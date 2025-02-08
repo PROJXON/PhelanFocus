@@ -15,7 +15,7 @@ const Home = async () => {
     <div>
       {/* Header with Navbar */}
       <header className="w-full">
-        <div className="w-full fixed flex mx-0 px-0 min-h-[vh21] z-40">
+        <div className="w-full fixed flex mx-0 px-0 min-h-[vh21] z-40 bg-white">
           <Navbar menuLinks={menuLinks} isFooter={false} />
         </div>
       </header>
