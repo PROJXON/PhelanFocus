@@ -9,7 +9,7 @@ Next.js will need to be install if not already installed.
 
 install Next.js
 ```bash
-npm install next react react-dom  
+npm install next@latest
 ```
 
 test in turbo
