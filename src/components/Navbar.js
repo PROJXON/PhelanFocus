@@ -112,13 +112,18 @@ export const Navbar = ({ menuLinks, isFooter }) => {
 
             {menu.submenus.length > 0 && (
               <div
-                className={`hover:text-cyan-500 uppercase text-xs absolute top-full mt-4 r-1 shadow-xl bg-white text-gray-800 rounded-bl-md rounded-br-md shadow-md z-50 transition-all duration-300 ${
+                className={`uppercase text-xs absolute top-full mt-4 right-1 shadow-xl bg-white text-gray-800 rounded-bl-md rounded-br-md shadow-md z-50 transition-all duration-300 ${
                   openMenu === index ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
                 } overflow-hidden sm:block hidden right-0 w-auto`}
               >
                 {menu.submenus.map((submenu, idx) => (
-                  <a key={idx} href={submenu.href} className="inline-block whitespace-nowrap px-4 py-2 hover:bg-gray-100">
+                  <a
+                    key={idx}
+                    href={submenu.href}
+                    className="inline-block whitespace-nowrap px-4 py-2 text-gray-800 relative group z-10"
+                  >
                     {submenu.name}
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left z-0"></div>
                   </a>
                 ))}
               </div>
