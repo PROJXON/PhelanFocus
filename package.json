@@ -2,7 +2,6 @@
   "name": "phelan-focus",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://PROJXON.github.io/PhelanFocus",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
