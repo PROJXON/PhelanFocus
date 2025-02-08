@@ -20,7 +20,7 @@ const Home = async () => {
         </div>
       </header>
 
-      <main className="z-1 translate-y-[4vh] flex flex-col mx-0 space-y-8 z-1">
+      <main className="z-1 t-[48px] flex flex-col mx-0 space-y-8 z-1">
         <HeroCarousel />
         <div className="pl-10 pr-10">
         <ImageCarousel />

@@ -7,11 +7,12 @@ export const Navbar = ({ menuLinks, isFooter }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [cursorPosition, setCursorPosition] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [isNavbarVisible, setIsNavbarVisible] = useState(true); // State to track navbar visibility
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const menuRefs = useRef([]);
   const barRef = useRef(null);
-  let prevScrollPos = useRef(0); // Use a ref to store the previous scroll position
+  let prevScrollPos = useRef(0);
 
+  // Click outside to close menu
   const handleClickOutside = (event) => {
     if (!menuRefs.current.some((ref) => ref?.contains(event.target))) {
       setOpenMenu(null);
@@ -23,6 +24,7 @@ export const Navbar = ({ menuLinks, isFooter }) => {
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
+  // Update cursor position
   const handleMouseMove = (e) => {
     const navbar = e.target.closest("nav");
     if (navbar) {
@@ -32,20 +34,22 @@ export const Navbar = ({ menuLinks, isFooter }) => {
     }
   };
 
+  // Handle window resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 640) setIsOpen(false);
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Toggle mobile menu
   const toggleMobileMenu = () => setIsOpen(!isOpen);
 
+  // Handle menu item click
   const handleMenuClick = (index, hasSubmenus, href, event) => {
     if (hasSubmenus) {
-      event.preventDefault(); // Prevents navigation when clicking menu items with submenus
+      event.preventDefault();
       setOpenMenu(openMenu === index ? null : index);
     } else {
       window.location.href = href;
@@ -55,12 +59,8 @@ export const Navbar = ({ menuLinks, isFooter }) => {
   // Scroll detection logic
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      if (currentScrollPos > prevScrollPos.current) {
-        setIsNavbarVisible(false); // Scroll down, hide navbar
-      } else {
-        setIsNavbarVisible(true); // Scroll up, show navbar
-      }
+      const currentScrollPos = window.scrollY;
+      setIsNavbarVisible(currentScrollPos <= prevScrollPos.current);
       prevScrollPos.current = currentScrollPos;
     };
 
@@ -70,40 +70,36 @@ export const Navbar = ({ menuLinks, isFooter }) => {
 
   return (
     <nav
-      className={`w-full p-4 bg-white relative transition-opacity duration-300 ${
-        isNavbarVisible ? "opacity-100" : "opacity-0"
-      }`}
+      className={`w-full p-4 bg-white relative transition-opacity duration-300 ${isNavbarVisible ? "opacity-100" : "opacity-0"}`}
       onMouseMove={handleMouseMove}
     >
-      <div className="sm:hidden flex justify-between items-center">
+      <div className="sm:hidden flex justify-end">
         <button onClick={toggleMobileMenu} className="text-gray-800">
           {isOpen ? "✖" : "☰"}
         </button>
       </div>
 
-      <div className={`sm:flex ${isOpen ? "flex-col" : "hidden"} sm:space-x-6 sm:justify-end`}>
+      <div className={`w-full ${isOpen ? "flex-col justify-center items-center" : "hidden sm:flex sm:space-x-6 sm:justify-end"}`}>
         {menuLinks?.map((menu, index) => (
           <div
-            className="relative"
             key={index}
             ref={(el) => (menuRefs.current[index] = el)}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
+            className="relative"
           >
             <button
-              className={`border-r-[1px] pr-5 border-black text-gray-800 flex items-center space-x-2 leading-none relative z-10 ${
-                index === menuLinks.length - 1 ? 'border-r-0' : ''
-              }`}
+              className={`text-gray-800 flex items-center justify-${isOpen ? "center !border-r-0" : ""} space-x-2 leading-none z-10 pr-5
+                ${index === menuLinks.length - 1 ? "!border-r-0" : "border-r-[1px]"}`}
               onClick={(e) => handleMenuClick(index, menu.submenus.length > 0, menu.href, e)}
             >
-              <span className={`tracking-widest uppercase text-xs ${openMenu === index ? "text-cyan-500" : "text-gray-800"}`}>{menu.name}</span>
+              <span className={`hover:text-cyan-500 tracking-widest uppercase text-xs ${openMenu === index ? "text-cyan-500" : "text-gray-800"}`}>
+                {menu.name}
+              </span>
               {menu.submenus.length > 0 && (
                 <span
-                  className={`transition-transform duration-200 ${openMenu === index ? "text-cyan-500" : "text-gray-800"}`}
-                  style={{
-                    transform: `rotate(${openMenu === index ? 270 : 90}deg)`,
-                    transformOrigin: "center"
-                  }}
+                  className={`hover:text-cyan-500 transition-transform duration-200 ${openMenu === index ? "rotate-270 text-cyan-500" : "rotate-90"} 
+                    ${isOpen ? "ml-auto" : ""}`}
                 >
                   «
                 </span>
@@ -112,16 +108,11 @@ export const Navbar = ({ menuLinks, isFooter }) => {
 
             {menu.submenus.length > 0 && (
               <div
-                className={`uppercase text-xs absolute top-full mt-4 right-1 shadow-xl bg-white text-gray-800 rounded-bl-md rounded-br-md shadow-md z-50 transition-all duration-300 ${
-                  openMenu === index ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-                } overflow-hidden sm:block hidden right-0 w-auto`}
+                className={`uppercase text-xs absolute top-full mt-4 right-1 shadow-xl bg-white text-gray-800 rounded-bl-md rounded-br-md shadow-md z-50 transition-all duration-300 overflow-hidden sm:block hidden w-auto 
+                  ${openMenu === index ? "opacity-100" : "max-h-0 opacity-0"}`}
               >
                 {menu.submenus.map((submenu, idx) => (
-                  <a
-                    key={idx}
-                    href={submenu.href}
-                    className="inline-block whitespace-nowrap px-4 py-2 text-gray-800 relative group z-10"
-                  >
+                  <a key={idx} href={submenu.href} className="hover: text-cyan-500 inline-block whitespace-nowrap px-4 py-2 text-gray-800 relative group z-10">
                     {submenu.name}
                     <div className="absolute bottom-0 left-0 w-full h-1 bg-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left z-0"></div>
                   </a>
@@ -132,7 +123,7 @@ export const Navbar = ({ menuLinks, isFooter }) => {
             <div className="sm:hidden flex flex-col mt-2">
               {openMenu === index &&
                 menu.submenus.map((submenu, idx) => (
-                  <a key={idx} href={submenu.href} className="block px-4 py-2 hover:bg-gray-600">
+                  <a key={idx} href={submenu.href} className="block uppercase text-xs px-4 py-2 hover:bg-cyan-500">
                     {submenu.name}
                   </a>
                 ))}
