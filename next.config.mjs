@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: '/PhelanFocus', // Your GitHub repo name
-    assetPrefix: '/PhelanFocus', // Same as above
+    basePath: '/PhelanFocus/out', // Your GitHub repo name
+    assetPrefix: '/PhelanFocus/out', // Same as above
     images: {
       unoptimized: true, // Avoid issues with Next.js image optimization
     },
