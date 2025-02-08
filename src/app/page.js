@@ -15,17 +15,19 @@ const Home = async () => {
     <div>
       {/* Header with Navbar */}
       <header className="w-full">
-        <div className="w-full fixed flex mx-0 px-0 min-h-[vh21] z-40 bg-white">
+        <div className="w-full fixed flex mx-0 px-0 z-40">
           <Navbar menuLinks={menuLinks} isFooter={false} />
         </div>
       </header>
 
-      <main className="z-1 translate-y-[11vh] flex flex-col mx-0 space-y-8 z-1">
+      <main className="z-1 translate-y-[4vh] flex flex-col mx-0 space-y-8 z-1">
         <HeroCarousel />
+        <div className="pl-10 pr-10">
         <ImageCarousel />
         <AboutMe />
         <YouTubeSection />
         <ImageGrid />
+        </div>
         <Footer menuLinks={menuLinks} />
       </main>
 

@@ -7,8 +7,10 @@ export const Navbar = ({ menuLinks, isFooter }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [cursorPosition, setCursorPosition] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true); // State to track navbar visibility
   const menuRefs = useRef([]);
   const barRef = useRef(null);
+  let prevScrollPos = useRef(0); // Use a ref to store the previous scroll position
 
   const handleClickOutside = (event) => {
     if (!menuRefs.current.some((ref) => ref?.contains(event.target))) {
@@ -50,8 +52,29 @@ export const Navbar = ({ menuLinks, isFooter }) => {
     }
   };
 
+  // Scroll detection logic
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      if (currentScrollPos > prevScrollPos.current) {
+        setIsNavbarVisible(false); // Scroll down, hide navbar
+      } else {
+        setIsNavbarVisible(true); // Scroll up, show navbar
+      }
+      prevScrollPos.current = currentScrollPos;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="w-full p-4 bg-white relative" onMouseMove={handleMouseMove}>
+    <nav
+      className={`w-full p-4 bg-white relative transition-opacity duration-300 ${
+        isNavbarVisible ? "opacity-100" : "opacity-0"
+      }`}
+      onMouseMove={handleMouseMove}
+    >
       <div className="sm:hidden flex justify-between items-center">
         <button onClick={toggleMobileMenu} className="text-gray-800">
           {isOpen ? "✖" : "☰"}

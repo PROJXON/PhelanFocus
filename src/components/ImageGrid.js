@@ -1,6 +1,6 @@
 // components/ImageGrid.js
 export const ImageGrid = () => (
-<section className="h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center">
+<section className="h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center pt-20">
   {Array.from({ length: 9 }).map((_, idx) => (
     <div
       key={idx}
