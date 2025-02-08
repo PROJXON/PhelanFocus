@@ -7,10 +7,14 @@ Node.js
 Next.js will need to be install if not already installed.
 ```npm install next```
 
-Turbopack is installed. Please run using next dev --turbo
-
+install Next.js
 ```bash
-npx next dev --turbo
+npm install next react react-dom  
+```
+
+test in turbo
+```bash
+npx run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
