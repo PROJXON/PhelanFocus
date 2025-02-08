@@ -1,6 +1,11 @@
 This is a Next.js app with Tailwind/Turbopack.
+## Preresiquites
+Next.js
+Node.js
 
 ## Getting Started
+Next.js will need to be install if not already installed.
+```npm install next```
 
 Turbopack is installed. Please run using next dev --turbo
 
