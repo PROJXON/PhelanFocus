@@ -79,7 +79,7 @@ export const Navbar = ({ menuLinks, isFooter }) => {
         </button>
       </div>
 
-      <div className={`w-full ${isOpen ? "flex-col justify-center items-center" : "hidden sm:flex sm:space-x-6 sm:justify-end"}`}>
+      <div className={`w-full ${isOpen ? "flex flex-col justify-center items-center" : "hidden sm:flex sm:space-x-6 sm:justify-end"}`}>
         {menuLinks?.map((menu, index) => (
           <div
             key={index}
