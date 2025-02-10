@@ -1,4 +1,6 @@
 This is a Next.js app with Tailwind/Turbopack.
+
+Clone repo, or use GitHub Desktop
 ## Preresiquites
 Next.js
 Node.js
