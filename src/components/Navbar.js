@@ -86,10 +86,10 @@ export const Navbar = ({ menuLinks, isFooter }) => {
             ref={(el) => (menuRefs.current[index] = el)}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
-            className="relative"
+            className="relative sm:w-auto w-full"
           >
             <button
-              className={`text-gray-800 flex items-center justify-${isOpen ? "center !border-r-0" : ""} space-x-2 leading-none z-10 pr-5
+              className={`text-gray-800 flex items-center justify-center ${isOpen ? "w-full center border-b-2 !border-r-0" : ""} space-x-2 leading-none z-10 pr-5
                 ${index === menuLinks.length - 1 ? "!border-r-0" : "border-r-[1px]"}`}
               onClick={(e) => handleMenuClick(index, menu.submenus.length > 0, menu.href, e)}
             >
@@ -99,7 +99,7 @@ export const Navbar = ({ menuLinks, isFooter }) => {
               {menu.submenus.length > 0 && (
                 <span
                   className={`hover:text-cyan-500 transition-transform duration-200 ${openMenu === index ? "rotate-270 text-cyan-500" : "rotate-90"} 
-                    ${isOpen ? "ml-auto" : ""}`}
+                    ${isOpen ? "ml-auto border-2" : ""}`}
                 >
                   «
                 </span>
