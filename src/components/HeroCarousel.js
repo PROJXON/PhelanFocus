@@ -7,7 +7,7 @@ export const HeroCarousel = () => (
     </div>
 
     <div className="sm:min-h-[66vw] h-[66vw] overflow-hidden max-h-[600px] sm:max-h-[400px]">
-      <video autoPlay loop muted playsinline className="w-full object-cover -mt-[12vw] sm:-mt-[8vw]">
+      <video autoPlay loop muted playsInline className="w-full object-cover -mt-[12vw] sm:-mt-[8vw]">
         <source src="/herobanner.mp4" type="video/mp4" />
       </video>
     </div>
