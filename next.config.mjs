@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    basePath: "/PhelanFocus",
     output: "export",  // <=== enables static exports
     reactStrictMode: true,
   };
