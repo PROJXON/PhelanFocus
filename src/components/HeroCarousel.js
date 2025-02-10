@@ -8,7 +8,7 @@ export const HeroCarousel = () => (
 
     <div className="sm:min-h-[66vw] h-[66vw] overflow-hidden max-h-[600px] sm:max-h-[400px]">
       <video autoPlay loop muted playsInline className="w-full object-cover -mt-[12vw] sm:-mt-[8vw]">
-        <source src="/herobanner.mp4" type="video/mp4" />
+        <source src="/PhelanFocus/herobanner.mp4" type="video/mp4" />
       </video>
     </div>
   </section>
