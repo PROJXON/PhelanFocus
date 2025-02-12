@@ -3,9 +3,12 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { HeroCarousel } from "../components/HeroCarousel";
 import { ImageCarousel } from "../components/ImageCarousel";
-import { AboutMe } from "../components/AboutMe";
+import AboutMe from "../components/AboutMe";
 import { YouTubeSection } from "../components/YoutubeSection";
 import { ImageGrid } from "../components/ImageGrid";
+import Contact from "../components/Contact";
+import Services from "../components/Services";
+import Podcast from "../components/Podcast";
 
 const Home = async () => {
   // Fetch menu links server-side
@@ -23,10 +26,13 @@ const Home = async () => {
       <main className="z-1 t-[48px] flex flex-col mx-0 space-y-8 z-1">
         <HeroCarousel />
         <div className="pl-10 pr-10">
-        <ImageCarousel />
-        <AboutMe />
-        <YouTubeSection />
-        <ImageGrid />
+        {/* <ImageCarousel /> */}
+        <AboutMe id="about"/>
+        <Services id="services"/>
+        <Podcast id="podcast"/>
+        <Contact id="contact"/>
+        {/* <YouTubeSection /> */}
+        {/* <ImageGrid /> */}
         </div>
         <Footer menuLinks={menuLinks} />
       </main>
