@@ -23,16 +23,15 @@ const Home = async () => {
         </div>
       </header>
 
-      <main className="z-1 t-[48px] flex flex-col mx-0 space-y-8 z-1">
+      <main className="pt-[48px] flex flex-col space-y-8 relative z-1">
         <HeroCarousel />
-        <div className="pl-10 pr-10">
-        {/* <ImageCarousel /> */}
-        <AboutMe id="about"/>
-        <Services id="services"/>
-        <Podcast id="podcast"/>
-        <Contact id="contact"/>
-        {/* <YouTubeSection /> */}
-        {/* <ImageGrid /> */}
+        <div className="max-w-6xl w-full mx-auto px-4">
+          <AboutMe id="about" />
+          <Services id="services" />
+          <Podcast id="podcast" />
+          <Contact id="contact" />
+          {/* <YouTubeSection /> */}
+          {/* <ImageGrid /> */}
         </div>
         <Footer menuLinks={menuLinks} />
       </main>
