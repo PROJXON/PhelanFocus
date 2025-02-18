@@ -6,10 +6,16 @@ export const HeroCarousel = () => (
       <h1 className="border-l-[3vw] border-neutral-800 sm:border-l-[2vw]">FOCUS</h1>
     </div>
 
-    <div className="sm:min-h-[66vw] h-[66vw] overflow-hidden max-h-[600px] sm:max-h-[400px]">
+    <div className="h-auto">
       <video autoPlay loop muted playsInline className="w-full object-cover -mt-[12vw] sm:-mt-[8vw]">
         <source src="/PhelanFocus/herobanner.mp4" type="video/mp4" />
       </video>
+    </div>
+    <div className="hero-container flex overflow-auto sm:h-[33vw] h-[333px]  sm:absolute sm:w-[55vw] bg-sky-50/75 top-[calc(6vw)] right-[calc(8vw)] rounded-lg shadow-lg shadow-sky-500/50 p-8 mx-4 my-4">
+      Hello World!<br></br> This is test content<br></br>Hello World!<br></br> This is test content<br></br>
+      Hello World!<br></br> This is test content<br></br>Hello World!<br></br> This is test content<br></br>
+      Hello World!<br></br> This is test content<br></br>Hello World!<br></br> This is test content<br></br>
+      Hello World!<br></br> This is test content<br></br>Hello World!<br></br> This is test content<br></br>
     </div>
   </section>
 

@@ -176,12 +176,12 @@ const ShapeFour = () => (
 
 const AboutMe = () => {
 	return (
-		<section id="about" className="ezy__about17 light pt-14 md:pt-24 pb-14 lg:pb-0 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white relative overflow-hidden z-[1]">
+		<section id="about" className="ezy__about17 light pt-14 md:pt-24 pb-14 lg:pb-0 bg-white rounded-full dark:bg-[#0b1727] text-zinc-900 dark:text-white relative overflow-hidden z-[1]">
 			<ShapeThree />
 			<ShapeFour />
 
-			<div className="container px-4">
-				<div className="grid grid-cols-12 justify-between">
+			<div className="max-w-7xl mx-auto px-4">
+				<div className="grid grid-cols-12 justify-center">
 					<div className="col-span-12 md:col-span-5">
 						<div className="relative">
 							<ShapeOne />

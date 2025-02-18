@@ -126,8 +126,8 @@ const ContactFormCard = () => (
 const Contact = () => {
 	return (
 		<section id="contact" className="ezy__contact3 light py-14 md:py-24 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white overflow-hidden">
-			<div className="container px-4">
-				<div className="grid grid-cols-12 py-6 lg:gap-8">
+			<div className="max-w-7xl mx-auto px-4">
+				<div className="grid grid-cols-12 py-6 lg:gap-8 justify-center">
 					<div className="col-span-12 lg:col-span-7 lg:order-2 mb-4 lg:mb-0">
 						<div
 							className="bg-center bg-no-repeat bg-cover rounded-2xl min-h-[150px] h-full object-cover"
