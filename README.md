@@ -13,10 +13,14 @@ install Next.js
 ```bash
 npm install next@latest
 ```
+install prop-types
+```
+npm install prop-types
+```
 
 test in turbo
 ```bash
-npx run dev
+npm run dev
 ```
 
 Open [http://localhost:3000/PhelanFocus](http://localhost:3000/PhelanFocus) with your browser to see the result.
