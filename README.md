@@ -13,6 +13,10 @@ install Next.js
 ```bash
 npm install next@latest
 ```
+install prop-types
+```
+npm install prop-types
+```
 
 test in turbo
 ```bash
