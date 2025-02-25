@@ -11,15 +11,13 @@ import Services from "../components/Services";
 import Podcast from "../components/Podcast";
 
 const Home = async () => {
-  // Fetch menu links server-side
-  const menuLinks = await fetchMenuLinks();
 
   return (
     <div>
       {/* Header with Navbar */}
       <header className="w-full">
         <div className="w-full fixed flex mx-0 px-0 z-40">
-          <Navbar menuLinks={menuLinks} isFooter={false} />
+          <Navbar isFooter={false} />
         </div>
       </header>
 
@@ -33,7 +31,7 @@ const Home = async () => {
           {/* <YouTubeSection /> */}
           {/* <ImageGrid /> */}
         </div>
-        <Footer menuLinks={menuLinks} />
+        <Footer />
       </main>
 
       {/* Footer with Navbar */}

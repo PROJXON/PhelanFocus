@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 
-export const Navbar = ({ menuLinks, isFooter }) => {
+export const Navbar = ({ isFooter }) => {
   const [openMenu, setOpenMenu] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [cursorPosition, setCursorPosition] = useState(0);
@@ -10,19 +10,15 @@ export const Navbar = ({ menuLinks, isFooter }) => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const menuRefs = useRef([]);
   const barRef = useRef(null);
-  let prevScrollPos = useRef(0);
+  const prevScrollPos = useRef(0);
+  const isNavigating = useRef(false); // Track if the user has navigated via a menu link
 
-  // Click outside to close menu
-  const handleClickOutside = (event) => {
-    if (!menuRefs.current.some((ref) => ref?.contains(event.target))) {
-      setOpenMenu(null);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
+  const menuLinks = [
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Podcast", href: "#podcast" },
+    { name: "Contact", href: "#contact" },
+  ];
 
   // Update cursor position
   const handleMouseMove = (e) => {
@@ -46,21 +42,27 @@ export const Navbar = ({ menuLinks, isFooter }) => {
   // Toggle mobile menu
   const toggleMobileMenu = () => setIsOpen(!isOpen);
 
-  // Handle menu item click
-  const handleMenuClick = (index, hasSubmenus, href, event) => {
-    if (hasSubmenus) {
-      event.preventDefault();
-      setOpenMenu(openMenu === index ? null : index);
-    } else {
-      window.location.href = href;
-    }
+  // Handle menu item click (anchor link navigation)
+  const handleMenuClick = () => {
+    setIsNavbarVisible(false);
+    isNavigating.current = true;
   };
 
   // Scroll detection logic
   useEffect(() => {
     const handleScroll = () => {
+      // If the user has navigated via a menu link, don't let scroll hide the navbar
+      if (isNavigating.current) {
+        isNavigating.current = false; // Reset navigation state after the next scroll
+        setIsNavbarVisible(true); // Make navbar visible after navigation
+        return;
+      }
+
       const currentScrollPos = window.scrollY;
-      setIsNavbarVisible(currentScrollPos <= prevScrollPos.current);
+
+      // Always show navbar when scrolling (up or down)
+      setIsNavbarVisible(true);
+
       prevScrollPos.current = currentScrollPos;
     };
 
@@ -88,46 +90,16 @@ export const Navbar = ({ menuLinks, isFooter }) => {
             onMouseLeave={() => setHoveredIndex(null)}
             className="relative sm:w-auto w-full"
           >
-            <button
+            <a
+              href={menu.href} // Anchor link to navigate to the section
               className={`text-gray-800 flex items-center justify-center ${isOpen ? "w-full center border-b-2 !border-r-0" : ""} space-x-2 leading-none z-10 pr-5
                 ${index === menuLinks.length - 1 ? "!border-r-0" : "border-r-[1px]"}`}
-              onClick={(e) => handleMenuClick(index, menu.submenus.length > 0, menu.href, e)}
+              onClick={(e) => handleMenuClick(index, menu.submenus?.length > 0, menu.href, e)}
             >
               <span className={`hover:text-cyan-500 tracking-widest uppercase text-xs ${openMenu === index ? "text-cyan-500" : "text-gray-800"}`}>
                 {menu.name}
               </span>
-              {menu.submenus.length > 0 && (
-                <span
-                  className={`hover:text-cyan-500 transition-transform duration-200 ${openMenu === index ? "rotate-270 text-cyan-500" : "rotate-90"} 
-                    ${isOpen ? "ml-auto border-2" : ""}`}
-                >
-                  «
-                </span>
-              )}
-            </button>
-
-            {menu.submenus.length > 0 && (
-              <div
-                className={`uppercase text-xs absolute top-full mt-4 right-1 shadow-xl bg-white text-gray-800 rounded-bl-md rounded-br-md shadow-md z-50 transition-all duration-300 overflow-hidden sm:block hidden w-auto 
-                  ${openMenu === index ? "opacity-100" : "max-h-0 opacity-0"}`}
-              >
-                {menu.submenus.map((submenu, idx) => (
-                  <a key={idx} href={submenu.href} className="hover: text-cyan-500 inline-block whitespace-nowrap px-4 py-2 text-gray-800 relative group z-10">
-                    {submenu.name}
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left z-0"></div>
-                  </a>
-                ))}
-              </div>
-            )}
-
-            <div className="sm:hidden flex flex-col mt-2">
-              {openMenu === index &&
-                menu.submenus.map((submenu, idx) => (
-                  <a key={idx} href={submenu.href} className="block uppercase text-xs px-4 py-2 hover:bg-cyan-500">
-                    {submenu.name}
-                  </a>
-                ))}
-            </div>
+            </a>
           </div>
         ))}
       </div>
