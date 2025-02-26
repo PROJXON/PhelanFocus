@@ -26,42 +26,31 @@ import {
 	faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import PropTypes from "prop-types";
+import MarkPhelanImg from "../../public/markphelan.webp"
 
-const stories = [
-	{
-		icon: faAward,
-		title: "Top Rank On Fiverr",
-	},
-	{
-		icon: faGraduationCap,
-		title: "200+ 5 star Review",
-	},
-	{
-		icon: faTrophy,
-		title: "Top Rank on Dribbble",
-	},
-	{
-		icon: faRibbon,
-		title: "Top Seller on Upwork",
-	},
-];
+// const stories = [
+// 	{
+// 		icon: faAward,
+// 		title: "Top Rank On Fiverr",
+// 	},
+// 	{
+// 		icon: faGraduationCap,
+// 		title: "200+ 5 star Review",
+// 	},
+// 	{
+// 		icon: faTrophy,
+// 		title: "Top Rank on Dribbble",
+// 	},
+// 	{
+// 		icon: faRibbon,
+// 		title: "Top Seller on Upwork",
+// 	},
+// ];
 
 const social = [
 	{
-		icon: faFacebookF,
-		link: "#",
-	},
-	{
-		icon: faTwitter,
-		link: "#",
-	},
-	{
-		icon: faPinterestP,
-		link: "#",
-	},
-	{
 		icon: faLinkedinIn,
-		link: "#",
+		link: "https://www.linkedin.com/in/phelanmarkw/",
 	},
 ];
 
@@ -101,8 +90,8 @@ const ShapeOne = () => (
 	<>
 		<svg
 			className="absolute -top-[10%] -left-[10%] -z-[1] text-gray-50 dark:text-[#1E2735]"
-			width="499"
-			height="499"
+			width="350"  // Adjusted size of the SVG
+			height="350"
 			viewBox="0 0 600 600"
 			fill="currentColor"
 			xmlns="http://www.w3.org/2000/svg"
@@ -115,13 +104,15 @@ const ShapeOne = () => (
 				fillOpacity="1"
 			/>
 		</svg>
+		{/* Make the image fill the oval without stretching the section */}
 		<img
-			src="https://cdn.easyfrontend.com/pictures/quiz_1.png"
-			alt=""
-			className="max-w-full h-auto"
+			src="/PhelanFocus/markphelan.webp"
+			alt="Mark Phelan"
+			className="absolute top-0 left-0 w-full h-full object-cover rounded-full" // Image will fill the oval
 		/>
 	</>
 );
+
 
 const ShapeTwo = () => (
 	<svg
@@ -176,43 +167,36 @@ const ShapeFour = () => (
 
 const AboutMe = () => {
 	return (
-		<section id="about" className="ezy__about17 light pt-14 md:pt-24 pb-14 lg:pb-0 bg-white rounded-full dark:bg-[#0b1727] text-zinc-900 dark:text-white relative overflow-hidden z-[1]">
+		<section
+			id="about"
+			className="ezy__about17 light pt-10 md:pt-16 pb-10 lg:pb-16 bg-white rounded-lg dark:bg-[#0b1727] text-zinc-900 dark:text-white relative overflow-hidden z-[1]"
+		>
 			<ShapeThree />
 			<ShapeFour />
 
-			<div className="max-w-7xl mx-auto px-4">
-				<div className="grid grid-cols-12 justify-center">
-					<div className="col-span-12 md:col-span-5">
-						<div className="relative">
+			<div className="max-w-6xl mx-auto px-4">
+				<div className="grid grid-cols-12 justify-center gap-8">
+					{/* Adjusting the column span to reduce the size */}
+					<div className="col-span-12 md:col-span-5 flex justify-center items-center relative">
+						<div className="relative w-[350px] h-[350px] rounded-full overflow-hidden">
+							{/* Oval shape stays fixed */}
 							<ShapeOne />
 							<ShapeTwo />
 						</div>
 					</div>
-					<div className="col-span-12 md:col-span-6 md:mr-4">
+
+					<div className="col-span-12 md:col-span-7 flex flex-col justify-center items-center text-center md:text-left">
 						<div>
-							<h2 className="text-2xl leading-tight font-bold md:text-5xl mt-4">
-								Noman Ali Khan's Story
+							<h2 className="text-xl md:text-3xl font-semibold leading-tight mt-4">
+								Mark Phelan's Story
 							</h2>
-							<p className="text-base sm:text-lg leading-relaxed opacity-80 my-6 lg:pr-12">
-								Assumenda non repellendus distinctio nihil dicta sapiente,
-								quibusdam maiores, illum at, aliquid blanditiis eligendi
-								qui.Assumenda non repellendus distinctio nihil dicta sapiente.
+							<p className="text-base sm:text-lg leading-relaxed opacity-80 my-4 md:my-6 lg:pr-12">
+								With a background in military logistics and project management, I bring a unique perspective to consulting, blending discipline with innovation. Over the years, I've spearheaded complex projects in e-commerce, IT, and engineering, managed multimillion-dollar assets, and developed scalable frameworks that have shaped PROJXON’s success.
 							</p>
-							<div className="grid grid-cols-12 gap-8">
-								{stories.map((item, i) => (
-									<div className="col-span-12 sm:col-span-6" key={i}>
-										<StoryItem item={item} />
-									</div>
-								))}
-							</div>
 						</div>
-						<div className="flex flex-col sm:flex-row mt-12">
-							<a
-								href="#!"
-								className="px-10 py-3 border-2 border-[#0b1727] dark:border-white hover:bg-blue-600 hover:border-blue-600 text-center hover:text-white rounded transition"
-							>
-								About Me
-							</a>
+
+						{/* Social Links */}
+						<div className="flex flex-col sm:flex-row mt-8">
 							<div className="flex justify-center md:ml-12 mt-4 sm:mt-0">
 								<ul className="flex items-center justify-center sm:justify-end">
 									{social.map((item, i) => (

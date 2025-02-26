@@ -2,32 +2,32 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faCamera,
-	faCannabis,
+	faStar,
 	faRandom,
 } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 
 const serviceList = [
 	{
-		color: "red",
-		icon: faCannabis,
+		color: "yellow",
+		icon: faStar,
 		title: "Branding",
 		description:
-			"Assumenda non repellendus distinctio nihil dicta sapiente, quibusdam maiores, illum at, aliquid blanditiis eligendi qui.",
+			"We help create a strong, unique brand identity that resonates with your audience. From logo design to brand strategy, we ensure your brand stands out and makes a lasting impression across all platforms.",
 	},
 	{
 		color: "blue",
 		icon: faRandom,
 		title: "Content Marketing",
 		description:
-			"It’s easier to reach yours have the right savings account. It’s easier to reach your savings goals when you have the right savings account",
+			"We craft compelling content that engages your audience and drives results. From blog posts to social media campaigns, we create content that amplifies your brand’s voice and boosts online visibility.",
 	},
 	{
 		color: "yellow",
 		icon: faCamera,
 		title: "Web Development",
 		description:
-			"Sed ut in perspiciatis unde omnis iste natus error sit on i tatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.",
+			"We create custom, responsive websites that deliver a seamless user experience. From sleek landing pages to full-fledged e-commerce solutions, we focus on fast load times, performance optimization, and SEO to ensure your site stands out and performs at its best.",
 	},
 ];
 
@@ -57,8 +57,7 @@ const Services = () => {
 							Services We Provide
 						</h2>
 						<p className="text-lg opacity-80">
-							Assumenda non repellendus distinctio nihil dicta sapiente,
-							quibusdam maiores, illum at, aliquid blanditiis eligendi qui.
+							We deliver full services to make your brand reach the clients you want 
 						</p>
 					</div>
 				</div>

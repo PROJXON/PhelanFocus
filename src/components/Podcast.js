@@ -28,7 +28,7 @@ const Shape2 = () => (
 
 const Podcast = () => {
 	return (
-		<section id="podcast" className="ezy__comingsoon3 light relative bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white py-[60px] md:pt-0 md:pb-[100px] z-[1]">
+		<section id="podcast" className="mb-16 pt-10 md:pt-16 pb-10 lg:pb-16 bg-white rounded-lg dark:bg-[#0b1727] text-zinc-900 dark:text-white relative overflow-hidden z-[1]">
 			<Shape1 />
 			<Shape2 />
 			<div className="max-w-7xl mx-auto px-4">
