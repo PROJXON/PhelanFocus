@@ -110,7 +110,7 @@ emailjs
 			<div className="text-end">
 			<button
     			type="submit"
-    			className="bg-blue-600 hover:bg-blue-700 transition duration-300 ease-in-out text-white px-9 py-3 rounded-md mb-4"
+    			className="bg-blue-500 hover:bg-blue-600 transition duration-300 ease-in-out text-white px-9 py-3 rounded-md mb-4"
 			>
 			Submit
 			</button>

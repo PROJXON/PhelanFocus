@@ -20,7 +20,7 @@ const Social = ({ item }) => {
     <li className="inline-block m-2">
       <a
         href={link}
-        className="border flex justify-center items-center rounded-full w-9 h-9 transition hover:bg-blue-600 hover:border-blue-600 hover:text-white"
+        className="border flex justify-center items-center rounded-full w-9 h-9 transition hover:bg-blue-500 hover:border-blue-500 hover:text-white"
       >
         <FontAwesomeIcon icon={icon} style={{ fontSize: "1rem", width: "1rem", height: "1rem" }} />
       </a>
