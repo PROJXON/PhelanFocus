@@ -169,12 +169,12 @@ const AboutMe = () => {
 	return (
 		<section
 			id="about"
-			className="ezy__about17 light pt-10 md:pt-16 pb-10 lg:pb-16 bg-white rounded-lg dark:bg-[#0b1727] text-zinc-900 dark:text-white relative overflow-hidden z-[1]"
+			className="ezy__about17 light pt-32 md:pt-40 pb-10 lg:pb-16 bg-white rounded-lg dark:bg-[#0b1727] text-zinc-900 dark:text-white relative overflow-hidden z-[1] scroll-mt-20"
 		>
 			<ShapeThree />
 			<ShapeFour />
 
-			<div className="max-w-6xl mx-auto px-4">
+			<div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
 				<div className="grid grid-cols-12 justify-center gap-8">
 					{/* Adjusting the column span to reduce the size */}
 					<div className="col-span-12 md:col-span-5 flex justify-center items-center relative">
