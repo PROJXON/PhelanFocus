@@ -42,7 +42,6 @@ const ServiceItem = ({ service }) => (
 		viewport={{ once: false, amount: 0.2 }} // Triggers when 20% in view
 		whileHover={{ scale: 1.05 }} // Instant hover zoom
 		whileTap={{ scale: 0.98 }} // Optional: subtle press effect
-		className="bg-white dark:bg-slate-800 h-full shadow-xl rounded-[20px] p-6 lg:px-6 lg:py-12 shadow-lg shadow-blue-500/50"
 		style={{ transition: "transform 0.08s ease-out" }}
 		className="bg-white dark:bg-slate-800 h-full shadow-xl rounded-[20px] p-6 lg:px-6 lg:py-12 shadow-lg shadow-blue-500/50 transition-transform duration-300 hover:scale-105">
 		 <div className={`w-24 h-24 rounded-full text-3xl inline-flex justify-center items-center mb-6 bg-${service.color}-600 bg-opacity-10 text-${service.color}-600 shadow-lg shadow-blue-500/50`}>
