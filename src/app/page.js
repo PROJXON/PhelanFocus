@@ -9,11 +9,13 @@ import { ImageGrid } from "../components/ImageGrid";
 import Contact from "../components/Contact";
 import Services from "../components/Services";
 import Podcast from "../components/Podcast";
+import MovingDotsBackground from "../components/MovingDotsBackground";
 
 const Home = async () => {
 
   return (
     <div>
+      <MovingDotsBackground />
       {/* Header with Navbar */}
       <header className="w-full">
         <div className="w-full fixed flex mx-0 px-0 z-40">
