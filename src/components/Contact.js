@@ -68,8 +68,11 @@ emailjs
 			<div className="mb-4">
 				<input
 					type="text"
-          name="name"
-					className="min-h-[48px] leading-[48px] bg-[#F2F6FD] dark:bg-[#2A384C] border border-transparent rounded-xl focus:outline-none focus:border focus:border-[#86b7fe] w-full px-5"
+					name="name"
+					className="min-h-[48px] leading-[24px] bg-[#F2F6FD] dark:bg-[#2A384C] 
+							border border-gray-400 dark:border-gray-600 rounded-xl 
+							focus:outline-none focus:border-black dark:focus:border-white 
+							w-full px-5 transition duration-300"
 					placeholder="Enter Name"
 					required
 				/>
@@ -79,8 +82,11 @@ emailjs
 			<div className="mb-4">
 				<input
 					type="email"
-          name="email"
-					className="min-h-[48px] leading-[48px] bg-[#F2F6FD] dark:bg-[#2A384C] border border-transparent rounded-xl focus:outline-none focus:border focus:border-[#86b7fe] w-full px-5"
+					name="email"
+					className="min-h-[48px] leading-[24px] bg-[#F2F6FD] dark:bg-[#2A384C] 
+							border border-gray-400 dark:border-gray-600 rounded-xl 
+							focus:outline-none focus:border-black dark:focus:border-white 
+							w-full px-5 transition duration-300"
 					placeholder="Enter Email"
 					required
 				/>
@@ -88,23 +94,26 @@ emailjs
 
 			{/* Message Textarea */}
 			<div className="mb-4">
-				<textarea
-					name="message"
-					className="min-h-[48px] leading-[48px] bg-[#F2F6FD] dark:bg-[#2A384C] border border-transparent rounded-xl focus:outline-none focus:border focus:border-[#86b7fe] w-full px-5"
-					placeholder="Enter Message"
-					rows="4"
-					required
-				></textarea>
+			<textarea
+				name="message"
+				className="min-h-[48px] max-h-[200px] leading-[24px] bg-[#F2F6FD] dark:bg-[#2A384C] 
+						border border-gray-400 dark:border-gray-600 rounded-xl 
+						focus:outline-none focus:border-black dark:focus:border-white 
+						w-full px-5 resize-none transition duration-300"
+				placeholder="Enter Message"
+				rows="4"
+				required
+			></textarea>
 			</div>
 
 			{/* Submit Button */}
 			<div className="text-end">
-				<button
-					type="submit"
-					className="bg-blue-600 hover:bg-opacity-90 text-white px-9 py-3 rounded-md mb-4"
-				>
-					Submit
-				</button>
+			<button
+    			type="submit"
+    			className="bg-blue-600 hover:bg-blue-700 transition duration-300 ease-in-out text-white px-9 py-3 rounded-md mb-4"
+			>
+			Submit
+			</button>
 			</div>
 		</form>
 	);
@@ -127,16 +136,18 @@ const Contact = () => {
 	return (
 		<section id="contact" className="rounded-lg ezy__contact3 light py-6 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white overflow-hidden">
 			<div className="max-w-7xl mx-auto px-4">
-				<div className="grid grid-cols-12 py-6 lg:gap-8 justify-center">
-					<div className="col-span-12 lg:col-span-7 lg:order-2 mb-4 lg:mb-0">
-						<div
-							className="bg-center bg-no-repeat bg-cover rounded-2xl min-h-[150px] h-full object-cover"
-							style={{
-								backgroundImage:
-									"url(https://cdn.easyfrontend.com/pictures/contact/contact_3.png)",
-							}}
-						></div>
-					</div>
+				<div className="grid grid-cols-12 lg:grid lg:grid-cols-12 lg:items-center min-h-[500px] py-6 lg:gap-8 justify-center">
+				<div className="col-span-12 lg:col-span-7 lg:order-2 mb-4 lg:mb-0 flex justify-center">
+					<div
+						className="bg-center bg-no-repeat bg-cover rounded-2xl min-h-[300px] lg:min-h-[400px] w-full lg:w-[500px] block"
+						style={{
+							backgroundImage: "url(https://cdn.easyfrontend.com/pictures/contact/contact_3.png)",
+							backgroundSize: "cover",
+							backgroundPosition: "center",
+							backgroundRepeat: "no-repeat",
+						}}
+					></div>
+				</div>
 					<div className="col-span-12 lg:col-span-5">
 						<ContactFormCard />
 					</div>
@@ -145,5 +156,6 @@ const Contact = () => {
 		</section>
 	);
 };
+
 
 export default Contact;
