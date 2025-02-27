@@ -17,6 +17,10 @@ install prop-types
 ```
 npm install prop-types
 ```
+install framer-motion
+```
+npm install framer-motion
+```
 
 test in turbo
 ```bash

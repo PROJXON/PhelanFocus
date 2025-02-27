@@ -96,7 +96,7 @@ export const Navbar = ({ isFooter }) => {
                 ${index === menuLinks.length - 1 ? "!border-r-0" : "border-r-[1px]"}`}
               onClick={(e) => handleMenuClick(index, menu.submenus?.length > 0, menu.href, e)}
             >
-              <span className={`hover:text-cyan-500 tracking-widest uppercase text-xs ${openMenu === index ? "text-cyan-500" : "text-gray-800"}`}>
+              <span className={`hover:text-blue-500 tracking-widest uppercase text-xs ${openMenu === index ? "text-blue-500" : "text-gray-800"}`}>
                 {menu.name}
               </span>
             </a>
@@ -107,7 +107,7 @@ export const Navbar = ({ isFooter }) => {
       {/* Animated Hover Bar */}
       <div
         ref={barRef}
-        className="absolute bottom-0 left-0 h-[8px] bg-cyan-500 transition-all duration-400 ease-in-out hidden sm:block"
+        className="absolute bottom-0 left-0 h-[8px] bg-blue-500 transition-all duration-400 ease-in-out hidden sm:block"
         style={{
           width: hoveredIndex !== null ? "66px" : "0px",
           transform: `translateX(${hoveredIndex !== null ? menuRefs.current[hoveredIndex]?.offsetLeft || 0 : cursorPosition - 75}px)`,
