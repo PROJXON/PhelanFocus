@@ -10,6 +10,7 @@ import Contact from "../components/Contact";
 import Services from "../components/Services";
 import Podcast from "../components/Podcast";
 import MovingDotsBackground from "../components/MovingDotsBackground";
+import ScrollToTopButton from "@/components/ScrollToTop";
 
 const Home = async () => {
 
@@ -35,6 +36,7 @@ const Home = async () => {
         </div>
         <Footer />
       </main>
+      <ScrollToTopButton />
 
       {/* Footer with Navbar */}
       
