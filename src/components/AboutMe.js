@@ -107,9 +107,9 @@ const ShapeOne = () => (
 		</svg>
 		{/* Make the image fill the oval without stretching the section */}
 		<img
-			src="/PhelanFocus/markphelan.webp"
+			src="/PhelanFocus/Phelan.png"
 			alt="Mark Phelan"
-			className="absolute top-0 left-0 w-full h-full object-cover rounded-full" // Image will fill the oval
+			className="absolute top-0 left-0 w-full h-full object-cover overflow-visible" // Image will fill the oval
 		/>
 	</>
 );
@@ -170,7 +170,7 @@ const AboutMe = () => {
 	return (
 		<section
 			id="about"
-			className="ezy__about17 light pt-32 md:pt-40 pb-10 lg:pb-16 bg-white rounded-lg dark:bg-[#0b1727] text-zinc-900 dark:text-white relative overflow-hidden z-[1] scroll-mt-20"
+			className="ezy__about17 light pt-32 md:pt-40 pb-10 lg:pb-16 bg-white rounded-3xl rounded-t-none dark:bg-[#0b1727] text-zinc-900 dark:text-white relative overflow-hidden z-[1] scroll-mt-20"
 		>
 			<ShapeThree />
 			<ShapeFour />
@@ -184,7 +184,7 @@ const AboutMe = () => {
 				<div className="grid grid-cols-12 justify-center gap-8">
 					{/* Adjusting the column span to reduce the size */}
 					<div className="col-span-12 md:col-span-5 flex justify-center items-center relative">
-						<div className="relative w-[350px] h-[350px] rounded-full overflow-hidden">
+						<div className="relative w-[350px] h-[350px] overflow-visible">
 							{/* Oval shape stays fixed */}
 							<ShapeOne />
 							<ShapeTwo />

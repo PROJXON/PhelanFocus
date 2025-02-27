@@ -24,8 +24,8 @@ const Home = async () => {
       </header>
 
       <main className="pt-[48px] flex flex-col space-y-8 relative z-1">
-        <HeroCarousel />
-        <div className="max-w-6xl w-full mx-auto px-4">
+        <div className="max-w-[80vw] w-full mx-auto">
+          <HeroCarousel />
           <AboutMe id="about" />
           <Services id="services" />
           <Podcast id="podcast" />

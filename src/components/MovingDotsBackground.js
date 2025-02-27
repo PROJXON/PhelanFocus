@@ -34,7 +34,7 @@ export default function MovingDotsBackground() {
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "#ffffff";
+        ctx.fillStyle = "#000000";
         ctx.fill();
       }
     }
@@ -61,7 +61,7 @@ export default function MovingDotsBackground() {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = "rgba(255, 255, 255, 0.2)";
+            ctx.strokeStyle = "rgba(0, 119, 255, 0.59)";
             ctx.stroke();
           }
         }

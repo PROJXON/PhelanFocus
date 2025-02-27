@@ -1,21 +1,18 @@
 // components/HeroCarousel.js
 export const HeroCarousel = () => (
-  <section className="">
-    <div className="text-[calc(6vw+.11vh)] leading-none font-bold tracking-widest text-white top-[calc(21vw)] left-[calc(8vw)] absolute max-w-full sm:text-[calc(4vw+.1vh)]">
-      <h1 className="border-l-[3vw] border-blue-500 sm:border-l-[2vw]">PHELAN</h1>
-      <h1 className="border-l-[3vw] border-neutral-800 sm:border-l-[2vw]">FOCUS</h1>
+<section className="relative">
+  <div className="relative w-full h-auto">
+    <video autoPlay loop muted playsInline className="w-full object-cover h-[33vw] min-h-[333px] opacity-50">
+      <source src="/PhelanFocus/herobanner.mp4" type="video/mp4" />
+    </video>
+
+    {/* Floating Div using the Golden Ratio and Responsive Width */}
+    <div className="absolute top-1/2 left-[5%] -translate-y-1/2 bg-black/50 text-white p-6 rounded-lg 
+                    w-[90%] sm:w-[38.2%]">
+      <h2 className="text-2xl font-bold">Golden Ratio Overlay</h2>
+      <p className="text-sm">This box follows the golden ratio on larger screens and scales to 90% on smaller screens.</p>
     </div>
-
-    <div className="h-auto">
-      <video autoPlay loop muted playsInline className="w-full object-cover -mt-[12vw] sm:-mt-[8vw]">
-        <source src="/PhelanFocus/herobanner.mp4" type="video/mp4" />
-      </video>
-    </div>
-    <div className="hero-container flex overflow-auto sm:h-[33vw] h-[333px]  sm:absolute sm:w-[55vw] bg-sky-50/75 top-[calc(6vw)] right-[calc(8vw)] rounded-lg shadow-lg shadow-sky-500/50 p-8 mx-4 my-4 hidden">
-    </div>
-  </section>
-
-
-
+  </div>
+</section>
   );
   
