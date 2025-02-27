@@ -122,10 +122,10 @@ emailjs
 const ContactFormCard = () => (
 	<div className="bg-white dark:bg-[#162231] shadow-xl rounded-2xl p-6 md:p-12">
 		<h2 className="text-2xl md:text-[45px] leading-none font-bold mb-4">
-			Contact Us
+			Contact Me
 		</h2>
 		<p className="text-lg mb-12">
-			We list your menu online, help you process orders.
+			Send me a message!
 		</p>
 
 		<ContactForm />
@@ -141,7 +141,7 @@ const Contact = () => {
 					<div
 						className="bg-center bg-no-repeat bg-cover rounded-2xl min-h-[300px] lg:min-h-[400px] w-full lg:w-[500px] block"
 						style={{
-							backgroundImage: "url(https://cdn.easyfrontend.com/pictures/contact/contact_3.png)",
+							backgroundImage: "url(/PhelanFocus/connection.jpg)",
 							backgroundSize: "cover",
 							backgroundPosition: "center",
 							backgroundRepeat: "no-repeat",

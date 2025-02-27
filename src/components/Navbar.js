@@ -69,7 +69,7 @@ export const Navbar = ({ isFooter }) => {
 
   return (
     <nav
-      className={`w-full p-4 bg-white fixed top-0 left-0 transition-transform duration-300 ${
+      className={`bg-gradient-to-r from-neutral-800 to-cyan-500 w-full p-4 bg-white fixed top-0 left-0 transition-transform duration-300 ${
         isNavbarVisible ? "translate-y-0" : "-translate-y-full"
       }`}
       onMouseMove={handleMouseMove}

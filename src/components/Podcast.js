@@ -38,17 +38,15 @@ const Podcast = () => {
 							Podcast Coming Soon
 						</h2>
 						<p className="text-lg opacity-80 mb-12 lg:mb-0">
-							An activity that requires a person's mental or physical effort is
-							work.If a person is trained for a certain type of job, they may
-							have a profession. Typically, a job would be a subset of someone's
-							career.
+							Tune in for a podcast coming soon on how to evolve your 
+							business to the next level
 						</p>
 					</div>
 					<div className="col-span-12 lg:col-span-5 lg:col-start-8 text-center">
 						<img
 							src="https://cdn.easyfrontend.com/pictures/comingsoon/three.png"
 							alt=""
-							className="h-auto max-w-full mx-auto"
+							className="h-auto max-w-full mx-auto rounded-xl"
 						/>
 					</div>
 				</div>
