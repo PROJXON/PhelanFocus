@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Shape1 = () => (
 	<svg
-		className="text-[#fef2fb] dark:text-[#1E2735] absolute left-0 top-0 hidden sm:block -z-[1]"
+		className="text-blue-500 dark:text-[#1E2735] absolute left-0 top-0 hidden sm:block -z-[1]"
 		width="370"
 		height="534"
 		viewBox="0 0 370 534"
@@ -16,7 +16,7 @@ const Shape1 = () => (
 
 const Shape2 = () => (
 	<svg
-		className="text-[#fef2fb] dark:text-[#1E2735] absolute right-0 bottom-0 hidden sm:block -z-[1]"
+		className="text-blue-500 dark:text-[#1E2735] absolute right-0 bottom-0 hidden sm:block -z-[1]"
 		width="344"
 		height="470"
 		viewBox="0 0 344 470"
