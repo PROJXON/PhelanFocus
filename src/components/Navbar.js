@@ -44,26 +44,23 @@ export const Navbar = ({ isFooter }) => {
 
   // Handle menu item click (anchor link navigation)
   const handleMenuClick = () => {
-    setIsNavbarVisible(false);
+    setIsNavbarVisible(true);
     isNavigating.current = true;
   };
 
   // Scroll detection logic
   useEffect(() => {
     const handleScroll = () => {
-      // If the user has navigated via a menu link, don't let scroll hide the navbar
-      if (isNavigating.current) {
-        isNavigating.current = false; // Reset navigation state after the next scroll
-        setIsNavbarVisible(true); // Make navbar visible after navigation
-        return;
+      const currentScrollPos = window.scrollY;
+      const isScrollingUp = prevScrollPos.current > currentScrollPos;
+
+      // Show navbar when scrolling up or at top, hide when scrolling down
+      if (!isNavigating.current) {
+        setIsNavbarVisible(isScrollingUp || currentScrollPos < 50);
       }
 
-      const currentScrollPos = window.scrollY;
-
-      // Always show navbar when scrolling (up or down)
-      setIsNavbarVisible(true);
-
       prevScrollPos.current = currentScrollPos;
+      isNavigating.current = false;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -72,7 +69,9 @@ export const Navbar = ({ isFooter }) => {
 
   return (
     <nav
-      className={`w-full p-4 bg-white relative transition-opacity duration-300 ${isNavbarVisible ? "opacity-100" : "opacity-0"}`}
+      className={`w-full p-4 bg-white fixed top-0 left-0 transition-transform duration-300 ${
+        isNavbarVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
       onMouseMove={handleMouseMove}
     >
       <div className="sm:hidden flex justify-end">
@@ -91,10 +90,10 @@ export const Navbar = ({ isFooter }) => {
             className="relative sm:w-auto w-full"
           >
             <a
-              href={menu.href} // Anchor link to navigate to the section
+              href={menu.href}
               className={`text-gray-800 flex items-center justify-center ${isOpen ? "w-full center border-b-2 !border-r-0" : ""} space-x-2 leading-none z-10 pr-5
                 ${index === menuLinks.length - 1 ? "!border-r-0" : "border-r-[1px]"}`}
-              onClick={(e) => handleMenuClick(index, menu.submenus?.length > 0, menu.href, e)}
+              onClick={handleMenuClick}
             >
               <span className={`hover:text-blue-500 tracking-widest uppercase text-xs ${openMenu === index ? "text-blue-500" : "text-gray-800"}`}>
                 {menu.name}

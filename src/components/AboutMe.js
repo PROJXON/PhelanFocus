@@ -174,10 +174,6 @@ const AboutMe = () => {
 		>
 			<ShapeThree />
 			<ShapeFour />
-<<<<<<< Updated upstream
-
-			<div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
-=======
 			<motion.div
 				initial={{ opacity: 0, y: 100 }} // Start fully hidden below the screen
 				whileInView={{ opacity: 1, y: 0 }} // Fly in and fade in when in view
@@ -185,7 +181,6 @@ const AboutMe = () => {
 				transition={{ duration: 0.9, ease: "easeOut" }} // Smooth transition
 				viewport={{ once: false, amount: 0.1 }} // Trigger when 10% of text is visible
 				className="max-w-6xl mx-auto px-4">
->>>>>>> Stashed changes
 				<div className="grid grid-cols-12 justify-center gap-8">
 					{/* Adjusting the column span to reduce the size */}
 					<div className="col-span-12 md:col-span-5 flex justify-center items-center relative">
