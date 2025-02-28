@@ -1,18 +1,31 @@
 // components/HeroCarousel.js
+"use client";
+import { motion } from "framer-motion";
 export const HeroCarousel = () => (
-<section className="relative">
-  <div className="relative w-full h-auto">
-    <video autoPlay loop muted playsInline className="w-full object-cover h-[33vw] min-h-[333px] opacity-50">
-      <source src="/PhelanFocus/herobanner.mp4" type="video/mp4" />
-    </video>
+  <section className="relative">
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileOutOfView={{ opacity: 0, y: 50 }}
+      transition={{ duration: 0.9, ease: "easeOut" }}
+      viewport={{ once: false, amount: 0.1 }}
+      className="relative w-full h-auto"
+    >
+      {/* Full-screen Background Iframe */}
+      <div className="relative w-full h-[33vw] min-h-[333px]">
+        <iframe
+          src="https://www.youtube.com/embed/9y9UEAkB2VA?si=oIYp_RsC9YGQIkDv&autoplay=1&mute=1&loop=1&playlist=9y9UEAkB2VA"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="autoplay; encrypted-media; fullscreen"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          className="absolute inset-0 w-full h-full"
+        ></iframe>
+      </div>
+    </motion.div>
+  </section>
 
-    {/* Floating Div using the Golden Ratio and Responsive Width */}
-    <div className="absolute top-1/2 left-[5%] -translate-y-1/2 bg-black/50 text-white p-6 rounded-lg 
-                    w-[90%] sm:w-[38.2%]">
-      <h2 className="text-2xl font-bold">Golden Ratio Overlay</h2>
-      <p className="text-sm">This box follows the golden ratio on larger screens and scales to 90% on smaller screens.</p>
-    </div>
-  </div>
-</section>
+
   );
   

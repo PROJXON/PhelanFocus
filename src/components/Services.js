@@ -77,7 +77,7 @@ const Services = () => {
 						</p>
 					</motion.div>
 				</div>
-				<div className="grid grid-cols-12 gap-6 text-center text-black pt-12 ">
+				<div className="grid grid-cols-12 gap-6 text-center pt-12 ">
 					{serviceList.map((service, i) => (
 						<div className="col-span-12 md:col-span-4" key={i}>
 							<ServiceItem service={service} />

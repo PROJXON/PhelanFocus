@@ -18,7 +18,7 @@ export const Footer = () => {
       whileOutOfView={{ opacity: 0, y: 50 }}
       transition={{ duration: 0.9, ease: "easeOut" }} // Smooth transition
       viewport={{ once: false, amount: 0.1 }} // Trigger when 10% of text is visible
-      className="bg-white black py-6">
+      className="bg-white black py-6 dark:bg-[#0b1727] dark:text-white">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
         {/* Left Side - Logo & Copyright */}
         <div className="text-center md:text-left mb-4 md:mb-0">

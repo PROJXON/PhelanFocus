@@ -15,32 +15,32 @@ import ScrollToTopButton from "@/components/ScrollToTop";
 const Home = async () => {
 
   return (
-    <div>
-      <MovingDotsBackground />
-      {/* Header with Navbar */}
-      <header className="w-full">
-        <div className="w-full fixed flex mx-0 px-0 z-40">
-          <Navbar isFooter={false} />
-        </div>
-      </header>
+      <div>
+        <MovingDotsBackground />
+        {/* Header with Navbar */}
+        <header className="w-full">
+          <div className="w-full fixed flex mx-0 px-0 z-40">
+            <Navbar isFooter={false} />
+          </div>
+        </header>
+        
+        <main className="pt-[48px] flex flex-col space-y-8 relative z-1">
+          <div className="max-w-[80vw] w-full mx-auto">
+            <HeroCarousel />
+            <AboutMe id="about" />
+            <Services id="services" />
+            <Podcast id="podcast" />
+            <Contact id="contact" />
+            {/* <YouTubeSection /> */}
+            {/* <ImageGrid /> */}
+          </div>
+          <Footer />
+        </main>
+        <ScrollToTopButton />
 
-      <main className="pt-[48px] flex flex-col space-y-8 relative z-1">
-        <div className="max-w-[80vw] w-full mx-auto">
-          <HeroCarousel />
-          <AboutMe id="about" />
-          <Services id="services" />
-          <Podcast id="podcast" />
-          <Contact id="contact" />
-          {/* <YouTubeSection /> */}
-          {/* <ImageGrid /> */}
-        </div>
-        <Footer />
-      </main>
-      <ScrollToTopButton />
-
-      {/* Footer with Navbar */}
-      
-    </div>
+        {/* Footer with Navbar */}
+        
+      </div>
   );
 };
 

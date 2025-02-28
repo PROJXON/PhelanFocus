@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import DarkModeToggle from "./DarkModeToggle";
 
 export const Navbar = ({ isFooter }) => {
   const [openMenu, setOpenMenu] = useState(null);
@@ -69,7 +70,8 @@ export const Navbar = ({ isFooter }) => {
 
   return (
     <nav
-      className={`bg-gradient-to-r from-neutral-800 to-blue-500 w-full p-4 bg-white fixed top-0 left-0 transition-transform duration-300 ${
+    //bg-gradient-to-t from-white to-blue-500 Taken out due to design conflicts. Not good design conflicts for gradients in navbar area. Not sleek.
+      className={`dark:bg-[#0b1727] dark:text-white w-full p-4 bg-white fixed top-0 left-0 transition-transform duration-300 ${
         isNavbarVisible ? "translate-y-0" : "-translate-y-full"
       }`}
       onMouseMove={handleMouseMove}
@@ -79,8 +81,9 @@ export const Navbar = ({ isFooter }) => {
           {isOpen ? "✖" : "☰"}
         </button>
       </div>
-
+      
       <div className={`w-full ${isOpen ? "flex flex-col justify-center items-center" : "hidden sm:flex sm:space-x-6 sm:justify-end"}`}>
+        <DarkModeToggle />
         {menuLinks?.map((menu, index) => (
           <div
             key={index}
@@ -95,10 +98,11 @@ export const Navbar = ({ isFooter }) => {
                 ${index === menuLinks.length - 1 ? "!border-r-0" : "border-r-[1px]"}`}
               onClick={handleMenuClick}
             >
-              <span className={`hover:text-blue-500 tracking-widest uppercase text-xs ${openMenu === index ? "text-blue-500" : "text-gray-800"}`}>
+              <span className={`dark:bg-[#0b1727] dark:text-white dark:hover:text-blue-500 hover:text-blue-500 tracking-widest uppercase text-xs ${openMenu === index ? "text-blue-500" : "text-gray-800"}`}>
                 {menu.name}
               </span>
             </a>
+            
           </div>
         ))}
       </div>
