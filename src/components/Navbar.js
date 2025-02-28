@@ -77,7 +77,7 @@ export const Navbar = ({ isFooter }) => {
       onMouseMove={handleMouseMove}
     >
       <div className="sm:hidden flex justify-end">
-        <button onClick={toggleMobileMenu} className="text-gray-800">
+        <button onClick={toggleMobileMenu} className="text-gray-800 dark:text-white">
           {isOpen ? "✖" : "☰"}
         </button>
       </div>

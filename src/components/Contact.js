@@ -2,6 +2,7 @@
 "use client";
 import { useState } from 'react';
 import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
 
 const ContactForm = () => {
 	const [validated, setValidated] = useState(false);
@@ -134,7 +135,13 @@ const ContactFormCard = () => (
 
 const Contact = () => {
 	return (
-		<section id="contact" className="rounded-lg ezy__contact3 light py-6 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white overflow-hidden">
+		<motion.section 
+		initial={{ opacity: 0, y: 100 }}
+		whileInView={{ opacity: 1, y: 0 }}
+		whileOutOfView={{ opacity: 0, y: 50 }}
+		transition={{ duration: 0.9, ease: "easeOut" }}
+		id="contact" 
+		className="rounded-3xl ezy__contact3 light py-6 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white overflow-hidden">
 			<div className="max-w-7xl mx-auto px-4">
 				<div className="grid grid-cols-12 lg:grid lg:grid-cols-12 lg:items-center min-h-[500px] py-6 lg:gap-8 justify-center">
 				<div className="col-span-12 lg:col-span-7 lg:order-2 mb-4 lg:mb-0 flex justify-center">
@@ -153,7 +160,7 @@ const Contact = () => {
 					</div>
 				</div>
 			</div>
-		</section>
+		</motion.section>
 	);
 };
 

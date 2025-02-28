@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -29,10 +31,15 @@ const Shape2 = () => (
 
 const Podcast = () => {
 	return (
-		<section id="podcast" className="mb-16 pt-10 md:pt-16 pb-10 lg:pb-16 bg-white rounded-lg dark:bg-[#0b1727] text-zinc-900 dark:text-white relative overflow-hidden z-[1]">
+		<section id="podcast" className="mb-16 pt-10 md:pt-16 pb-10 lg:pb-16 bg-white rounded-3xl dark:bg-[#0b1727] text-zinc-900 dark:text-white relative overflow-hidden z-[1]">
 			<Shape1 />
 			<Shape2 />
-			<div className="max-w-7xl mx-auto px-4">
+			<motion.div
+				initial={{ opacity: 0, y: 100 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				whileOutOfView={{ opacity: 0, y: 50 }}
+				transition={{ duration: 0.9, ease: "easeOut" }}
+				className="max-w-7xl mx-auto px-4">
 				<div className="grid grid-cols-12 justify-center">
 					<div className="col-span-12 lg:col-span-5 flex flex-col justify-center text-center lg:text-start">
 						<h2 className="font-bold text-[32px] leading-none md:text-[45px] mb-6 mt-0 md:mt-12">
@@ -51,7 +58,7 @@ const Podcast = () => {
 						/>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</section>
 	);
 };
