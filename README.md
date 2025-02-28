@@ -22,6 +22,11 @@ install framer-motion
 npm install framer-motion
 ```
 
+install next-themes
+```
+npm install next-themes
+```
+
 test in turbo
 ```bash
 npm run dev
