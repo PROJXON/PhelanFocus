@@ -1,14 +1,13 @@
 // pages/contact.js
 "use client";
 import { useState } from 'react';
-import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 
 const ContactForm = () => {
 	const [validated, setValidated] = useState(false);
-  const [statusMessage, setStatusMessage] = useState(""); 
+	const [statusMessage, setStatusMessage] = useState("");
 
-	const handleSubmit = (event) => {
+	const handleSubmit = async (event) => {
 		event.preventDefault(); // Prevent form submission
 
 		const form = event.currentTarget;
@@ -18,50 +17,38 @@ const ContactForm = () => {
 
 		setValidated(true); // Mark form as validated
 
-    const formData = new FormData(form);
+		const formData = new FormData(form);
 
-  const message = {
-    name: formData.get("name"),
-    email: formData.get("email"),
-    message: formData.get("message")
-  };
+		const message = {
+			name: formData.get("name"),
+			email: formData.get("email"),
+			message: formData.get("message")
+		};
 
-  // 1. Send email to the user (confirmation email)
-  emailjs
-  .sendForm(
-    process.env.NEXT_PUBLIC_SERVICE,  // Using the environment variable
-    process.env.NEXT_PUBLIC_TEMPLATE, // Using the environment variable
-    form, // The form element to be used
-    process.env.NEXT_PUBLIC_USER  // User ID from EmailJS
-  )
-  .then(
-    (response) => {
-      console.log("User email SUCCESS!", response.status, response.text);
-      setStatusMessage("Your message has been sent successfully!");
-    },
-    (error) => {
-      console.log("User email FAILED...", error);
-      setStatusMessage("Failed to send message. Please try again.");
-    }
-  );
+		if (validated) {
+			const url = '/PhelanFocus/api/contact';
+			const opt = {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(message),
+			}
+			const res = await fetch(url, opt)
+			const data = await res.json()
+			console.log(data)
+			if (data.status === 'success') {
+				setStatusMessage('Your message has been sent!')
+			} else {
+				setStatusMessage('There was an error. Please try again.')
+			}
+		} else {
+			console.log('Form is not valid')
+		}
 
-// 2. Send email to you (the admin)
-emailjs
-  .send(
-    process.env.NEXT_PUBLIC_SERVICE,  // Using the environment variable
-    process.env.NEXT_ADMIN_TEMPLATE, // You should have a separate template for admin
-    message, // Send message details to admin
-    process.env.NEXT_PUBLIC_USER  // User ID from EmailJS (send to yourself)
-  )
-  .then(
-    (response) => {
-      console.log("Admin email SUCCESS!", response.status, response.text);
-    },
-    (error) => {
-      console.log("Admin email FAILED...", error);
-    }
-  );
-};
+	};
+
+
 
 	return (
 		<form noValidate validated={validated.toString()} onSubmit={handleSubmit}>
@@ -95,26 +82,26 @@ emailjs
 
 			{/* Message Textarea */}
 			<div className="mb-4">
-			<textarea
-				name="message"
-				className="min-h-[48px] max-h-[200px] leading-[24px] bg-[#F2F6FD] dark:bg-[#2A384C] 
+				<textarea
+					name="message"
+					className="min-h-[48px] max-h-[200px] leading-[24px] bg-[#F2F6FD] dark:bg-[#2A384C] 
 						border border-gray-400 dark:border-gray-600 rounded-xl 
 						focus:outline-none focus:border-black dark:focus:border-white 
 						w-full px-5 resize-none transition duration-300"
-				placeholder="Enter Message"
-				rows="4"
-				required
-			></textarea>
+					placeholder="Enter Message"
+					rows="4"
+					required
+				></textarea>
 			</div>
 
 			{/* Submit Button */}
 			<div className="text-end">
-			<button
-    			type="submit"
-    			className="bg-blue-500 hover:bg-blue-600 transition duration-300 ease-in-out text-white px-9 py-3 rounded-md mb-4"
-			>
-			Submit
-			</button>
+				<button
+					type="submit"
+					className="bg-blue-500 hover:bg-blue-600 transition duration-300 ease-in-out text-white px-9 py-3 rounded-md mb-4"
+				>
+					Submit
+				</button>
 			</div>
 		</form>
 	);
@@ -135,26 +122,26 @@ const ContactFormCard = () => (
 
 const Contact = () => {
 	return (
-		<motion.section 
-		initial={{ opacity: 0, y: 100 }}
-		whileInView={{ opacity: 1, y: 0 }}
-		whileOutOfView={{ opacity: 0, y: 50 }}
-		transition={{ duration: 0.9, ease: "easeOut" }}
-		id="contact" 
-		className="rounded-3xl ezy__contact3 light py-6 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white overflow-hidden">
+		<motion.section
+			initial={{ opacity: 0, y: 100 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			whileOutOfView={{ opacity: 0, y: 50 }}
+			transition={{ duration: 0.9, ease: "easeOut" }}
+			id="contact"
+			className="rounded-3xl ezy__contact3 light py-6 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white overflow-hidden">
 			<div className="max-w-7xl mx-auto px-4">
 				<div className="grid grid-cols-12 lg:grid lg:grid-cols-12 lg:items-center min-h-[500px] py-6 lg:gap-8 justify-center">
-				<div className="col-span-12 lg:col-span-7 lg:order-2 mb-4 lg:mb-0 flex justify-center">
-					<div
-						className="bg-center bg-no-repeat bg-cover rounded-2xl min-h-[300px] lg:min-h-[400px] w-full lg:w-[500px] block"
-						style={{
-							backgroundImage: "url(/PhelanFocus/connection.jpg)",
-							backgroundSize: "cover",
-							backgroundPosition: "center",
-							backgroundRepeat: "no-repeat",
-						}}
-					></div>
-				</div>
+					<div className="col-span-12 lg:col-span-7 lg:order-2 mb-4 lg:mb-0 flex justify-center">
+						<div
+							className="bg-center bg-no-repeat bg-cover rounded-2xl min-h-[300px] lg:min-h-[400px] w-full lg:w-[500px] block"
+							style={{
+								backgroundImage: "url(/PhelanFocus/connection.jpg)",
+								backgroundSize: "cover",
+								backgroundPosition: "center",
+								backgroundRepeat: "no-repeat",
+							}}
+						></div>
+					</div>
 					<div className="col-span-12 lg:col-span-5">
 						<ContactFormCard />
 					</div>
@@ -165,4 +152,4 @@ const Contact = () => {
 };
 
 
-export default Contact;
+export default Contact
