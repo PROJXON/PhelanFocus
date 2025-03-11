@@ -4,103 +4,120 @@ import { useState } from 'react';
 import { motion } from "framer-motion";
 
 const ContactForm = () => {
-	const [validated, setValidated] = useState(false);
+	const [formData, setFormData] = useState({
+		name: "",
+		email: "",
+		message: "",
+	});
+	const [errors, setErrors] = useState({});
 	const [statusMessage, setStatusMessage] = useState("");
+	const [loading, setLoading] = useState(false);
 
+
+	const handleChange = (event) => {
+		const { name, value } = event.target;
+		setFormData({ ...formData, [name]: value });
+		setErrors({ ...errors, [name]: value.trim() ? "" : errors[name] });
+	};
 
 	const handleSubmit = async (event) => {
-		event.preventDefault(); // Prevent form submission
-
-		const form = event.currentTarget;
-		if (form.checkValidity() === false) {
-			setValidated(true);
-			console.log('error')
-			return
-		}
-
-		setValidated(true); // Mark form as validated
-
-		const formData = new FormData(form);
-
-		const message = {
-			name: formData.get("name"),
-			email: formData.get("email"),
-			message: formData.get("message")
-		};
+		event.preventDefault();
+		const validated = validateForm();
 
 		if (validated) {
+			setLoading(true)
+			setFormData({ name: "", email: "", message: "" });
+			setErrors({});
+			setStatusMessage('Your message has been sent!')
 			const url = '/PhelanFocus/api/contact';
 			const opt = {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
 				},
-				body: JSON.stringify(message),
+				body: JSON.stringify(formData),
 			}
 			const res = await fetch(url, opt)
 			const data = await res.json()
-			console.log(data)
-			if (data.status === 'success') {
-				setStatusMessage('Your message has been sent!')
+
+			if (res.ok) {
+				const secondUrl = '/PhelanFocus/api/confirmation';
+				const secondOpt = {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(formData),
+				}
+				const secondEmail = await fetch(secondUrl, secondOpt)
+				const secondEmailData = await secondEmail.json()
 			} else {
 				setStatusMessage('There was an error. Please try again.')
 			}
 		} else {
-			console.log('Form is not valid')
+			console.log("Connection error. Please try again later.")
 		}
+	};
 
+	const validateForm = () => {
+		const newErrors = {};
+		if (!formData.name.trim()) newErrors.name = "Please enter your name";
+		if (!formData.email.trim()) newErrors.email = "Please enter your email";
+		if (!formData.message.trim()) newErrors.message = "Please enter your message";
+		setErrors(newErrors);
+		return Object.keys(newErrors).length === 0;
 	};
 
 
 	return (
-		<form noValidate validated={validated.toString()} onSubmit={handleSubmit}>
-			{/* Name Input */}
+		<form noValidate onSubmit={handleSubmit}>
 			<div className="mb-4">
 				<input
 					type="text"
 					name="name"
-					className="min-h-[48px] leading-[24px] bg-[#F2F6FD] dark:bg-[#2A384C] 
-							border border-gray-400 dark:border-gray-600 rounded-xl 
-							focus:outline-none focus:border-black dark:focus:border-white 
-							w-full px-5 transition duration-300"
+					value={formData.name}
+					onChange={handleChange}
+					className={`min-h-[48px] w-full px-5 rounded-xl border transition duration-300  bg-[#F2F6FD] dark:bg-[#2A384C] 
+						${errors.name ? "border-red-500" : "border-gray-400"} `}
 					placeholder="Enter Name"
-					required
 				/>
+				{errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
 			</div>
 
-			{/* Email Input */}
 			<div className="mb-4">
 				<input
 					type="email"
 					name="email"
-					className="min-h-[48px] leading-[24px] bg-[#F2F6FD] dark:bg-[#2A384C] 
-							border border-gray-400 dark:border-gray-600 rounded-xl 
-							focus:outline-none focus:border-black dark:focus:border-white 
-							w-full px-5 transition duration-300"
+					value={formData.email}
+					onChange={handleChange}
+					className={`min-h-[48px] w-full px-5 rounded-xl border transition duration-300  bg-[#F2F6FD] dark:bg-[#2A384C] 
+						${errors.email ? "border-red-500" : "border-gray-400"} `}
 					placeholder="Enter Email"
-					required
 				/>
+				{errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
 			</div>
 
-			{/* Message Textarea */}
 			<div className="mb-4">
 				<textarea
 					name="message"
-					className="min-h-[48px] max-h-[200px] leading-[24px] bg-[#F2F6FD] dark:bg-[#2A384C] 
-						border border-gray-400 dark:border-gray-600 rounded-xl 
-						focus:outline-none focus:border-black dark:focus:border-white 
-						w-full px-5 resize-none transition duration-300"
+					value={formData.message}
+					onChange={handleChange}
+					className={`min-h-[48px] w-full px-5 rounded-xl border resize-none transition duration-300  bg-[#F2F6FD] dark:bg-[#2A384C] 
+						${errors.message ? "border-red-500" : "border-gray-400"} `}
 					placeholder="Enter Message"
 					rows="4"
-					required
 				></textarea>
+				{errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
 			</div>
 
-			{/* Submit Button */}
+			{statusMessage && <p className="text-white pb-2">{statusMessage}</p>}
+
 			<div className="text-end">
 				<button
 					type="submit"
-					className="bg-blue-500 hover:bg-blue-600 transition duration-300 ease-in-out text-white px-9 py-3 rounded-md mb-4"
+					disabled={loading}
+					className={`px-9 py-3 rounded-md mb-4 text-white transition duration-300 ease-in-out
+						${loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"}`}
 				>
 					Submit
 				</button>
