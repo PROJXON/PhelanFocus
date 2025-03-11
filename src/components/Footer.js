@@ -5,10 +5,10 @@ import { faFacebook, faTwitter, faInstagram, faLinkedin } from "@fortawesome/fre
 
 export const Footer = () => {
   const socialIcons = [
-    { icon: faFacebook, href: "#" },
-    { icon: faTwitter, href: "#" },
-    { icon: faInstagram, href: "#" },
-    { icon: faLinkedin, href: "#" },
+    // { icon: faFacebook, href: "#" },
+    { icon: faTwitter, href: "https://x.com/The.Phelan.Focus" },
+    { icon: faInstagram, href: "https://www.instagram.com/The.Phelan.Focus/" },
+    { icon: faLinkedin, href: "https://www.linkedin.com/in/phelanmarkw/" },
   ];
 
   return (
@@ -40,7 +40,7 @@ export const Footer = () => {
         {/* Right Side - Social Media Icons */}
         <div className="flex space-x-4 text-xl text-blue-500">
           {socialIcons.map((item, index) => (
-            <a key={index} href={item.href} className="hover:text-gray-900 dark:hover:text-gray-200 transition-colors duration-300">
+            <a key={index} href={item.href} target="_blank" className="hover:text-gray-900 dark:hover:text-gray-200 transition-colors duration-300">
               <FontAwesomeIcon icon={item.icon} />
             </a>
           ))}

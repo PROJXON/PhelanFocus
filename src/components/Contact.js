@@ -7,12 +7,15 @@ const ContactForm = () => {
 	const [validated, setValidated] = useState(false);
 	const [statusMessage, setStatusMessage] = useState("");
 
+
 	const handleSubmit = async (event) => {
 		event.preventDefault(); // Prevent form submission
 
 		const form = event.currentTarget;
 		if (form.checkValidity() === false) {
-			event.stopPropagation(); // Stop if form is not valid
+			setValidated(true);
+			console.log('error')
+			return
 		}
 
 		setValidated(true); // Mark form as validated
@@ -47,7 +50,6 @@ const ContactForm = () => {
 		}
 
 	};
-
 
 
 	return (
