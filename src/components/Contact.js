@@ -1,120 +1,126 @@
 // pages/contact.js
 "use client";
 import { useState } from 'react';
-import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 
 const ContactForm = () => {
-	const [validated, setValidated] = useState(false);
-  const [statusMessage, setStatusMessage] = useState(""); 
+	const [formData, setFormData] = useState({
+		name: "",
+		email: "",
+		message: "",
+	});
+	const [errors, setErrors] = useState({});
+	const [statusMessage, setStatusMessage] = useState("");
+	const [loading, setLoading] = useState(false);
 
-	const handleSubmit = (event) => {
-		event.preventDefault(); // Prevent form submission
 
-		const form = event.currentTarget;
-		if (form.checkValidity() === false) {
-			event.stopPropagation(); // Stop if form is not valid
+	const handleChange = (event) => {
+		const { name, value } = event.target;
+		setFormData({ ...formData, [name]: value });
+		setErrors({ ...errors, [name]: value.trim() ? "" : errors[name] });
+	};
+
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		const validated = validateForm();
+
+		if (validated) {
+			setLoading(true)
+			setFormData({ name: "", email: "", message: "" });
+			setErrors({});
+			setStatusMessage('Your message has been sent!')
+			const url = '/PhelanFocus/api/contact';
+			const opt = {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
+			}
+			const res = await fetch(url, opt)
+			const data = await res.json()
+
+			if (res.ok) {
+				const secondUrl = '/PhelanFocus/api/confirmation';
+				const secondOpt = {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(formData),
+				}
+				const secondEmail = await fetch(secondUrl, secondOpt)
+				const secondEmailData = await secondEmail.json()
+			} else {
+				setStatusMessage('There was an error. Please try again.')
+			}
+		} else {
+			console.log("Connection error. Please try again later.")
 		}
+	};
 
-		setValidated(true); // Mark form as validated
+	const validateForm = () => {
+		const newErrors = {};
+		if (!formData.name.trim()) newErrors.name = "Please enter your name";
+		if (!formData.email.trim()) newErrors.email = "Please enter your email";
+		if (!formData.message.trim()) newErrors.message = "Please enter your message";
+		setErrors(newErrors);
+		return Object.keys(newErrors).length === 0;
+	};
 
-    const formData = new FormData(form);
-
-  const message = {
-    name: formData.get("name"),
-    email: formData.get("email"),
-    message: formData.get("message")
-  };
-
-  // 1. Send email to the user (confirmation email)
-  emailjs
-  .sendForm(
-    process.env.NEXT_PUBLIC_SERVICE,  // Using the environment variable
-    process.env.NEXT_PUBLIC_TEMPLATE, // Using the environment variable
-    form, // The form element to be used
-    process.env.NEXT_PUBLIC_USER  // User ID from EmailJS
-  )
-  .then(
-    (response) => {
-      console.log("User email SUCCESS!", response.status, response.text);
-      setStatusMessage("Your message has been sent successfully!");
-    },
-    (error) => {
-      console.log("User email FAILED...", error);
-      setStatusMessage("Failed to send message. Please try again.");
-    }
-  );
-
-// 2. Send email to you (the admin)
-emailjs
-  .send(
-    process.env.NEXT_PUBLIC_SERVICE,  // Using the environment variable
-    process.env.NEXT_ADMIN_TEMPLATE, // You should have a separate template for admin
-    message, // Send message details to admin
-    process.env.NEXT_PUBLIC_USER  // User ID from EmailJS (send to yourself)
-  )
-  .then(
-    (response) => {
-      console.log("Admin email SUCCESS!", response.status, response.text);
-    },
-    (error) => {
-      console.log("Admin email FAILED...", error);
-    }
-  );
-};
 
 	return (
-		<form noValidate validated={validated.toString()} onSubmit={handleSubmit}>
-			{/* Name Input */}
+		<form noValidate onSubmit={handleSubmit}>
 			<div className="mb-4">
 				<input
 					type="text"
 					name="name"
-					className="min-h-[48px] leading-[24px] bg-[#F2F6FD] dark:bg-[#2A384C] 
-							border border-gray-400 dark:border-gray-600 rounded-xl 
-							focus:outline-none focus:border-black dark:focus:border-white 
-							w-full px-5 transition duration-300"
+					value={formData.name}
+					onChange={handleChange}
+					className={`min-h-[48px] w-full px-5 rounded-xl border transition duration-300  bg-[#F2F6FD] dark:bg-[#2A384C] 
+						${errors.name ? "border-red-500" : "border-gray-400"} `}
 					placeholder="Enter Name"
-					required
 				/>
+				{errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
 			</div>
 
-			{/* Email Input */}
 			<div className="mb-4">
 				<input
 					type="email"
 					name="email"
-					className="min-h-[48px] leading-[24px] bg-[#F2F6FD] dark:bg-[#2A384C] 
-							border border-gray-400 dark:border-gray-600 rounded-xl 
-							focus:outline-none focus:border-black dark:focus:border-white 
-							w-full px-5 transition duration-300"
+					value={formData.email}
+					onChange={handleChange}
+					className={`min-h-[48px] w-full px-5 rounded-xl border transition duration-300  bg-[#F2F6FD] dark:bg-[#2A384C] 
+						${errors.email ? "border-red-500" : "border-gray-400"} `}
 					placeholder="Enter Email"
-					required
 				/>
+				{errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
 			</div>
 
-			{/* Message Textarea */}
 			<div className="mb-4">
-			<textarea
-				name="message"
-				className="min-h-[48px] max-h-[200px] leading-[24px] bg-[#F2F6FD] dark:bg-[#2A384C] 
-						border border-gray-400 dark:border-gray-600 rounded-xl 
-						focus:outline-none focus:border-black dark:focus:border-white 
-						w-full px-5 resize-none transition duration-300"
-				placeholder="Enter Message"
-				rows="4"
-				required
-			></textarea>
+				<textarea
+					name="message"
+					value={formData.message}
+					onChange={handleChange}
+					className={`min-h-[48px] w-full px-5 rounded-xl border resize-none transition duration-300  bg-[#F2F6FD] dark:bg-[#2A384C] 
+						${errors.message ? "border-red-500" : "border-gray-400"} `}
+					placeholder="Enter Message"
+					rows="4"
+				></textarea>
+				{errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
 			</div>
 
-			{/* Submit Button */}
+			{statusMessage && <p className="text-white pb-2">{statusMessage}</p>}
+
 			<div className="text-end">
-			<button
-    			type="submit"
-    			className="bg-blue-500 hover:bg-blue-600 transition duration-300 ease-in-out text-white px-9 py-3 rounded-md mb-4"
-			>
-			Submit
-			</button>
+				<button
+					type="submit"
+					disabled={loading}
+					className={`px-9 py-3 rounded-md mb-4 text-white transition duration-300 ease-in-out
+						${loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"}`}
+				>
+					Submit
+				</button>
 			</div>
 		</form>
 	);
@@ -135,26 +141,26 @@ const ContactFormCard = () => (
 
 const Contact = () => {
 	return (
-		<motion.section 
-		initial={{ opacity: 0, y: 100 }}
-		whileInView={{ opacity: 1, y: 0 }}
-		whileOutOfView={{ opacity: 0, y: 50 }}
-		transition={{ duration: 0.9, ease: "easeOut" }}
-		id="contact" 
-		className="rounded-3xl ezy__contact3 light py-6 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white overflow-hidden">
+		<motion.section
+			initial={{ opacity: 0, y: 100 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			whileOutOfView={{ opacity: 0, y: 50 }}
+			transition={{ duration: 0.9, ease: "easeOut" }}
+			id="contact"
+			className="rounded-3xl ezy__contact3 light py-6 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white overflow-hidden">
 			<div className="max-w-7xl mx-auto px-4">
 				<div className="grid grid-cols-12 lg:grid lg:grid-cols-12 lg:items-center min-h-[500px] py-6 lg:gap-8 justify-center">
-				<div className="col-span-12 lg:col-span-7 lg:order-2 mb-4 lg:mb-0 flex justify-center">
-					<div
-						className="bg-center bg-no-repeat bg-cover rounded-2xl min-h-[300px] lg:min-h-[400px] w-full lg:w-[500px] block"
-						style={{
-							backgroundImage: "url(/PhelanFocus/connection.jpg)",
-							backgroundSize: "cover",
-							backgroundPosition: "center",
-							backgroundRepeat: "no-repeat",
-						}}
-					></div>
-				</div>
+					<div className="col-span-12 lg:col-span-7 lg:order-2 mb-4 lg:mb-0 flex justify-center">
+						<div
+							className="bg-center bg-no-repeat bg-cover rounded-2xl min-h-[300px] lg:min-h-[400px] w-full lg:w-[500px] block"
+							style={{
+								backgroundImage: "url(/PhelanFocus/connection.jpg)",
+								backgroundSize: "cover",
+								backgroundPosition: "center",
+								backgroundRepeat: "no-repeat",
+							}}
+						></div>
+					</div>
 					<div className="col-span-12 lg:col-span-5">
 						<ContactFormCard />
 					</div>
@@ -165,4 +171,4 @@ const Contact = () => {
 };
 
 
-export default Contact;
+export default Contact
