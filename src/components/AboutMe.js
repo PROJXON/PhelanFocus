@@ -22,7 +22,7 @@ const Social = ({ item }) => {
         href={link}
         className="border flex justify-center items-center rounded-full w-9 h-9 transition 
         hover:bg-blue-500 hover:border-blue-500 hover:text-white 
-        hover:scale-110 hover:shadow-lg duration-300 ease-in-out" 
+        hover:scale-110 hover:shadow-lg duration-300 ease-in-out"
       >
         <FontAwesomeIcon icon={icon} style={{ fontSize: "1rem", width: "1rem", height: "1rem" }} />
       </a>
