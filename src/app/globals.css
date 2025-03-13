@@ -14,9 +14,21 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   overscroll-behavior: none;
+}
+
+.hero-container {
+  scrollbar-width: thin;
+  /* Reduces width */
+  scrollbar-color: rgba(15, 16, 17, 0.8) transparent;
+  /* Thumb and track colors */
+  border-radius: 10px;
 }

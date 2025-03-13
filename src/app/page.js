@@ -9,37 +9,38 @@ import { ImageGrid } from "../components/ImageGrid";
 import Contact from "../components/Contact";
 import Services from "../components/Services";
 import Podcast from "../components/Podcast";
+import MovingDotsBackground from "../components/MovingDotsBackground";
+import ScrollToTopButton from "@/components/ScrollToTop";
 
 const Home = async () => {
-  // Fetch menu links server-side
-  const menuLinks = await fetchMenuLinks();
 
   return (
-    <div>
-      {/* Header with Navbar */}
-      <header className="w-full">
-        <div className="w-full fixed flex mx-0 px-0 z-40">
-          <Navbar menuLinks={menuLinks} isFooter={false} />
-        </div>
-      </header>
+      <div>
+        <MovingDotsBackground />
+        {/* Header with Navbar */}
+        <header className="w-full">
+          <div className="w-full fixed flex mx-0 px-0 z-40">
+            <Navbar isFooter={false} />
+          </div>
+        </header>
+        
+        <main className="pt-[48px] flex flex-col space-y-8 relative z-1">
+          <div className="max-w-[80vw] w-full mx-auto">
+            <HeroCarousel />
+            <AboutMe id="about" />
+            <Services id="services" />
+            <Podcast id="podcast" />
+            <Contact id="contact" />
+            {/* <YouTubeSection /> */}
+            {/* <ImageGrid /> */}
+          </div>
+          <Footer />
+        </main>
+        <ScrollToTopButton />
 
-      <main className="z-1 t-[48px] flex flex-col mx-0 space-y-8 z-1">
-        <HeroCarousel />
-        <div className="pl-10 pr-10">
-        {/* <ImageCarousel /> */}
-        <AboutMe id="about"/>
-        <Services id="services"/>
-        <Podcast id="podcast"/>
-        <Contact id="contact"/>
-        {/* <YouTubeSection /> */}
-        {/* <ImageGrid /> */}
-        </div>
-        <Footer menuLinks={menuLinks} />
-      </main>
-
-      {/* Footer with Navbar */}
-      
-    </div>
+        {/* Footer with Navbar */}
+        
+      </div>
   );
 };
 
