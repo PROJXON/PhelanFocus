@@ -20,23 +20,23 @@ const serviceList = [
 	{
 		color: "blue",
 		icon: faStar,
-		title: "Branding",
+		title: "Performance Coaching",
 		description:
-			"We help create a strong, unique brand identity that resonates with your audience. From logo design to brand strategy, we ensure your brand stands out and makes a lasting impression across all platforms.",
+			"Empowering individuals and teams to maximize their potential through tailored coaching strategies. We focus on skill development, goal setting, and performance optimization to help you achieve long-term success.",
 	},
 	{
 		color: "blue",
 		icon: faRandom,
-		title: "Content Marketing",
+		title: "Business Optimization",
 		description:
-			"We craft compelling content that engages your audience and drives results. From blog posts to social media campaigns, we create content that amplifies your brand’s voice and boosts online visibility.",
+			"Streamlining processes, improving efficiency, and implementing strategic solutions to drive business growth. We analyze workflows, eliminate bottlenecks, and enhance productivity to ensure operational excellence.",
 	},
 	{
 		color: "blue",
 		icon: faCamera,
-		title: "Web Development",
+		title: "Program Development",
 		description:
-			"We create custom, responsive websites that deliver a seamless user experience. From sleek landing pages to full-fledged e-commerce solutions, we focus on fast load times, performance optimization, and SEO to ensure your site stands out and performs at its best.",
+			"Designing and implementing structured programs that align with your business goals. From employee training to leadership development, we create customized programs that foster growth, engagement, and long-term success.",
 	},
 ];
 
