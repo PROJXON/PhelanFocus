@@ -12,7 +12,7 @@ const social = [
     icon: faLinkedinIn,
     link: "https://www.linkedin.com/in/phelanmarkw/",
   },
-];
+]; 
 
 const Social = ({ item }) => {
   const { link, icon } = item;
