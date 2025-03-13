@@ -38,7 +38,7 @@ const AboutMe = () => {
   return (
     <section
       id="about"
-      className="ezy__about17 light pt-32 md:pt-40 pb-20 lg:pb-30 bg-white rounded-3xl rounded-t-none 
+      className="ezy__about17 light pt-32 md:pt-40 pb-20 lg:pb-30 bg-white rounded-3xl rounded-3xl 
       dark:bg-[#0b1727] text-zinc-900 dark:text-white relative overflow-hidden z-[1] scroll-mt-20"
     >
       {/* Background ripples */}
