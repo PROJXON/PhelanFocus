@@ -3,7 +3,7 @@ import * as React from 'react';
 export const ConfirmationEmail = ({ name }) => {
     return (
         <div>
-            <p>hi {name}</p>
+            <h1>hi {name}, thanks for reaching out, we'll get back to you shortly</h1>
         </div>
     );
 } 
