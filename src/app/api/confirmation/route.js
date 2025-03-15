@@ -5,12 +5,12 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req) {
     try {
-        const { name, email, message } = await req.json();
+        const { name, email } = await req.json();
         const { data, error } = await resend.emails.send({
-            from: 'no-reply@thephelanfocus.com',
+            from: 'Phelan@thephelanfocus.com',
             to: [email],
             subject: 'Confirmation email',
-            react: ConfirmationEmail({ name, email, message }),
+            react: ConfirmationEmail({ name }),
         });
 
         if (error) {
