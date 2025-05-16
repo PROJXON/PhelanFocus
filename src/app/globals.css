@@ -32,3 +32,71 @@ body {
   /* Thumb and track colors */
   border-radius: 10px;
 }
+
+/* Button */
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #13395c; /* ✅ Light mode text color */
+  box-shadow: 0 0 0 2px #13395c80; /* ✅ Light mode border */
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s ease;
+  z-index: 1;
+}
+
+.btn span:first-child {
+  position: relative;
+  z-index: 2;
+}
+
+.btn span:last-child {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #13395c; /* ✅ Light mode circle */
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.8s ease;
+}
+
+.btn:hover {
+  color: #ffffff;
+  box-shadow: 0 0 0 5px #13395c80;
+}
+
+.btn:hover span:last-child {
+  width: 160px;
+  height: 160px;
+  opacity: 1;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* 🌙 DARK MODE STYLING (via `.dark` class on <html>) */
+.dark .btn {
+  color: #F9C705;
+  box-shadow: 0 0 0 2px #F9C70580;
+}
+
+.dark .btn span:last-child {
+  background-color: #F9C705;
+}
+
+.dark .btn:hover {
+  color: #0b1727;
+  box-shadow: 0 0 0 5px #F9C70580;
+}

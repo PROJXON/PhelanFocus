@@ -1,27 +1,27 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import DarkModeToggle from "./DarkModeToggle";
 
 export const Navbar = ({ isFooter }) => {
-  const [openMenu, setOpenMenu] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [cursorPosition, setCursorPosition] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const menuRefs = useRef([]);
   const barRef = useRef(null);
-  const prevScrollPos = useRef(0);
-  const isNavigating = useRef(false); // Track if the user has navigated via a menu link
-
+  const [cursorPosition, setCursorPosition] = useState(0);
   const menuLinks = [
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Podcast", href: "#podcast" },
-    { name: "Contact", href: "#contact" },
+    { name: "About", href: "/about" },
+    { name: "Coaching", href: "/coaching" },
+    { name: "Speaking", href: "/speaking" },
+    { name: "Consulting", href: "/consulting" },
+    { name: "Services", href: "/services" },
+    { name: "Podcast", href: "/podcast" },
+    { name: "Contact", href: "/contact" },
   ];
 
-  // Update cursor position
+  const toggleMobileMenu = () => setIsOpen(!isOpen);
+
   const handleMouseMove = (e) => {
     const navbar = e.target.closest("nav");
     if (navbar) {
@@ -31,86 +31,70 @@ export const Navbar = ({ isFooter }) => {
     }
   };
 
-  // Handle window resize
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 640) setIsOpen(false);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Toggle mobile menu
-  const toggleMobileMenu = () => setIsOpen(!isOpen);
-
-  // Handle menu item click (anchor link navigation)
-  const handleMenuClick = () => {
-    setIsNavbarVisible(true);
-    isNavigating.current = true;
-  };
-
-  // Scroll detection logic
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      const isScrollingUp = prevScrollPos.current > currentScrollPos;
-
-      // Show navbar when scrolling up or at top, hide when scrolling down
-      if (!isNavigating.current) {
-        setIsNavbarVisible(isScrollingUp || currentScrollPos < 50);
-      }
-
-      prevScrollPos.current = currentScrollPos;
-      isNavigating.current = false;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <nav
-    //bg-gradient-to-t from-white to-blue-500 Taken out due to design conflicts. Not good design conflicts for gradients in navbar area. Not sleek.
-      className={`dark:bg-[#0b1727] dark:text-white w-full p-4 bg-white fixed top-0 left-0 transition-transform duration-300 ${
-        isNavbarVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className="fixed w-full top-0 left-0 z-50 p-4 bg-white dark:bg-[#144a8f] dark:text-white shadow-md"
       onMouseMove={handleMouseMove}
     >
-      <div className="sm:hidden flex justify-end">
-        <button onClick={toggleMobileMenu} className="text-gray-800 dark:text-white">
+      <div className="flex justify-between items-center">
+        {/* Logo */}
+        <Link href="/">
+          <img
+            src="/PhelanFocusLOGO-02.png"
+            alt="Phelan Focus Logo"
+            className="h-8 w-auto"
+          />
+        </Link>
+
+        {/* Navigation Links */}
+        <div className="hidden sm:flex space-x-6 justify-center flex-1">
+          {menuLinks.map((menu, index) => (
+            <Link
+              key={index}
+              href={menu.href}
+              ref={(el) => (menuRefs.current[index] = el)}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              className="uppercase text-sm tracking-widest text-gray-800 dark:text-white hover:text-blue-500 dark:hover:text-blue-400"
+            >
+              {menu.name}
+            </Link>
+          ))}
+        </div>
+
+        {/* Dark Mode Toggle */}
+        {/* <div className="ml-auto">
+          <DarkModeToggle />
+        </div> */}
+
+        {/* Mobile menu button */}
+        <button
+          onClick={toggleMobileMenu}
+          className="sm:hidden text-2xl text-gray-800 dark:text-white ml-4"
+        >
           {isOpen ? "✖" : "☰"}
         </button>
       </div>
-      
-      <div className={`w-full ${isOpen ? "flex flex-col justify-center items-center" : "hidden sm:flex sm:space-x-6 sm:justify-end"}`}>
-        <DarkModeToggle />
-        {menuLinks?.map((menu, index) => (
-          <div
-            key={index}
-            ref={(el) => (menuRefs.current[index] = el)}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-            className="relative sm:w-auto w-full"
-          >
-            <a
-              href={menu.href}
-              className={`text-gray-800 flex items-center justify-center ${isOpen ? "w-full center border-b-2 !border-r-0" : ""} space-x-2 leading-none z-10 pr-5
-                ${index === menuLinks.length - 1 ? "!border-r-0" : "border-r-[1px]"}`}
-              onClick={handleMenuClick}
-            >
-              <span className={`dark:bg-[#0b1727] dark:text-white dark:hover:text-blue-500 hover:text-blue-500 tracking-widest uppercase text-xs ${openMenu === index ? "text-blue-500" : "text-gray-800"}`}>
-                {menu.name}
-              </span>
-            </a>
-            
-          </div>
-        ))}
-      </div>
 
-      {/* Animated Hover Bar */}
+      {/* Mobile Menu Dropdown */}
+      {isOpen && (
+        <div className="sm:hidden mt-2 flex flex-col items-center gap-3">
+          {menuLinks.map((menu, index) => (
+            <Link
+              key={index}
+              href={menu.href}
+              className="text-gray-800 dark:text-white py-2 border-b border-gray-300 dark:border-gray-600 w-full text-center"
+            >
+              {menu.name}
+            </Link>
+          ))}
+        </div>
+      )}
+
+      {/* Hover underline */}
       <div
         ref={barRef}
-        className="absolute bottom-0 left-0 h-[8px] bg-blue-500 transition-all duration-400 ease-in-out hidden sm:block"
+        className="absolute bottom-0 left-0 h-[3px] bg-blue-500 transition-all duration-300 ease-in-out hidden sm:block"
         style={{
           width: hoveredIndex !== null ? "66px" : "0px",
           transform: `translateX(${hoveredIndex !== null ? menuRefs.current[hoveredIndex]?.offsetLeft || 0 : cursorPosition - 75}px)`,

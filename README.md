@@ -21,11 +21,15 @@ install framer-motion
 ```
 npm install framer-motion
 ```
+npm install react-slick slick-carousel
 
 install next-themes
 ```
+npm install @fortawesome/fontawesome-free
+```
 npm install next-themes
 ```
+npm install react-icons
 
 test in turbo
 ```bash

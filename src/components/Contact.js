@@ -1,62 +1,18 @@
-// pages/contact.js
 "use client";
-import { useState } from 'react';
+
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 const ContactForm = () => {
-	const [formData, setFormData] = useState({
-		name: "",
-		email: "",
-		message: "",
-	});
+	const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 	const [errors, setErrors] = useState({});
 	const [statusMessage, setStatusMessage] = useState("");
 	const [loading, setLoading] = useState(false);
-
 
 	const handleChange = (event) => {
 		const { name, value } = event.target;
 		setFormData({ ...formData, [name]: value });
 		setErrors({ ...errors, [name]: value.trim() ? "" : errors[name] });
-	};
-
-	const handleSubmit = async (event) => {
-		event.preventDefault();
-		const validated = validateForm();
-
-		if (validated) {
-			setLoading(true)
-			setFormData({ name: "", email: "", message: "" });
-			setErrors({});
-			setStatusMessage('Your message has been sent!')
-			const url = '/PhelanFocus/api/contact';
-			const opt = {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(formData),
-			}
-			const res = await fetch(url, opt)
-			const data = await res.json()
-
-			if (res.ok) {
-				const secondUrl = '/PhelanFocus/api/confirmation';
-				const secondOpt = {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify(formData),
-				}
-				const secondEmail = await fetch(secondUrl, secondOpt)
-				const secondEmailData = await secondEmail.json()
-			} else {
-				setStatusMessage('There was an error. Please try again.')
-			}
-		} else {
-			console.log("Connection error. Please try again later.")
-		}
 	};
 
 	const validateForm = () => {
@@ -68,58 +24,57 @@ const ContactForm = () => {
 		return Object.keys(newErrors).length === 0;
 	};
 
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		if (validateForm()) {
+			setLoading(true);
+			setStatusMessage("Your message has been sent!");
+			setFormData({ name: "", email: "", message: "" });
+			setErrors({});
+			const res = await fetch('/api/contact', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(formData),
+			});
+			if (!res.ok) setStatusMessage("There was an error. Please try again.");
+			setLoading(false);
+		}
+	};
 
 	return (
 		<form noValidate onSubmit={handleSubmit}>
-			<div className="mb-4">
-				<input
-					type="text"
-					name="name"
-					value={formData.name}
-					onChange={handleChange}
-					className={`min-h-[48px] w-full px-5 rounded-xl border transition duration-300  bg-[#F2F6FD] dark:bg-[#2A384C] 
-						${errors.name ? "border-red-500" : "border-gray-400"} `}
-					placeholder="Enter Name"
-				/>
-				{errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
-			</div>
-
-			<div className="mb-4">
-				<input
-					type="email"
-					name="email"
-					value={formData.email}
-					onChange={handleChange}
-					className={`min-h-[48px] w-full px-5 rounded-xl border transition duration-300  bg-[#F2F6FD] dark:bg-[#2A384C] 
-						${errors.email ? "border-red-500" : "border-gray-400"} `}
-					placeholder="Enter Email"
-				/>
-				{errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
-			</div>
-
-			<div className="mb-4">
-				<textarea
-					name="message"
-					value={formData.message}
-					onChange={handleChange}
-					className={`min-h-[48px] w-full px-5 rounded-xl border resize-none transition duration-300  bg-[#F2F6FD] dark:bg-[#2A384C] 
-						${errors.message ? "border-red-500" : "border-gray-400"} `}
-					placeholder="Enter Message"
-					rows="4"
-				></textarea>
-				{errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
-			</div>
-
-			{statusMessage && <p className="text-white pb-2">{statusMessage}</p>}
-
+			{["name", "email", "message"].map((field, idx) => (
+				<div className="mb-4" key={idx}>
+					{field !== "message" ? (
+						<input
+							type={field === "email" ? "email" : "text"}
+							name={field}
+							value={formData[field]}
+							onChange={handleChange}
+							className="min-h-[48px] w-full px-5 py-3 rounded-xl border bg-[#0e2a47] text-white  placeholder-gray-400 focus:ring focus:ring-blue-500/40"
+							placeholder={`Enter ${field.charAt(0).toUpperCase() + field.slice(1)}`}
+						/>
+					) : (
+						<textarea
+							name={field}
+							value={formData[field]}
+							onChange={handleChange}
+							className="min-h-[120px] w-full px-5 py-3 rounded-xl border bg-[#0e2a47] text-white  placeholder-gray-400 resize-none focus:ring focus:ring-blue-500/40"
+							placeholder="Enter Message"
+						></textarea>
+					)}
+					{errors[field] && <p className="text-red-500 text-sm">{errors[field]}</p>}
+				</div>
+			))}
+			{statusMessage && <p className="text-green-600 pb-2">{statusMessage}</p>}
 			<div className="text-end">
 				<button
 					type="submit"
 					disabled={loading}
-					className={`px-9 py-3 rounded-md mb-4 text-white transition duration-300 ease-in-out
-						${loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"}`}
+					className={`btn relative ${loading ? "disabled-btn" : ""}`}
 				>
-					Submit
+					<span>{loading ? "Submitting..." : "Submit"}</span>
+					<span></span>
 				</button>
 			</div>
 		</form>
@@ -127,42 +82,68 @@ const ContactForm = () => {
 };
 
 const ContactFormCard = () => (
-	<div className="bg-white dark:bg-[#162231] shadow-xl rounded-2xl p-6 md:p-12">
-		<h2 className="text-2xl md:text-[45px] leading-none font-bold mb-4">
-			Contact Me
-		</h2>
-		<p className="text-lg mb-12">
-			Send me a message!
-		</p>
-
+	<div className="h-full flex flex-col justify-center bg-[#13395c] text-white p-8 rounded-3xl">
+		<h2 className="text-3xl md:text-4xl font-bold mb-4">Contact Me</h2>
+		<p className="text-lg mb-8 opacity-90">Send me a message!</p>
 		<ContactForm />
 	</div>
 );
+
+const FaqSection = () => {
+	const faqs = [
+		{
+			question: "What is life coaching?",
+			answer:
+				"Life coaching is a collaborative process between a trained professional and an individual aimed at helping the client achieve personal and/or professional goals, overcome obstacles, and maximize their potential.",
+		},
+		{
+			question: "What can I expect from life coaching sessions?",
+			answer:
+				"You can expect personalized goal-setting, accountability, and support to help you move forward confidently in your personal or professional life.",
+		},
+		{
+			question: "How is life coaching different from therapy?",
+			answer:
+				"Therapy focuses on healing and addressing past trauma. Life coaching focuses on taking action toward goals and future achievements.",
+		},
+		{
+			question: "Is life coaching confidential?",
+			answer: "Yes, all coaching sessions are private and confidential.",
+		},
+	];
+
+	return (
+		<div className="h-full flex flex-col justify-center">
+			<h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Your Path to Success Starts Here</h2>
+			<div className="space-y-4">
+				{faqs.map((faq, idx) => (
+					<details key={idx} className="group border-b border-gray-300 pb-4 cursor-pointer">
+						<summary className="text-lg font-semibold text-gray-900 flex justify-between items-center">
+							{faq.question}
+							<span className="ml-2 text-blue-500 group-open:rotate-180 transition-transform">+</span>
+						</summary>
+						<p className="mt-2 text-gray-700">{faq.answer}</p>
+					</details>
+				))}
+			</div>
+		</div>
+	);
+};
 
 const Contact = () => {
 	return (
 		<motion.section
 			initial={{ opacity: 0, y: 100 }}
 			whileInView={{ opacity: 1, y: 0 }}
-			whileOutOfView={{ opacity: 0, y: 50 }}
 			transition={{ duration: 0.9, ease: "easeOut" }}
 			id="contact"
-			className="rounded-3xl ezy__contact3 light py-6 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white overflow-hidden">
+			className="py-12 bg-white text-zinc-900"
+		>
 			<div className="max-w-7xl mx-auto px-4">
-				<div className="grid grid-cols-12 lg:grid lg:grid-cols-12 lg:items-center min-h-[500px] py-6 lg:gap-8 justify-center">
-					<div className="col-span-12 lg:col-span-7 lg:order-2 mb-4 lg:mb-0 flex justify-center">
-						<div
-							className="bg-center bg-no-repeat bg-cover rounded-2xl min-h-[300px] lg:min-h-[400px] w-full lg:w-[500px] block"
-							style={{
-								backgroundImage: "url(/PhelanFocus/connection.jpg)",
-								backgroundSize: "cover",
-								backgroundPosition: "center",
-								backgroundRepeat: "no-repeat",
-							}}
-						></div>
-					</div>
-					<div className="col-span-12 lg:col-span-5">
-						<ContactFormCard />
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+					<ContactFormCard />
+					<div className="lg:pl-10">
+						<FaqSection />
 					</div>
 				</div>
 			</div>
@@ -170,5 +151,4 @@ const Contact = () => {
 	);
 };
 
-
-export default Contact
+export default Contact;

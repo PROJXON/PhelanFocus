@@ -14,7 +14,7 @@ export default function DarkModeToggle() {
   if (!mounted) return <div className="w-12 h-6 bg-gray-300 rounded-full" />;
 
   return (
-    <div className="absolute left-0 top-1 p-2 flex items-center gap-2">
+    <div className="absolute right-0 top-1 p-2 flex items-center gap-2">
       <span className="text-xl">{resolvedTheme === "dark" ? "🌙" : "☀️"}</span>
       <button
         aria-label="Toggle dark mode"
