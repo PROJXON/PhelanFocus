@@ -1,50 +1,106 @@
 "use client";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export const Footer = () => {
   const socialIcons = [
-    // { icon: faFacebook, href: "#" },
-    { icon: faTwitter, href: "https://x.com/The.Phelan.Focus" },
     { icon: faInstagram, href: "https://www.instagram.com/The.Phelan.Focus/" },
     { icon: faLinkedin, href: "https://www.linkedin.com/in/phelanmarkw/" },
+    { icon: faFacebook, href: "https://www.facebook.com/profile.php?id=100009307890107&ref=ig_profile_ac" },
+    { icon: faTwitter, href: "https://x.com/The.Phelan.Focus" },
   ];
+
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   return (
     <motion.footer
-      initial={{ opacity: 0, y: 100 }} // Start fully hidden below the screen
-      whileInView={{ opacity: 1, y: 0 }} // Fly in and fade in when in view
-      whileOutOfView={{ opacity: 0, y: 50 }}
-      transition={{ duration: 0.9, ease: "easeOut" }} // Smooth transition
-      viewport={{ once: false, amount: 0.1 }} // Trigger when 10% of text is visible
-      className="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300 py-6">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
-        {/* Left Side - Logo & Copyright */}
-        <div className="text-center md:text-left mb-4 md:mb-0">
-          <h2 className="text-xl font-bold text-blue-500">Phelan Focus</h2>
-          <p className="text-sm text-gray-700 dark:text-gray-400">© {new Date().getFullYear()} All Rights Reserved.</p>
-        </div>
-
-        {/* Center - Navigation Links */}
-        <ul className="flex space-x-4 text-sm text-gray-700 dark:text-gray-300">
-          {["About", "Services", "Contact"].map((link, index) => (
-            <li key={index}>
-              <a href={`#${link.toLowerCase()}`} className="hover:text-blue-500">
-                {link}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        {/* Right Side - Social Media Icons */}
-        <div className="flex space-x-4 text-xl text-blue-500">
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.9, ease: "easeOut" }}
+      viewport={{ once: false, amount: 0.1 }}
+      className={`py-16 px-6 transition-colors duration-500 ${
+        mounted && resolvedTheme === "light" ? "bg-white text-black" : "bg-[#144a8f] text-white"
+      }`}
+    >
+      {/* Top Row: Logo and Social */}
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center border-b border-gray-600 pb-8">
+        <h2 className="text-2xl font-bold text-blue-500">Phelan Focus</h2>
+        <div className="flex space-x-6 mt-6 md:mt-0">
           {socialIcons.map((item, index) => (
-            <a key={index} href={item.href} target="_blank" className="hover:text-gray-900 dark:hover:text-gray-200 transition-colors duration-300">
-              <FontAwesomeIcon icon={item.icon} />
+            <a
+              key={index}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#FFD700] transition duration-300"
+            >
+              <FontAwesomeIcon icon={item.icon} size="lg" />
             </a>
           ))}
         </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pt-8">
+        {/* Quick Links */}
+        <div>
+          <h3 className="text-lg mb-4 font-semibold">Quick Links</h3>
+          <ul className="space-y-2">
+            <li><Link href="/" className="hover:text-[#FFD700]">Home</Link></li>
+            <li><Link href="/about" className="hover:text-[#FFD700]">About Us</Link></li>
+            <li><Link href="/services" className="hover:text-[#FFD700]">Services</Link></li>
+            <li><Link href="/podcast" className="hover:text-[#FFD700]">Podcast</Link></li>
+            <li><Link href="/contact" className="hover:text-[#FFD700]">Contact</Link></li>
+          </ul>
+        </div>
+
+        {/* Contact Info */}
+        <div>
+          <h3 className="text-lg mb-4 font-semibold">Contact Us</h3>
+          <p className="my-2">818-606-2451</p>
+          <p>
+            <a href="mailto:phelan@projxon.com" className="hover:text-[#FFD700] transition duration-300">
+              phelan@projxon.com
+            </a>
+          </p>
+        </div>
+
+        {/* Newsletter */}
+        <div>
+          <h3 className="text-lg mb-4 font-semibold">Subscribe For Our Newsletter</h3>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className={`w-full p-3 rounded-lg mb-4 border ${
+              mounted && resolvedTheme === "light"
+                ? "bg-white text-black placeholder-gray-600 border-gray-400"
+                : "bg-[#0e2a47] text-white placeholder-gray-300 border-[#355776]"
+            }`}
+          />
+          <button
+            className={`w-full border py-3 rounded-lg transition duration-300 ${
+              mounted && resolvedTheme === "light"
+                ? "border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white"
+                : "border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black"
+            }`}
+          >
+            SUBSCRIBE NOW
+          </button>
+        </div>
+      </div>
+
+      {/* Horizontal Line perfectly aligned */}
+      <hr className="max-w-7xl mx-auto border-gray-600 my-8" />
+
+      {/* Copyright */}
+      <div className="text-center text-gray-400 text-sm">
+        © 2025 <span className="font-semibold">Phelan Focus</span>. All rights reserved.
       </div>
     </motion.footer>
   );

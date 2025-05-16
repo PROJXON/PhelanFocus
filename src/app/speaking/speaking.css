@@ -1,0 +1,96 @@
+nav {
+    position: relative;
+    z-index: 10;
+  }
+
+.service-page {
+  background: #fff;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hero */
+.speaking-hero {
+  background-image: url('/service-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.speaking-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 41, 77, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-content p a {
+  color: #FFD700;
+  text-decoration: underline;
+}
+
+/* Button */
+.btn-book {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  font-size: 16px;
+  background-color: #13395c; 
+  border-radius: 10px;
+  font-weight: 600;
+  color: #ffffff; 
+  box-shadow: 0 0 0 2px #5ed4c6; 
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.btn-book span:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-book span:last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #FFD700;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.6s ease;
+  z-index: 0;
+}
+
+.btn-book:hover {
+  background-color: #ffffff;
+  color: #13395c;
+  box-shadow: 0 0 0 2px #13395c;
+}
+
+.btn-book:hover span:last-child {
+  width: 250px;
+  height: 150px;
+  opacity: 1;
+}
+
+.btn-book:active {
+  transform: scale(0.95);
+}

@@ -1,46 +1,59 @@
-import { fetchMenuLinks } from "../services/fetchMenuLinks"; // Import the data fetching service
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
-import { HeroCarousel } from "../components/HeroCarousel";
-import { ImageCarousel } from "../components/ImageCarousel";
 import AboutMe from "../components/AboutMe";
-import { YouTubeSection } from "../components/YoutubeSection";
 import { ImageGrid } from "../components/ImageGrid";
 import Contact from "../components/Contact";
 import Services from "../components/Services";
 import Podcast from "../components/Podcast";
-import MovingDotsBackground from "../components/MovingDotsBackground";
 import ScrollToTopButton from "@/components/ScrollToTop";
+import ServiceCarousel from "@/components/ServiceCarousel";
+import ProcessSection from "@/components/ProcessSection";
+import Link from "next/link";
 
 const Home = async () => {
-
   return (
-      <div>
-        <MovingDotsBackground />
-        {/* Header with Navbar */}
-        <header className="w-full">
-          <div className="w-full fixed flex mx-0 px-0 z-40">
-            <Navbar isFooter={false} />
-          </div>
-        </header>
-        
-        <main className="pt-[48px] flex flex-col space-y-8 relative z-1">
-          <div className="max-w-[80vw] w-full mx-auto">
-            <HeroCarousel />
-            <AboutMe id="about" />
-            <Services id="services" />
-            <Podcast id="podcast" />
-            <Contact id="contact" />
-            {/* <YouTubeSection /> */}
-            {/* <ImageGrid /> */}
-          </div>
-          <Footer />
-        </main>
-        <ScrollToTopButton />
+    <div className="bg-white text-gray-800">
+      {/* Fixed Navbar */}
+      <header className="w-full fixed z-40">
+        <Navbar isFooter={false} />
+      </header>
 
-        {/* Footer with Navbar */}
-        
-      </div>
+      <main className="pt-16 space-y-16">
+
+        {/* 🌟 Hero Section */}
+        <section
+          className="w-full h-[60vh] bg-center bg-cover flex items-center justify-center text-white text-center relative"
+          style={{ backgroundImage: "url('/homepage-hero.png')" }} // <-- replace with your image
+        >
+          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="relative z-10 px-4">
+            <h1 className="text-5xl font-bold uppercase">Welcome to Phelan Coaching</h1>
+            <p className="mt-4 text-lg max-w-xl mx-auto">
+              Helping individuals unlock their potential and achieve personal and professional growth.
+            </p>
+              <div className="mt-6">
+                <Link href="/contact">
+                  <button className="btn">
+                    <span>Book a Call</span>
+                    <span></span>
+                  </button>
+                </Link>
+              </div>
+          </div>
+        </section>
+
+        {/* ✨ Your Page Sections */}
+        <AboutMe id="about" />
+        <Services id="services" />
+        <ServiceCarousel />
+        <ProcessSection />
+        <Podcast id="podcast" />
+        <Contact id="contact" />
+      </main>
+
+      <Footer />
+      <ScrollToTopButton />
+    </div>
   );
 };
 
