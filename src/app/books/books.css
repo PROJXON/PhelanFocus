@@ -1,0 +1,48 @@
+nav {
+    position: relative;
+    z-index: 10;
+  }
+
+.service-page {
+  background: #fff;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hero */
+.books-hero {
+  background-image: url('/service-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.books-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 41, 77, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-content p a {
+  color: #FFD700;
+  text-decoration: underline;
+}
+
+/* Button */
+
+

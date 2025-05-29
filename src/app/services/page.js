@@ -46,7 +46,7 @@ export default function ServicesPage() {
                                 </div>
                             </div>
                             <div class="image">
-                                <img src="/Phalen, Mark -26.jpg" alt="image"/>
+                                <img src="/coaching.jpeg" alt="image"/>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ export default function ServicesPage() {
                                 </div>
                             </div>
                             <div class="image">
-                                <img src="/Phalen, Mark -22.jpg" alt="image"/>
+                                <img src="/publicspeaking.jpeg" alt="image"/>
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@ export default function ServicesPage() {
                                 </div>
                             </div>
                             <div class="image">
-                                <img src="/Phalen, Mark -18.jpg" alt="image"/>
+                                <img src="/Consulting.jpeg" alt="image"/>
                             </div>
                         </div>
                     </div>

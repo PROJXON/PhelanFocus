@@ -135,12 +135,6 @@ export default function AboutPage() {
         <div className="overlay"></div>
         <div className="hero-content">
           <h1>About Phelan</h1>
-          <nav>
-            <ol className="breadcrumb">
-              <li><Link href="/">Home</Link></li>
-              <li className="active">About Us</li>
-            </ol>
-          </nav>
         </div>
       </section>
 
@@ -235,91 +229,91 @@ export default function AboutPage() {
 
 
       {/* Team Section */}
-<section className="team-cards-section">
-  <h2 className="team-title">Meet Our Team</h2>
-  <div className="team-cards-container">
-    {[
-      {
-        name: "Mark Phelan",
-        role: "Senior Consultant, E-Commerce Solutions",
-        img: "/team/Phalen, Mark -41.jpg",
-        socials: {
-          linkedin: "https://www.linkedin.com/in/phelanmarkw/",
-          twitter: "#",
-          facebook: "#",
-          instagram: "#"
-        }
-      },
-      {
-        name: "Kathy Seaton",
-        role: "Senior Consultant, Non Profit Development",
-        img: "/team/kathy.webp",
-        socials: {
-          linkedin: "https://www.linkedin.com/in/kathyseaton/",
-          twitter: "#",
-          facebook: "#",
-          instagram: "#"
-        }
-      },
-      {
-        name: "Melissa Eboli",
-        role: "Senior Consultant, Tech + Software Solutions",
-        img: "/team/melissa.webp",
-        socials: {
-          linkedin: "https://www.linkedin.com/in/melissaeboli/",
-          twitter: "#",
-          facebook: "#",
-          instagram: "#"
-        }
-      },
-      {
-        name: "Donavon Roberson",
-        role: "Senior Consultant, Health + Wellness Solutions",
-        img: "/team/donavon.webp",
-        socials: {
-          linkedin: "https://www.linkedin.com/in/donavonroberson/",
-          twitter: "#",
-          facebook: "#",
-          instagram: "#"
-        }
-      }
-    ].map((member, idx) => {
-      const [title, dept] = member.role.split(",");
-      return (
-        <div key={idx} className="team-card">
-          <div className="team-img-wrapper">
-            <img src={member.img} alt={member.name} />
-          </div>
-          <h3>{member.name}</h3>
-          <p className="title">{title}</p>
-          <p className="department">{dept}</p>
-          <div className="team-socials">
-            {member.socials.twitter && (
-              <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-twitter"></i>
-              </a>
-            )}
-            {member.socials.linkedin && (
-              <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-            )}
-            {member.socials.facebook && (
-              <a href={member.socials.facebook} target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-            )}
-            {member.socials.instagram && (
-              <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-instagram"></i>
-              </a>
-            )}
-          </div>
+      <section className="team-cards-section">
+        <h2 className="team-title">Meet Our Team</h2>
+        <div className="team-cards-container">
+          {[
+            {
+              name: "Mark Phelan",
+              role: "Senior Consultant, E-Commerce Solutions",
+              img: "/team/Phalen, Mark -41.jpg",
+              socials: {
+                linkedin: "https://www.linkedin.com/in/phelanmarkw/",
+                twitter: "#",
+                facebook: "#",
+                instagram: "#"
+              }
+            },
+            {
+              name: "Kathy Seaton",
+              role: "Senior Consultant, Non Profit Development",
+              img: "/team/kathy.webp",
+              socials: {
+                linkedin: "https://www.linkedin.com/in/kathyseaton/",
+                twitter: "#",
+                facebook: "#",
+                instagram: "#"
+              }
+            },
+            {
+              name: "Melissa Eboli",
+              role: "Senior Consultant, Tech + Software Solutions",
+              img: "/team/melissa.webp",
+              socials: {
+                linkedin: "https://www.linkedin.com/in/melissaeboli/",
+                twitter: "#",
+                facebook: "#",
+                instagram: "#"
+              }
+            },
+            {
+              name: "Donavon Roberson",
+              role: "Senior Consultant, Health + Wellness Solutions",
+              img: "/team/donavon.webp",
+              socials: {
+                linkedin: "https://www.linkedin.com/in/donavonroberson/",
+                twitter: "#",
+                facebook: "#",
+                instagram: "#"
+              }
+            }
+          ].map((member, idx) => {
+            const [title, dept] = member.role.split(",");
+            return (
+              <div key={idx} className="team-card">
+                <div className="team-img-wrapper">
+                  <img src={member.img} alt={member.name} />
+                </div>
+                <h3>{member.name}</h3>
+                <p className="title">{title}</p>
+                <p className="department">{dept}</p>
+                <div className="team-socials">
+                  {member.socials.twitter && (
+                    <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer">
+                      <i className="fab fa-twitter"></i>
+                    </a>
+                  )}
+                  {member.socials.linkedin && (
+                    <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer">
+                      <i className="fab fa-linkedin-in"></i>
+                    </a>
+                  )}
+                  {member.socials.facebook && (
+                    <a href={member.socials.facebook} target="_blank" rel="noopener noreferrer">
+                      <i className="fab fa-facebook-f"></i>
+                    </a>
+                  )}
+                  {member.socials.instagram && (
+                    <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer">
+                      <i className="fab fa-instagram"></i>
+                    </a>
+                  )}
+                </div>
+              </div>
+            );
+          })}
         </div>
-      );
-    })}
-  </div>
-</section>
+      </section>
 
 
 
