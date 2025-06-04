@@ -28,22 +28,11 @@ export default function ConsultingPage() {
     <div className="consulting-page">
       <Navbar isFooter={false} />
 
-      {/* Hero Section - Updated to match requested style */}
-      <section 
-        className="consulting-hero"
-        style={{ backgroundImage: "url('/consulting.jpeg')" }}
-      >
-        <div className="overlay" />
+      {/* Hero Section*/}
+      <section className="consulting-hero" style={{ backgroundImage: "url('/consulting.jpeg')" }}>
+        <div className="overlay"></div>
         <div className="hero-content">
-          <h1>
-            CONSULTING
-          </h1>
-          <p className="breadcrumb">
-            <Link href="/">Home</Link> / Consulting
-          </p>
-          <div className="scroll-down">
-            <FontAwesomeIcon icon={faChevronDown} size="2x" />
-          </div>
+          <h1>Consulting</h1>
         </div>
       </section>
 
@@ -231,10 +220,10 @@ export default function ConsultingPage() {
               </p>
             </div>
             <div className="cta-buttons">
-              <a href="#" className="cta-button primary">
+              <a href="/contact" className="cta-button primary">
                 Get Started Now
               </a>
-              <a href="#" className="cta-button secondary">
+              <a href="/contact" className="cta-button secondary">
                 Contact Us
               </a>
             </div>

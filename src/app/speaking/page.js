@@ -16,7 +16,6 @@ export default function SpeakingPage() {
         <div className="overlay"></div>
         <div className="hero-content">
           <h1>Speaking</h1>
-          <p><Link href="/">Home</Link> / Speaking</p>
         </div>
       </section>
 
@@ -55,12 +54,7 @@ export default function SpeakingPage() {
             The Power of Storytelling
         </h2>
 
-        {/* Colored underline bar */}
-        <div className="flex justify-center space-x-1 mb-6">
-            <div className="w-8 h-1 bg-pink-500"></div>
-            <div className="w-8 h-1 bg-blue-500"></div>
-            <div className="w-8 h-1 bg-yellow-400"></div>
-        </div>
+
 
         <p className="text-md text-gray-600 dark:text-gray-300 mb-8">
             Dive into Mark's approach to storytelling and learn how he captivates audiences in under 4 minutes.
@@ -82,11 +76,6 @@ export default function SpeakingPage() {
         <section className="py-20 px-6 bg-[#f9f7f6] text-gray-900 dark:bg-[#1c1c1c] dark:text-white">
         <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Mark’s Most Popular Coaching Sessions</h2>
-            <div className="flex justify-center space-x-1">
-                <div className="w-8 h-1 bg-pink-500"></div>
-                <div className="w-8 h-1 bg-blue-500"></div>
-                <div className="w-8 h-1 bg-yellow-400"></div>
-            </div>
         </div>
 
         <div className="space-y-16">
@@ -143,11 +132,6 @@ export default function SpeakingPage() {
       <section className="py-16 text-center bg-[#ffe6cc] dark:bg-[#2a1e13]">
         <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Mark’s Most Popular Keynote Speeches</h2>
-            <div className="flex justify-center space-x-1">
-                <div className="w-8 h-1 bg-pink-500"></div>
-                <div className="w-8 h-1 bg-blue-500"></div>
-                <div className="w-8 h-1 bg-yellow-400"></div>
-            </div>
         </div>
         <h3 className="text-xl font-bold mb-4">Don't Take Our Word For It</h3>
         <p className="italic max-w-xl mx-auto">
@@ -163,11 +147,6 @@ export default function SpeakingPage() {
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
         What Makes a Great Coaching Experience?
         </h2>
-        <div className="flex justify-center space-x-1 mb-4">
-        <div className="w-8 h-1 bg-pink-500"></div>
-        <div className="w-8 h-1 bg-blue-500"></div>
-        <div className="w-8 h-1 bg-yellow-400"></div>
-        </div>
         <p className="max-w-3xl mx-auto text-lg opacity-80">
         A transformational coaching session empowers individuals to challenge their own thinking and approach. It inspires clients to take actionable steps towards their goals. A great coaching experience should be engaging, insightful, memorable, and motivating. That’s exactly what Mark delivers. Every Single Time.
         </p>

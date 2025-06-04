@@ -46,9 +46,6 @@ export default function PodcastPage() {
         <div className="overlay"></div>
         <div className="hero-content">
           <h1>Podcast</h1>
-          <p>
-            <Link href="/">Home</Link> / Podcast
-          </p>
         </div>
       </section>
 

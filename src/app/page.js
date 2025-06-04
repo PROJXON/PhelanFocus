@@ -8,6 +8,7 @@ import Podcast from "../components/Podcast";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import ServiceCarousel from "@/components/ServiceCarousel";
 import ProcessSection from "@/components/ProcessSection";
+import Books from "@/components/Books";
 import Link from "next/link";
 
 const Home = async () => {
@@ -47,6 +48,7 @@ const Home = async () => {
         <Services id="services" />
         <ServiceCarousel />
         <ProcessSection />
+        <Books/>
         <Podcast id="podcast" />
         <Contact id="contact" />
       </main>

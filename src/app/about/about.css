@@ -17,45 +17,33 @@ section {
 /* Hero Section */
 .about-hero {
   background-size: cover;
-  background-position: relative;
-  height: 90vh;
+  background-position: center;
+  height: 70vh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-  
+
 .about-hero .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 41, 77, 0.5);
+  background-color: rgba(0, 41, 77, 0.6);
 }
-  
-.about-hero .hero-content {
+
+.hero-content {
   position: relative;
   color: #fff;
   text-align: center;
 }
-  
-.about-hero .hero-content h1 {
+
+.hero-content h1 {
   font-size: 48px;
-  font-weight: 600;
+  margin-bottom: 15px;
 }
-  
-.breadcrumb {
-  list-style: none;
-  padding: 0;
-  margin-top: 15px;
-  color: #fff;
-}
-  
-.breadcrumb li {
-  display: inline;
-  margin-right: 8px;
-}
-  
-.breadcrumb li a {
-  color: #fff;
+
+.hero-content p a {
+  color: #FFD700;
   text-decoration: underline;
 }
 

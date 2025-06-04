@@ -11,7 +11,6 @@ nav {
 
 /* Hero */
 .podcast-hero {
-    background-image: url('/podcast-hero.jpg');
     background-size: cover;
     background-position: center;
     height: 70vh;

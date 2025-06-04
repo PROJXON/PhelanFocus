@@ -1,0 +1,68 @@
+/* Hero */
+.courses-hero {
+   background-size: cover;
+   background-position: center;
+   height: 70vh;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+  
+ .courses-hero .overlay {
+   position: absolute;
+   inset: 0;
+   background-color: rgba(0, 41, 77, 0.6);
+ }
+  
+ .hero-content {
+   position: relative;
+   color: #fff;
+   text-align: center;
+ }
+  
+ .hero-content h1 {
+   font-size: 48px;
+   margin-bottom: 15px;
+ }
+  
+ .hero-content p a {
+   color: #FFD700;
+   text-decoration: underline;
+ }
+
+.stripe-memphis-bg {
+  background-image: url('/courses/module.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.semicircle-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  opacity: 0.1;
+}
+@media (max-width: 768px) {
+  .stripe-memphis-bg {
+    background-attachment: scroll;
+  }
+}
+
+.parallax-card {
+  perspective: 1000px;
+}
+
+.parallax-inner {
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+.parallax-card:hover .parallax-inner {
+  transform: scale(1.03);
+}
