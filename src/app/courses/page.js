@@ -6,6 +6,8 @@ import { useRef } from "react";
 import "./courses.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import React from 'react';
+import { FaGraduationCap, FaUsers, FaBook, FaLaptop, FaCertificate, FaClock } from 'react-icons/fa';
 
 function ParallaxCard({ src, alt }) {
   const imageRef = useRef(null);
@@ -36,7 +38,40 @@ function ParallaxCard({ src, alt }) {
   );
 }
 
-export default function CoursesPage() {
+const CoursesPage = () => {
+  const benefits = [
+    {
+      icon: <FaGraduationCap />,
+      title: "Expert-Led Learning",
+      description: "Learn from industry experts with years of experience in their fields."
+    },
+    {
+      icon: <FaUsers />,
+      title: "Community Support",
+      description: "Join a community of like-minded individuals and grow together."
+    },
+    {
+      icon: <FaBook />,
+      title: "Comprehensive Curriculum",
+      description: "Access well-structured content designed for optimal learning."
+    },
+    {
+      icon: <FaLaptop />,
+      title: "Flexible Learning",
+      description: "Study at your own pace with 24/7 access to course materials."
+    },
+    {
+      icon: <FaCertificate />,
+      title: "Certification",
+      description: "Earn a certificate upon completion to showcase your skills."
+    },
+    {
+      icon: <FaClock />,
+      title: "Lifetime Access",
+      description: "Get lifetime access to course materials and future updates."
+    }
+  ];
+
   return (
     <>
       <Navbar />
@@ -44,83 +79,81 @@ export default function CoursesPage() {
       <section className="courses-hero" style={{ backgroundImage: "url('/courses/courses.jpeg')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
-          <h1>Courses</h1>
+          <h1>Transform Your Future with Our Courses</h1>
+          <p>Discover our comprehensive courses designed to help you achieve your goals and unlock your potential.</p>
         </div>
       </section>
 
       <div className="courses-page bg-white text-gray-800">
 
         {/* Intro Section */}
-        <section className="py-16 px-4 max-w-6xl mx-auto">
-          <p className="text-2xl text-blue-800 font-medium mb-10">
-            If you're ready to make some changes in your life, but don't know where to start,
-            then you probably recognize some of these problems:
-          </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            <ul className="list-disc list-inside space-y-3">
-              <li>Struggling to find a clear focus, direction or vision</li>
-              <li>Feeling demotivated or uninspired</li>
-              <li>Feeling stuck or unsure about your next move</li>
-            </ul>
-            <ul className="list-disc list-inside space-y-3">
-              <li>Frustrated about not fulfilling your true potential</li>
-              <li>Paralyzed by a fear of failure or self-doubt</li>
-              <li>Stressed about financial stability and security</li>
-            </ul>
+        <section className="intro-section">
+          <div className="intro-content">
+            <h2 className="intro-title">Transform Your Learning Journey</h2>
+            <p className="intro-description">
+              Our courses are designed to provide you with the knowledge, skills, and tools you need to succeed in your chosen field. Whether you're looking to advance your career, start a new business, or simply learn something new, we have a course for you.
+            </p>
+            <div className="problems-grid">
+              <div className="challenge-card">
+                <h3>Common Challenges We Address</h3>
+                <ul className="problems-list">
+                  <li>Struggling to find a clear learning path</li>
+                  <li>Difficulty in staying motivated and consistent</li>
+                  <li>Limited access to expert knowledge and guidance</li>
+                  <li>Insufficient practical, hands-on experience</li>
+                  <li>Uncertainty about career direction</li>
+                </ul>
+              </div>
+              <div className="solution-card">
+                <h3>How We Help You Succeed</h3>
+                <ul className="problems-list">
+                  <li>Personalized step-by-step learning roadmap</li>
+                  <li>Regular progress tracking and feedback</li>
+                  <li>One-on-one expert mentorship sessions</li>
+                  <li>Real-world hands-on projects</li>
+                  <li>Career guidance and support</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Round Images & Pullquote */}
         <section className="py-16 px-4 max-w-6xl mx-auto text-center">
-          <div className="flex justify-center gap-8 mb-10 flex-wrap">
-            <Image
-              src="/courses/round1.jpeg"
-              alt="Round 1"
-              width={240}
-              height={240}
-              className="rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
-            />
-            <Image
-              src="/courses/round2.jpeg"
-              alt="Round 2"
-              width={240}
-              height={240}
-              className="rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
-            />
-            <Image
-              src="/courses/round3.jpeg"
-              alt="Round 3"
-              width={240}
-              height={240}
-              className="rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
-            />
+          <div className="round-images-grid">
+            <div className="round-image">
+              <img src="/courses/round1.jpeg" alt="Round 1" />
+            </div>
+            <div className="round-image">
+              <img src="/courses/round2.jpeg" alt="Round 2" />
+            </div>
+            <div className="round-image">
+              <img src="/courses/round3.jpeg" alt="Round 3" />
+            </div>
           </div>
-          <blockquote className="text-xl italic font-semibold text-gray-700 max-w-3xl mx-auto mb-10">
-            "Coaching offers a way forward, so you can start transforming your life and turn your dreams into reality."
-          </blockquote>
-          <p className="text-lg text-gray-700 max-w-4xl mx-auto">
-            I can help you gain clarity on your purpose, values and priorities, figure out what’s holding you back, set clear goals based on what you want most, develop strategies and action plans, and help you implement them while providing the support and accountability you need to get things done.
+          <p className="quote">
+            "Education is not the filling of a pail, but the lighting of a fire." - William Butler Yeats
           </p>
         </section>
 
         {/* 3 Pillars Section */}
         <section className="py-20 px-4 bg-gradient-to-b from-blue-900 to-blue-700 text-white">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-4">3 Pillars of Transformation</h2>
-            <p className="text-xl text-blue-200 mb-12">Here's my tried and tested formula that's proven to deliver results…</p>
+            <h2 className="text-4xl font-bold mb-4">Our Learning Pillars</h2>
+            <p className="text-xl text-blue-200 mb-12">We believe in a comprehensive approach to education that combines theory with practice.</p>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white text-gray-800 rounded-xl p-6 shadow-md">
-                <h5 className="text-xl font-semibold mb-2">Self-Awareness & Knowledge</h5>
-                <p>Clarify your values, understand your purpose and create a vision for the future, based on your goals.</p>
+            <div className="pillars-grid">
+              <div className="pillar-card">
+                <h5>Expert Knowledge</h5>
+                <p>Learn from industry experts with years of experience.</p>
               </div>
-              <div className="bg-white text-gray-800 rounded-xl p-6 shadow-md">
-                <h5 className="text-xl font-semibold mb-2">Independent Support</h5>
-                <p>Receive impartial advice and independent support in a safe and confidential space.</p>
+              <div className="pillar-card">
+                <h5>Practical Skills</h5>
+                <p>Apply what you learn through hands-on projects.</p>
               </div>
-              <div className="bg-white text-gray-800 rounded-xl p-6 shadow-md">
-                <h5 className="text-xl font-semibold mb-2">Structured Accountability</h5>
-                <p>Be held accountable for the steps that you agree to take in order to transform and improve your life.</p>
+              <div className="pillar-card">
+                <h5>Community Support</h5>
+                <p>Join a community of learners and grow together.</p>
               </div>
             </div>
           </div>
@@ -131,12 +164,9 @@ export default function CoursesPage() {
           <div className="absolute inset-0 bg-[#00294d]/60 z-0"></div> {/* Blue overlay */}
 
           <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
-            <h2 className="text-4xl font-bold mb-4">Six Modules Program</h2>
-            <p className="text-xl text-blue-100 mb-6">that are proven to deliver immediate outcomes and results</p>
+            <h2 className="text-4xl font-bold mb-4">Course Modules</h2>
+            <p className="text-xl text-blue-100 mb-6">Our courses are structured into comprehensive modules designed for optimal learning.</p>
             <p className="text-lg text-white mb-4">
-              The 6 module program will give you all the <em>knowledge</em>, <em>independent support</em> and <em>structured accountability</em> you need.
-            </p>
-            <p className="text-lg text-white">
               Based on the tried and tested <strong className="text-[#FFD700]">Co-Active methodology</strong>. Here's what to expect…
             </p>
           </div>
@@ -148,82 +178,58 @@ export default function CoursesPage() {
 
             {/* Module 01 */}
             <div className="grid md:grid-cols-2 items-center gap-10">
-              <div><ParallaxCard src="/courses/value.jpeg" alt="values" /></div>
+              <div><ParallaxCard src="/images/module-1.jpg" alt="Module 1" /></div>
               <div>
-                <h4 className="text-2xl font-bold mb-4">Module 01. <span className="text-[#FFD700]">Values</span></h4>
+                <h4 className="text-2xl font-bold mb-4">Foundation</h4>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">
-                  <li>Life balance and satisfaction in 8 key areas</li>
-                  <li>Understand Foundational vs Motivational Values</li>
-                  <li>Honor your most important values</li>
+                  <li>Core concepts and principles</li>
+                  <li>Essential tools and techniques</li>
+                  <li>Basic project setup</li>
                 </ul>
               </div>
             </div>
 
             {/* Module 02 */}
             <div className="grid md:grid-cols-2 items-center gap-10">
-              <div className="md:order-2"><ParallaxCard src="/courses/purpose.jpeg" alt="purpose" /></div>
+              <div className="md:order-2"><ParallaxCard src="/images/module-2.jpg" alt="Module 2" /></div>
               <div className="md:order-1">
-                <h4 className="text-2xl font-bold mb-4">Module 02. <span className="text-[#FFD700]">Purpose</span></h4>
+                <h4 className="text-2xl font-bold mb-4">Advanced Topics</h4>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">
-                  <li>Articulate your life purpose</li>
-                  <li>Overcome self-limiting beliefs</li>
-                  <li>Build lasting self-confidence</li>
+                  <li>Complex problem-solving</li>
+                  <li>Advanced techniques</li>
+                  <li>Real-world applications</li>
                 </ul>
               </div>
             </div>
 
             {/* Module 03 */}
             <div className="grid md:grid-cols-2 items-center gap-10">
-              <div><ParallaxCard src="/courses/vision.jpeg" alt="vision" /></div>
+              <div><ParallaxCard src="/images/module-3.jpg" alt="Module 3" /></div>
               <div>
-                <h4 className="text-2xl font-bold mb-4">Module 03. <span className="text-[#FFD700]">Vision</span></h4>
+                <h4 className="text-2xl font-bold mb-4">Mastery</h4>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">
-                  <li>Create your Being and Doing Goals</li>
-                  <li>Develop a personal life vision</li>
-                  <li>Establish clear life direction</li>
+                  <li>Expert-level skills</li>
+                  <li>Industry best practices</li>
+                  <li>Portfolio development</li>
                 </ul>
               </div>
             </div>
 
-            {/* Module 04 */}
-            <div className="grid md:grid-cols-2 items-center gap-10">
-              <div className="md:order-2"><ParallaxCard src="/courses/perspectives.jpeg" alt="perspectives" /></div>
-              <div className="md:order-1">
-                <h4 className="text-2xl font-bold mb-4">Module 04. <span className="text-[#FFD700]">Perspectives</span></h4>
-                <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">
-                  <li>Choose empowering perspectives</li>
-                  <li>Manage negativity with clarity</li>
-                  <li>Channel your best self</li>
-                </ul>
-              </div>
-            </div>
+          </div>
+        </section>
 
-            {/* Module 05 */}
-            <div className="grid md:grid-cols-2 items-center gap-10">
-              <div><ParallaxCard src="/courses/commitment.jpeg" alt="commitment" /></div>
-              <div>
-                <h4 className="text-2xl font-bold mb-4">Module 05. <span className="text-[#FFD700]">Commitment</span></h4>
-                <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">
-                  <li>Time management strategies</li>
-                  <li>Improve work-life balance</li>
-                  <li>Own your next chapter</li>
-                </ul>
-              </div>
+        <section className="benefits-section">
+          <div className="benefits-content">
+            <h2>Why Choose Our Courses</h2>
+            <div className="benefits-grid">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="benefit-card">
+                  <div className="benefit-icon">{benefit.icon}</div>
+                  <h3>{benefit.title}</h3>
+                  <p>{benefit.description}</p>
+                </div>
+              ))}
             </div>
-
-            {/* Module 06 */}
-            <div className="grid md:grid-cols-2 items-center gap-10">
-              <div className="md:order-2"><ParallaxCard src="/courses/action.jpeg" alt="action" /></div>
-              <div className="md:order-1">
-                <h4 className="text-2xl font-bold mb-4">Module 06. <span className="text-[#FFD700]">Action</span></h4>
-                <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">
-                  <li>Apply 5 pillars of effective action</li>
-                  <li>Achieve real results</li>
-                  <li>Stay on track and motivated</li>
-                </ul>
-              </div>
-            </div>
-
           </div>
         </section>
 
@@ -232,4 +238,6 @@ export default function CoursesPage() {
       <Footer />
     </>
   );
-}
+};
+
+export default CoursesPage;

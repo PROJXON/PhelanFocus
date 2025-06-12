@@ -43,8 +43,8 @@ body {
   background-color: transparent;
   border-radius: 10px;
   font-weight: 600;
-  color: #13395c; /* ✅ Light mode text color */
-  box-shadow: 0 0 0 2px #13395c80; /* ✅ Light mode border */
+  color: #F9C705;
+  box-shadow: 0 0 0 2px #F9C70580;
   cursor: pointer;
   overflow: hidden;
   transition: all 0.6s ease;
@@ -64,7 +64,7 @@ body {
   transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
-  background-color: #13395c; /* ✅ Light mode circle */
+  background-color: #F9C705;
   border-radius: 50%;
   opacity: 0;
   z-index: 1;
@@ -72,8 +72,8 @@ body {
 }
 
 .btn:hover {
-  color: #ffffff;
-  box-shadow: 0 0 0 5px #13395c80;
+  color: #0b1727;
+  box-shadow: 0 0 0 5px #F9C70580;
 }
 
 .btn:hover span:last-child {

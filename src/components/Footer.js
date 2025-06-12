@@ -19,89 +19,89 @@ export const Footer = () => {
   useEffect(() => setMounted(true), []);
 
   return (
-    <motion.footer
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.9, ease: "easeOut" }}
-      viewport={{ once: false, amount: 0.1 }}
-      className={`py-16 px-6 transition-colors duration-500 ${
-        mounted && resolvedTheme === "light" ? "bg-white text-black" : "bg-[#144a8f] text-white"
-      }`}
-    >
-      {/* Top Row: Logo and Social */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center border-b border-gray-600 pb-8">
-        <h2 className="text-2xl font-bold text-blue-500">Phelan Focus</h2>
-        <div className="flex space-x-6 mt-6 md:mt-0">
-          {socialIcons.map((item, index) => (
-            <a
-              key={index}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#FFD700] transition duration-300"
+    <>
+      <div className="px-6">
+        <hr className="max-w-7xl mx-auto border-gray-600" />
+      </div>
+      <motion.footer
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
+        viewport={{ once: false, amount: 0.1 }}
+        className={`py-16 px-6 transition-colors duration-500 ${
+          mounted && resolvedTheme === "light" ? "bg-white text-black" : "bg-[#144a8f] text-white"
+        }`}
+      >
+        {/* Main Content */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg mb-4 font-semibold">Quick Links</h3>
+            <ul className="space-y-2">
+              <li><Link href="/" className="hover:text-[#FFD700]">Home</Link></li>
+              <li><Link href="/about" className="hover:text-[#FFD700]">About Us</Link></li>
+              <li><Link href="/services" className="hover:text-[#FFD700]">Services</Link></li>
+              <li><Link href="/podcast" className="hover:text-[#FFD700]">Podcast</Link></li>
+              <li><Link href="/contact" className="hover:text-[#FFD700]">Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-lg mb-4 font-semibold">Contact Us</h3>
+            <p className="my-2">818-606-2451</p>
+            <p>
+              <a href="mailto:phelan@projxon.com" className="hover:text-[#FFD700] transition duration-300">
+                phelan@projxon.com
+              </a>
+            </p>
+            <div className="flex space-x-6 mt-6">
+              {socialIcons.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#FFD700] transition duration-300"
+                >
+                  <FontAwesomeIcon icon={item.icon} size="lg" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h3 className="text-lg mb-4 font-semibold">Subscribe For Our Newsletter</h3>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className={`w-full p-3 rounded-lg mb-4 border ${
+                mounted && resolvedTheme === "light"
+                  ? "bg-white text-black placeholder-gray-600 border-gray-400"
+                  : "bg-[#0e2a47] text-white placeholder-gray-300 border-[#355776]"
+              }`}
+            />
+            <button
+              className={`w-full border py-3 rounded-lg transition duration-300 ${
+                mounted && resolvedTheme === "light"
+                  ? "border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white"
+                  : "border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black"
+              }`}
             >
-              <FontAwesomeIcon icon={item.icon} size="lg" />
-            </a>
-          ))}
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pt-8">
-        {/* Quick Links */}
-        <div>
-          <h3 className="text-lg mb-4 font-semibold">Quick Links</h3>
-          <ul className="space-y-2">
-            <li><Link href="/" className="hover:text-[#FFD700]">Home</Link></li>
-            <li><Link href="/about" className="hover:text-[#FFD700]">About Us</Link></li>
-            <li><Link href="/services" className="hover:text-[#FFD700]">Services</Link></li>
-            <li><Link href="/podcast" className="hover:text-[#FFD700]">Podcast</Link></li>
-            <li><Link href="/contact" className="hover:text-[#FFD700]">Contact</Link></li>
-          </ul>
+              SUBSCRIBE NOW
+            </button>
+          </div>
         </div>
 
-        {/* Contact Info */}
-        <div>
-          <h3 className="text-lg mb-4 font-semibold">Contact Us</h3>
-          <p className="my-2">818-606-2451</p>
-          <p>
-            <a href="mailto:phelan@projxon.com" className="hover:text-[#FFD700] transition duration-300">
-              phelan@projxon.com
-            </a>
-          </p>
+        {/* Horizontal Line perfectly aligned */}
+        <hr className="max-w-7xl mx-auto border-gray-600 my-8" />
+
+        {/* Copyright */}
+        <div className="text-center text-gray-400 text-sm">
+          © 2025 <span className="font-semibold">Phelan Focus</span>. All rights reserved.
         </div>
-
-        {/* Newsletter */}
-        <div>
-          <h3 className="text-lg mb-4 font-semibold">Subscribe For Our Newsletter</h3>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className={`w-full p-3 rounded-lg mb-4 border ${
-              mounted && resolvedTheme === "light"
-                ? "bg-white text-black placeholder-gray-600 border-gray-400"
-                : "bg-[#0e2a47] text-white placeholder-gray-300 border-[#355776]"
-            }`}
-          />
-          <button
-            className={`w-full border py-3 rounded-lg transition duration-300 ${
-              mounted && resolvedTheme === "light"
-                ? "border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white"
-                : "border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black"
-            }`}
-          >
-            SUBSCRIBE NOW
-          </button>
-        </div>
-      </div>
-
-      {/* Horizontal Line perfectly aligned */}
-      <hr className="max-w-7xl mx-auto border-gray-600 my-8" />
-
-      {/* Copyright */}
-      <div className="text-center text-gray-400 text-sm">
-        © 2025 <span className="font-semibold">Phelan Focus</span>. All rights reserved.
-      </div>
-    </motion.footer>
+      </motion.footer>
+    </>
   );
 };
