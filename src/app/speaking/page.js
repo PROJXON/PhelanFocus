@@ -75,7 +75,7 @@ export default function SpeakingPage() {
         {/* Keynote Speeches Section */}
         <section className="py-20 px-6 bg-[#f9f7f6] text-gray-900 dark:bg-[#1c1c1c] dark:text-white">
         <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Mark’s Most Popular Coaching Sessions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Mark's Most Popular Coaching Sessions</h2>
         </div>
 
         <div className="space-y-16">
@@ -100,7 +100,7 @@ export default function SpeakingPage() {
                 <p className="text-sm font-bold text-pink-600 uppercase mb-2">Expanded for 2025</p>
                 <h3 className="text-2xl font-semibold mb-2">Artificial Influence</h3>
                 <p className="mb-4">
-                How savvy brands are safely using the magic of AI. Learn how to navigate AI’s potential without sacrificing authenticity or trust in your brand journey.
+                How savvy brands are safely using the magic of AI. Learn how to navigate AI's potential without sacrificing authenticity or trust in your brand journey.
                 </p>
                 <button className="border border-pink-400 text-pink-500 px-5 py-2 rounded-md hover:bg-pink-500 hover:text-white transition">
                 Uncover the Magic of AI
@@ -131,11 +131,11 @@ export default function SpeakingPage() {
       {/* Testimonial Carousel - Placeholder */}
       <section className="py-16 text-center bg-[#ffe6cc] dark:bg-[#2a1e13]">
         <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Mark’s Most Popular Keynote Speeches</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Mark's Most Popular Keynote Speeches</h2>
         </div>
         <h3 className="text-xl font-bold mb-4">Don't Take Our Word For It</h3>
         <p className="italic max-w-xl mx-auto">
-          "Mark’s coaching sessions are the most impactful of any program I’ve participated in  —
+          "Mark's coaching sessions are the most impactful of any program I've participated in  —
           insightful, energizing, and life-changing."
         </p>
         <p className="mt-2 font-semibold">— Global Leadership Summit Participant</p>
@@ -148,7 +148,7 @@ export default function SpeakingPage() {
         What Makes a Great Coaching Experience?
         </h2>
         <p className="max-w-3xl mx-auto text-lg opacity-80">
-        A transformational coaching session empowers individuals to challenge their own thinking and approach. It inspires clients to take actionable steps towards their goals. A great coaching experience should be engaging, insightful, memorable, and motivating. That’s exactly what Mark delivers. Every Single Time.
+        A transformational coaching session empowers individuals to challenge their own thinking and approach. It inspires clients to take actionable steps towards their goals. A great coaching experience should be engaging, insightful, memorable, and motivating. That's exactly what Mark delivers. Every Single Time.
         </p>
     </div>
 
@@ -164,7 +164,7 @@ export default function SpeakingPage() {
         </div>
 
         <div>
-        <h3 className="text-2xl font-bold mb-4">What’s Included In Every Speech?</h3>
+        <h3 className="text-2xl font-bold mb-4">What's Included In Every Speech?</h3>
         <ul className="space-y-4 text-lg">
             {[
             "One-on-one sessions",
@@ -185,9 +185,9 @@ export default function SpeakingPage() {
 
 
       {/* Call To Action */}
-      <section className="bg-yellow-500 py-16 text-center text-black">
+      <section className="bg-[#13395c] py-16 text-center text-white">
         <h3 className="text-2xl font-bold mb-4">
-          Have a question that hasn’t been answered, yet?
+          Have a question that hasn't been answered, yet?
         </h3>
         <Link href="/contact">
           <button className="btn-book">
