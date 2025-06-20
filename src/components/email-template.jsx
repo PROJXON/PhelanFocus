@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-export const EmailTemplate = ({ name, email, message }) => {
+export function EmailTemplate({ name, email, message }) {
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', border: '1px solid #ddd', borderRadius: '8px', maxWidth: '500px' }}>
       <h1 style={{ color: '#333' }}>Hello Phelan,</h1>
@@ -15,4 +13,4 @@ export const EmailTemplate = ({ name, email, message }) => {
       </p>
     </div>
   );
-};
+}

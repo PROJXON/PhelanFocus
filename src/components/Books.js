@@ -53,12 +53,12 @@ export default function Books() {
           <h2 className="text-3xl font-bold text-gray-900">
             Books
           </h2>
-          <Link 
-            href="/books" 
-            className="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-300"
-          >
-            View All Books
-          </Link>
+            <Link href="/books">
+              <button className="btn">
+                <span>View all Books</span>
+                <span></span>
+              </button>
+            </Link>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -73,29 +73,19 @@ export default function Books() {
               className="rounded-md mb-4 mx-auto transition-transform duration-500 hover:scale-105"
             />
             <h3 className="text-xl font-semibold mb-2 text-gray-800">
-              Bend to Bend
+              {/* Bend to Bend */}
             </h3>
-            <StarRating rating={5} />
+            <StarRating rating={4.5} />
             <p className="text-gray-600 mb-4">
               {expandedBooks[0] 
                 ? "The course of Volume, Velocity and Veracity "
                 : "The course of Volume, Velocity and Veracity "}
             </p>
             <div className="flex mt-auto space-x-2">
-              <button 
-                onClick={() => toggleReadMore(0)}
-                className="bg-[#ffd419] text-gray-900 py-2 px-4 rounded hover:bg-[#e6bf17] transition-colors font-medium"
-              >
-                {expandedBooks[0] ? "Read Less" : "Read More"}
-              </button>
-              <Link 
-                href="https://www.amazon.com" 
-                className="ml-auto bg-[#144a8f] text-white py-2 px-4 rounded hover:bg-[#0d3a7a] transition-colors font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Buy on Amazon
-              </Link>
+            <button onClick={() => toggleReadMore(2)} className="btn">
+              <span>{expandedBooks[2] ? "Read Less" : "Read More"}</span>
+              <span></span>
+            </button>
             </div>
           </div>
 
@@ -110,7 +100,7 @@ export default function Books() {
               className="rounded-md mb-4 mx-auto transition-transform duration-500 hover:scale-105"
             />
             <h3 className="text-xl font-semibold mb-2 text-gray-800">
-              Peak to Peak
+              {/* Peak to Peak */}
             </h3>
             <StarRating rating={4.5} />
             <p className="text-gray-600 mb-4">
@@ -119,20 +109,10 @@ export default function Books() {
                 : "The journey of Purpose, progress and perspective."}
             </p>
             <div className="flex mt-auto space-x-2">
-              <button 
-                onClick={() => toggleReadMore(1)}
-                className="bg-[#ffd419] text-gray-900 py-2 px-4 rounded hover:bg-[#e6bf17] transition-colors font-medium"
-              >
-                {expandedBooks[1] ? "Read Less" : "Read More"}
-              </button>
-              <Link 
-                href="https://www.amazon.com" 
-                className="ml-auto bg-[#144a8f] text-white py-2 px-4 rounded hover:bg-[#0d3a7a] transition-colors font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Buy on Amazon
-              </Link>
+            <button onClick={() => toggleReadMore(2)} className="btn">
+              <span>{expandedBooks[2] ? "Read Less" : "Read More"}</span>
+              <span></span>
+            </button>
             </div>
           </div>
 
@@ -147,7 +127,7 @@ export default function Books() {
               className="rounded-md mb-4 mx-auto transition-transform duration-500 hover:scale-105"
             />
             <h3 className="text-xl font-semibold mb-2 text-gray-800">
-              Shore to Shore
+              {/* Shore to Shore */}
             </h3>
             <StarRating rating={4.5} />
             <p className="text-gray-600 mb-4">
@@ -156,20 +136,10 @@ export default function Books() {
                 : "The building of a Captain, crew and Courses."}
             </p>
             <div className="flex mt-auto space-x-2">
-              <button 
-                onClick={() => toggleReadMore(2)}
-                className="bg-[#ffd419] text-gray-900 py-2 px-4 rounded hover:bg-[#e6bf17] transition-colors font-medium"
-              >
-                {expandedBooks[2] ? "Read Less" : "Read More"}
-              </button>
-              <Link 
-                href="https://www.amazon.com" 
-                className="ml-auto bg-[#144a8f] text-white py-2 px-4 rounded hover:bg-[#0d3a7a] transition-colors font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Buy on Amazon
-              </Link>
+            <button onClick={() => toggleReadMore(2)} className="btn">
+              <span>{expandedBooks[2] ? "Read Less" : "Read More"}</span>
+              <span></span>
+            </button>
             </div>
           </div>
         </div>

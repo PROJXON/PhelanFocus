@@ -3,23 +3,24 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 export const Navbar = () => {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const lastScroll = useRef(0);
 
-  // Scroll handler
   useEffect(() => {
     const handleScroll = () => {
       const current = window.scrollY;
       if (current > lastScroll.current && current > 80) {
-        setShowNavbar(false); // scrolling down
+        setShowNavbar(false);
       } else {
-        setShowNavbar(true); // scrolling up
+        setShowNavbar(true);
       }
       lastScroll.current = current;
     };
@@ -52,7 +53,6 @@ export const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo */}
         <Link href="/">
           <Image
             src="/PhelanFocusLOGO-02.png"
@@ -75,15 +75,26 @@ export const Navbar = () => {
               >
                 <Link
                   href={menu.href}
-                  className="text-lg px-4 py-2 relative inline-flex items-center gap-1 rounded-md transition duration-300 hover:bg-white/10"
+                  className={`text-lg px-4 py-2 relative inline-flex items-center gap-1 rounded-md transition duration-300 group ${
+                    pathname.startsWith(menu.href)
+                      ? "bg-white/10"
+                      : "hover:bg-white/10"
+                  }`}
                 >
                   {menu.name}
                   <FaChevronDown className="text-sm" />
-                  <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-1/2" />
-                  <span className="absolute bottom-0 right-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-1/2" />
+                  <span
+                    className={`absolute bottom-0 left-0 h-[2px] ${
+                      pathname.startsWith(menu.href) ? "w-1/2" : "w-0"
+                    } bg-white transition-all duration-300 group-hover:w-1/2`}
+                  />
+                  <span
+                    className={`absolute bottom-0 right-0 h-[2px] ${
+                      pathname.startsWith(menu.href) ? "w-1/2" : "w-0"
+                    } bg-white transition-all duration-300 group-hover:w-1/2`}
+                  />
                 </Link>
 
-                {/* Desktop Dropdown */}
                 {desktopDropdownOpen && (
                   <div className="absolute top-full mt-1 left-1/2 transform -translate-x-1/2 w-44 bg-[#144a8f] rounded-lg shadow-lg py-2 z-40">
                     <div className="absolute -top-3 left-0 w-full h-4" />
@@ -91,7 +102,11 @@ export const Navbar = () => {
                       <Link
                         key={subIndex}
                         href={sub.href}
-                        className="block px-4 py-2 text-white text-base hover:bg-[#2b5ea5] transition"
+                        className={`block px-4 py-2 text-white text-base transition ${
+                          pathname === sub.href
+                            ? "bg-[#2b5ea5]"
+                            : "hover:bg-[#2b5ea5]"
+                        }`}
                       >
                         {sub.name}
                       </Link>
@@ -103,17 +118,29 @@ export const Navbar = () => {
               <Link
                 key={index}
                 href={menu.href}
-                className="text-lg px-4 py-2 relative inline-block rounded-md transition duration-300 hover:bg-white/10 group"
+                className={`text-lg px-4 py-2 relative inline-block rounded-md transition duration-300 group ${
+                  pathname === menu.href
+                    ? "bg-white/10"
+                    : "hover:bg-white/10"
+                }`}
               >
                 {menu.name}
-                <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-1/2" />
-                <span className="absolute bottom-0 right-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-1/2" />
+                <span
+                  className={`absolute bottom-0 left-0 h-[2px] ${
+                    pathname === menu.href ? "w-1/2" : "w-0"
+                  } bg-white transition-all duration-300 group-hover:w-1/2`}
+                />
+                <span
+                  className={`absolute bottom-0 right-0 h-[2px] ${
+                    pathname === menu.href ? "w-1/2" : "w-0"
+                  } bg-white transition-all duration-300 group-hover:w-1/2`}
+                />
               </Link>
             )
           )}
         </div>
 
-        {/* Mobile Toggle Button */}
+        {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden text-white text-2xl"
@@ -131,7 +158,9 @@ export const Navbar = () => {
                 <div className="flex justify-between items-center">
                   <Link
                     href={menu.href}
-                    className="text-white text-lg py-2"
+                    className={`text-white text-lg py-2 ${
+                      pathname.startsWith(menu.href) ? "bg-white/10" : ""
+                    }`}
                   >
                     {menu.name}
                   </Link>
@@ -153,7 +182,9 @@ export const Navbar = () => {
               ) : (
                 <Link
                   href={menu.href}
-                  className="text-white text-lg py-2"
+                  className={`text-white text-lg py-2 ${
+                    pathname === menu.href ? "bg-white/10" : ""
+                  }`}
                 >
                   {menu.name}
                 </Link>
@@ -165,7 +196,9 @@ export const Navbar = () => {
                   <Link
                     key={subIndex}
                     href={sub.href}
-                    className="block text-white/90 text-base pl-6 py-1"
+                    className={`block text-white/90 text-base pl-6 py-1 ${
+                      pathname === sub.href ? "bg-white/10" : ""
+                    }`}
                   >
                     {sub.name}
                   </Link>

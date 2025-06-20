@@ -104,7 +104,7 @@ export default function CoursesPage() {
         </section>
 
         {/* 3 Pillars Section */}
-        <section className="py-20 px-4 bg-gradient-to-b from-blue-900 to-blue-700 text-white">
+        <section className="py-20 px-4 text-white" style={{ backgroundColor: "#144a8f" }}>
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-4">3 Pillars of Transformation</h2>
             <p className="text-xl text-blue-200 mb-12">Here's my tried and tested formula that's proven to deliver results…</p>

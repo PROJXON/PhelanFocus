@@ -6,13 +6,12 @@ import { Footer } from "@/components/Footer";
 import "./contact.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faPhoneAlt,
-  faEnvelopeOpenText,
+  faGlobe,
   faMapMarkerAlt,
   faClock,
   faMapMarker,
-  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
+import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -46,7 +45,7 @@ export default function ContactPage() {
     setStatusMessage("");
 
     try {
-      const res = await fetch("/api/route", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -68,12 +67,9 @@ export default function ContactPage() {
     <div className="contact-page">
       <Navbar isFooter={false} />
 
-      {/* Hero Section */}
       <section
         className="relative w-full h-[50vh] bg-center bg-cover flex items-center justify-center text-white text-center mt-20"
-        style={{
-          backgroundImage: "url('/contact-bg.jpg')",
-        }}
+        style={{ backgroundImage: "url('/contact-bg.jpg')" }}
       >
         <div className="absolute inset-0 bg-blue-900/60"></div>
         <div className="relative z-10">
@@ -83,23 +79,40 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Info Section */}
       <div className="bg-[#FFFFFF] dark:bg-[#13395c]">
         <section className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-4 gap-10 text-center">
           <div className="flex flex-col items-center">
             {mounted && (
-              <FontAwesomeIcon icon={faPhoneAlt} className="w-10 h-10 text-yellow-500 dark:text-yellow-400 mb-4" />
+              <FontAwesomeIcon icon={faYoutube} className="w-10 h-10 text-yellow-500 dark:text-yellow-400 mb-4" />
             )}
-            <h3 className="font-semibold text-lg text-gray-800 dark:text-gray-200">Phone No.</h3>
-            <p className="text-gray-600 dark:text-gray-300 mt-2">818-606-2451</p>
+            <h3 className="font-semibold text-lg text-gray-800 dark:text-gray-200">Youtube</h3>
+            <p className="text-gray-600 dark:text-gray-300 mt-2">
+              <a
+                href="https://www.youtube.com/@ThePhelanFocus"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                The Phelan Focus
+              </a>
+            </p>
           </div>
 
           <div className="flex flex-col items-center">
             {mounted && (
-              <FontAwesomeIcon icon={faEnvelopeOpenText} className="w-10 h-10 text-yellow-500 dark:text-yellow-400 mb-4" />
+              <FontAwesomeIcon icon={faGlobe} className="w-10 h-10 text-yellow-500 dark:text-yellow-400 mb-4" />
             )}
-            <h3 className="font-semibold text-lg text-gray-800 dark:text-gray-200">E-mail</h3>
-            <p className="text-gray-600 dark:text-gray-300 mt-2">phelan@projxon.com</p>
+            <h3 className="font-semibold text-lg text-gray-800 dark:text-gray-200">Website</h3>
+            <p className="text-gray-600 dark:text-gray-300 mt-2">
+              <a
+                href="https://www.projxon.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                www.projxon.com
+              </a>
+            </p>
           </div>
 
           <div className="flex flex-col items-center">
@@ -120,7 +133,6 @@ export default function ContactPage() {
         </section>
       </div>
 
-      {/* Contact Form + Image Section */}
       <section className="contact-section">
         <div className="contact-left">
           <h2>Contact Us or Visit Us</h2>
@@ -131,13 +143,17 @@ export default function ContactPage() {
           </div>
 
           <div className="contact-detail">
-            {mounted && <FontAwesomeIcon icon={faEnvelope} className="icon" />}
-            <a href="mailto:phelan@projxon.com" className="hover:text-[#FFD700] transition duration-300">
-              phelan@projxon.com
+            {mounted && <FontAwesomeIcon icon={faGlobe} className="icon" />}
+            <a
+              href="https://www.projxon.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#FFD700] transition duration-300"
+            >
+              www.projxon.com
             </a>
           </div>
 
-          {/* Form */}
           <form className="contact-form-box" onSubmit={handleSubmit} noValidate>
             <div className="form-group">
               <input

@@ -24,7 +24,7 @@ const Home = async () => {
         {/* 🌟 Hero Section */}
         <section
           className="w-full h-[60vh] bg-center bg-cover flex items-center justify-center text-white text-center relative"
-          style={{ backgroundImage: "url('/homepage-hero.png')" }} // <-- replace with your image
+          style={{ backgroundImage: "url('/homepage-hero.png')" }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="relative z-10 px-4">

@@ -24,7 +24,6 @@ export default function ServicesPage() {
         <div className="overlay"></div>
         <div className="hero-content">
           <h1>SERVICE</h1>
-          <p><Link href="/">Home</Link> / Service</p>
         </div>
       </section>
 

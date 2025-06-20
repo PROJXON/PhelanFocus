@@ -5,6 +5,15 @@
 }
 
 /* Hero */
+ .hero-content {
+   position: relative;
+   color: #fff;
+   text-align: center;
+ }
+ .hero-content h1 {
+   font-size: 48px;
+   margin-bottom: 15px;
+ }
 .consulting-hero {
   background-size: cover;
   background-position: center;
@@ -29,12 +38,12 @@
 }
 
 /* Section Styles */
-.section-header {
+.consulting-section-header {
   text-align: center;
   margin-bottom: 3rem;
 }
 
-.section-header h2 {
+.consulting-section-header h2 {
   font-size: 2.5rem;
   font-weight: 700;
   color: #144a8f;
@@ -45,12 +54,12 @@
   gap: 0.75rem;
 }
 
-.section-icon {
+.consulting-section-icon {
   font-size: 1.8rem;
   color: #144a8f;
 }
 
-.section-subtitle {
+.consulting-section-subtitle {
   font-size: 1.1rem;
   color: #4a5568;
   max-width: 700px;
@@ -58,17 +67,17 @@
 }
 
 /* Services Section */
-.services-section {
+.consulting-services-section {
   margin-bottom: 6rem;
 }
 
-.services-grid {
+.consulting-services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
-.service-card {
+.consulting-service-card {
   background: white;
   border-radius: 12px;
   padding: 2rem;
@@ -77,32 +86,32 @@
   border: 1px solid #e2e8f0;
 }
 
-.service-card:hover {
+.consulting-service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(20, 74, 143, 0.1);
   border-color: #a0c4f8;
 }
 
-.service-icon {
+.consulting-service-icon {
   font-size: 2.5rem;
   color: #144a8f;
   margin-bottom: 1.5rem;
 }
 
-.service-title {
+.consulting-service-title {
   font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 1rem;
   color: #1e293b;
 }
 
-.service-description {
+.consulting-service-description {
   color: #4a5568;
   margin-bottom: 1.5rem;
   font-size: 1rem;
 }
 
-.service-link {
+.consulting-service-link {
   color: #144a8f;
   font-weight: 500;
   text-decoration: none;
@@ -111,13 +120,13 @@
   transition: all 0.2s;
 }
 
-.service-link:hover {
+.consulting-service-link:hover {
   color: #0d3a7a;
   transform: translateX(5px);
 }
 
 /* Approach Section */
-.approach-section {
+.consulting-approach-section {
   margin-bottom: 6rem;
 }
 
@@ -185,14 +194,14 @@
   margin-bottom: 6rem;
 }
 
-.industries-grid {
+.consulting-industries-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
-.industry-card {
+.consulting-industry-card {
   background: white;
   border-radius: 12px;
   padding: 2rem 1.5rem;
@@ -202,30 +211,30 @@
   border: 1px solid #e2e8f0;
 }
 
-.industry-card:hover {
+.consulting-industry-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(20, 74, 143, 0.1);
   background: #144a8f;
   color: white;
 }
 
-.industry-card:hover .industry-icon {
+.consulting-industry-card:hover .consulting-industry-icon {
   color: white;
 }
 
-.industry-icon {
+.consulting-industry-icon {
   font-size: 2rem;
   color: #144a8f;
   margin-bottom: 1rem;
 }
 
-.industry-card h3 {
+.consulting-industry-card h3 {
   font-size: 1.1rem;
   font-weight: 600;
 }
 
 /* CTA Section */
-.cta-section {
+.consulting-cta-section {
   background: linear-gradient(135deg, #144a8f 0%, #0d3a7a 100%);
   border-radius: 16px;
   padding: 4rem 2rem;
@@ -233,24 +242,24 @@
   text-align: center;
 }
 
-.cta-container {
+.consulting-cta-container {
   max-width: 800px;
   margin: 0 auto;
 }
 
-.cta-content h2 {
+.consulting-cta-content h2 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
-.cta-content p {
+.consulting-cta-content p {
   font-size: 1.1rem;
   opacity: 0.9;
   margin-bottom: 2rem;
 }
 
-.cta-buttons {
+.consulting-cta-buttons {
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -309,11 +318,11 @@
     font-size: 2.5rem;
   }
   
-  .section-header h2 {
+  .consulting-section-header h2 {
     font-size: 2rem;
   }
   
-  .cta-buttons {
+  .consulting-cta-buttons {
     flex-direction: column;
     align-items: center;
   }
@@ -338,7 +347,7 @@
     margin-right: 0.5rem;
   }
   
-  .section-header h2 {
+  .consulting-section-header h2 {
     font-size: 1.7rem;
   }
   
@@ -351,7 +360,7 @@
     height: 50px;
   }
   
-  .industries-grid {
+  .consulting-industries-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
