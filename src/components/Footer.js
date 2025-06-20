@@ -2,16 +2,37 @@
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faTwitter, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export const Footer = () => {
-  const socialIcons = [
-    { icon: faInstagram, href: "https://www.instagram.com/The.Phelan.Focus/" },
-    { icon: faLinkedin, href: "https://www.linkedin.com/in/phelanmarkw/" },
-    { icon: faFacebook, href: "https://www.facebook.com/profile.php?id=100009307890107&ref=ig_profile_ac" },
-    { icon: faTwitter, href: "https://x.com/The.Phelan.Focus" },
+  const socialLinks = [
+    {
+      icon: faInstagram,
+      label: "Instagram",
+      href: "https://www.instagram.com/The.Phelan.Focus/",
+    },
+    {
+      icon: faLinkedin,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/phelanmarkw/",
+    },
+    {
+      icon: faFacebook,
+      label: "Facebook",
+      href: "https://www.facebook.com/profile.php?id=100009307890107&ref=ig_profile_ac",
+    },
+    {
+      icon: faTwitter,
+      label: "Twitter",
+      href: "https://x.com/The.Phelan.Focus",
+    },
   ];
 
   const { resolvedTheme } = useTheme();
@@ -25,14 +46,16 @@ export const Footer = () => {
       transition={{ duration: 0.9, ease: "easeOut" }}
       viewport={{ once: false, amount: 0.1 }}
       className={`py-16 px-6 transition-colors duration-500 ${
-        mounted && resolvedTheme === "light" ? "bg-white text-black" : "bg-[#144a8f] text-white"
+        mounted && resolvedTheme === "light"
+          ? "bg-white text-black"
+          : "bg-[#144a8f] text-white"
       }`}
     >
       {/* Top Row: Logo and Social */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center border-b border-gray-600 pb-8">
         <h2 className="text-2xl font-bold text-blue-500">Phelan Focus</h2>
         <div className="flex space-x-6 mt-6 md:mt-0">
-          {socialIcons.map((item, index) => (
+          {socialLinks.map((item, index) => (
             <a
               key={index}
               href={item.href}
@@ -40,51 +63,61 @@ export const Footer = () => {
               rel="noopener noreferrer"
               className="hover:text-[#FFD700] transition duration-300"
             >
-              <FontAwesomeIcon icon={item.icon} size="lg" />
             </a>
           ))}
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pt-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pt-8 text-center md:text-left">
         {/* Quick Links */}
         <div>
           <h3 className="text-lg mb-4 font-semibold">Quick Links</h3>
-          <ul className="space-y-2">
-            <li><Link href="/" className="hover:text-[#FFD700]">Home</Link></li>
-            <li><Link href="/about" className="hover:text-[#FFD700]">About Us</Link></li>
-            <li><Link href="/services" className="hover:text-[#FFD700]">Services</Link></li>
-            <li><Link href="/podcast" className="hover:text-[#FFD700]">Podcast</Link></li>
-            <li><Link href="/contact" className="hover:text-[#FFD700]">Contact</Link></li>
+          <ul className="space-y-2 text-sm">
+            <li>
+              <Link href="/" className="hover:text-[#FFD700]">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="hover:text-[#FFD700]">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/services" className="hover:text-[#FFD700]">
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link href="/podcast" className="hover:text-[#FFD700]">
+                Podcast
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-[#FFD700]">
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
 
-        {/* Contact Info */}
-        <div>
-          <h3 className="text-lg mb-4 font-semibold">Contact Us</h3>
-          <p className="my-2">818-606-2451</p>
-          <p>
-            <a href="mailto:phelan@projxon.com" className="hover:text-[#FFD700] transition duration-300">
-              phelan@projxon.com
-            </a>
-          </p>
-        </div>
-
-        {/* Newsletter */}
-        <div>
-          <h3 className="text-lg mb-4 font-semibold">Subscribe For Our Newsletter</h3>
+        {/* Newsletter - Center */}
+        <div className="flex flex-col items-center justify-center text-center">
+          <h3 className="text-base mb-4 font-medium tracking-wide text-center w-full">
+            Subscribe For Our Newsletter
+          </h3>
           <input
             type="email"
             placeholder="Enter your email"
-            className={`w-full p-3 rounded-lg mb-4 border ${
+            className={`w-full max-w-xs p-3 rounded-lg mb-4 border text-sm text-center ${
               mounted && resolvedTheme === "light"
                 ? "bg-white text-black placeholder-gray-600 border-gray-400"
                 : "bg-[#0e2a47] text-white placeholder-gray-300 border-[#355776]"
             }`}
           />
           <button
-            className={`w-full border py-3 rounded-lg transition duration-300 ${
+            className={`w-full max-w-xs border py-2 rounded-full text-sm font-semibold transition duration-300 ${
               mounted && resolvedTheme === "light"
                 ? "border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white"
                 : "border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black"
@@ -93,14 +126,43 @@ export const Footer = () => {
             SUBSCRIBE NOW
           </button>
         </div>
+
+        {/* Follow Us - Right */}
+        <div className="md:text-left flex flex-col items-center md:items-end">
+          <h3 className="text-lg mb-4 font-semibold">Follow Us</h3>
+          <div className="space-y-3">
+            {socialLinks.map((item, index) => (
+              <div key={index}>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#FFD700] transition duration-300 inline-flex items-center gap-2 text-base"
+                >
+                  <FontAwesomeIcon icon={item.icon} className="text-xl" />
+                  <span>{item.label}</span>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
-      {/* Horizontal Line perfectly aligned */}
+      {/* Divider */}
       <hr className="max-w-7xl mx-auto border-gray-600 my-8" />
 
       {/* Copyright */}
       <div className="text-center text-gray-400 text-sm">
-        © 2025 <span className="font-semibold">Phelan Focus</span>. All rights reserved.
+        © 2025 <span className="font-semibold">Phelan Focus</span>. All rights
+        reserved • Powered by{" "}
+        <a
+          href="https://www.projxon.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white font-semibold hover:underline"
+        >
+          Projxon
+        </a>
       </div>
     </motion.footer>
   );

@@ -65,7 +65,7 @@ const ServiceCarousel = () => {
               <div className="rounded-xl shadow-lg bg-white overflow-hidden transition hover:shadow-2xl">
                 {/* Image Block */}
                 <div className="relative group overflow-hidden">
-                  <Link href="/service-detail">
+                  <Link href="/services">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -89,7 +89,7 @@ const ServiceCarousel = () => {
                 {/* Title */}
                 <div className="p-4 bg-white">
                   <h4 className="text-xl font-semibold text-gray-800">
-                    <Link href="/service-detail">{item.title}</Link>
+                    <Link href="/services">{item.title}</Link>
                   </h4>
                 </div>
               </div>

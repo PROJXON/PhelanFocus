@@ -35,6 +35,11 @@ test in turbo
 ```bash
 npm run dev
 ```
+npm install resend
+```
+npm install stripe
+
+
 
 For EmailJS functionality for the contact form to work, create an emailjs account or use supplied credentials with a .env folder created in root as follows:
 ```

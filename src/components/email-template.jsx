@@ -1,12 +1,11 @@
-import * as React from 'react';
-
-export const EmailTemplate = ({ name, email, message }) => {
+export function EmailTemplate({ name, email, message }) {
   return (
     <div>
-      <h1>{name}!</h1>
-      <p>{email}</p>
+      <h2>New Contact Form Submission</h2>
+      <p><strong>Name:</strong> {name}</p>
+      <p><strong>Email:</strong> {email}</p>
+      <p><strong>Message:</strong></p>
       <p>{message}</p>
-      <p>This is a test</p>
     </div>
   );
-} 
+}

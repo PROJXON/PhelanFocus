@@ -17,12 +17,12 @@ export default function booksPage() {
   // Testimonials data
   const testimonials = [
     {
-      quote: "The coaching book transformed the way I approach my team's growth.",
+      quote: "The Bend to Bendd book transformed the way I approach my team's growth.",
       author: "Latressa",
       rating: 5
     },
     {
-      quote: "This consulting book gave me the framework I needed to deliver results.",
+      quote: "This Peak to Peak book gave me the framework I needed to deliver results.",
       author: "Jake Rappleye",
       rating: 4.5
     },
@@ -141,34 +141,26 @@ export default function booksPage() {
               className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             >
               <Image 
-                src="/books/coaching-book.png" 
-                alt="Book cover 1" 
+                src="/books/bendtobendblur.png" 
+                alt="Bend to Bend" 
                 width={300} 
                 height={450} 
                 className="rounded-md mb-4 mx-auto transition-transform duration-500 hover:scale-105"
               />
               <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">
-                Conscious Coaching
+                {/* Bend to Bend */}
               </h3>
-              <StarRating rating={5} />
+              <StarRating rating={4.5} />
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 {expandedBooks[0] 
-                  ? "Actionable strategies and insights to help you inspire growth and unlock full potential. This comprehensive guide covers everything from foundational coaching principles to advanced techniques for transformational leadership. Learn how to ask powerful questions, create accountability, and foster lasting change in individuals and teams."
-                  : "Actionable strategies and insights to help you inspire growth and unlock full potential..."}
+                  ? "The course of Volume, Velocity and Veracity"
+                  : "The course of Volume, Velocity and Veracity."}
               </p>
               <div className="flex mt-auto space-x-2">
-                <button 
-                  onClick={() => toggleReadMore(0)}
-                  className="bg-[#ffd419] text-gray-900 py-2 px-4 rounded hover:bg-[#e6bf17] transition-colors font-medium"
-                >
-                  {expandedBooks[0] ? "Read Less" : "Read More"}
-                </button>
-                <Link 
-                  href="https://www.amazon.com" 
-                  className="ml-auto bg-[#144a8f] text-white py-2 px-4 rounded hover:bg-[#0d3a7a] transition-colors font-medium"
-                >
-                  Buy on Amazon
-                </Link>
+              <button onClick={() => toggleReadMore(2)} className="btn">
+                <span>{expandedBooks[2] ? "Read Less" : "Read More"}</span>
+                <span></span>
+              </button>
               </div>
             </div>
 
@@ -177,34 +169,26 @@ export default function booksPage() {
               className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             >
               <Image 
-                src="/books/consulting-book.png" 
-                alt="Book cover 2" 
+                src="/books/peaktopeakblur.png" 
+                alt="Peak to Peak" 
                 width={300} 
                 height={450} 
                 className="rounded-md mb-4 mx-auto transition-transform duration-500 hover:scale-105"
               />
               <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">
-                Consulting Success
+                {/* Peak to Peak */}
               </h3>
               <StarRating rating={4.5} />
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 {expandedBooks[1] 
-                  ? "Diagnose problems, deliver tailored solutions, and build lasting client relationships. This book provides a step-by-step framework for effective consulting, from initial client engagement to final recommendations. Discover how to analyze business challenges, develop strategic solutions, and communicate your value proposition effectively to stakeholders at all levels."
-                  : "Diagnose problems, deliver tailored solutions, and build lasting client relationships..."}
+                  ? "The journey of Purpose, progress and perspective."
+                  : "The journey of Purpose, progress and perspective."}
               </p>
               <div className="flex mt-auto space-x-2">
-                <button 
-                  onClick={() => toggleReadMore(1)}
-                  className="bg-[#ffd419] text-gray-900 py-2 px-4 rounded hover:bg-[#e6bf17] transition-colors font-medium"
-                >
-                  {expandedBooks[1] ? "Read Less" : "Read More"}
-                </button>
-                <Link 
-                  href="https://www.amazon.com" 
-                  className="ml-auto bg-[#144a8f] text-white py-2 px-4 rounded hover:bg-[#0d3a7a] transition-colors font-medium"
-                >
-                  Buy on Amazon
-                </Link>
+              <button onClick={() => toggleReadMore(2)} className="btn">
+                <span>{expandedBooks[2] ? "Read Less" : "Read More"}</span>
+                <span></span>
+              </button>
               </div>
             </div>
 
@@ -213,34 +197,26 @@ export default function booksPage() {
               className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             >
               <Image 
-                src="/books/speaking-book.png" 
-                alt="Book cover 3" 
+                src="/books/shoretoshoreblur.png" 
+                alt="Shore to Shore" 
                 width={300} 
                 height={450} 
                 className="rounded-md mb-4 mx-auto transition-transform duration-500 hover:scale-105"
               />
               <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">
-                Speak with No Fear
+                {/* Shore to Shore */}
               </h3>
               <StarRating rating={4.5} />
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 {expandedBooks[2] 
-                  ? "Engage audiences, build confidence, and master your message with clarity. This comprehensive guide covers everything from overcoming stage fright to crafting compelling presentations. Learn techniques for vocal variety, body language, storytelling, and handling Q&A sessions. Whether you're speaking to small teams or large audiences, this book will transform your public speaking skills."
-                  : "Engage audiences, build confidence, and master your message with clarity..."}
+                  ? "The building of a Captain, crew and Courses."
+                  : "The building of a Captain, crew and Courses."}
               </p>
               <div className="flex mt-auto space-x-2">
-                <button 
-                  onClick={() => toggleReadMore(2)}
-                  className="bg-[#ffd419] text-gray-900 py-2 px-4 rounded hover:bg-[#e6bf17] transition-colors font-medium"
-                >
-                  {expandedBooks[2] ? "Read Less" : "Read More"}
-                </button>
-                <Link 
-                  href="https://www.amazon.com" 
-                  className="ml-auto bg-[#144a8f] text-white py-2 px-4 rounded hover:bg-[#0d3a7a] transition-colors font-medium"
-                >
-                  Buy on Amazon
-                </Link>
+              <button onClick={() => toggleReadMore(2)} className="btn">
+                <span>{expandedBooks[2] ? "Read Less" : "Read More"}</span>
+                <span></span>
+              </button>
               </div>
             </div>
           </div>
@@ -325,7 +301,7 @@ export default function booksPage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow transition-all duration-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1">
-              <h3 className="text-xl font-semibold text-blue-600 mb-2">Coaching Book</h3>
+              {/* <h3 className="text-xl font-semibold text-blue-600 mb-2">Bend to Bend</h3> */}
               <p>Ideal for leaders, managers, mentors, and anyone fostering growth.</p>
               <ul className="mt-2 pl-5 list-disc text-gray-600 dark:text-gray-300 hidden group-hover:block">
                 <li>Team leaders</li>
@@ -334,7 +310,7 @@ export default function booksPage() {
               </ul>
             </div>
             <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow transition-all duration-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1">
-              <h3 className="text-xl font-semibold text-blue-600 mb-2">Consulting Book</h3>
+              {/* <h3 className="text-xl font-semibold text-blue-600 mb-2">Peak to Peak</h3> */}
               <p>Perfect for consultants, advisors, and entrepreneurs enhancing delivery skills.</p>
               <ul className="mt-2 pl-5 list-disc text-gray-600 dark:text-gray-300 hidden group-hover:block">
                 <li>Management consultants</li>
@@ -343,7 +319,7 @@ export default function booksPage() {
               </ul>
             </div>
             <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow transition-all duration-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1">
-              <h3 className="text-xl font-semibold text-blue-600 mb-2">Speaking Book</h3>
+              {/* <h3 className="text-xl font-semibold text-blue-600 mb-2">Shore to Shore</h3> */}
               <p>Great for professionals, educators, and creatives mastering public speaking.</p>
               <ul className="mt-2 pl-5 list-disc text-gray-600 dark:text-gray-300 hidden group-hover:block">
                 <li>Sales professionals</li>

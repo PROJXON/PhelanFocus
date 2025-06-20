@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import "./sessions.css";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import './sessions.css';
+import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
 
 export default function CoachingSessions() {
   const [selectedSession, setSelectedSession] = useState(null);
@@ -12,49 +12,61 @@ export default function CoachingSessions() {
 
   const sessionTypes = [
     {
-      id: 'career', icon: '💼', title: 'Career Coaching',
-      description: 'Navigate your career path with confidence. Get strategic guidance on job transitions, leadership development, and professional growth.',
-      duration: '60 minutes', format: '1-on-1', delivery: 'Online/In-person', price: '$150/session'
+      id: 'performance',
+      icon: '💼',
+      title: 'Performance Coaching',
+      bullets: ['✔️ Life', '✔️ Career', '✔️ Wellness'],
+      description: 'Empowering individuals to thrive across all areas of life with clarity, focus, and momentum.',
+      duration: '60 minutes',
+      format: '1-on-1',
+      delivery: 'Online/In-person',
+      price: '$300/session',
     },
     {
-      id: 'life', icon: '🌟', title: 'Life Coaching',
-      description: 'Create balance and fulfillment in all areas of your life. Focus on personal growth, relationships, and life transitions.',
-      duration: '75 minutes', format: '1-on-1', delivery: 'Online/In-person', price: '$120/session'
+      id: 'executive',
+      icon: '👔',
+      title: 'Executive Performance',
+      bullets: ['✔️ Packages Available', '✔️ Business', '✔️ Entrepreneur'],
+      description: 'Enhance leadership and entrepreneurial performance through strategic coaching and guidance.',
+      duration: '90 minutes',
+      format: '1-on-1',
+      delivery: 'Online/In-person',
+      price: '$600/session',
     },
     {
-      id: 'executive', icon: '👔', title: 'Executive Coaching',
-      description: 'Enhance your leadership skills and executive presence. Perfect for C-suite executives and senior managers.',
-      duration: '90 minutes', format: '1-on-1', delivery: 'Online/In-person', price: '$300/session'
+      id: 'group',
+      icon: '👥',
+      title: 'Group Performance',
+      bullets: ['✔️ Peer Coaching', '✔️ Team Dynamics', '✔️ Collaborative Learning'],
+      description: 'Dynamic group sessions designed to foster growth and accountability among like-minded individuals.',
+      duration: '90 minutes',
+      format: '4–8 people',
+      delivery: 'Online/In-person',
+      price: '$150/person',
     },
-    {
-      id: 'business', icon: '🚀', title: 'Business Coaching',
-      description: 'Scale your business and overcome entrepreneurial challenges. Strategic planning, team building, and growth acceleration.',
-      duration: '120 minutes', format: '1-on-1', delivery: 'Online/In-person', price: '$250/session'
-    },
-    {
-      id: 'group', icon: '👥', title: 'Group Coaching',
-      description: 'Learn and grow with like-minded individuals. Dynamic group sessions with peer support and collaborative learning.',
-      duration: '90 minutes', format: '4-8 people', delivery: 'Online/In-person', price: '$75/person'
-    }
   ];
 
   const features = [
     {
-      icon: '🎯', title: 'Personalized Approach',
-      description: 'Every session is tailored to your unique goals and challenges'
+      icon: '🎯',
+      title: 'Personalized Approach',
+      description: 'Every session is tailored to your unique goals and challenges',
     },
     {
-      icon: '📈', title: 'Proven Results',
-      description: 'Track your progress with measurable outcomes and actionable insights'
+      icon: '📈',
+      title: 'Proven Results',
+      description: 'Track your progress with measurable outcomes and actionable insights',
     },
     {
-      icon: '🤝', title: 'Expert Guidance',
-      description: 'Work with certified coaches who have years of experience'
+      icon: '🤝',
+      title: 'Expert Guidance',
+      description: 'Work with certified coaches who have years of experience',
     },
     {
-      icon: '🔄', title: 'Ongoing Support',
-      description: 'Continuous support between sessions to maintain momentum'
-    }
+      icon: '🔄',
+      title: 'Ongoing Support',
+      description: 'Continuous support between sessions to maintain momentum',
+    },
   ];
 
   const openBookingModal = (session) => {
@@ -70,6 +82,7 @@ export default function CoachingSessions() {
   return (
     <>
       <Navbar />
+
       {/* Hero Section */}
       <section className="sessions-hero" style={{ backgroundImage: "url('/sessions/sessions.jpeg')" }}>
         <div className="overlay"></div>
@@ -82,7 +95,7 @@ export default function CoachingSessions() {
         <main className="sessions-main">
           <section className="hero">
             <h1>Transform Your Potential</h1>
-            <p>Professional coaching sessions designed to unlock your full potential and achieve your goals</p>
+            <p>Explore tailored coaching packages built for personal, executive, and group success.</p>
           </section>
 
           <section id="sessions" className="sessions-grid">
@@ -90,6 +103,11 @@ export default function CoachingSessions() {
               <div key={session.id} className="session-card">
                 <div className="session-icon">{session.icon}</div>
                 <h3>{session.title}</h3>
+                <ul className="session-bullets">
+                  {session.bullets.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
                 <p className="session-description">{session.description}</p>
                 <div className="session-details">
                   <span>📅 {session.duration}</span>
@@ -124,29 +142,82 @@ export default function CoachingSessions() {
               <span className="close" onClick={closeModal}>&times;</span>
               <h2>Book Your Session</h2>
               <p className="session-title">{selectedSession?.title}</p>
+
               <form
-                action="https://formspree.io/f/yourFormID" // Replace with your actual Formspree ID
-                method="POST"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  const sessionType = selectedSession?.title;
+
+                  const res = await fetch('/api/create-checkout-session', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ sessionType }),
+                  });
+
+                  const data = await res.json();
+                  if (data.url) {
+                    window.location.href = data.url; 
+                  } else {
+                    alert('There was an error. Please try again.');
+                  }
+                }}
                 className="space-y-4"
               >
                 <input type="hidden" name="Session Type" value={selectedSession?.title || ''} />
                 <input type="text" name="Full Name" placeholder="Full Name" required />
                 <input type="email" name="Email" placeholder="Email Address" required />
                 <input type="tel" name="Phone" placeholder="Phone Number" required />
-                <input
-                  type="datetime-local"
-                  name="Preferred Date and Time"
-                  required
-                  className="w-full p-3 border border-gray-300 rounded-lg"
-                />
-
+                <input type="datetime-local" name="Preferred Date and Time" required />
                 <textarea name="Goals" rows="4" placeholder="Tell us about your goals..." />
-                <button type="submit" className="btn"><span>Confirm Booking</span><span></span></button>
+                  <input
+                    type="number"
+                    name="people"
+                    placeholder="Number of People"
+                    min="1"
+                    defaultValue="1"
+                    required
+                    className="w-full p-3 border border-gray-300 rounded-lg"
+                  />
+                  <button
+                    type="submit"
+                    className="w-full bg-[#F9C705] hover:bg-yellow-500 text-black font-semibold py-3 px-6 rounded-lg transition duration-300"
+                  >
+                    Confirm Booking & Pay
+                  </button>
               </form>
             </div>
           </div>
         )}
       </div>
+
+      <section className="coaching-process">
+        <h2>Our Coaching Process</h2>
+        <p className="section-intro">
+          We follow a proven step-by-step approach to ensure each session delivers lasting impact and clarity.
+        </p>
+        <div className="process-steps">
+          <div className="sessions-step">
+            <div className="sessions-step-number">1</div>
+            <h3>Discovery Call</h3>
+            <p>We start with a free 20-minute consultation to understand your goals and challenges.</p>
+          </div>
+          <div className="sessions-step">
+            <div className="sessions-step-number">2</div>
+            <h3>Goal Setting</h3>
+            <p>We define clear, actionable goals and outline a roadmap for success tailored to your needs.</p>
+          </div>
+          <div className="sessions-step">
+            <div className="sessions-step-number">3</div>
+            <h3>Coaching Sessions</h3>
+            <p>Engage in dynamic 1-on-1 or group sessions focused on strategy, mindset, and accountability.</p>
+          </div>
+          <div className="sessions-step">
+            <div className="sessions-step-number">4</div>
+            <h3>Progress Review</h3>
+            <p>We track your growth, make adjustments, and ensure continued momentum toward your outcomes.</p>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </>

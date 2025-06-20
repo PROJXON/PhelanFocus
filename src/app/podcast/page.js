@@ -109,22 +109,65 @@ export default function PodcastPage() {
           Listen wherever you find your favorite podcasts:
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-          {["apple-podcast", "youtube", "spotify", "google-podcast"].map((platform, i) => (
-            <a
-              key={i}
-              href="https://www.youtube.com/watch?v=962eYqe--Yc"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-lg"
-            >
-              <Image
-                src={`/podcast/${platform}.png`}
-                alt={`${platform} logo`}
-                width={200}
-                height={50}
-              />
-            </a>
-          ))}
+          {/* TikTok */}
+          <a
+            href="https://www.tiktok.com/@the.phelan.focus"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-lg"
+          >
+            <Image
+              src="/podcast/tiktok.png"
+              alt="TikTok logo"
+              width={200}
+              height={50}
+            />
+          </a>
+
+          {/* YouTube */}
+          <a
+            href="https://www.youtube.com/@ThePhelanFocus"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-lg"
+          >
+            <Image
+              src="/podcast/youtube.png"
+              alt="YouTube logo"
+              width={200}
+              height={50}
+            />
+          </a>
+
+          {/* Spotify */}
+          <a
+            href="https://podcasters.spotify.com/pod/show/the-phelan-focus"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-lg"
+          >
+            <Image
+              src="/podcast/spotify.png"
+              alt="Spotify logo"
+              width={200}
+              height={50}
+            />
+          </a>
+
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/The.Phelan.Focus/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-lg"
+          >
+            <Image
+              src="/podcast/Instagram.png"
+              alt="Instagram logo"
+              width={200}
+              height={50}
+            />
+          </a>
         </div>
       </section>
 

@@ -15,11 +15,7 @@ import {
   faEnvelope,
   faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebookF,
-  faTwitter,
-  faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
+import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 // Circle Progress Component
 const CircleProgress = ({ percentage, label }) => {
@@ -131,7 +127,7 @@ export default function AboutPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <section className="about-hero" style={{ backgroundImage: "url('/connection.jpg')" }}>
+      <section className="about-hero" style={{ backgroundImage: "url('/about.png')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
           <h1>About Phelan</h1>
@@ -151,15 +147,20 @@ export default function AboutPage() {
             <p>We help individuals unlock their full potential, overcome obstacles, and achieve their goals.</p>
             <hr />
             <div className="contact-info">
-              <p><FontAwesomeIcon icon={faPhone} className="icon" /> 818-606-2451</p>
               <p>
                 <a href="https://projxon.com" className="hover:text-[#FFD700]">
                   <FontAwesomeIcon icon={faGlobe} className="icon" /> projxon.com
                 </a>
               </p>
               <p>
-                <a href="mailto:phelan@projxon.com" className="hover:text-[#FFD700]">
-                  <FontAwesomeIcon icon={faEnvelope} className="icon" /> phelan@projxon.com
+                <a
+                  href="https://www.linkedin.com/in/phelanmarkw/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#FFD700] flex items-center gap-2"
+                >
+                  <FontAwesomeIcon icon={faLinkedinIn} className="icon" />
+                  Linkedin
                 </a>
               </p>
             </div>
@@ -189,15 +190,6 @@ export default function AboutPage() {
             <CircleProgress percentage={90} label="Holistic Approach" />
             <CircleProgress percentage={93} label="Empathetic Support" />
             <CircleProgress percentage={95} label="Proven Results" />
-          </div>
-
-          <div className="contact-info">
-            <p><FontAwesomeIcon icon={faPhone} className="icon" /> 818-606-2451</p>
-            <p>
-              <a href="https://projxon.com" className="hover:text-[#FFD700]">
-                <FontAwesomeIcon icon={faGlobe} className="icon" /> projxon.com
-              </a>
-            </p>
           </div>
         </div>
 
@@ -238,10 +230,7 @@ export default function AboutPage() {
               role: "Senior Consultant, E-Commerce Solutions",
               img: "/team/Phalen, Mark -41.jpg",
               socials: {
-                linkedin: "https://www.linkedin.com/in/phelanmarkw/",
-                twitter: "#",
-                facebook: "#",
-                instagram: "#"
+                linkedin: "https://www.linkedin.com/in/phelanmarkw/"
               }
             },
             {
@@ -249,10 +238,7 @@ export default function AboutPage() {
               role: "Senior Consultant, Non Profit Development",
               img: "/team/kathy.webp",
               socials: {
-                linkedin: "https://www.linkedin.com/in/kathyseaton/",
-                twitter: "#",
-                facebook: "#",
-                instagram: "#"
+                linkedin: "https://www.linkedin.com/in/klseaton/"
               }
             },
             {
@@ -260,10 +246,7 @@ export default function AboutPage() {
               role: "Senior Consultant, Tech + Software Solutions",
               img: "/team/melissa.webp",
               socials: {
-                linkedin: "https://www.linkedin.com/in/melissaeboli/",
-                twitter: "#",
-                facebook: "#",
-                instagram: "#"
+                linkedin: "https://www.linkedin.com/in/viamelissa/"
               }
             },
             {
@@ -271,10 +254,7 @@ export default function AboutPage() {
               role: "Senior Consultant, Health + Wellness Solutions",
               img: "/team/donavon.webp",
               socials: {
-                linkedin: "https://www.linkedin.com/in/donavonroberson/",
-                twitter: "#",
-                facebook: "#",
-                instagram: "#"
+                linkedin: "https://www.linkedin.com/in/donavonroberson/"
               }
             }
           ].map((member, idx) => {
@@ -294,8 +274,13 @@ export default function AboutPage() {
                     </a>
                   )}
                   {member.socials.linkedin && (
-                    <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-linkedin-in"></i>
+                    <a
+                      href={member.socials.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-[#F9C705]"
+                    >
+                      <FontAwesomeIcon icon={faLinkedinIn} />
                     </a>
                   )}
                   {member.socials.facebook && (
@@ -340,21 +325,21 @@ export default function AboutPage() {
             <FontAwesomeIcon icon={faUsers} className="service-icon" />
             <h4>Personalized Coaching</h4>
             <p>Our services are tailored to your unique needs, providing personalized guidance and support.</p>
-            <Link href="/service-details" className="learn-more">Learn More <FontAwesomeIcon icon={faArrowRight} /></Link>
+            <Link href="/services" className="learn-more">Learn More <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
 
           <div className="service-card">
             <FontAwesomeIcon icon={faBrain} className="service-icon" />
             <h4>Mindfulness Techniques</h4>
             <p>Learn practical mindfulness exercises to enhance focus, reduce stress, and promote well-being.</p>
-            <Link href="/service-details" className="learn-more">Learn More <FontAwesomeIcon icon={faArrowRight} /></Link>
+            <Link href="/services" className="learn-more">Learn More <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
 
           <div className="service-card">
             <FontAwesomeIcon icon={faBriefcase} className="service-icon" />
             <h4>Career Development</h4>
             <p>This coaching service provides guidance and support to individuals at various career stages.</p>
-            <Link href="/service-details" className="learn-more">Learn More <FontAwesomeIcon icon={faArrowRight} /></Link>
+            <Link href="/services" className="learn-more">Learn More <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
         </div>
       </section>
