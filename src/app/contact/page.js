@@ -12,6 +12,7 @@ import {
   faMapMarker,
 } from "@fortawesome/free-solid-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
+import ScrollToTopButton from "@/components/ScrollToTop";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -198,6 +199,8 @@ export default function ContactPage() {
       </section>
 
       <Footer />
+      <ScrollToTopButton />
+
     </div>
   );
 }

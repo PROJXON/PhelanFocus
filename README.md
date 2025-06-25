@@ -38,8 +38,7 @@ npm run dev
 npm install resend
 ```
 npm install stripe
-
-
+npm install @stripe/stripe-js @stripe/react-stripe-js
 
 For EmailJS functionality for the contact form to work, create an emailjs account or use supplied credentials with a .env folder created in root as follows:
 ```
@@ -49,7 +48,4 @@ NEXT_PUBLIC_TEMPLATE=email sent to person who submitted contact form
 NEXT_ADMIN_TEMPLATE=email sent to admin
 NEXT_PUBLIC_ADMIN_EMAIL=admin email
 ```
-
 Open [http://localhost:3000/PhelanFocus](http://localhost:3000/PhelanFocus) with your browser to see the result.
-
-

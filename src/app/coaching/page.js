@@ -2,14 +2,14 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import "./coaching.css";
-
+import ScrollToTopButton from "@/components/ScrollToTop";
 export default function CoachingPage() {
   return (
     <div className="coaching-page">
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <section className="coaching-hero" style={{ backgroundImage: "url('/coaching.jpeg')" }}>
+      <section className="coaching-hero" style={{ backgroundImage: "url('/coaching.png')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
           <h1>Coaching</h1>
@@ -350,6 +350,8 @@ export default function CoachingPage() {
       </section>
 
       <Footer />
+      <ScrollToTopButton />
+
     </div>
   );
 }

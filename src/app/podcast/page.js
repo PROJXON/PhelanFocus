@@ -8,6 +8,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./podcast.css";
+import ScrollToTopButton from "@/components/ScrollToTop";
 
 export default function PodcastPage() {
   const { resolvedTheme } = useTheme();
@@ -193,6 +194,8 @@ export default function PodcastPage() {
       </section>
 
       <Footer />
+      <ScrollToTopButton />
+
     </div>
   );
 }

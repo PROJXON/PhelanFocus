@@ -1,7 +1,6 @@
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import AboutMe from "../components/AboutMe";
-import { ImageGrid } from "../components/ImageGrid";
 import Contact from "../components/Contact";
 import Services from "../components/Services";
 import Podcast from "../components/Podcast";
@@ -33,7 +32,7 @@ const Home = async () => {
               Helping individuals unlock their potential and achieve personal and professional growth.
             </p>
               <div className="mt-6">
-                <Link href="/contact">
+                <Link href="/sessions">
                   <button className="btn">
                     <span>Book a Call</span>
                     <span></span>

@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import "./books.css";
+import ScrollToTopButton from "@/components/ScrollToTop";
 
 export default function booksPage() {
   // State for Read More toggles
@@ -125,7 +126,6 @@ export default function booksPage() {
       <section className="books-hero" style={{ backgroundImage: "url('/books.jpeg')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
-          <h1>Books</h1>
         </div>
       </section>
 
@@ -348,11 +348,20 @@ export default function booksPage() {
             <p className="text-gray-700 dark:text-gray-300">
               Phelan is a renowned expert in coaching, consulting, and public speaking, with years of experience inspiring individuals and organizations worldwide. These books share insights and tools to help you excel in leadership and communication.
             </p>
+                <Image 
+                src="books/sign.png" 
+                alt="Author Signature" 
+                width={160} 
+                height={80} 
+                className="mx-auto md:mx-0 mt-4 opacity-90 hover:opacity-100 transition-opacity duration-300"
+              />
           </div>
         </div>
       </section>
       
       <Footer />
+      <ScrollToTopButton />
+
     </div>
   );
 }

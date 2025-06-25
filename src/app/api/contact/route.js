@@ -6,10 +6,12 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req) {
   try {
     const { name, email, message } = await req.json();
+
     const { data, error } = await resend.emails.send({
-      from: 'Website Contact <noreply@projxon.com>',
-      to: ['phelan@projxon.com'],
-      subject: 'First email',
+      from: 'noreply@resend.dev',
+      to: ['nghia.ha.projxon@gmail.com'],
+      replyTo: email,
+      subject: 'Contact from Website',
       react: EmailTemplate({ name, email, message }),
     });
 
@@ -22,3 +24,4 @@ export async function POST(req) {
     return Response.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }
+
