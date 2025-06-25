@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 import "./speaking.css";
+import ScrollToTopButton from "@/components/ScrollToTop";
 
 export default function SpeakingPage() {
   return (
@@ -12,7 +13,7 @@ export default function SpeakingPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <section className="speaking-hero" style={{ backgroundImage: "url('/publicspeaking.jpeg')" }}>
+      <section className="speaking-hero" style={{ backgroundImage: "url('/PublicSPeakking.png')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
           <h1>Speaking</h1>
@@ -63,7 +64,7 @@ export default function SpeakingPage() {
         <div className="max-w-4xl mx-auto aspect-video">
             <iframe
             className="w-full h-full rounded-lg shadow-lg"
-            src="https://www.youtube.com/embed/bbz2boNSeL0"
+            src="https://drive.google.com/file/d/1Bzen3obegQ0SxDmNKaXqkMO9-WWG4ACb/view?t=79"
             title="Mark Phelan Keynote Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -197,6 +198,8 @@ export default function SpeakingPage() {
       </section>
 
       <Footer />
+      <ScrollToTopButton />
+
     </div>
   );
 }

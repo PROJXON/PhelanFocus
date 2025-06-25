@@ -6,6 +6,7 @@ import { useRef } from "react";
 import "./courses.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 function ParallaxCard({ src, alt }) {
   const imageRef = useRef(null);
@@ -230,6 +231,8 @@ export default function CoursesPage() {
       </div>
 
       <Footer />
+      <ScrollToTop/>
+
     </>
   );
 }

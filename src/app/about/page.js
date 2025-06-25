@@ -16,6 +16,8 @@ import {
   faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import ScrollToTopButton from "@/components/ScrollToTop";
+
 
 // Circle Progress Component
 const CircleProgress = ({ percentage, label }) => {
@@ -164,7 +166,7 @@ export default function AboutPage() {
                 </a>
               </p>
             </div>
-            <Link href="/about" className="btn-read"><span>Read More</span><span></span></Link>
+            <Link href="/sessions" className="btn-read"><span>Read More</span><span></span></Link>
             </div>
         </div>
       </section>
@@ -345,6 +347,7 @@ export default function AboutPage() {
       </section>
 
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

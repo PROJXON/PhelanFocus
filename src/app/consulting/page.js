@@ -22,6 +22,7 @@ import {
   faSeedling,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import ScrollToTopButton from "@/components/ScrollToTop";
 
 export default function ConsultingPage() {
   return (
@@ -29,7 +30,7 @@ export default function ConsultingPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section*/}
-      <section className="consulting-hero" style={{ backgroundImage: "url('/consulting.jpeg')" }}>
+      <section className="consulting-hero" style={{ backgroundImage: "url('/Consult.png')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
           <h1>Consulting</h1>
@@ -220,7 +221,7 @@ export default function ConsultingPage() {
               </p>
             </div>
             <div className="consulting-cta-buttons">
-              <a href="/contact" className="cta-button primary">
+              <a href="/sessions" className="cta-button primary">
                 Get Started Now
               </a>
               <a href="/contact" className="cta-button secondary">
@@ -232,6 +233,7 @@ export default function ConsultingPage() {
       </main>
 
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

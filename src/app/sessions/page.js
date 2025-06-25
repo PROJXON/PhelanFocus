@@ -5,6 +5,7 @@ import Link from 'next/link';
 import './sessions.css';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import ScrollToTopButton from '@/components/ScrollToTop';
 
 export default function CoachingSessions() {
   const [selectedSession, setSelectedSession] = useState(null);
@@ -79,6 +80,44 @@ export default function CoachingSessions() {
     setSelectedSession(null);
   };
 
+  const handleBookingSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    const bookingData = {
+      name: form['Full Name'].value,
+      email: form['Email'].value,
+      phone: form['Phone'].value,
+      dateTime: form['Preferred Date and Time'].value,
+      goals: form['Goals'].value,
+      people: form['people'].value,
+      sessionType: selectedSession?.title,
+    };
+
+    try {
+      // 1. Send email via Resend
+      const emailRes = await fetch('/api/book-and-pay', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(bookingData),
+      });
+
+      if (!emailRes.ok) throw new Error('Failed to send booking email');
+
+      // 2. Redirect to custom Stripe Elements payment form
+      const params = new URLSearchParams({
+        sessionType: bookingData.sessionType,
+        people: bookingData.people,
+        name: bookingData.name,
+        email: bookingData.email,
+      });
+
+      window.location.href = `/book-and-pay?${params.toString()}`;
+    } catch (error) {
+      alert('Error: ' + error.message);
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -136,6 +175,7 @@ export default function CoachingSessions() {
           </section>
         </main>
 
+        {/* Modal */}
         {isModalOpen && (
           <div className="modal">
             <div className="modal-content">
@@ -143,47 +183,31 @@ export default function CoachingSessions() {
               <h2>Book Your Session</h2>
               <p className="session-title">{selectedSession?.title}</p>
 
-              <form
-                onSubmit={async (e) => {
-                  e.preventDefault();
-                  const sessionType = selectedSession?.title;
-
-                  const res = await fetch('/api/create-checkout-session', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ sessionType }),
-                  });
-
-                  const data = await res.json();
-                  if (data.url) {
-                    window.location.href = data.url; 
-                  } else {
-                    alert('There was an error. Please try again.');
-                  }
-                }}
-                className="space-y-4"
-              >
+              <form onSubmit={handleBookingSubmit} className="space-y-4">
                 <input type="hidden" name="Session Type" value={selectedSession?.title || ''} />
                 <input type="text" name="Full Name" placeholder="Full Name" required />
                 <input type="email" name="Email" placeholder="Email Address" required />
                 <input type="tel" name="Phone" placeholder="Phone Number" required />
                 <input type="datetime-local" name="Preferred Date and Time" required />
                 <textarea name="Goals" rows="4" placeholder="Tell us about your goals..." />
-                  <input
-                    type="number"
-                    name="people"
-                    placeholder="Number of People"
-                    min="1"
-                    defaultValue="1"
-                    required
-                    className="w-full p-3 border border-gray-300 rounded-lg"
-                  />
-                  <button
-                    type="submit"
-                    className="w-full bg-[#F9C705] hover:bg-yellow-500 text-black font-semibold py-3 px-6 rounded-lg transition duration-300"
-                  >
-                    Confirm Booking & Pay
-                  </button>
+                  <label htmlFor="people" className="block mb-1 font-medium text-gray-700">
+                    How many people will attend?
+                  </label>
+                <input
+                  type="number"
+                  name="people"
+                  placeholder="Number of People"
+                  min="1"
+                  defaultValue="1"
+                  required
+                  className="w-full p-3 border border-gray-300 rounded-lg"
+                />
+                <button
+                  type="submit"
+                  className="w-full bg-[#F9C705] hover:bg-yellow-500 text-black font-semibold py-3 px-6 rounded-lg transition duration-300"
+                >
+                  Confirm Booking & Pay
+                </button>
               </form>
             </div>
           </div>
@@ -220,6 +244,8 @@ export default function CoachingSessions() {
       </section>
 
       <Footer />
+      <ScrollToTopButton />
+
     </>
   );
 }

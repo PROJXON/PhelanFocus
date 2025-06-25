@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import Link from "next/link";
 import "./services.css";
 import { useState } from 'react';
+import ScrollToTopButton from "@/components/ScrollToTop";
 
 
 export default function ServicesPage() {
@@ -227,6 +228,8 @@ export default function ServicesPage() {
         </section>
       
       <Footer />
+      <ScrollToTopButton />
+
     </div>
   );
 }
