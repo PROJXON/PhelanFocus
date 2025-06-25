@@ -9,7 +9,7 @@ export async function POST(req) {
 
     const { data, error } = await resend.emails.send({
       from: 'noreply@resend.dev',
-      to: ['nghia.ha.projxon@gmail.com'],
+      to: ['ThePhelanFocus@gmail.com '],
       replyTo: email,
       subject: 'Contact from Website',
       react: EmailTemplate({ name, email, message }),
@@ -24,4 +24,3 @@ export async function POST(req) {
     return Response.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }
-
