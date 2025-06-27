@@ -13,7 +13,7 @@ export default function SpeakingPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <section className="speaking-hero" style={{ backgroundImage: "url('/PublicSPeakking.png')" }}>
+      <section className="speaking-hero" style={{ backgroundImage: "url('PublicSPeakking.png')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
           <h1>Speaking</h1>
@@ -39,7 +39,7 @@ export default function SpeakingPage() {
                 {[...Array(9)].map((_, i) => (
                   <img
                     key={i}
-                    src={`/speaking/school${i + 1}.png`}
+                    src={`speaking/school${i + 1}.png`}
                     alt={`school${i + 1}`}
                     className="h-12 object-contain grayscale hover:grayscale-0 transition duration-300"
                   />

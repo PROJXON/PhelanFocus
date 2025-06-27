@@ -123,7 +123,7 @@ export default function CoachingSessions() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="sessions-hero" style={{ backgroundImage: "url('/sessions/sessions.jpeg')" }}>
+      <section className="sessions-hero" style={{ backgroundImage: "url('sessions/sessions.jpeg')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
           <h1>Sessions</h1>

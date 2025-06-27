@@ -30,7 +30,7 @@ export default function ConsultingPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section*/}
-      <section className="consulting-hero" style={{ backgroundImage: "url('/Consult.png')" }}>
+      <section className="consulting-hero" style={{ backgroundImage: "url('Consult.png')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
           <h1>Consulting</h1>
