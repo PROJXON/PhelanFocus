@@ -12,7 +12,7 @@ export default function ThankYou() {
       {/* Hero Section */}
       <section
         className="sessions-hero"
-        style={{ backgroundImage: "url('/sessions/thank-you.jpeg')" }}
+        style={{ backgroundImage: "url('sessions/thank-you.jpeg')" }}
       >
         <div className="overlay"></div>
         <div className="hero-content">

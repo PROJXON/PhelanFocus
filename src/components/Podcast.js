@@ -69,7 +69,7 @@ const Podcast = () => {
         <div className="col-span-12 lg:col-span-6 mt-10 lg:mt-0 text-center">
           <div className="relative inline-block group">
             <img
-              src="/podcast.png"
+              src="podcast.png"
               alt="Podcast Coming Soon"
               className="rounded-xl shadow-lg group-hover:opacity-80 transition"
             />

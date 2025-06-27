@@ -42,7 +42,7 @@ export default function CoursesPage() {
     <>
       <Navbar />
 
-      <section className="courses-hero" style={{ backgroundImage: "url('/courses/courses.jpeg')" }}>
+      <section className="courses-hero" style={{ backgroundImage: "url('courses/courses.jpeg')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
           <h1>Courses</h1>
@@ -75,21 +75,21 @@ export default function CoursesPage() {
         <section className="py-16 px-4 max-w-6xl mx-auto text-center">
           <div className="flex justify-center gap-8 mb-10 flex-wrap">
             <Image
-              src="/courses/round1.jpeg"
+              src="courses/round1.jpeg"
               alt="Round 1"
               width={240}
               height={240}
               className="rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
             />
             <Image
-              src="/courses/round2.jpeg"
+              src="courses/round2.jpeg"
               alt="Round 2"
               width={240}
               height={240}
               className="rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
             />
             <Image
-              src="/courses/round3.jpeg"
+              src="courses/round3.jpeg"
               alt="Round 3"
               width={240}
               height={240}
@@ -149,7 +149,7 @@ export default function CoursesPage() {
 
             {/* Module 01 */}
             <div className="grid md:grid-cols-2 items-center gap-10">
-              <div><ParallaxCard src="/courses/value.jpeg" alt="values" /></div>
+              <div><ParallaxCard src="courses/value.jpeg" alt="values" /></div>
               <div>
                 <h4 className="text-2xl font-bold mb-4">Module 01. <span className="text-[#FFD700]">Values</span></h4>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">
@@ -175,7 +175,7 @@ export default function CoursesPage() {
 
             {/* Module 03 */}
             <div className="grid md:grid-cols-2 items-center gap-10">
-              <div><ParallaxCard src="/courses/vision.jpeg" alt="vision" /></div>
+              <div><ParallaxCard src="courses/vision.jpeg" alt="vision" /></div>
               <div>
                 <h4 className="text-2xl font-bold mb-4">Module 03. <span className="text-[#FFD700]">Vision</span></h4>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">
@@ -188,7 +188,7 @@ export default function CoursesPage() {
 
             {/* Module 04 */}
             <div className="grid md:grid-cols-2 items-center gap-10">
-              <div className="md:order-2"><ParallaxCard src="/courses/perspectives.jpeg" alt="perspectives" /></div>
+              <div className="md:order-2"><ParallaxCard src="courses/perspectives.jpeg" alt="perspectives" /></div>
               <div className="md:order-1">
                 <h4 className="text-2xl font-bold mb-4">Module 04. <span className="text-[#FFD700]">Perspectives</span></h4>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">
@@ -201,7 +201,7 @@ export default function CoursesPage() {
 
             {/* Module 05 */}
             <div className="grid md:grid-cols-2 items-center gap-10">
-              <div><ParallaxCard src="/courses/commitment.jpeg" alt="commitment" /></div>
+              <div><ParallaxCard src="courses/commitment.jpeg" alt="commitment" /></div>
               <div>
                 <h4 className="text-2xl font-bold mb-4">Module 05. <span className="text-[#FFD700]">Commitment</span></h4>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">
@@ -214,7 +214,7 @@ export default function CoursesPage() {
 
             {/* Module 06 */}
             <div className="grid md:grid-cols-2 items-center gap-10">
-              <div className="md:order-2"><ParallaxCard src="/courses/action.jpeg" alt="action" /></div>
+              <div className="md:order-2"><ParallaxCard src="courses/action.jpeg" alt="action" /></div>
               <div className="md:order-1">
                 <h4 className="text-2xl font-bold mb-4">Module 06. <span className="text-[#FFD700]">Action</span></h4>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">

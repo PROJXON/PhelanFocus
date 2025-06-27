@@ -123,7 +123,7 @@ export default function booksPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <section className="books-hero" style={{ backgroundImage: "url('/books.jpeg')" }}>
+      <section className="books-hero" style={{ backgroundImage: "url('books.jpeg')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
         </div>
@@ -141,7 +141,7 @@ export default function booksPage() {
               className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             >
               <Image 
-                src="/books/bendtobendblur.png" 
+                src="books/bendtobendblur.png" 
                 alt="Bend to Bend" 
                 width={300} 
                 height={450} 
@@ -169,7 +169,7 @@ export default function booksPage() {
               className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             >
               <Image 
-                src="/books/peaktopeakblur.png" 
+                src="books/peaktopeakblur.png" 
                 alt="Peak to Peak" 
                 width={300} 
                 height={450} 
@@ -197,7 +197,7 @@ export default function booksPage() {
               className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             >
               <Image 
-                src="/books/shoretoshoreblur.png" 
+                src="books/shoretoshoreblur.png" 
                 alt="Shore to Shore" 
                 width={300} 
                 height={450} 
@@ -335,7 +335,7 @@ export default function booksPage() {
       <section className="py-16 bg-gray-100 dark:bg-gray-800">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
           <Image 
-            src="/Phalen, Mark -21.jpg" 
+            src="Phalen, Mark -21.jpg" 
             alt="Phelan" 
             width={200} 
             height={200} 
