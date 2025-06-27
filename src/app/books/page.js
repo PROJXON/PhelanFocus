@@ -141,7 +141,7 @@ export default function booksPage() {
               className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             >
               <Image 
-                src="/books/bendtobendblur.png" 
+                src="books/bendtobendblur.png" 
                 alt="Bend to Bend" 
                 width={300} 
                 height={450} 
@@ -169,7 +169,7 @@ export default function booksPage() {
               className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             >
               <Image 
-                src="/books/peaktopeakblur.png" 
+                src="books/peaktopeakblur.png" 
                 alt="Peak to Peak" 
                 width={300} 
                 height={450} 
@@ -197,7 +197,7 @@ export default function booksPage() {
               className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             >
               <Image 
-                src="/books/shoretoshoreblur.png" 
+                src="books/shoretoshoreblur.png" 
                 alt="Shore to Shore" 
                 width={300} 
                 height={450} 
