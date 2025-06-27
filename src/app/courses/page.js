@@ -188,7 +188,7 @@ export default function CoursesPage() {
 
             {/* Module 04 */}
             <div className="grid md:grid-cols-2 items-center gap-10">
-              <div className="md:order-2"><ParallaxCard src="courses/perspectives.jpeg" alt="perspectives" /></div>
+              <div className="md:order-2"><ParallaxCard src="courses/Perspectives.jpeg" alt="perspectives" /></div>
               <div className="md:order-1">
                 <h4 className="text-2xl font-bold mb-4">Module 04. <span className="text-[#FFD700]">Perspectives</span></h4>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">
@@ -201,7 +201,7 @@ export default function CoursesPage() {
 
             {/* Module 05 */}
             <div className="grid md:grid-cols-2 items-center gap-10">
-              <div><ParallaxCard src="courses/commitment.jpeg" alt="commitment" /></div>
+              <div><ParallaxCard src="courses/Commitment.jpeg" alt="commitment" /></div>
               <div>
                 <h4 className="text-2xl font-bold mb-4">Module 05. <span className="text-[#FFD700]">Commitment</span></h4>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">
@@ -214,7 +214,7 @@ export default function CoursesPage() {
 
             {/* Module 06 */}
             <div className="grid md:grid-cols-2 items-center gap-10">
-              <div className="md:order-2"><ParallaxCard src="courses/action.jpeg" alt="action" /></div>
+              <div className="md:order-2"><ParallaxCard src="courses/Action.jpeg" alt="action" /></div>
               <div className="md:order-1">
                 <h4 className="text-2xl font-bold mb-4">Module 06. <span className="text-[#FFD700]">Action</span></h4>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">

@@ -129,7 +129,7 @@ export default function AboutPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <section className="about-hero" style={{ backgroundImage: "url('about.png')" }}>
+      <section className="about-hero" style={{ backgroundImage: "url('About.png')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
           <h1>About Phelan</h1>
