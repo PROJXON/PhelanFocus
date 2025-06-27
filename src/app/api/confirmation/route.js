@@ -9,7 +9,7 @@ export async function POST(req) {
 
     const { data, error } = await resend.emails.send({
       from: 'noreply@resend.dev', // updated sender email
-      to: [email, 'ThePhelanFocus@gmail.com '], // send to user & admin
+      to: [email, 'nghia.ha.projxon@gmail.com '], // send to user & admin
       subject: 'Confirmation email',
       react: ConfirmationEmail({ name, email, message }),
     });
