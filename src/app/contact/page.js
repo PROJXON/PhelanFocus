@@ -70,7 +70,7 @@ export default function ContactPage() {
 
       <section
         className="relative w-full h-[50vh] bg-center bg-cover flex items-center justify-center text-white text-center mt-20"
-        style={{ backgroundImage: "url('/contact-bg.jpg')" }}
+        style={{ backgroundImage: "url('contact-bg.jpg')" }}
       >
         <div className="absolute inset-0 bg-blue-900/60"></div>
         <div className="relative z-10">
