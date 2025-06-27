@@ -16,14 +16,14 @@ const social = [
 const Social = ({ item }) => {
   const { link, icon } = item;
   return (
-    <li className="inline-block m-2">
+    <li className="inline-block">
       <a
         href={link}
         target="_blank"
         rel="noopener noreferrer"
         className="border border-gray-400 flex justify-center items-center rounded-full w-9 h-9 transition hover:bg-blue-500 hover:border-blue-500 hover:text-white hover:scale-110 duration-300 ease-in-out"
       >
-        <FontAwesomeIcon icon={icon} style={{ fontSize: "1rem", width: "1rem", height: "1rem" }} />
+        <FontAwesomeIcon icon={icon} className="w-4 h-4" />
       </a>
     </li>
   );
@@ -35,10 +35,7 @@ Social.propTypes = {
 
 const AboutMe = () => {
   return (
-    <section
-      id="about"
-      className="pt-20 md:pt-28 pb-20 bg-white text-gray-800 scroll-mt-20"
-    >
+    <section id="about" className="pt-20 md:pt-28 pb-20 bg-white text-gray-800 scroll-mt-20">
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -47,18 +44,18 @@ const AboutMe = () => {
         viewport={{ once: false, amount: 0.1 }}
         className="max-w-6xl mx-auto px-4"
       >
-        <div className="grid grid-cols-12 gap-10 items-center">
+        <div className="flex flex-col md:flex-row items-center gap-10">
           {/* Image section */}
-          <div className="col-span-12 sm:col-span-5 flex justify-center items-center">
+          <div className="w-full md:w-5/12 flex justify-center">
             <img
-              src="Phalen, Mark -77.jpg"
+              src="/Phalen, Mark -77.jpg"
               alt="Mark Phelan"
-              className="w-full max-w-xs sm:max-w-sm h-auto rounded-lg shadow-md object-cover"
+              className="w-64 sm:w-72 md:w-full max-w-sm rounded-lg shadow-md object-cover"
             />
           </div>
 
           {/* Text section */}
-          <div className="col-span-12 sm:col-span-7">
+          <div className="w-full md:w-7/12">
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">Hi, I'm Mark.</h2>
             <p className="text-[#cf443c] font-medium mb-4">
               I believe that each of us has the potential to create the change we want to see in the world.
@@ -75,12 +72,7 @@ const AboutMe = () => {
 
             {/* Social & Button */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-              <ul className="flex">
-                {social.map((item, i) => (
-                  <Social item={item} key={i} />
-                ))}
-              </ul>
-
+              <ul className="flex gap-2">{social.map((item, i) => <Social item={item} key={i} />)}</ul>
                 <Link href="/about">
                   <button className="btn">
                     <span>About Phelan</span>

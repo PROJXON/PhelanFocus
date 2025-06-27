@@ -890,7 +890,7 @@ p {
   }
 }
   
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .why-section {
     flex-direction: column;
   }
@@ -898,7 +898,9 @@ p {
     position: static;
     margin-top: 20px;
     transform: none;
-    left: 0;
+    left: auto;
+    right: auto;
+    display: block;
   }
 }
   

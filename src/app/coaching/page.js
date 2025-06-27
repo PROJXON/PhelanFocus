@@ -9,7 +9,7 @@ export default function CoachingPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <section className="coaching-hero" style={{ backgroundImage: "url('coaching.png')" }}>
+      <section className="coaching-hero" style={{ backgroundImage: "url('Coaching.png')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
           <h1>Coaching</h1>
