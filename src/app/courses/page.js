@@ -162,7 +162,7 @@ export default function CoursesPage() {
 
             {/* Module 02 */}
             <div className="grid md:grid-cols-2 items-center gap-10">
-              <div className="md:order-2"><ParallaxCard src="/courses/purpose.jpeg" alt="purpose" /></div>
+              <div className="md:order-2"><ParallaxCard src="courses/purpose.jpeg" alt="purpose" /></div>
               <div className="md:order-1">
                 <h4 className="text-2xl font-bold mb-4">Module 02. <span className="text-[#FFD700]">Purpose</span></h4>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">

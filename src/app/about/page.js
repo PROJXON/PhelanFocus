@@ -129,7 +129,7 @@ export default function AboutPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <section className="about-hero" style={{ backgroundImage: "url('/about.png')" }}>
+      <section className="about-hero" style={{ backgroundImage: "url('about.png')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
           <h1>About Phelan</h1>
@@ -205,7 +205,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section position-relative" style={{ backgroundImage: "url('/Phalen, Mark -39.jpg')" }}>
+      <section className="cta-section position-relative" style={{ backgroundImage: "url('Phalen, Mark -39.jpg')" }}>
         <div className="image-overlay"></div>
         <div className="r-container position-relative py-5" style={{ zIndex: 2 }}>
           <div className="d-flex flex-column mx-auto text-center align-items-center text-white gap-4" style={{ maxWidth: '900px' }}>

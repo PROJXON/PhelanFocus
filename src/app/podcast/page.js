@@ -43,7 +43,7 @@ export default function PodcastPage() {
       <Navbar isFooter={false} />
 
       {/* HERO */}
-      <section className="podcast-hero" style={{ backgroundImage: "url('/podcast2.jpeg')" }}>
+      <section className="podcast-hero" style={{ backgroundImage: "url('podcast2.jpeg')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
           <h1>Podcast</h1>
