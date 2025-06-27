@@ -13,8 +13,7 @@ nav {
   .contact-section {
     display: flex;
     flex-wrap: wrap;
-    background: url('contact-bg.jpg') center/cover no-repeat;
-    padding: 50px 20px;
+    background: url('/contact-bg.jpg') center/cover no-repeat; 
     align-items: center;
     justify-content: center;
   }
