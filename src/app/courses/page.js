@@ -128,12 +128,25 @@ export default function CoursesPage() {
         </section>
 
         {/* Six Modules Program Section */}
-        <section className="stripe-memphis-bg semicircle-bg py-20 text-white relative z-10">
-          <div className="absolute inset-0 bg-[#00294d]/60 z-0"></div> {/* Blue overlay */}
+        <section
+          className="py-20 text-white relative z-10 bg-cover bg-center bg-no-repeat bg-fixed"
+          style={{ backgroundImage: "url('courses/module.jpeg')" }}
+        >
+          <div className="absolute inset-0 bg-[#00294d]/60 z-0"></div>
+
+          <div
+            className="absolute top-0 left-0 w-full z-0 opacity-10 pointer-events-none"
+            style={{
+              height: "200px",
+              background: "radial-gradient(circle at center, white, transparent)"
+            }}
+          ></div>
 
           <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
             <h2 className="text-4xl font-bold mb-4">Six Modules Program</h2>
-            <p className="text-xl text-blue-100 mb-6">that are proven to deliver immediate outcomes and results</p>
+            <p className="text-xl text-blue-100 mb-6">
+              that are proven to deliver immediate outcomes and results
+            </p>
             <p className="text-lg text-white mb-4">
               The 6 module program will give you all the <em>knowledge</em>, <em>independent support</em> and <em>structured accountability</em> you need.
             </p>
