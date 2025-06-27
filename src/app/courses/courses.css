@@ -32,7 +32,7 @@
  }
 
 .stripe-memphis-bg {
-  background-image: url('courses/module.jpeg');
+  background-image: url('/courses/module.jpeg');
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
