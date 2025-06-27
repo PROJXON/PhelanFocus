@@ -36,7 +36,7 @@ export default function ServicesPage() {
                         <div class="project-three__item">
                             <div class="project-three__content">
                                 <div class="shape">
-                                    <img src="/services/services-background.png" alt="shape"/>
+                                    <img src="services/services-background.png" alt="shape"/>
                                 </div>
                                 <div class="content">
                                     <h4><a class="hover-link-light" href="service-detail">1 Coaching</a></h4>
@@ -46,7 +46,7 @@ export default function ServicesPage() {
                                 </div>
                             </div>
                             <div class="image">
-                                <img src="/coaching.jpeg" alt="image"/>
+                                <img src="coaching.jpeg" alt="image"/>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ export default function ServicesPage() {
                                 </div>
                             </div>
                             <div class="image">
-                                <img src="/publicspeaking.jpeg" alt="image"/>
+                                <img src="publicspeaking.jpeg" alt="image"/>
                             </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@ export default function ServicesPage() {
                         <div class="project-three__item">
                             <div class="project-three__content">
                                 <div class="shape">
-                                    <img src="/services/services-background.png" alt="shape"/>
+                                    <img src="services/services-background.png" alt="shape"/>
                                 </div>
                                 <div class="content">
                                     <h4><a class="hover-link-light" href="service-detail">3 Consulting</a>
@@ -84,7 +84,7 @@ export default function ServicesPage() {
                                 </div>
                             </div>
                             <div class="image">
-                                <img src="/Consulting.jpeg" alt="image"/>
+                                <img src="Consulting.jpeg" alt="image"/>
                             </div>
                         </div>
                     </div>
@@ -214,7 +214,7 @@ export default function ServicesPage() {
                 <div className="col-xl-5 order-1 order-xl-2">
                 <div className="choose-one__image gsap__parallax">
                     <img
-                    src="/services/choose-one-image.jpg"
+                    src="services/choose-one-image.jpg"
                     alt="Financial Solutions"
                     />
                     <div className="choose-one__rectangle">

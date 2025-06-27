@@ -140,8 +140,8 @@ export default function AboutPage() {
       <section className="about-section">
         <div className="about-container">
           <div className="about-images">
-            <img src="/about-1.jpg" alt="About Main" className="img1" />
-            <img src="/about-2.jpg" alt="About Overlay" className="img2" />
+            <img src="about-1.jpg" alt="About Main" className="img1" />
+            <img src="about-2.jpg" alt="About Overlay" className="img2" />
           </div>
           <div className="about-text">
             <h6>Empowering Change</h6>
@@ -196,7 +196,7 @@ export default function AboutPage() {
         </div>
 
         <div className="why-right">
-          <img src="/about-1.jpg" alt="Why Us" className="why-image" />
+          <img src="about-1.jpg" alt="Why Us" className="why-image" />
           <div className="years-badge">
             <h3>15<sup>+</sup></h3>
             <span>Years Experience</span>
@@ -230,7 +230,7 @@ export default function AboutPage() {
             {
               name: "Mark Phelan",
               role: "Senior Consultant, E-Commerce Solutions",
-              img: "/team/Phalen, Mark -41.jpg",
+              img: "team/Phalen, Mark -41.jpg",
               socials: {
                 linkedin: "https://www.linkedin.com/in/phelanmarkw/"
               }
@@ -238,7 +238,7 @@ export default function AboutPage() {
             {
               name: "Kathy Seaton",
               role: "Senior Consultant, Non Profit Development",
-              img: "/team/kathy.webp",
+              img: "team/kathy.webp",
               socials: {
                 linkedin: "https://www.linkedin.com/in/klseaton/"
               }
@@ -246,7 +246,7 @@ export default function AboutPage() {
             {
               name: "Melissa Eboli",
               role: "Senior Consultant, Tech + Software Solutions",
-              img: "/team/melissa.webp",
+              img: "team/melissa.webp",
               socials: {
                 linkedin: "https://www.linkedin.com/in/viamelissa/"
               }
@@ -254,7 +254,7 @@ export default function AboutPage() {
             {
               name: "Donavon Roberson",
               role: "Senior Consultant, Health + Wellness Solutions",
-              img: "/team/donavon.webp",
+              img: "team/donavon.webp",
               socials: {
                 linkedin: "https://www.linkedin.com/in/donavonroberson/"
               }

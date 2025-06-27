@@ -194,7 +194,7 @@ export default function ContactPage() {
         </div>
 
         <div className="contact-right">
-          <img src="/contact-form.jpeg" alt="Contact Visual" />
+          <img src="contact-form.jpeg" alt="Contact Visual" />
         </div>
       </section>
 

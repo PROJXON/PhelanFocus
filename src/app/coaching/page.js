@@ -32,7 +32,7 @@ export default function CoachingPage() {
       {/* Image right */}
       <div className="methodology-image">
         <img
-          src="/coaching/KC_GroupTraining-4.jpg"
+          src="coaching/KC_GroupTraining-4.jpg"
           alt="Coaching Methodology"
           className="methodology-img"
         />
@@ -130,7 +130,7 @@ export default function CoachingPage() {
       {/* Left side: Image */}
       <div className="w-full">
         <img
-          src="/coaching/KC_GroupTraining-221.jpg"
+          src="coaching/KC_GroupTraining-221.jpg"
           alt="Expected Outcomes"
           className="rounded-xl shadow-lg w-full object-cover max-h-[600px]"
         />
@@ -173,7 +173,7 @@ export default function CoachingPage() {
               </p>
             </div>
             <div className="ideal-clients-image">
-              <img src="/coaching/KC_GroupTraining-13.jpg" alt="Ideal Clients" />
+              <img src="coaching/KC_GroupTraining-13.jpg" alt="Ideal Clients" />
             </div>
           </div>
 
