@@ -68,9 +68,9 @@ export default function ConsultingPage() {
               <p className="consulting-service-description">
                 Our technology experts assist with digital transformation, system implementation, and IT optimization.
               </p>
-              <a href="/sessions" className="consulting-service-link">
+              <Link href="/sessions" className="consulting-service-link">
                 Learn more →
-              </a>
+              </Link>
             </div>
             <div className="consulting-service-card">
               <div className="consulting-service-icon">
@@ -80,9 +80,9 @@ export default function ConsultingPage() {
               <p className="consulting-service-description">
                 Expert advice on financial planning, investment strategies, and comprehensive risk management solutions.
               </p>
-              <a href="/sessions" className="consulting-service-link">
+              <Link href="/sessions" className="consulting-service-link">
                 Learn more →
-              </a>
+              </Link>
             </div>
             <div className="consulting-service-card">
               <div className="consulting-service-icon">
@@ -92,9 +92,9 @@ export default function ConsultingPage() {
               <p className="consulting-service-description">
                 Strategic human resources planning, talent management, and organizational development tailored to your needs.
               </p>
-              <a href="/sessions" className="consulting-service-link">
+              <Link href="/sessions" className="consulting-service-link">
                 Learn more →
-              </a>
+              </Link>
             </div>
           </div>
         </section>
