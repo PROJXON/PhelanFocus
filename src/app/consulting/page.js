@@ -56,9 +56,9 @@ export default function ConsultingPage() {
               <p className="consulting-service-description">
                 We help organizations improve performance, operations, and efficiency through strategic planning and implementation.
               </p>
-              <a href="/sessions" className="consulting-service-link">
+              <Link href="/sessions" className="consulting-service-link">
                 Learn more →
-              </a>
+              </Link>
             </div>
             <div className="consulting-service-card">
               <div className="consulting-service-icon">

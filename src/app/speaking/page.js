@@ -51,26 +51,26 @@ export default function SpeakingPage() {
 
         {/* The Power of Storytelling */}
         <section className="py-20 px-6 text-center bg-white dark:bg-[#0b1727]">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            The Power of Storytelling
-        </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+              The Power of Storytelling
+          </h2>
 
 
 
-        <p className="text-md text-gray-600 dark:text-gray-300 mb-8">
-            Dive into Mark's approach to storytelling and learn how he captivates audiences in under 4 minutes.
-        </p>
+          <p className="text-md text-gray-600 dark:text-gray-300 mb-8">
+              Dive into Mark's approach to storytelling and learn how he captivates audiences in under 4 minutes.
+          </p>
 
-        <div className="max-w-4xl mx-auto aspect-video">
+          <div className="max-w-4xl mx-auto aspect-video">
             <iframe
-            className="w-full h-full rounded-lg shadow-lg"
-            src="https://drive.google.com/file/d/1Bzen3obegQ0SxDmNKaXqkMO9-WWG4ACb/view?t=79"
-            title="Mark Phelan Keynote Video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
+              className="w-full h-full rounded-lg shadow-lg"
+              src="https://www.youtube.com/embed/GyXiM_O76Vo"
+              title="Mark Phelan Keynote Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             ></iframe>
-        </div>
+          </div>
         </section>
 
         {/* Keynote Speeches Section */}
