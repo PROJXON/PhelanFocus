@@ -14,7 +14,7 @@ export async function POST(req) {
 
     const data = await resend.emails.send({
       from: 'noreply@resend.dev',
-      to: ['nghia.ha.projxon@gmail.com'],
+      to: ['the.phelan.focus@gmail.com'],
       subject: "New Newsletter Subscriber",
       html: `<p>You have a new subscriber: <strong>${email}</strong></p>`,
     });

@@ -29,7 +29,7 @@ export default function ServicesPage() {
       </section>
 
         {/* Service Detail Section */}
-        <section class="project-three-area pt-130 pb-130">
+        <section className="project-three-area pt-130 pb-130">
             <div class="project-three__wrp">
                 <div class="row g-4">
                     <div class="col-lg-6 col-xl-4">
@@ -39,9 +39,9 @@ export default function ServicesPage() {
                                     <img src="services/services-background.png" alt="shape"/>
                                 </div>
                                 <div class="content">
-                                    <h4><a class="hover-link-light" href="/coaching">1 Coaching</a></h4>
+                                    <h4><Link class="hover-link-light" href="/coaching">1 Coaching</Link></h4>
                                     <p class="mt-15 mb-25">Unlock your full potential with personalized executive coaching. Develop leadership skills, enhance strategic thinking, and achieve your professional aspirations with tailored guidance and support.</p>
-                                    <Link href="/coaching" class="arry-btn">
+                                    <Link href="/coaching" className="arry-btn">
                                         <i class="fa-light fa-arrow-up-right"></i>
                                     </Link>
                                 </div>
@@ -59,9 +59,9 @@ export default function ServicesPage() {
                                     <img src="services/services-background.png" alt="shape"/>
                                 </div>
                                 <div class="content">
-                                    <h4><a class="hover-link-light" href="/speaking">2 Speaking</a></h4>
+                                    <h4><Link class="hover-link-light" href="/speaking">2 Speaking</Link></h4>
                                     <p class="mt-15 mb-25">Inspire and motivate your audience with engaging presentations. From keynote speeches to workshops, our dynamic speaking engagements deliver impactful messages on leadership, strategy, and personal growth.</p>
-                                    <Link href="/speaking" class="arry-btn">
+                                    <Link href="/speaking" className="arry-btn">
                                         <i class="fa-light fa-arrow-up-right"></i>
                                     </Link>
                                 </div>
@@ -79,9 +79,9 @@ export default function ServicesPage() {
                                     <img src="services/services-background.png" alt="shape"/>
                                 </div>
                                 <div class="content">
-                                    <h4><a class="hover-link-light" href="/consulting">3 Consulting</a></h4>
+                                    <h4><Link class="hover-link-light" href="/consulting">3 Consulting</Link></h4>
                                     <p class="mt-15 mb-25">Drive business growth and overcome challenges with expert strategic consulting. We provide actionable insights and innovative solutions to optimize performance and achieve sustainable success.</p>
-                                    <Link href="/consulting" class="arry-btn">
+                                    <Link href="/consulting" className="arry-btn">
                                         <i class="fa-light fa-arrow-up-right"></i>
                                     </Link>
                                 </div>
