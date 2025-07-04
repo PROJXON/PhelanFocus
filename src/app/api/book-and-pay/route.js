@@ -32,7 +32,7 @@ New Coaching Booking:
   try {
     const response = await resend.emails.send({
       from: 'noreply@resend.dev',
-      to: 'nghia.ha.projxon@gmail.com',
+      to: 'the.phelan.focus@gmail.com',
       subject: 'New Coaching Booking',
       text: message, // 👈 This fills the "Plain Text" content
     });
