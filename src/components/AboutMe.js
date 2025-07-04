@@ -48,7 +48,7 @@ const AboutMe = () => {
           {/* Image section */}
           <div className="w-full md:w-5/12 flex justify-center">
             <img
-              src="/Phalen, Mark -77.jpg"
+              src="Phalen, Mark -77.jpg"
               alt="Mark Phelan"
               className="w-64 sm:w-72 md:w-full max-w-sm rounded-lg shadow-md object-cover"
             />
