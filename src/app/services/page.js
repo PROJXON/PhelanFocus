@@ -28,7 +28,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Service Detail Section */}
+        {/* Service Detail Section */}
         <section class="project-three-area pt-130 pb-130">
             <div class="project-three__wrp">
                 <div class="row g-4">
@@ -39,10 +39,11 @@ export default function ServicesPage() {
                                     <img src="services/services-background.png" alt="shape"/>
                                 </div>
                                 <div class="content">
-                                    <h4><a class="hover-link-light" href="service-detail">1 Coaching</a></h4>
+                                    <h4><a class="hover-link-light" href="/coaching">1 Coaching</a></h4>
                                     <p class="mt-15 mb-25">Unlock your full potential with personalized executive coaching. Develop leadership skills, enhance strategic thinking, and achieve your professional aspirations with tailored guidance and support.</p>
-                                    <a href="service-detail" class="arry-btn"><i
-                                            class="fa-light fa-arrow-up-right"></i></a>
+                                    <Link href="/coaching" class="arry-btn">
+                                        <i class="fa-light fa-arrow-up-right"></i>
+                                    </Link>
                                 </div>
                             </div>
                             <div class="image">
@@ -50,6 +51,7 @@ export default function ServicesPage() {
                             </div>
                         </div>
                     </div>
+
                     <div class="col-lg-6 col-xl-4">
                         <div class="project-three__item">
                             <div class="project-three__content">
@@ -57,11 +59,11 @@ export default function ServicesPage() {
                                     <img src="services/services-background.png" alt="shape"/>
                                 </div>
                                 <div class="content">
-                                    <h4><a class="hover-link-light" href="service-detail">2 Speaking</a>
-                                    </h4>
+                                    <h4><a class="hover-link-light" href="/speaking">2 Speaking</a></h4>
                                     <p class="mt-15 mb-25">Inspire and motivate your audience with engaging presentations. From keynote speeches to workshops, our dynamic speaking engagements deliver impactful messages on leadership, strategy, and personal growth.</p>
-                                    <a href="service-detail" class="arry-btn"><i
-                                            class="fa-light fa-arrow-up-right"></i></a>
+                                    <Link href="/speaking" class="arry-btn">
+                                        <i class="fa-light fa-arrow-up-right"></i>
+                                    </Link>
                                 </div>
                             </div>
                             <div class="image">
@@ -69,6 +71,7 @@ export default function ServicesPage() {
                             </div>
                         </div>
                     </div>
+
                     <div class="col-lg-6 col-xl-4">
                         <div class="project-three__item">
                             <div class="project-three__content">
@@ -76,11 +79,11 @@ export default function ServicesPage() {
                                     <img src="services/services-background.png" alt="shape"/>
                                 </div>
                                 <div class="content">
-                                    <h4><a class="hover-link-light" href="service-detail">3 Consulting</a>
-                                    </h4>
+                                    <h4><a class="hover-link-light" href="/consulting">3 Consulting</a></h4>
                                     <p class="mt-15 mb-25">Drive business growth and overcome challenges with expert strategic consulting. We provide actionable insights and innovative solutions to optimize performance and achieve sustainable success.</p>
-                                    <a href="service-detail" class="arry-btn"><i
-                                            class="fa-light fa-arrow-up-right"></i></a>
+                                    <Link href="/consulting" class="arry-btn">
+                                        <i class="fa-light fa-arrow-up-right"></i>
+                                    </Link>
                                 </div>
                             </div>
                             <div class="image">
@@ -91,6 +94,7 @@ export default function ServicesPage() {
                 </div>
             </div>
         </section>
+
 
         {/* Choose area */}
         <section className="choose-one-area bg-sub pt-130">
