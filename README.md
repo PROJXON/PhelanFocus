@@ -3,6 +3,10 @@
 [![React.js](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en)
 
+# Table of Contents
+- [Preresiquites](#prerequisites)
+- [Getting Started](#getting-started)
+
 Clone repo, or use GitHub Desktop
 ## Preresiquites
 Next.js
