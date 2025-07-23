@@ -1,5 +1,4 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { loadStripe } from '@stripe/stripe-js';
@@ -9,8 +8,9 @@ import {
   useStripe,
   useElements,
 } from '@stripe/react-stripe-js';
-import { Navbar } from '@/components/Navbar';
-import { Footer } from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Hero from "@/components/Hero";
 import '../sessions/sessions.css';
 import './book-and-pay.css';
 
@@ -166,15 +166,7 @@ export default function BookAndPayPage() {
     <div className="bg-white text-black min-h-screen">
       <Navbar />
 
-      <section
-        className="sessions-hero"
-        style={{ backgroundImage: "url('/sessions/book-and-pay.jpeg')" }}
-      >
-        <div className="overlay"></div>
-        <div className="hero-content">
-          <h1>{sessionType}</h1>
-        </div>
-      </section>
+      <Hero sectionClass="sessions-hero" bgImage="/sessions/book-and-pay.jpeg" header={sessionType} />
 
       <div className="py-10 px-4">
         <Elements stripe={stripePromise}>

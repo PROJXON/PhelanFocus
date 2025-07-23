@@ -1,11 +1,10 @@
 "use client";
-
 import Image from "next/image";
-import Link from "next/link";
 import { useRef } from "react";
 import "./courses.css";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import ScrollToTop from "@/components/ScrollToTop";
 
 function ParallaxCard({ src, alt }) {
@@ -42,12 +41,7 @@ export default function CoursesPage() {
     <>
       <Navbar />
 
-      <section className="courses-hero" style={{ backgroundImage: "url('courses/courses.jpeg')" }}>
-        <div className="overlay"></div>
-        <div className="hero-content">
-          <h1>Courses</h1>
-        </div>
-      </section>
+      <Hero sectionClass="courses-hero" bgImage="courses/courses.jpeg" header="Courses" />
 
       <div className="courses-page bg-white text-gray-800">
 
@@ -244,7 +238,7 @@ export default function CoursesPage() {
       </div>
 
       <Footer />
-      <ScrollToTop/>
+      <ScrollToTop />
 
     </>
   );

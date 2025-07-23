@@ -11,7 +11,7 @@ import {
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export const Footer = () => {
+const Footer = () => {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [subscriberEmail, setSubscriberEmail] = useState("");
@@ -54,7 +54,7 @@ export const Footer = () => {
     {
       icon: faLinkedin,
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/phelanmarkw/",
+      href: "https://www.linkedin.com/company/the-phelan-focus/?viewAsMember=true",
     },
     {
       icon: faFacebook,
@@ -74,11 +74,10 @@ export const Footer = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9, ease: "easeOut" }}
       viewport={{ once: false, amount: 0.1 }}
-      className={`py-16 px-6 transition-colors duration-500 ${
-        mounted && resolvedTheme === "light"
-          ? "bg-white text-black"
-          : "bg-[#144a8f] text-white"
-      }`}
+      className={`py-16 px-6 transition-colors duration-500 ${mounted && resolvedTheme === "light"
+        ? "bg-white text-black"
+        : "bg-[#144a8f] text-white"
+        }`}
     >
       {/* Top Row: Logo Only (social removed) */}
       <div className="max-w-7xl mx-auto flex justify-center md:justify-start border-b border-gray-600 pb-8">
@@ -119,19 +118,17 @@ export const Footer = () => {
             value={subscriberEmail}
             onChange={(e) => setSubscriberEmail(e.target.value)}
             placeholder="Enter your email"
-            className={`w-full max-w-xs p-3 rounded-lg mb-2 border text-sm text-center ${
-              mounted && resolvedTheme === "light"
-                ? "bg-white text-black placeholder-gray-600 border-gray-400"
-                : "bg-[#0e2a47] text-white placeholder-gray-300 border-[#355776]"
-            }`}
+            className={`w-full max-w-xs p-3 rounded-lg mb-2 border text-sm text-center ${mounted && resolvedTheme === "light"
+              ? "bg-white text-black placeholder-gray-600 border-gray-400"
+              : "bg-[#0e2a47] text-white placeholder-gray-300 border-[#355776]"
+              }`}
           />
           <button
             onClick={handleSubscribe}
-            className={`w-full max-w-xs border py-2 rounded-full text-sm font-semibold transition duration-300 ${
-              mounted && resolvedTheme === "light"
-                ? "border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white"
-                : "border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black"
-            }`}
+            className={`w-full max-w-xs border py-2 rounded-full text-sm font-semibold transition duration-300 ${mounted && resolvedTheme === "light"
+              ? "border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white"
+              : "border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black"
+              }`}
           >
             SUBSCRIBE NOW
           </button>
@@ -180,3 +177,5 @@ export const Footer = () => {
     </motion.footer>
   );
 };
+
+export default Footer;

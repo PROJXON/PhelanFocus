@@ -1,7 +1,7 @@
 "use client";
-
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -30,6 +30,29 @@ export default function PodcastPage() {
     },
   ];
 
+  const listenOn = [
+    {
+      href: "https://www.tiktok.com/@the.phelan.focus",
+      src: "podcast/tiktok.png",
+      alt: "TikTok logo",
+    },
+    {
+      href: "https://www.youtube.com/@ThePhelanFocus",
+      src: "podcast/youtube.png",
+      alt: "YouTube logo",
+    },
+    {
+      href: "https://open.spotify.com/show/1hsQ9TSkvmuzkbnrE27ho7?si=95e611acecfa4385",
+      src: "podcast/spotify.png",
+      alt: "Spotify logo",
+    },
+    {
+      href: "https://www.instagram.com/The.Phelan.Focus/",
+      src: "podcast/Instagram.png",
+      alt: "Instagram logo",
+    },
+  ]
+
   useEffect(() => {
     setMounted(true);
     const interval = setInterval(() => {
@@ -43,12 +66,7 @@ export default function PodcastPage() {
       <Navbar isFooter={false} />
 
       {/* HERO */}
-      <section className="podcast-hero" style={{ backgroundImage: "url('podcast2.jpeg')" }}>
-        <div className="overlay"></div>
-        <div className="hero-content">
-          <h1>Podcast</h1>
-        </div>
-      </section>
+      <Hero sectionClass="podcast-hero" bgImage="podcast2.jpeg" header="Podcast" />
 
       {/* MARK PHELAN STORY */}
       <section className="py-20 px-6 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -110,65 +128,22 @@ export default function PodcastPage() {
           Listen wherever you find your favorite podcasts:
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-          {/* TikTok */}
-          <a
-            href="https://www.tiktok.com/@the.phelan.focus"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-lg"
-          >
-            <Image
-              src="podcast/tiktok.png"
-              alt="TikTok logo"
-              width={200}
-              height={50}
-            />
-          </a>
-
-          {/* YouTube */}
-          <a
-            href="https://www.youtube.com/@ThePhelanFocus"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-lg"
-          >
-            <Image
-              src="podcast/youtube.png"
-              alt="YouTube logo"
-              width={200}
-              height={50}
-            />
-          </a>
-
-          {/* Spotify */}
-          <a
-            href="https://podcasters.spotify.com/pod/show/the-phelan-focus"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-lg"
-          >
-            <Image
-              src="podcast/spotify.png"
-              alt="Spotify logo"
-              width={200}
-              height={50}
-            />
-          </a>
-
-          {/* Instagram */}
-          <a
-            href="https://www.instagram.com/The.Phelan.Focus/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-lg"
-          >
-            <Image
-              src="podcast/Instagram.png"
-              alt="Instagram logo"
-              width={200}
-              height={50}
-            />
-          </a>
+          {listenOn.map((place, i) => (
+            <a
+              key={i}
+              href={place.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-lg"
+            >
+              <Image
+                src={place.src}
+                alt={place.alt}
+                width={200}
+                height={50}
+              />
+            </a>
+          ))}
         </div>
       </section>
 
@@ -181,11 +156,10 @@ export default function PodcastPage() {
         <div className="max-w-xs mx-auto">
           <Link href="/contact">
             <button
-              className={`w-full sm:w-auto px-8 py-3 rounded-lg font-semibold transition duration-300 border-2 ${
-                mounted && resolvedTheme === "light"
-                  ? "border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white hover:shadow-md"
-                  : "border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black hover:shadow-md"
-              }`}
+              className={`w-full sm:w-auto px-8 py-3 rounded-lg font-semibold transition duration-300 border-2 ${mounted && resolvedTheme === "light"
+                ? "border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white hover:shadow-md"
+                : "border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black hover:shadow-md"
+                }`}
             >
               Book a Call
             </button>

@@ -1,6 +1,7 @@
 "use client";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import "./about.css";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -11,8 +12,6 @@ import {
   faUsers,
   faBrain,
   faBriefcase,
-  faPhone,
-  faEnvelope,
   faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
@@ -129,12 +128,7 @@ export default function AboutPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <section className="about-hero" style={{ backgroundImage: "url('About.png')" }}>
-        <div className="overlay"></div>
-        <div className="hero-content">
-          <h1>About Phelan</h1>
-        </div>
-      </section>
+      <Hero sectionClass="about-hero" bgImage="About.png" header="About" />
 
       {/* About Us Section */}
       <section className="about-section">
@@ -167,7 +161,7 @@ export default function AboutPage() {
               </p>
             </div>
             <Link href="/sessions" className="btn-read"><span>Read More</span><span></span></Link>
-            </div>
+          </div>
         </div>
       </section>
 

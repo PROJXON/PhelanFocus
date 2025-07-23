@@ -1,9 +1,8 @@
 "use client";
-
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import "./books.css";
 import ScrollToTopButton from "@/components/ScrollToTop";
@@ -11,10 +10,10 @@ import ScrollToTopButton from "@/components/ScrollToTop";
 export default function booksPage() {
   // State for Read More toggles
   const [expandedBooks, setExpandedBooks] = useState([false, false, false]);
-  
+
   // State for testimonials slider
   const [activeTestimonial, setActiveTestimonial] = useState(0);
-  
+
   // Testimonials data
   const testimonials = [
     {
@@ -44,6 +43,24 @@ export default function booksPage() {
     }
   ];
 
+  const books = [
+    {
+      image: "books/bendtobendblur.png",
+      title: "Bend to Bend",
+      subtitle: "The course of Volume, Velocity and Veracity.",
+    },
+    {
+      image: "books/peaktopeakblur.png",
+      title: "Peak to Peak",
+      subtitle: "The journey of Purpose, progress and perspective.",
+    },
+    {
+      image: "books/shoretoshoreblur.png",
+      title: "Shore to Shore",
+      subtitle: "The building of a Captain, crew and Courses.",
+    },
+  ];
+
   // Auto-rotate testimonials
   useEffect(() => {
     const interval = setInterval(() => {
@@ -63,7 +80,7 @@ export default function booksPage() {
   const StarRating = ({ rating }) => {
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
-    
+
     return (
       <div className="flex items-center mb-2">
         {[...Array(5)].map((_, i) => {
@@ -123,11 +140,7 @@ export default function booksPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <section className="books-hero" style={{ backgroundImage: "url('books.jpeg')" }}>
-        <div className="overlay"></div>
-        <div className="hero-content">
-        </div>
-      </section>
+      <Hero sectionClass="books-hero" bgImage="books.jpeg" header="Books" />
 
       {/* Books Section */}
       <section id="books" className="py-16 bg-white dark:bg-gray-900">
@@ -136,89 +149,33 @@ export default function booksPage() {
             Books
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Book 1 */}
-            <div 
-              className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            >
-              <Image 
-                src="books/bendtobendblur.png" 
-                alt="Bend to Bend" 
-                width={300} 
-                height={450} 
-                className="rounded-md mb-4 mx-auto transition-transform duration-500 hover:scale-105"
-              />
-              <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">
-                {/* Bend to Bend */}
-              </h3>
-              <StarRating rating={4.5} />
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                {expandedBooks[0] 
-                  ? "The course of Volume, Velocity and Veracity"
-                  : "The course of Volume, Velocity and Veracity."}
-              </p>
-              <div className="flex mt-auto space-x-2">
-              <button onClick={() => toggleReadMore(2)} className="btn">
-                <span>{expandedBooks[2] ? "Read Less" : "Read More"}</span>
-                <span></span>
-              </button>
+            {books.map((book, i) => (
+              <div
+                key={i}
+                className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              >
+                <Image
+                  src={book.image}
+                  alt={book.title}
+                  width={300}
+                  height={450}
+                  className="rounded-md mb-4 mx-auto transition-transform duration-500 hover:scale-105"
+                />
+                <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">
+                  {/* Bend to Bend */}
+                </h3>
+                <StarRating rating={4.5} />
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  {expandedBooks[i] ? book.subtitle : book.subtitle}
+                </p>
+                <div className="flex mt-auto space-x-2">
+                  <button onClick={() => toggleReadMore(2)} className="btn">
+                    <span>{expandedBooks[2] ? "Read Less" : "Read More"}</span>
+                    <span></span>
+                  </button>
+                </div>
               </div>
-            </div>
-
-            {/* Book 2 */}
-            <div 
-              className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            >
-              <Image 
-                src="books/peaktopeakblur.png" 
-                alt="Peak to Peak" 
-                width={300} 
-                height={450} 
-                className="rounded-md mb-4 mx-auto transition-transform duration-500 hover:scale-105"
-              />
-              <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">
-                {/* Peak to Peak */}
-              </h3>
-              <StarRating rating={4.5} />
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                {expandedBooks[1] 
-                  ? "The journey of Purpose, progress and perspective."
-                  : "The journey of Purpose, progress and perspective."}
-              </p>
-              <div className="flex mt-auto space-x-2">
-              <button onClick={() => toggleReadMore(2)} className="btn">
-                <span>{expandedBooks[2] ? "Read Less" : "Read More"}</span>
-                <span></span>
-              </button>
-              </div>
-            </div>
-
-            {/* Book 3 */}
-            <div 
-              className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            >
-              <Image 
-                src="books/shoretoshoreblur.png" 
-                alt="Shore to Shore" 
-                width={300} 
-                height={450} 
-                className="rounded-md mb-4 mx-auto transition-transform duration-500 hover:scale-105"
-              />
-              <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">
-                {/* Shore to Shore */}
-              </h3>
-              <StarRating rating={4.5} />
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                {expandedBooks[2] 
-                  ? "The building of a Captain, crew and Courses."
-                  : "The building of a Captain, crew and Courses."}
-              </p>
-              <div className="flex mt-auto space-x-2">
-              <button onClick={() => toggleReadMore(2)} className="btn">
-                <span>{expandedBooks[2] ? "Read Less" : "Read More"}</span>
-                <span></span>
-              </button>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -235,9 +192,8 @@ export default function booksPage() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className={`absolute inset-0 transition-opacity duration-500 flex items-center justify-center ${
-                  index === activeTestimonial ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                }`}
+                className={`absolute inset-0 transition-opacity duration-500 flex items-center justify-center ${index === activeTestimonial ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                  }`}
               >
                 <div className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg max-w-3xl mx-4 relative">
                   <div className="absolute top-0 left-8 -mt-4 w-8 h-8 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center">
@@ -254,15 +210,15 @@ export default function booksPage() {
                       />
                     </svg>
                   </div>
-                  
+
                   <div className="flex justify-center mb-2">
                     <StarRating rating={testimonial.rating} />
                   </div>
-                  
+
                   <blockquote className="text-xl md:text-2xl italic text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                     "{testimonial.quote}"
                   </blockquote>
-                  
+
                   <div className="flex items-center">
                     <div className="bg-blue-600 dark:bg-blue-500 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg">
                       {testimonial.author.charAt(0)}
@@ -281,11 +237,10 @@ export default function booksPage() {
               <button
                 key={index}
                 onClick={() => setActiveTestimonial(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  index === activeTestimonial
-                    ? 'bg-blue-600 dark:bg-blue-400 w-6'
-                    : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
-                }`}
+                className={`w-3 h-3 rounded-full transition-all ${index === activeTestimonial
+                  ? 'bg-blue-600 dark:bg-blue-400 w-6'
+                  : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
+                  }`}
                 aria-label={`View testimonial from ${testimonials[index].author}`}
               />
             ))}
@@ -334,11 +289,11 @@ export default function booksPage() {
       {/* Author Section */}
       <section className="py-16 bg-gray-100 dark:bg-gray-800">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
-          <Image 
-            src="Phalen, Mark -21.jpg" 
-            alt="Phelan" 
-            width={200} 
-            height={200} 
+          <Image
+            src="Phalen, Mark -21.jpg"
+            alt="Phelan"
+            width={200}
+            height={200}
             className="rounded-full shadow-lg transition-transform duration-500 hover:scale-105"
           />
           <div>
@@ -348,17 +303,17 @@ export default function booksPage() {
             <p className="text-gray-700 dark:text-gray-300">
               Phelan is a renowned expert in coaching, consulting, and public speaking, with years of experience inspiring individuals and organizations worldwide. These books share insights and tools to help you excel in leadership and communication.
             </p>
-                <Image 
-                src="books/sign.png" 
-                alt="Author Signature" 
-                width={160} 
-                height={80} 
-                className="mx-auto md:mx-0 mt-4 opacity-90 hover:opacity-100 transition-opacity duration-300"
-              />
+            <Image
+              src="books/sign.png"
+              alt="Author Signature"
+              width={160}
+              height={80}
+              className="mx-auto md:mx-0 mt-4 opacity-90 hover:opacity-100 transition-opacity duration-300"
+            />
           </div>
         </div>
       </section>
-      
+
       <Footer />
       <ScrollToTopButton />
 
