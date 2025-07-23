@@ -124,6 +124,7 @@ export default function booksPage() {
       <section className="books-hero" style={{ backgroundImage: "url('books.jpeg')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
+          <h1>Books</h1>
         </div>
       </section>
 

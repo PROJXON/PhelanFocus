@@ -130,7 +130,7 @@ export default function AboutPage() {
       <section className="about-hero" style={{ backgroundImage: "url('About.png')" }}>
         <div className="overlay"></div>
         <div className="hero-content">
-          <h1>About Phelan</h1>
+          <h1>About</h1>
         </div>
       </section>
 
