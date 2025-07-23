@@ -43,6 +43,24 @@ export default function booksPage() {
     }
   ];
 
+  const books = [
+    {
+      image: "books/bendtobendblur.png",
+      title: "Bend to Bend",
+      subtitle: "The course of Volume, Velocity and Veracity.",
+    },
+    {
+      image: "books/peaktopeakblur.png",
+      title: "Peak to Peak",
+      subtitle: "The journey of Purpose, progress and perspective.",
+    },
+    {
+      image: "books/shoretoshoreblur.png",
+      title: "Shore to Shore",
+      subtitle: "The building of a Captain, crew and Courses.",
+    },
+  ];
+
   // Auto-rotate testimonials
   useEffect(() => {
     const interval = setInterval(() => {
@@ -131,89 +149,33 @@ export default function booksPage() {
             Books
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Book 1 */}
-            <div
-              className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            >
-              <Image
-                src="books/bendtobendblur.png"
-                alt="Bend to Bend"
-                width={300}
-                height={450}
-                className="rounded-md mb-4 mx-auto transition-transform duration-500 hover:scale-105"
-              />
-              <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">
-                {/* Bend to Bend */}
-              </h3>
-              <StarRating rating={4.5} />
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                {expandedBooks[0]
-                  ? "The course of Volume, Velocity and Veracity"
-                  : "The course of Volume, Velocity and Veracity."}
-              </p>
-              <div className="flex mt-auto space-x-2">
-                <button onClick={() => toggleReadMore(2)} className="btn">
-                  <span>{expandedBooks[2] ? "Read Less" : "Read More"}</span>
-                  <span></span>
-                </button>
+            {books.map((book, i) => (
+              <div
+                key={i}
+                className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              >
+                <Image
+                  src={book.image}
+                  alt={book.title}
+                  width={300}
+                  height={450}
+                  className="rounded-md mb-4 mx-auto transition-transform duration-500 hover:scale-105"
+                />
+                <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">
+                  {/* Bend to Bend */}
+                </h3>
+                <StarRating rating={4.5} />
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  {expandedBooks[i] ? book.subtitle : book.subtitle}
+                </p>
+                <div className="flex mt-auto space-x-2">
+                  <button onClick={() => toggleReadMore(2)} className="btn">
+                    <span>{expandedBooks[2] ? "Read Less" : "Read More"}</span>
+                    <span></span>
+                  </button>
+                </div>
               </div>
-            </div>
-
-            {/* Book 2 */}
-            <div
-              className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            >
-              <Image
-                src="books/peaktopeakblur.png"
-                alt="Peak to Peak"
-                width={300}
-                height={450}
-                className="rounded-md mb-4 mx-auto transition-transform duration-500 hover:scale-105"
-              />
-              <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">
-                {/* Peak to Peak */}
-              </h3>
-              <StarRating rating={4.5} />
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                {expandedBooks[1]
-                  ? "The journey of Purpose, progress and perspective."
-                  : "The journey of Purpose, progress and perspective."}
-              </p>
-              <div className="flex mt-auto space-x-2">
-                <button onClick={() => toggleReadMore(2)} className="btn">
-                  <span>{expandedBooks[2] ? "Read Less" : "Read More"}</span>
-                  <span></span>
-                </button>
-              </div>
-            </div>
-
-            {/* Book 3 */}
-            <div
-              className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            >
-              <Image
-                src="books/shoretoshoreblur.png"
-                alt="Shore to Shore"
-                width={300}
-                height={450}
-                className="rounded-md mb-4 mx-auto transition-transform duration-500 hover:scale-105"
-              />
-              <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">
-                {/* Shore to Shore */}
-              </h3>
-              <StarRating rating={4.5} />
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                {expandedBooks[2]
-                  ? "The building of a Captain, crew and Courses."
-                  : "The building of a Captain, crew and Courses."}
-              </p>
-              <div className="flex mt-auto space-x-2">
-                <button onClick={() => toggleReadMore(2)} className="btn">
-                  <span>{expandedBooks[2] ? "Read Less" : "Read More"}</span>
-                  <span></span>
-                </button>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
