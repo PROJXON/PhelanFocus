@@ -14,6 +14,39 @@ export default function ServicesPage() {
     // Function to handle tab switching
     const handleTabClick = (tab) => setActiveTab(tab);
 
+    const services = [
+        {
+            href: "/coaching",
+            heading: "1 Coaching",
+            paragraph: "Unlock your full potential with personalized executive coaching. Develop leadership skills, enhance strategic thinking, and achieve your professional aspirations with tailored guidance and support.",
+        },
+        {
+            href: "/speaking",
+            heading: "2 Speaking",
+            paragraph: "Inspire and motivate your audience with engaging presentations. From keynote speeches to workshops, our dynamic speaking engagements deliver impactful messages on leadership, strategy, and personal growth.",
+        },
+        {
+            href: "/consulting",
+            heading: "3 Consulting",
+            paragraph: "Drive business growth and overcome challenges with expert strategic consulting. We provide actionable insights and innovative solutions to optimize performance and achieve sustainable success.",
+        },
+    ];
+
+    const tabs = [
+        {
+            tab: "our-services",
+            text: "Why Need Our Services?",
+        },
+        {
+            tab: "choose-us",
+            text: "Why Choose Us",
+        },
+        {
+            tab: "how-works",
+            text: "How it Works",
+        },
+    ];
+
     return (
         <div className="service-page">
             <Navbar isFooter={false} />
@@ -25,65 +58,29 @@ export default function ServicesPage() {
             <section className="project-three-area pt-130 pb-130">
                 <div className="project-three__wrp">
                     <div className="row g-4">
-                        <div className="col-lg-6 col-xl-4">
-                            <div className="project-three__item">
-                                <div className="project-three__content">
-                                    <div className="shape">
-                                        <img src="services/services-background.png" alt="shape" />
+                        {services.map((service, i) => (
+                            <div className="col-lg-6 col-xl-4" key={i}>
+                                <div className="project-three__item">
+                                    <div className="project-three__content">
+                                        <div className="shape">
+                                            <img src="services/services-background.png" alt="shape" />
+                                        </div>
+                                        <div className="content">
+                                            <h4><Link className="hover-link-light" href={service.href}>
+                                                {service.heading}
+                                            </Link></h4>
+                                            <p className="mt-15 mb-25">{service.paragraph}</p>
+                                            <Link href={service.href} className="arry-btn">
+                                                <i className="fa-light fa-arrow-up-right"></i>
+                                            </Link>
+                                        </div>
                                     </div>
-                                    <div className="content">
-                                        <h4><Link className="hover-link-light" href="/coaching">1 Coaching</Link></h4>
-                                        <p className="mt-15 mb-25">Unlock your full potential with personalized executive coaching. Develop leadership skills, enhance strategic thinking, and achieve your professional aspirations with tailored guidance and support.</p>
-                                        <Link href="/coaching" className="arry-btn">
-                                            <i className="fa-light fa-arrow-up-right"></i>
-                                        </Link>
+                                    <div className="image">
+                                        <img src="coaching.jpeg" alt="image" />
                                     </div>
-                                </div>
-                                <div className="image">
-                                    <img src="coaching.jpeg" alt="image" />
                                 </div>
                             </div>
-                        </div>
-
-                        <div className="col-lg-6 col-xl-4">
-                            <div className="project-three__item">
-                                <div className="project-three__content">
-                                    <div className="shape">
-                                        <img src="services/services-background.png" alt="shape" />
-                                    </div>
-                                    <div className="content">
-                                        <h4><Link className="hover-link-light" href="/speaking">2 Speaking</Link></h4>
-                                        <p className="mt-15 mb-25">Inspire and motivate your audience with engaging presentations. From keynote speeches to workshops, our dynamic speaking engagements deliver impactful messages on leadership, strategy, and personal growth.</p>
-                                        <Link href="/speaking" className="arry-btn">
-                                            <i className="fa-light fa-arrow-up-right"></i>
-                                        </Link>
-                                    </div>
-                                </div>
-                                <div className="image">
-                                    <img src="publicspeaking.jpeg" alt="image" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-6 col-xl-4">
-                            <div className="project-three__item">
-                                <div className="project-three__content">
-                                    <div className="shape">
-                                        <img src="services/services-background.png" alt="shape" />
-                                    </div>
-                                    <div className="content">
-                                        <h4><Link className="hover-link-light" href="/consulting">3 Consulting</Link></h4>
-                                        <p className="mt-15 mb-25">Drive business growth and overcome challenges with expert strategic consulting. We provide actionable insights and innovative solutions to optimize performance and achieve sustainable success.</p>
-                                        <Link href="/consulting" className="arry-btn">
-                                            <i className="fa-light fa-arrow-up-right"></i>
-                                        </Link>
-                                    </div>
-                                </div>
-                                <div className="image">
-                                    <img src="Consulting.jpeg" alt="image" />
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -102,30 +99,16 @@ export default function ServicesPage() {
                                 </div>
                                 <div className="choose__tab">
                                     <ul className="nav nav-tabs" role="tablist">
-                                        <li className="nav-item" role="presentation">
-                                            <button
-                                                className={activeTab === "our-services" ? "nav-link active" : "nav-link"}
-                                                onClick={() => handleTabClick("our-services")}
-                                            >
-                                                Why Need Our Services?
-                                            </button>
-                                        </li>
-                                        <li className="nav-item" role="presentation">
-                                            <button
-                                                className={activeTab === "choose-us" ? "nav-link active" : "nav-link"}
-                                                onClick={() => handleTabClick("choose-us")}
-                                            >
-                                                Why Choose Us
-                                            </button>
-                                        </li>
-                                        <li className="nav-item" role="presentation">
-                                            <button
-                                                className={activeTab === "how-works" ? "nav-link active" : "nav-link"}
-                                                onClick={() => handleTabClick("how-works")}
-                                            >
-                                                How it Works
-                                            </button>
-                                        </li>
+                                        {tabs.map((tab, i) => (
+                                            <li className="nav-item" role="presentation" key={i}>
+                                                <button
+                                                    className={activeTab === tab.tab ? "nav-link active" : "nav-link"}
+                                                    onClick={() => handleTabClick(tab.tab)}
+                                                >
+                                                    {tab.text}
+                                                </button>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                                 <div className="tab-content mt-50">
