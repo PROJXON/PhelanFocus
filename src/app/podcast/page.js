@@ -142,7 +142,7 @@ export default function PodcastPage() {
 
           {/* Spotify */}
           <a
-            href="https://podcasters.spotify.com/pod/show/the-phelan-focus"
+            href="https://open.spotify.com/show/1hsQ9TSkvmuzkbnrE27ho7?si=95e611acecfa4385"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-lg"
@@ -181,11 +181,10 @@ export default function PodcastPage() {
         <div className="max-w-xs mx-auto">
           <Link href="/contact">
             <button
-              className={`w-full sm:w-auto px-8 py-3 rounded-lg font-semibold transition duration-300 border-2 ${
-                mounted && resolvedTheme === "light"
+              className={`w-full sm:w-auto px-8 py-3 rounded-lg font-semibold transition duration-300 border-2 ${mounted && resolvedTheme === "light"
                   ? "border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white hover:shadow-md"
                   : "border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black hover:shadow-md"
-              }`}
+                }`}
             >
               Book a Call
             </button>
