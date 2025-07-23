@@ -1,6 +1,7 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import "./books.css";
@@ -121,12 +122,7 @@ export default function booksPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <section className="books-hero" style={{ backgroundImage: "url('books.jpeg')" }}>
-        <div className="overlay"></div>
-        <div className="hero-content">
-          <h1>Books</h1>
-        </div>
-      </section>
+      <Hero sectionClass="books-hero" bgImage="books.jpeg" header="Books" />
 
       {/* Books Section */}
       <section id="books" className="py-16 bg-white dark:bg-gray-900">

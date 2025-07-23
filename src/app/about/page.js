@@ -1,6 +1,7 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import "./about.css";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -127,12 +128,7 @@ export default function AboutPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <section className="about-hero" style={{ backgroundImage: "url('About.png')" }}>
-        <div className="overlay"></div>
-        <div className="hero-content">
-          <h1>About</h1>
-        </div>
-      </section>
+      <Hero sectionClass="about-hero" bgImage="About.png" header="About" />
 
       {/* About Us Section */}
       <section className="about-section">

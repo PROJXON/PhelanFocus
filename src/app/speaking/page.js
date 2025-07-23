@@ -1,6 +1,7 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import Image from "next/image";
 import Link from "next/link";
 import "./speaking.css";
@@ -12,12 +13,7 @@ export default function SpeakingPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <section className="speaking-hero" style={{ backgroundImage: "url('PublicSPeakking.png')" }}>
-        <div className="overlay"></div>
-        <div className="hero-content">
-          <h1>Speaking</h1>
-        </div>
-      </section>
+      <Hero sectionClass="speaking-hero" bgImage="PublicSPeakking.png" header="Speaking" />
 
       {/* Brand Logos */}
       <section className="py-20 px-6 bg-white dark:bg-[#f8f9fa] text-gray-900 dark:text-gray-900">

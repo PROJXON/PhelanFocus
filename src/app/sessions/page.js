@@ -1,10 +1,9 @@
 'use client';
-
 import { useState } from 'react';
-import Link from 'next/link';
 import './sessions.css';
-import { Navbar } from '@/components/Navbar';
-import { Footer } from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Hero from '@/components/Hero';
 import ScrollToTopButton from '@/components/ScrollToTop';
 
 export default function CoachingSessions() {
@@ -123,12 +122,7 @@ export default function CoachingSessions() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="sessions-hero" style={{ backgroundImage: "url('sessions/sessions.jpeg')" }}>
-        <div className="overlay"></div>
-        <div className="hero-content">
-          <h1>Sessions</h1>
-        </div>
-      </section>
+      <Hero sectionClass="sessions-hero" bgImage="sessions/sessions.jpeg" header="Sessions" />
 
       <div className="sessions-container">
         <main className="sessions-main">
@@ -190,9 +184,9 @@ export default function CoachingSessions() {
                 <input type="tel" name="Phone" placeholder="Phone Number" required />
                 <input type="datetime-local" name="Preferred Date and Time" required />
                 <textarea name="Goals" rows="4" placeholder="Tell us about your goals..." />
-                  <label htmlFor="people" className="block mb-1 font-medium text-gray-700">
-                    How many people will attend?
-                  </label>
+                <label htmlFor="people" className="block mb-1 font-medium text-gray-700">
+                  How many people will attend?
+                </label>
                 <input
                   type="number"
                   name="people"

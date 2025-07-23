@@ -2,10 +2,9 @@
 import "./consulting.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faHandshake,
-  faChevronDown,
   faBriefcase,
   faChartLine,
   faLaptopCode,
@@ -30,12 +29,7 @@ export default function ConsultingPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section*/}
-      <section className="consulting-hero" style={{ backgroundImage: "url('Consult.png')" }}>
-        <div className="overlay"></div>
-        <div className="hero-content">
-          <h1>Consulting</h1>
-        </div>
-      </section>
+      <Hero sectionClass="consulting-hero" bgImage="Consult.png" header="Consulting" />
 
       <main className="consulting-main">
         {/* Services Section */}

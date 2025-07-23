@@ -1,7 +1,7 @@
 'use client';
-
-import { Navbar } from '@/components/Navbar';
-import { Footer } from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Hero from '@/components/Hero';
 import '../sessions/sessions.css';
 
 export default function ThankYou() {
@@ -10,15 +10,7 @@ export default function ThankYou() {
       <Navbar />
 
       {/* Hero Section */}
-      <section
-        className="sessions-hero"
-        style={{ backgroundImage: "url('sessions/thank-you.jpeg')" }}
-      >
-        <div className="overlay"></div>
-        <div className="hero-content">
-          <h1>Thank You</h1>
-        </div>
-      </section>
+      <Hero sectionClass="sessions-hero" bgImage="sessions/thank-you.jpeg" header="Thank You" />
 
       {/* Message Section */}
       <main className="flex-grow flex justify-center items-center px-4 py-12">

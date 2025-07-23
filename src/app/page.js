@@ -1,5 +1,5 @@
-import { Navbar } from "../components/Navbar";
-import { Footer } from "../components/Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import AboutMe from "../components/AboutMe";
 import Contact from "../components/Contact";
 import Services from "../components/Services";
@@ -31,14 +31,14 @@ const Home = async () => {
             <p className="mt-4 text-lg max-w-xl mx-auto">
               Helping individuals unlock their potential and achieve personal and professional growth.
             </p>
-              <div className="mt-6">
-                <Link href="/sessions">
-                  <button className="btn">
-                    <span>Book a Call</span>
-                    <span></span>
-                  </button>
-                </Link>
-              </div>
+            <div className="mt-6">
+              <Link href="/sessions">
+                <button className="btn">
+                  <span>Book a Call</span>
+                  <span></span>
+                </button>
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -47,7 +47,7 @@ const Home = async () => {
         <Services id="services" />
         <ServiceCarousel />
         <ProcessSection />
-        <Books/>
+        <Books />
         <Podcast id="podcast" />
         <Contact id="contact" />
       </main>

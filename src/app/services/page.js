@@ -1,92 +1,85 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import Link from "next/link";
 import "./services.css";
 import { useState } from 'react';
 import ScrollToTopButton from "@/components/ScrollToTop";
-
 
 export default function ServicesPage() {
     // State to keep track of the active tab
     const [activeTab, setActiveTab] = useState("our-services");
 
     // Function to handle tab switching
-    const handleTabClick = (tab) => {
-        setActiveTab(tab);
-    };
+    const handleTabClick = (tab) => setActiveTab(tab);
 
     return (
         <div className="service-page">
             <Navbar isFooter={false} />
 
             {/* Hero Section */}
-            <section className="service-hero" style={{ backgroundImage: "url('/service.jpeg')" }}>
-                <div className="overlay"></div>
-                <div className="hero-content">
-                    <h1>SERVICE</h1>
-                </div>
-            </section>
+            <Hero sectionClass="service-hero" bgImage="/service.jpeg" header="SERVICE" />
 
             {/* Service Detail Section */}
             <section className="project-three-area pt-130 pb-130">
-                <div class="project-three__wrp">
-                    <div class="row g-4">
-                        <div class="col-lg-6 col-xl-4">
-                            <div class="project-three__item">
-                                <div class="project-three__content">
-                                    <div class="shape">
+                <div className="project-three__wrp">
+                    <div className="row g-4">
+                        <div className="col-lg-6 col-xl-4">
+                            <div className="project-three__item">
+                                <div className="project-three__content">
+                                    <div className="shape">
                                         <img src="services/services-background.png" alt="shape" />
                                     </div>
-                                    <div class="content">
-                                        <h4><Link class="hover-link-light" href="/coaching">1 Coaching</Link></h4>
-                                        <p class="mt-15 mb-25">Unlock your full potential with personalized executive coaching. Develop leadership skills, enhance strategic thinking, and achieve your professional aspirations with tailored guidance and support.</p>
+                                    <div className="content">
+                                        <h4><Link className="hover-link-light" href="/coaching">1 Coaching</Link></h4>
+                                        <p className="mt-15 mb-25">Unlock your full potential with personalized executive coaching. Develop leadership skills, enhance strategic thinking, and achieve your professional aspirations with tailored guidance and support.</p>
                                         <Link href="/coaching" className="arry-btn">
-                                            <i class="fa-light fa-arrow-up-right"></i>
+                                            <i className="fa-light fa-arrow-up-right"></i>
                                         </Link>
                                     </div>
                                 </div>
-                                <div class="image">
+                                <div className="image">
                                     <img src="coaching.jpeg" alt="image" />
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-6 col-xl-4">
-                            <div class="project-three__item">
-                                <div class="project-three__content">
-                                    <div class="shape">
+                        <div className="col-lg-6 col-xl-4">
+                            <div className="project-three__item">
+                                <div className="project-three__content">
+                                    <div className="shape">
                                         <img src="services/services-background.png" alt="shape" />
                                     </div>
-                                    <div class="content">
-                                        <h4><Link class="hover-link-light" href="/speaking">2 Speaking</Link></h4>
-                                        <p class="mt-15 mb-25">Inspire and motivate your audience with engaging presentations. From keynote speeches to workshops, our dynamic speaking engagements deliver impactful messages on leadership, strategy, and personal growth.</p>
+                                    <div className="content">
+                                        <h4><Link className="hover-link-light" href="/speaking">2 Speaking</Link></h4>
+                                        <p className="mt-15 mb-25">Inspire and motivate your audience with engaging presentations. From keynote speeches to workshops, our dynamic speaking engagements deliver impactful messages on leadership, strategy, and personal growth.</p>
                                         <Link href="/speaking" className="arry-btn">
-                                            <i class="fa-light fa-arrow-up-right"></i>
+                                            <i className="fa-light fa-arrow-up-right"></i>
                                         </Link>
                                     </div>
                                 </div>
-                                <div class="image">
+                                <div className="image">
                                     <img src="publicspeaking.jpeg" alt="image" />
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-6 col-xl-4">
-                            <div class="project-three__item">
-                                <div class="project-three__content">
-                                    <div class="shape">
+                        <div className="col-lg-6 col-xl-4">
+                            <div className="project-three__item">
+                                <div className="project-three__content">
+                                    <div className="shape">
                                         <img src="services/services-background.png" alt="shape" />
                                     </div>
-                                    <div class="content">
-                                        <h4><Link class="hover-link-light" href="/consulting">3 Consulting</Link></h4>
-                                        <p class="mt-15 mb-25">Drive business growth and overcome challenges with expert strategic consulting. We provide actionable insights and innovative solutions to optimize performance and achieve sustainable success.</p>
+                                    <div className="content">
+                                        <h4><Link className="hover-link-light" href="/consulting">3 Consulting</Link></h4>
+                                        <p className="mt-15 mb-25">Drive business growth and overcome challenges with expert strategic consulting. We provide actionable insights and innovative solutions to optimize performance and achieve sustainable success.</p>
                                         <Link href="/consulting" className="arry-btn">
-                                            <i class="fa-light fa-arrow-up-right"></i>
+                                            <i className="fa-light fa-arrow-up-right"></i>
                                         </Link>
                                     </div>
                                 </div>
-                                <div class="image">
+                                <div className="image">
                                     <img src="Consulting.jpeg" alt="image" />
                                 </div>
                             </div>

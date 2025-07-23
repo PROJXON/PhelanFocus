@@ -1,6 +1,7 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -65,12 +66,7 @@ export default function PodcastPage() {
       <Navbar isFooter={false} />
 
       {/* HERO */}
-      <section className="podcast-hero" style={{ backgroundImage: "url('podcast2.jpeg')" }}>
-        <div className="overlay"></div>
-        <div className="hero-content">
-          <h1>Podcast</h1>
-        </div>
-      </section>
+      <Hero sectionClass="podcast-hero" bgImage="podcast2.jpeg" header="Podcast" />
 
       {/* MARK PHELAN STORY */}
       <section className="py-20 px-6 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

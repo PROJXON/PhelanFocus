@@ -1,6 +1,7 @@
 'use client';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import "./coaching.css";
 import ScrollToTopButton from "@/components/ScrollToTop";
 export default function CoachingPage() {
@@ -9,12 +10,7 @@ export default function CoachingPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <section className="coaching-hero" style={{ backgroundImage: "url('Coaching.png')" }}>
-        <div className="overlay"></div>
-        <div className="hero-content">
-          <h1>Coaching</h1>
-        </div>
-      </section>
+      <Hero sectionClass="coaching-hero" bgImage="Coaching.png" header="Coaching" />
 
       {/* Methodology Section */}
       <section className="section methodology-section coaching-page">
