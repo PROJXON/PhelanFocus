@@ -1,11 +1,9 @@
 "use client";
-
 import Image from "next/image";
-import Link from "next/link";
 import { useRef } from "react";
 import "./courses.css";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
 function ParallaxCard({ src, alt }) {
@@ -244,7 +242,7 @@ export default function CoursesPage() {
       </div>
 
       <Footer />
-      <ScrollToTop/>
+      <ScrollToTop />
 
     </>
   );

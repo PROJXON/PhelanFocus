@@ -1,6 +1,6 @@
 'use client';
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import "./coaching.css";
 import ScrollToTopButton from "@/components/ScrollToTop";
 export default function CoachingPage() {
@@ -16,54 +16,54 @@ export default function CoachingPage() {
         </div>
       </section>
 
-{/* Methodology Section */}
-<section className="section methodology-section coaching-page">
-  <div className="container">
-    <h2 className="methodology-title">My Coaching Methodology</h2>
+      {/* Methodology Section */}
+      <section className="section methodology-section coaching-page">
+        <div className="container">
+          <h2 className="methodology-title">My Coaching Methodology</h2>
 
-    <div className="methodology-intro">
-      {/* Text left */}
-      <div className="methodology-text">
-        <p>
-          This coaching program follows a proven 4 coaching step framework that has helped hundreds of clients create sustainable transformation. It's not just talk therapy – it's a strategic, action-oriented approach designed to deliver real, lasting results.
-        </p>
-      </div>
+          <div className="methodology-intro">
+            {/* Text left */}
+            <div className="methodology-text">
+              <p>
+                This coaching program follows a proven 4 coaching step framework that has helped hundreds of clients create sustainable transformation. It's not just talk therapy – it's a strategic, action-oriented approach designed to deliver real, lasting results.
+              </p>
+            </div>
 
-      {/* Image right */}
-      <div className="methodology-image">
-        <img
-          src="coaching/KC_GroupTraining-4.jpg"
-          alt="Coaching Methodology"
-          className="methodology-img"
-        />
-      </div>
-    </div>
+            {/* Image right */}
+            <div className="methodology-image">
+              <img
+                src="coaching/KC_GroupTraining-4.jpg"
+                alt="Coaching Methodology"
+                className="methodology-img"
+              />
+            </div>
+          </div>
 
-    {/* Steps */}
-    <div className="process-coaching-steps">
-      <div className="coaching-step">
-        <div className="coaching-step-number">1</div>
-        <h3>Clarity & Vision</h3>
-        <p>We uncover what you truly want and identify the limiting beliefs holding you back from achieving it.</p>
-      </div>
-      <div className="coaching-step">
-        <div className="coaching-step-number">2</div>
-        <h3>Strategic Planning</h3>
-        <p>Create a personalized roadmap with clear milestones and actionable steps toward your goals.</p>
-      </div>
-      <div className="coaching-step">
-        <div className="coaching-step-number">3</div>
-        <h3>Implementation</h3>
-        <p>Take consistent action with accountability and support to overcome obstacles as they arise.</p>
-      </div>
-      <div className="coaching-step">
-        <div className="coaching-step-number">4</div>
-        <h3>Integration</h3>
-        <p>Lock in your new habits and mindset shifts to ensure lasting transformation beyond our work together.</p>
-      </div>
-    </div>
-  </div>
-</section>
+          {/* Steps */}
+          <div className="process-coaching-steps">
+            <div className="coaching-step">
+              <div className="coaching-step-number">1</div>
+              <h3>Clarity & Vision</h3>
+              <p>We uncover what you truly want and identify the limiting beliefs holding you back from achieving it.</p>
+            </div>
+            <div className="coaching-step">
+              <div className="coaching-step-number">2</div>
+              <h3>Strategic Planning</h3>
+              <p>Create a personalized roadmap with clear milestones and actionable steps toward your goals.</p>
+            </div>
+            <div className="coaching-step">
+              <div className="coaching-step-number">3</div>
+              <h3>Implementation</h3>
+              <p>Take consistent action with accountability and support to overcome obstacles as they arise.</p>
+            </div>
+            <div className="coaching-step">
+              <div className="coaching-step-number">4</div>
+              <h3>Integration</h3>
+              <p>Lock in your new habits and mindset shifts to ensure lasting transformation beyond our work together.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Coaching Services */}
       <section className="section services-section">
@@ -114,52 +114,52 @@ export default function CoachingPage() {
         </div>
       </section>
 
-{/* Expected Outcomes */}
-<section className="section outcomes-section py-16 bg-white">
-  <div className="container mx-auto px-4">
-    {/* Centered Heading and Description */}
-    <div className="text-center mb-10 max-w-3xl mx-auto">
-      <h2 className="text-3xl font-semibold text-neutral-dark mb-4">What You Can Expect</h2>
-      <p className="text-neutral-medium">
-        My clients typically see significant shifts within the first 30 days. Here's what's possible when you commit to the process:
-      </p>
-    </div>
+      {/* Expected Outcomes */}
+      <section className="section outcomes-section py-16 bg-white">
+        <div className="container mx-auto px-4">
+          {/* Centered Heading and Description */}
+          <div className="text-center mb-10 max-w-3xl mx-auto">
+            <h2 className="text-3xl font-semibold text-neutral-dark mb-4">What You Can Expect</h2>
+            <p className="text-neutral-medium">
+              My clients typically see significant shifts within the first 30 days. Here's what's possible when you commit to the process:
+            </p>
+          </div>
 
-    {/* Two Column Layout: Image Left, Outcomes Right */}
-    <div className="grid md:grid-cols-2 gap-10 items-center">
-      {/* Left side: Image */}
-      <div className="w-full">
-        <img
-          src="coaching/KC_GroupTraining-221.jpg"
-          alt="Expected Outcomes"
-          className="rounded-xl shadow-lg w-full object-cover max-h-[600px]"
-        />
-      </div>
+          {/* Two Column Layout: Image Left, Outcomes Right */}
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            {/* Left side: Image */}
+            <div className="w-full">
+              <img
+                src="coaching/KC_GroupTraining-221.jpg"
+                alt="Expected Outcomes"
+                className="rounded-xl shadow-lg w-full object-cover max-h-[600px]"
+              />
+            </div>
 
-      {/* Right side: Outcomes List */}
-      <div className="grid grid-cols-1 gap-6">
-        <div className="outcome-item">
-          <h3 className="text-xl font-medium text-neutral-dark">Clarity & Direction</h3>
-          <p className="text-neutral-medium">
-            Cut through the noise and get clear on your goals, values, and the steps to move forward.
-          </p>
+            {/* Right side: Outcomes List */}
+            <div className="grid grid-cols-1 gap-6">
+              <div className="outcome-item">
+                <h3 className="text-xl font-medium text-neutral-dark">Clarity & Direction</h3>
+                <p className="text-neutral-medium">
+                  Cut through the noise and get clear on your goals, values, and the steps to move forward.
+                </p>
+              </div>
+              <div className="outcome-item">
+                <h3 className="text-xl font-medium text-neutral-dark">Confidence in Action</h3>
+                <p className="text-neutral-medium">
+                  Build self-belief and take bold, aligned action—even in the face of fear or uncertainty.
+                </p>
+              </div>
+              <div className="outcome-item">
+                <h3 className="text-xl font-medium text-neutral-dark">Sustainable Progress</h3>
+                <p className="text-neutral-medium">
+                  Stay consistent, overcome perfectionism, and make steady progress toward meaningful results.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="outcome-item">
-          <h3 className="text-xl font-medium text-neutral-dark">Confidence in Action</h3>
-          <p className="text-neutral-medium">
-            Build self-belief and take bold, aligned action—even in the face of fear or uncertainty.
-          </p>
-        </div>
-        <div className="outcome-item">
-          <h3 className="text-xl font-medium text-neutral-dark">Sustainable Progress</h3>
-          <p className="text-neutral-medium">
-            Stay consistent, overcome perfectionism, and make steady progress toward meaningful results.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
 
       {/* Ideal Clients */}
@@ -268,55 +268,55 @@ export default function CoachingPage() {
         </div>
       </section>
 
-{/* Challenges */}
-<section className="section challenges-section coaching-page">
-  <div className="container">
-    <h2>Common Challenges I Help Solve</h2>
-    <p>These patterns hold many people back. If they sound familiar, coaching can help:</p>
-    <div className="challenges-grid">
-      <div className="challenge-item">
-        <div className="challenge-icon">🔄</div>
-        <h3>Stuck in Cycles</h3>
-        <p>You keep getting the same results and need a fresh approach.</p>
-      </div>
-      <div className="challenge-item">
-        <div className="challenge-icon">😰</div>
-        <h3>Fear of Failure</h3>
-        <p>You dream big but hesitate to take risks. We’ll build courage with a plan.</p>
-      </div>
-      <div className="challenge-item">
-        <div className="challenge-icon">⏰</div>
-        <h3>Time Management</h3>
-        <p>Busy but not productive? Let’s create focus and eliminate distractions.</p>
-      </div>
-      <div className="challenge-item">
-        <div className="challenge-icon">🎭</div>
-        <h3>Imposter Syndrome</h3>
-        <p>You doubt your success. We'll build real inner confidence.</p>
-      </div>
-      <div className="challenge-item">
-        <div className="challenge-icon">⚖️</div>
-        <h3>Work-Life Balance</h3>
-        <p>You’re thriving professionally but burning out personally. Let’s align.</p>
-      </div>
-      <div className="challenge-item">
-        <div className="challenge-icon">🧭</div>
-        <h3>Lack of Direction</h3>
-        <p>You feel lost. Coaching helps you reconnect with values and purpose.</p>
-      </div>
-      <div className="challenge-item">
-        <div className="challenge-icon">🔒</div>
-        <h3>Fear of Visibility</h3>
-        <p>You’re holding back from putting yourself out there. We’ll build confidence to show up and lead.</p>
-      </div>
-      <div className="challenge-item">
-        <div className="challenge-icon">🎯</div>
-        <h3>Overwhelmed by Goals</h3>
-        <p>You have big ambitions but don’t know where to start. Let’s break it down into achievable steps.</p>
-      </div>
-    </div>
-  </div>
-</section>
+      {/* Challenges */}
+      <section className="section challenges-section coaching-page">
+        <div className="container">
+          <h2>Common Challenges I Help Solve</h2>
+          <p>These patterns hold many people back. If they sound familiar, coaching can help:</p>
+          <div className="challenges-grid">
+            <div className="challenge-item">
+              <div className="challenge-icon">🔄</div>
+              <h3>Stuck in Cycles</h3>
+              <p>You keep getting the same results and need a fresh approach.</p>
+            </div>
+            <div className="challenge-item">
+              <div className="challenge-icon">😰</div>
+              <h3>Fear of Failure</h3>
+              <p>You dream big but hesitate to take risks. We’ll build courage with a plan.</p>
+            </div>
+            <div className="challenge-item">
+              <div className="challenge-icon">⏰</div>
+              <h3>Time Management</h3>
+              <p>Busy but not productive? Let’s create focus and eliminate distractions.</p>
+            </div>
+            <div className="challenge-item">
+              <div className="challenge-icon">🎭</div>
+              <h3>Imposter Syndrome</h3>
+              <p>You doubt your success. We'll build real inner confidence.</p>
+            </div>
+            <div className="challenge-item">
+              <div className="challenge-icon">⚖️</div>
+              <h3>Work-Life Balance</h3>
+              <p>You’re thriving professionally but burning out personally. Let’s align.</p>
+            </div>
+            <div className="challenge-item">
+              <div className="challenge-icon">🧭</div>
+              <h3>Lack of Direction</h3>
+              <p>You feel lost. Coaching helps you reconnect with values and purpose.</p>
+            </div>
+            <div className="challenge-item">
+              <div className="challenge-icon">🔒</div>
+              <h3>Fear of Visibility</h3>
+              <p>You’re holding back from putting yourself out there. We’ll build confidence to show up and lead.</p>
+            </div>
+            <div className="challenge-item">
+              <div className="challenge-icon">🎯</div>
+              <h3>Overwhelmed by Goals</h3>
+              <p>You have big ambitions but don’t know where to start. Let’s break it down into achievable steps.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
 
       {/* Timeline */}

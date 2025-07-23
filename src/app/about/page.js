@@ -1,6 +1,6 @@
 "use client";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import "./about.css";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -11,8 +11,6 @@ import {
   faUsers,
   faBrain,
   faBriefcase,
-  faPhone,
-  faEnvelope,
   faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
@@ -167,7 +165,7 @@ export default function AboutPage() {
               </p>
             </div>
             <Link href="/sessions" className="btn-read"><span>Read More</span><span></span></Link>
-            </div>
+          </div>
         </div>
       </section>
 

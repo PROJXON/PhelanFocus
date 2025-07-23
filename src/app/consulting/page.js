@@ -1,7 +1,7 @@
 "use client";
 import "./consulting.css";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHandshake,
