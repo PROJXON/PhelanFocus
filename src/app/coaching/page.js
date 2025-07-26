@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import "./coaching.css";
 import ScrollToTopButton from "@/components/ScrollToTop";
+import Image from "next/image";
 export default function CoachingPage() {
   return (
     <div className="coaching-page">
@@ -27,8 +28,10 @@ export default function CoachingPage() {
 
             {/* Image right */}
             <div className="methodology-image">
-              <img
-                src="coaching/KC_GroupTraining-4.jpg"
+              <Image
+                src="/coaching/KC_GroupTraining-4.jpg"
+                width={350}
+                height={220}
                 alt="Coaching Methodology"
                 className="methodology-img"
               />
@@ -125,8 +128,10 @@ export default function CoachingPage() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             {/* Left side: Image */}
             <div className="w-full">
-              <img
-                src="coaching/KC_GroupTraining-221.jpg"
+              <Image
+                src="/coaching/KC_GroupTraining-221.jpg"
+                width={390}
+                height={490}
                 alt="Expected Outcomes"
                 className="rounded-xl shadow-lg w-full object-cover max-h-[600px]"
               />
@@ -169,7 +174,11 @@ export default function CoachingPage() {
               </p>
             </div>
             <div className="ideal-clients-image">
-              <img src="coaching/KC_GroupTraining-13.jpg" alt="Ideal Clients" />
+              <Image 
+                src="/coaching/KC_GroupTraining-13.jpg" 
+                width={400}
+                height={260}
+                alt="Ideal Clients" />
             </div>
           </div>
 

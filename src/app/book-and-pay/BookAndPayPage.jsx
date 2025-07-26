@@ -88,10 +88,22 @@ function CheckoutForm({ sessionType, people }) {
         >
           <header className="credit-header flex justify-between items-center">
             <span className="credit-logo flex items-center gap-2">
-              <img src="PhelanFocusLOGO-02.png" alt="logo" className="w-12" />
+              <Image
+                src="/PhelanFocusLOGO-02.png" 
+                width={120}
+                height={40}
+                alt="logo" 
+                className="w-12" 
+              />
               <h5 className="text-base font-medium">PhelanFocus</h5>
             </span>
-            <img src="sessions/chip.png" alt="chip" className="chip w-14" />
+            <Image
+              src="sessions/chip.png" 
+              alt="chip"
+              width={60}
+              height={36} 
+              className="chip w-14" 
+            />
           </header>
           <div className="card-details mt-10 flex justify-between items-end">
             <div className="name-number">
