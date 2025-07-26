@@ -9,6 +9,7 @@ import ServiceCarousel from "@/components/ServiceCarousel";
 import ProcessSection from "@/components/ProcessSection";
 import Books from "@/components/Books";
 import Link from "next/link";
+import Hero from "@/components/Hero";
 
 const Home = async () => {
   return (
@@ -21,25 +22,24 @@ const Home = async () => {
       <main className="pt-16 space-y-16">
 
         {/* 🌟 Hero Section */}
-        <section
-          className="w-full h-[60vh] bg-center bg-cover flex items-center justify-center text-white text-center relative"
-          style={{ backgroundImage: "url('homepage-hero.png')" }}
-        >
-          <div className="absolute inset-0 bg-black/50"></div>
-          <div className="relative z-10 px-4">
-            <h1 className="text-5xl font-bold uppercase">Welcome to Phelan Coaching</h1>
-            <p className="mt-4 text-lg max-w-xl mx-auto">
-              Helping individuals unlock their potential and achieve personal and professional growth.
-            </p>
-            <div className="mt-6">
-              <Link href="/sessions">
-                <button className="btn">
-                  <span>Book a Call</span>
-                  <span></span>
-                </button>
-              </Link>
-            </div>
-          </div>
+        <Hero 
+          sectionClass="home-hero h-[60vh] flex items-center justify-center text-white text-center" 
+          bgImage="/homepage-hero.png" 
+          header="Welcome to Phelan Coaching" 
+          alt="Phelan Coaching Hero Background"
+        />
+
+        {/* Call to Action Section */}
+        <section className="text-center py-8">
+          <p className="text-lg max-w-xl mx-auto mb-6">
+            Helping individuals unlock their potential and achieve personal and professional growth.
+          </p>
+          <Link href="/sessions">
+            <button className="btn">
+              <span>Book a Call</span>
+              <span></span>
+            </button>
+          </Link>
         </section>
 
         {/* ✨ Your Page Sections */}
