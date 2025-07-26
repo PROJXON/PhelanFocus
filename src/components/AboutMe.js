@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import PropTypes from "prop-types";
 import Link from "next/link";
-
+import Image from "next/image";
 const social = [
   {
     icon: faLinkedinIn,
@@ -47,8 +47,10 @@ const AboutMe = () => {
         <div className="flex flex-col md:flex-row items-center gap-10">
           {/* Image section */}
           <div className="w-full md:w-5/12 flex justify-center">
-            <img
-              src="Phalen, Mark -77.jpg"
+            <Image
+              src="/Phalen, Mark -77.jpg"
+              width={256}
+              height={256}
               alt="Mark Phelan"
               className="w-64 sm:w-72 md:w-full max-w-sm rounded-lg shadow-md object-cover"
             />

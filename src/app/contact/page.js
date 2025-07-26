@@ -12,6 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import ScrollToTopButton from "@/components/ScrollToTop";
+import Image from "next/image";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -193,7 +194,11 @@ export default function ContactPage() {
         </div>
 
         <div className="contact-right">
-          <img src="contact-form.jpeg" alt="Contact Visual" />
+          <Image 
+            src="/contact-form.jpeg" 
+            width={900}
+            height={600}
+            alt="Contact Visual" />
         </div>
       </section>
 

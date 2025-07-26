@@ -33,22 +33,22 @@ export default function PodcastPage() {
   const listenOn = [
     {
       href: "https://www.tiktok.com/@the.phelan.focus",
-      src: "podcast/tiktok.png",
+      src: "/podcast/tiktok.png",
       alt: "TikTok logo",
     },
     {
       href: "https://www.youtube.com/@ThePhelanFocus",
-      src: "podcast/youtube.png",
+      src: "/podcast/youtube.png",
       alt: "YouTube logo",
     },
     {
       href: "https://open.spotify.com/show/1hsQ9TSkvmuzkbnrE27ho7?si=95e611acecfa4385",
-      src: "podcast/spotify.png",
+      src: "/podcast/spotify.png",
       alt: "Spotify logo",
     },
     {
       href: "https://www.instagram.com/The.Phelan.Focus/",
-      src: "podcast/Instagram.png",
+      src: "/podcast/Instagram.png",
       alt: "Instagram logo",
     },
   ]
@@ -72,7 +72,7 @@ export default function PodcastPage() {
       <section className="py-20 px-6 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="flex justify-center">
           <Image
-            src="Phelancoaching.jpg"
+            src="/Phelancoaching.jpg"
             alt="Podcast Hosts"
             width={400}
             height={400}

@@ -6,6 +6,7 @@ import Link from "next/link";
 import "./services.css";
 import { useState } from 'react';
 import ScrollToTopButton from "@/components/ScrollToTop";
+import Image from "next/image";
 
 export default function ServicesPage() {
     // State to keep track of the active tab
@@ -63,7 +64,12 @@ export default function ServicesPage() {
                                 <div className="project-three__item">
                                     <div className="project-three__content">
                                         <div className="shape">
-                                            <img src="services/services-background.png" alt="shape" />
+                                            <Image 
+                                                src="/services/services-background.png"
+                                                width={100}
+                                                height={100} 
+                                                alt="shape" 
+                                            />
                                         </div>
                                         <div className="content">
                                             <h4><Link className="hover-link-light" href={service.href}>
@@ -76,7 +82,11 @@ export default function ServicesPage() {
                                         </div>
                                     </div>
                                     <div className="image">
-                                        <img src="coaching.jpeg" alt="image" />
+                                        <Image 
+                                            src="/coaching.jpeg"
+                                            width={446}
+                                            height={250} 
+                                            alt="image" />
                                     </div>
                                 </div>
                             </div>
@@ -193,8 +203,10 @@ export default function ServicesPage() {
 
                         <div className="col-xl-5 order-1 order-xl-2">
                             <div className="choose-one__image gsap__parallax">
-                                <img
-                                    src="services/choose-one-image.jpg"
+                                <Image
+                                    src="/services/choose-one-image.jpg"
+                                    width={429}
+                                    height={287}
                                     alt="Financial Solutions"
                                 />
                                 <div className="choose-one__rectangle">

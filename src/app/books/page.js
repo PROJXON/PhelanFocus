@@ -45,17 +45,17 @@ export default function booksPage() {
 
   const books = [
     {
-      image: "books/bendtobendblur.png",
+      image: "/books/bendtobendblur.png",
       title: "Bend to Bend",
       subtitle: "The course of Volume, Velocity and Veracity.",
     },
     {
-      image: "books/peaktopeakblur.png",
+      image: "/books/peaktopeakblur.png",
       title: "Peak to Peak",
       subtitle: "The journey of Purpose, progress and perspective.",
     },
     {
-      image: "books/shoretoshoreblur.png",
+      image: "/books/shoretoshoreblur.png",
       title: "Shore to Shore",
       subtitle: "The building of a Captain, crew and Courses.",
     },
@@ -290,7 +290,7 @@ export default function booksPage() {
       <section className="py-16 bg-gray-100 dark:bg-gray-800">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
           <Image
-            src="Phalen, Mark -21.jpg"
+            src="/Phalen, Mark -21.jpg"
             alt="Phelan"
             width={200}
             height={200}
@@ -304,7 +304,7 @@ export default function booksPage() {
               Phelan is a renowned expert in coaching, consulting, and public speaking, with years of experience inspiring individuals and organizations worldwide. These books share insights and tools to help you excel in leadership and communication.
             </p>
             <Image
-              src="books/sign.png"
+              src="/books/sign.png"
               alt="Author Signature"
               width={160}
               height={80}

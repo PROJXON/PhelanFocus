@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 // Background Shape SVGs
 const Shape1 = () => (
@@ -68,8 +69,10 @@ const Podcast = () => {
         {/* Right Column - Image */}
         <div className="col-span-12 lg:col-span-6 mt-10 lg:mt-0 text-center">
           <div className="relative inline-block group">
-            <img
-              src="podcast.png"
+            <Image
+              src="/podcast.png"
+              width={796}
+              height={796}
               alt="Podcast Coming Soon"
               className="rounded-xl shadow-lg group-hover:opacity-80 transition"
             />

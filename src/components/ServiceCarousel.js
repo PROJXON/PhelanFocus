@@ -11,25 +11,25 @@ const services = [
     title: "Performance Coaching",
     lessons: "10+ Lessons",
     badgeColor: "bg-blue-500",
-    image: "performance-coaching.jpg",
+    image: "/performance-coaching.jpg",
   },
   {
     title: "Career Coaching",
     lessons: "10+ Lessons",
     badgeColor: "bg-pink-500",
-    image: "career-coaching.jpg",
+    image: "/career-coaching.jpg",
   },
   {
     title: "Consulting",
     lessons: "10+ Lessons",
     badgeColor: "bg-green-500",
-    image: "consulting.jpg",
+    image: "/consulting.jpg",
   },
   {
     title: "Personal Development",
     lessons: "10+ Lessons",
     badgeColor: "bg-yellow-500",
-    image: "personal-development.jpg",
+    image: "/personal-development.jpg",
   },
 ];
 
@@ -72,7 +72,6 @@ const ServiceCarousel = () => {
                       width={600}
                       height={400}
                       className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105 group-hover:opacity-80"
-                      unoptimized
                     />
                   </Link>
                 </div>

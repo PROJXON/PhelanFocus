@@ -77,7 +77,13 @@ export default function SpeakingPage() {
         <div className="space-y-16">
           {/* Keynote 1 */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <img src="Phalen, Mark -78.jpg" alt="Keynote 1" className="rounded-lg shadow-xl" />
+            <Image 
+              src="/Phalen, Mark -78.jpg" 
+              width={700}
+              height={700}
+              alt="Keynote 1" 
+              className="rounded-lg shadow-xl" 
+              />
             <div className="bg-white dark:bg-[#2a2a2a] p-6 rounded-lg shadow-lg">
               <p className="text-sm font-bold text-cyan-600 uppercase mb-2">Fan Favorite of 2023</p>
               <h3 className="text-2xl font-semibold mb-2">The Cube of Creativity</h3>
@@ -102,12 +108,23 @@ export default function SpeakingPage() {
                 Uncover the Magic of AI
               </button>
             </div>
-            <img src="Phalen, Mark -21.jpg" alt="Keynote 2" className="rounded-lg shadow-xl order-1 md:order-2" />
+            <Image 
+              src="/Phalen, Mark -21.jpg" 
+              alt="Keynote 2" 
+              width={700}
+              height={700}
+              className="rounded-lg shadow-xl order-1 md:order-2" />
           </div>
 
           {/* Keynote 3 */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <img src="Phalen, Mark -39.jpg" alt="Keynote 3" className="rounded-lg shadow-xl" />
+            <Image 
+              src="/Phalen, Mark -39.jpg" 
+              alt="Keynote 3" 
+              width={700}
+              height={700}
+              className="rounded-lg shadow-xl" 
+              />
             <div className="bg-white dark:bg-[#2a2a2a] p-6 rounded-lg shadow-lg">
               <p className="text-sm font-bold text-yellow-600 uppercase mb-2">Most Booked Keynote All Time</p>
               <h3 className="text-2xl font-semibold mb-2">The Loyalty Loop</h3>
@@ -151,10 +168,10 @@ export default function SpeakingPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <Image
-              src="Phalen, Mark -37.jpg"
+              src="/Phalen, Mark -37.jpg"
               alt="Mark speaking on stage"
               width={600}
-              height={400}
+              height={600}
               className="rounded-xl shadow-lg"
             />
           </div>
