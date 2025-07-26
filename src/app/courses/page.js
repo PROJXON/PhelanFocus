@@ -41,7 +41,7 @@ export default function CoursesPage() {
     <>
       <Navbar />
 
-      <Hero sectionClass="courses-hero" bgImage="courses/courses.jpeg" header="Courses" />
+      <Hero sectionClass="courses-hero" bgImage="/courses/courses.jpeg" header="Courses" />
 
       <div className="courses-page bg-white text-gray-800">
 

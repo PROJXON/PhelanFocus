@@ -10,7 +10,7 @@ export default function ThankYou() {
       <Navbar />
 
       {/* Hero Section */}
-      <Hero sectionClass="sessions-hero" bgImage="sessions/thank-you.jpeg" header="Thank You" />
+      <Hero sectionClass="sessions-hero" bgImage="/sessions/thank-you.jpeg" header="Thank You" />
 
       {/* Message Section */}
       <main className="flex-grow flex justify-center items-center px-4 py-12">
