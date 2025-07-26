@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // basePath: "/PhelanFocus",
-  output: "export",  // Enables static exports
+  // output: "export",  // Removed - now using server-side rendering
   reactStrictMode: true,
 
-  // Disable image optimization for static export compatibility
+  // Enable image optimization
   images: {
-    unoptimized: true,
+    unoptimized: false,  // Enable Next.js image optimization
   },
 };
 
