@@ -140,7 +140,7 @@ export default function booksPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <Hero sectionClass="books-hero" bgImage="books.jpeg" header="Books" />
+      <Hero sectionClass="books-hero" bgImage="/books.jpeg" header="Books" />
 
       {/* Books Section */}
       <section id="books" className="py-16 bg-white dark:bg-gray-900">

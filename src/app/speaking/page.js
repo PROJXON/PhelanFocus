@@ -13,7 +13,7 @@ export default function SpeakingPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <Hero sectionClass="speaking-hero" bgImage="PublicSPeakking.png" header="Speaking" />
+      <Hero sectionClass="speaking-hero" bgImage="/PublicSPeakking.png" header="Speaking" />
 
       {/* Brand Logos */}
       <section className="py-20 px-6 bg-white dark:bg-[#f8f9fa] text-gray-900 dark:text-gray-900">

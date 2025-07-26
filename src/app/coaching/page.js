@@ -11,7 +11,7 @@ export default function CoachingPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <Hero sectionClass="coaching-hero" bgImage="Coaching.png" header="Coaching" />
+      <Hero sectionClass="coaching-hero" bgImage="/Coaching.png" header="Coaching" />
 
       {/* Methodology Section */}
       <section className="section methodology-section coaching-page">

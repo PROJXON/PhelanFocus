@@ -29,7 +29,7 @@ export default function ConsultingPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section*/}
-      <Hero sectionClass="consulting-hero" bgImage="Consult.png" header="Consulting" />
+      <Hero sectionClass="consulting-hero" bgImage="/Consult.png" header="Consulting" />
 
       <main className="consulting-main">
         {/* Services Section */}

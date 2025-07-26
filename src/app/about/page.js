@@ -129,7 +129,7 @@ export default function AboutPage() {
       <Navbar isFooter={false} />
 
       {/* Hero Section */}
-      <Hero sectionClass="about-hero" bgImage="About.png" header="About" />
+      <Hero sectionClass="about-hero" bgImage="/About.png" header="About" />
 
       {/* About Us Section */}
       <section className="about-section">

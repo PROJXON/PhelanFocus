@@ -66,7 +66,7 @@ export default function PodcastPage() {
       <Navbar isFooter={false} />
 
       {/* HERO */}
-      <Hero sectionClass="podcast-hero" bgImage="podcast2.jpeg" header="Podcast" />
+      <Hero sectionClass="podcast-hero" bgImage="/podcast2.jpeg" header="Podcast" />
 
       {/* MARK PHELAN STORY */}
       <section className="py-20 px-6 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
