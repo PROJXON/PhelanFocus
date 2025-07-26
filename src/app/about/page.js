@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import {
   faArrowRight,
   faUsers,
@@ -134,8 +135,20 @@ export default function AboutPage() {
       <section className="about-section">
         <div className="about-container">
           <div className="about-images">
-            <img src="about-1.jpg" alt="About Main" className="img1" />
-            <img src="about-2.jpg" alt="About Overlay" className="img2" />
+            <Image
+              src="/about-1.jpg" 
+              width={400}
+              height={400}
+              alt="About Main" 
+              className="img1" 
+              />
+            <Image 
+              src="/about-2.jpg" 
+              width={280}
+              height={280}
+              alt="About Overlay"  
+              className="img2" 
+            />
           </div>
           <div className="about-text">
             <h6>Empowering Change</h6>
@@ -190,7 +203,12 @@ export default function AboutPage() {
         </div>
 
         <div className="why-right">
-          <img src="about-1.jpg" alt="Why Us" className="why-image" />
+          <Image 
+            src="/about-1.jpg"
+            width={400}
+            height={400} 
+            alt="Why Us" 
+            className="why-image" />
           <div className="years-badge">
             <h3>15<sup>+</sup></h3>
             <span>Years Experience</span>
