@@ -24,4 +24,4 @@ Clone repo, or use GitHub Desktop
   NEXT_ADMIN_TEMPLATE=email sent to admin
   NEXT_PUBLIC_ADMIN_EMAIL=admin email
   ```
-6. Open [http://localhost:3000/PhelanFocus](http://localhost:3000/PhelanFocus) with your browser to see the result.
+6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
