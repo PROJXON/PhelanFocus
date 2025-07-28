@@ -111,8 +111,8 @@ export default function booksPage() {
                   {expandedBooks[i] ? book.subtitle : book.subtitle}
                 </p>
                 <div className="flex mt-auto space-x-2">
-                  <button onClick={() => toggleReadMore(2)} className="btn">
-                    <span>{expandedBooks[2] ? "Read Less" : "Read More"}</span>
+                  <button onClick={() => toggleReadMore(i)} className="btn">
+                    <span>{expandedBooks[i] ? "Read Less" : "Read More"}</span>
                     <span></span>
                   </button>
                 </div>
