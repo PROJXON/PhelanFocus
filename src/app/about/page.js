@@ -136,18 +136,18 @@ export default function AboutPage() {
         <div className="about-container">
           <div className="about-images">
             <Image
-              src="/about-1.jpg" 
+              src="/about-1.jpg"
               width={400}
               height={400}
-              alt="About Main" 
-              className="img1" 
-              />
-            <Image 
-              src="/about-2.jpg" 
+              alt="About Main"
+              className="img1"
+            />
+            <Image
+              src="/about-2.jpg"
               width={280}
               height={280}
-              alt="About Overlay"  
-              className="img2" 
+              alt="About Overlay"
+              className="img2"
             />
           </div>
           <div className="about-text">
@@ -157,7 +157,7 @@ export default function AboutPage() {
             <hr />
             <div className="contact-info">
               <p>
-                <a href="https://projxon.com" className="hover:text-[#FFD700]">
+                <a href="https://projxon.com" className="link-gold-hover">
                   <FontAwesomeIcon icon={faGlobe} className="icon" /> projxon.com
                 </a>
               </p>
@@ -166,7 +166,7 @@ export default function AboutPage() {
                   href="https://www.linkedin.com/in/phelanmarkw/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#FFD700] flex items-center gap-2"
+                  className="link-gold-hover flex items-center gap-2"
                 >
                   <FontAwesomeIcon icon={faLinkedinIn} className="icon" />
                   Linkedin
@@ -203,11 +203,11 @@ export default function AboutPage() {
         </div>
 
         <div className="why-right">
-          <Image 
+          <Image
             src="/about-1.jpg"
             width={400}
-            height={400} 
-            alt="Why Us" 
+            height={400}
+            alt="Why Us"
             className="why-image" />
           <div className="years-badge">
             <h3>15<sup>+</sup></h3>
@@ -292,7 +292,7 @@ export default function AboutPage() {
                       href={member.socials.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-[#F9C705]"
+                      className="link-gold-hover"
                     >
                       <FontAwesomeIcon icon={faLinkedinIn} />
                     </a>

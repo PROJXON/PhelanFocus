@@ -133,20 +133,8 @@
 
 /* Button */
 .btn {
-  position: relative;
-  display: inline-block;
-  padding: 12px 24px;
-  border: none;
-  font-size: 16px;
-  background-color: transparent;
-  border-radius: 100px;
-  font-weight: 600;
-  color: #F9C705;
-  box-shadow: 0 0 0 2px #F9C70580;
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.6s ease;
-  z-index: 1;
+  color: var(--gold);
+  box-shadow: 0 0 0 2px var(--darkGold);
 }
 
 .btn span:first-child {
@@ -162,7 +150,7 @@
   transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
-  background-color: #F9C705;
+  background-color: var(--gold);
   border-radius: 50%;
   opacity: 0;
   z-index: 1;
@@ -171,7 +159,7 @@
 
 .btn:hover {
   color: #13395c;
-  box-shadow: 0 0 0 5px #F9C70580;
+  box-shadow: 0 0 0 5px var(--darkGold);
 }
 
 .btn:hover span:last-child {
@@ -245,6 +233,7 @@
 .features .feature-item p {
   color: #000000;
 }
+
 /* Modal */
 .modal {
   position: fixed;
@@ -253,7 +242,7 @@
   z-index: 9999;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -266,7 +255,7 @@
   width: 90%;
   max-width: 500px;
   position: relative;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .modal-content h2 {
@@ -359,7 +348,7 @@
 .sessions-step {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

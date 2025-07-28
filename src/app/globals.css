@@ -5,6 +5,9 @@
 :root {
   --background: #27272A;
   --foreground: #171717;
+  --gold: #F9C705;
+  --darkGold: #F9C70580;
+  --shadow: #13395c80;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,8 +46,10 @@ body {
   background-color: transparent;
   border-radius: 10px;
   font-weight: 600;
-  color: #13395c; /* ✅ Light mode text color */
-  box-shadow: 0 0 0 2px #13395c80; /* ✅ Light mode border */
+  color: #13395c;
+  /* ✅ Light mode text color */
+  box-shadow: 0 0 0 2px var(--shadow);
+  /* ✅ Light mode border */
   cursor: pointer;
   overflow: hidden;
   transition: all 0.6s ease;
@@ -64,7 +69,8 @@ body {
   transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
-  background-color: #13395c; /* ✅ Light mode circle */
+  background-color: #13395c;
+  /* ✅ Light mode circle */
   border-radius: 50%;
   opacity: 0;
   z-index: 1;
@@ -73,7 +79,7 @@ body {
 
 .btn:hover {
   color: #ffffff;
-  box-shadow: 0 0 0 5px #13395c80;
+  box-shadow: 0 0 0 5px var(--shadow);
 }
 
 .btn:hover span:last-child {
@@ -88,15 +94,19 @@ body {
 
 /* 🌙 DARK MODE STYLING (via `.dark` class on <html>) */
 .dark .btn {
-  color: #F9C705;
-  box-shadow: 0 0 0 2px #F9C70580;
+  color: var(--gold);
+  box-shadow: 0 0 0 2px var(--darkGold);
 }
 
 .dark .btn span:last-child {
-  background-color: #F9C705;
+  background-color: var(--gold);
 }
 
 .dark .btn:hover {
   color: #0b1727;
-  box-shadow: 0 0 0 5px #F9C70580;
+  box-shadow: 0 0 0 5px var(--darkGold);
+}
+
+.link-gold-hover {
+  @apply hover:text-[#FFD700] transition duration-300;
 }

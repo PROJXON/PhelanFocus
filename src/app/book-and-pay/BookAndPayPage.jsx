@@ -84,25 +84,25 @@ function CheckoutForm({ sessionType, people }) {
       <div className="w-full flex justify-center">
         <div
           className="credit-card-container"
-          style={{ backgroundColor: '#144a8f', color: '#F9C705' }}
+          style={{ backgroundColor: '#144a8f', color: 'var(--gold)' }}
         >
           <header className="credit-header flex justify-between items-center">
             <span className="credit-logo flex items-center gap-2">
               <Image
-                src="/PhelanFocusLOGO-02.png" 
+                src="/PhelanFocusLOGO-02.png"
                 width={120}
                 height={40}
-                alt="logo" 
-                className="w-12" 
+                alt="logo"
+                className="w-12"
               />
               <h5 className="text-base font-medium">PhelanFocus</h5>
             </span>
             <Image
-              src="sessions/chip.png" 
+              src="sessions/chip.png"
               alt="chip"
               width={60}
-              height={36} 
-              className="chip w-14" 
+              height={36}
+              className="chip w-14"
             />
           </header>
           <div className="card-details mt-10 flex justify-between items-end">
@@ -131,7 +131,7 @@ function CheckoutForm({ sessionType, people }) {
           required
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="w-full p-3 rounded-lg border border-gray-300 bg-[#f9f9f9] placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#F9C705]"
+          className="w-full p-3 rounded-lg border border-gray-300 bg-[#f9f9f9] placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[var(--gold)]"
         />
 
         <input
@@ -140,7 +140,7 @@ function CheckoutForm({ sessionType, people }) {
           required
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="w-full p-3 rounded-lg border border-gray-300 bg-[#f9f9f9] placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#F9C705]"
+          className="w-full p-3 rounded-lg border border-gray-300 bg-[#f9f9f9] placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[var(--gold)]"
         />
 
         <div className="p-3 border border-gray-300 rounded-lg bg-[#f9f9f9]">
@@ -159,7 +159,7 @@ function CheckoutForm({ sessionType, people }) {
 
         <button
           type="submit"
-          className="w-full bg-[#F9C705] hover:bg-yellow-500 text-black font-semibold text-lg py-3 px-4 rounded-lg transition duration-300"
+          className="w-full bg-[var(--gold)] hover:bg-yellow-500 text-black font-semibold text-lg py-3 px-4 rounded-lg transition duration-300"
           disabled={!stripe}
         >
           Pay
