@@ -45,6 +45,29 @@ const Footer = () => {
     }
   };
 
+  const quickLinks = [
+    {
+      text: "Home",
+      href: "/"
+    },
+    {
+      text: "About",
+      href: "/about"
+    },
+    {
+      text: "Services",
+      href: "/services"
+    },
+    {
+      text: "Podcast",
+      href: "/podcast"
+    },
+    {
+      text: "Contact",
+      href: "/contact"
+    },
+  ];
+
   const socialLinks = [
     {
       icon: faInstagram,
@@ -90,21 +113,11 @@ const Footer = () => {
         <div>
           <h3 className="text-lg mb-4 font-semibold">Quick Links</h3>
           <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/" className="hover:text-[#FFD700]">Home</Link>
-            </li>
-            <li>
-              <Link href="/about" className="hover:text-[#FFD700]">About</Link>
-            </li>
-            <li>
-              <Link href="/services" className="hover:text-[#FFD700]">Services</Link>
-            </li>
-            <li>
-              <Link href="/podcast" className="hover:text-[#FFD700]">Podcast</Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:text-[#FFD700]">Contact</Link>
-            </li>
+            {quickLinks.map((link, i) => (
+              <li key={i}>
+                <Link href={link.href} className="footer-link">{link.text}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -147,7 +160,7 @@ const Footer = () => {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#FFD700] transition duration-300 inline-flex items-center gap-2 text-base"
+                  className="footer-link inline-flex items-center gap-2 text-base"
                 >
                   <FontAwesomeIcon icon={item.icon} className="text-xl" />
                   <span>{item.label}</span>
