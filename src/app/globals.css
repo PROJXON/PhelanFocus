@@ -110,3 +110,19 @@ body {
 .link-gold-hover {
   @apply hover:text-[#FFD700] transition duration-300;
 }
+
+.hero-content {
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-content p a {
+  color: #FFD700;
+  text-decoration: underline;
+}
