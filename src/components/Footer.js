@@ -115,7 +115,7 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             {quickLinks.map((link, i) => (
               <li key={i}>
-                <Link href={link.href} className="footer-link">{link.text}</Link>
+                <Link href={link.href} className="link-gold-hover">{link.text}</Link>
               </li>
             ))}
           </ul>
@@ -160,7 +160,7 @@ const Footer = () => {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="footer-link inline-flex items-center gap-2 text-base"
+                  className="link-gold-hover inline-flex items-center gap-2 text-base"
                 >
                   <FontAwesomeIcon icon={item.icon} className="text-xl" />
                   <span>{item.label}</span>

@@ -198,7 +198,7 @@ export default function CoachingSessions() {
                 />
                 <button
                   type="submit"
-                  className="w-full bg-[#F9C705] hover:bg-yellow-500 text-black font-semibold py-3 px-6 rounded-lg transition duration-300"
+                  className="w-full bg-[var(--gold)] hover:bg-yellow-500 text-black font-semibold py-3 px-6 rounded-lg transition duration-300"
                 >
                   Confirm Booking & Pay
                 </button>
