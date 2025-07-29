@@ -82,7 +82,7 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={loading}
-          className={`btn relative ${loading ? "disabled-btn" : ""}`}
+          className={`btn-gold relative ${loading ? "disabled-btn" : ""}`}
         >
           <span>{loading ? "Submitting..." : "Send Message"}</span>
           <span></span>
@@ -93,7 +93,7 @@ const ContactForm = () => {
 };
 
 const ContactFormCard = () => (
-  <div className="h-full flex flex-col justify-center bg-[#13395c] text-white p-8 rounded-3xl">
+  <div className="h-full flex flex-col justify-center bg-[var(--slateBlue)] text-white p-8 rounded-3xl">
     <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact Me</h2>
     <p className="text-lg mb-8 opacity-90">Send me a message!</p>
     <ContactForm />

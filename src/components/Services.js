@@ -62,7 +62,7 @@ ServiceItem.propTypes = {
 
 const Services = () => {
   return (
-    <section className="bg-white dark:bg-[#13395c] py-20 md:py-24 px-4 mb-24">
+    <section className="bg-white dark:bg-[var(--slateBlue)] py-20 md:py-24 px-4 mb-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <motion.h2
