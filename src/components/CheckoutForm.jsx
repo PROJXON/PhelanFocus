@@ -110,7 +110,7 @@ export default function CheckoutForm() {
       <button
         type="submit"
         disabled={!stripe || loading}
-        className="w-full bg-[#F9C705] text-black py-2 px-4 rounded hover:bg-yellow-400"
+        className="w-full bg-[var(--gold)] text-black py-2 px-4 rounded hover:bg-yellow-400"
       >
         {loading ? "Processing..." : "Confirm Booking & Pay"}
       </button>

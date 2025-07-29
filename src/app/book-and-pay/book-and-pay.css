@@ -1,6 +1,6 @@
 .credit-card-container {
   background-color: #144a8f;
-  color: #F9C705;
+  color: var(--gold);
   padding: 25px;
   border-radius: 28px;
   max-width: 380px;
@@ -33,5 +33,5 @@
 
 .credit-card-container h5,
 .credit-card-container h6 {
-  color: #F9C705;
+  color: var(--gold);
 }
