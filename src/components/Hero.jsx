@@ -8,7 +8,7 @@ const Hero = ({ sectionClass, bgImage, header, alt = "Hero background" }) => {
         alt={alt}
         fill
         priority
-        quality={75}
+        quality={60}
         sizes="100vw"
         className="object-cover object-center"
         placeholder="blur"

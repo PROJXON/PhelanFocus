@@ -31,7 +31,7 @@ export default function SpeakingPage() {
           {/* Right: Logo grid */}
           <div className="bg-[#f4f1f1] rounded-xl p-6 shadow relative border-t-4 border-pink-500">
             <div className="grid grid-cols-3 sm:grid-cols-3 gap-6 items-center justify-items-center">
-              {[...Array(9)].map((_, i) => (
+              {[...Array(6)].map((_, i) => (
                 <img
                   key={i}
                   src={`speaking/school${i + 1}.png`}
