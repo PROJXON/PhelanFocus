@@ -15,9 +15,15 @@ const StarRating = ({ rating }) => {
   const gradient = `linear-gradient(90deg, #fac115 ${percentage}%, ${grayColor} ${percentage}%)`;
 
   return (
-    <span className="w-fit bg-clip-text text-transparent text-xl" style={{ backgroundImage: gradient }}>
-      ★★★★★
-    </span>
+    <div className="flex align-center">
+      <span
+        className="w-fit bg-clip-text text-transparent text-2xl cursor-default"
+        style={{ backgroundImage: gradient }}
+      >
+        ★★★★★
+      </span>
+      <span className="ml-1 text-gray-600 dark:text-gray-300 text-sm h-fit my-auto">{rating.toFixed(1)}</span>
+    </div>
   );
 }
 
