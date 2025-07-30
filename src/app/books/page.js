@@ -232,7 +232,7 @@ export default function booksPage() {
       <section className="py-16 bg-gray-100 dark:bg-gray-800">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
           <Image
-            src="/Phalen, Mark -21.jpg"
+            src="/phelan-mark-21.jpg"
             alt="Phelan"
             width={200}
             height={200}
