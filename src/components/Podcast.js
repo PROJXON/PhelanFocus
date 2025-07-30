@@ -37,7 +37,7 @@ const Podcast = () => {
   return (
     <section
       id="podcast"
-      className="bg-[#f5faff] dark:bg-[#13395c] text-[#13395c] dark:text-white py-20 md:py-24 px-4 relative mb-24 transition-colors duration-500"
+      className="bg-[#f5faff] dark:bg-[var(--slateBlue)] text-[var(--slateBlue)] dark:text-white py-20 md:py-24 px-4 relative mb-24 transition-colors duration-500"
     >
       <Shape1 />
       <Shape2 />

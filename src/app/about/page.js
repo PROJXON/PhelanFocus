@@ -61,7 +61,7 @@ const CircleProgress = ({ percentage, label }) => {
           cx="70"
           cy="70"
           r="45"
-          stroke="#13395c"
+          stroke="var(--slateBlue)"
           strokeWidth="10"
           fill="none"
           strokeDasharray={strokeDasharray}
@@ -69,7 +69,7 @@ const CircleProgress = ({ percentage, label }) => {
           strokeLinecap="round"
           style={{ transition: "stroke-dashoffset 0.3s linear" }}
         />
-        <text x="70" y="75" textAnchor="middle" fontSize="24" fill="#13395c" fontWeight="700">
+        <text x="70" y="75" textAnchor="middle" fontSize="24" fill="var(--slateBlue)" fontWeight="700">
           {count}%
         </text>
       </svg>

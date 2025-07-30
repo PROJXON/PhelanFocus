@@ -7,6 +7,7 @@
   --foreground: #171717;
   --gold: #F9C705;
   --darkGold: #F9C70580;
+  --slateBlue: #13395c;
   --shadow: #13395c80;
 }
 
@@ -37,23 +38,25 @@ body {
 }
 
 /* Button */
-.btn {
+.btn,
+.btn-gold {
   position: relative;
   display: inline-block;
   padding: 12px 24px;
   border: none;
   font-size: 16px;
   background-color: transparent;
-  border-radius: 10px;
   font-weight: 600;
-  color: #13395c;
-  /* ✅ Light mode text color */
-  box-shadow: 0 0 0 2px var(--shadow);
-  /* ✅ Light mode border */
   cursor: pointer;
   overflow: hidden;
   transition: all 0.6s ease;
   z-index: 1;
+}
+
+.btn {
+  color: var(--slateBlue);
+  box-shadow: 0 0 0 2px var(--shadow);
+  border-radius: 10px;
 }
 
 .btn span:first-child {
@@ -61,7 +64,8 @@ body {
   z-index: 2;
 }
 
-.btn span:last-child {
+.btn span:last-child,
+.btn-gold span:last-child {
   content: '';
   position: absolute;
   top: 50%;
@@ -69,12 +73,27 @@ body {
   transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
-  background-color: #13395c;
-  /* ✅ Light mode circle */
   border-radius: 50%;
   opacity: 0;
   z-index: 1;
   transition: all 0.8s ease;
+}
+
+.btn:hover span:last-child,
+.btn-gold:hover span:last-child {
+  width: 160px;
+  height: 160px;
+  opacity: 1;
+}
+
+.btn span:first-child,
+.btn-gold span:first-child {
+  position: relative;
+  z-index: 2;
+}
+
+.btn span:last-child {
+  background-color: var(--gold);
 }
 
 .btn:hover {
@@ -107,6 +126,37 @@ body {
   box-shadow: 0 0 0 5px var(--darkGold);
 }
 
+.btn-gold {
+  color: var(--gold);
+  box-shadow: 0 0 0 2px var(--darkGold);
+  border-radius: 100px;
+}
+
+.btn-gold:hover {
+  color: var(--slateBlue);
+  box-shadow: 0 0 0 5px var(--darkGold);
+}
+
+.btn-gold span:last-child {
+  background-color: var(--gold);
+}
+
 .link-gold-hover {
-  @apply hover:text-[#FFD700] transition duration-300;
+  @apply hover:text-[var(--gold)] transition duration-300;
+}
+
+.hero-content {
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-content p a {
+  color: #FFD700;
+  text-decoration: underline;
 }
