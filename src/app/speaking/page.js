@@ -32,10 +32,12 @@ export default function SpeakingPage() {
           <div className="bg-[#f4f1f1] rounded-xl p-6 shadow relative border-t-4 border-pink-500">
             <div className="grid grid-cols-3 sm:grid-cols-3 gap-6 items-center justify-items-center">
               {[...Array(9)].map((_, i) => (
-                <img
+                <Image
                   key={i}
-                  src={`speaking/school${i + 1}.png`}
-                  alt={`school${i + 1}`}
+                  src={`/speaking/school${i + 1}.png`}
+                  alt={`Client ${i + 1} logo`}
+                  width={80}
+                  height={48}
                   className="h-12 object-contain grayscale hover:grayscale-0 transition duration-300"
                 />
               ))}
@@ -78,7 +80,7 @@ export default function SpeakingPage() {
           {/* Keynote 1 */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <Image 
-              src="/Phalen, Mark -78.jpg" 
+              src="/phelan-mark-78.jpg" 
               width={700}
               height={700}
               alt="Keynote 1" 
@@ -102,14 +104,14 @@ export default function SpeakingPage() {
               <p className="text-sm font-bold text-pink-600 uppercase mb-2">Expanded for 2025</p>
               <h3 className="text-2xl font-semibold mb-2">Artificial Influence</h3>
               <p className="mb-4">
-                How savvy brands are safely using the magic of AI. Learn how to navigate AI’s potential without sacrificing authenticity or trust in your brand journey.
+                How savvy brands are safely using the magic of AI. Learn how to navigate AI's potential without sacrificing authenticity or trust in your brand journey.
               </p>
               <button className="border border-pink-400 text-pink-500 px-5 py-2 rounded-md hover:bg-pink-500 hover:text-white transition">
                 Uncover the Magic of AI
               </button>
             </div>
             <Image 
-              src="/Phalen, Mark -21.jpg" 
+              src="/phelan-mark-21.jpg" 
               alt="Keynote 2" 
               width={700}
               height={700}
@@ -119,7 +121,7 @@ export default function SpeakingPage() {
           {/* Keynote 3 */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <Image 
-              src="/Phalen, Mark -39.jpg" 
+              src="/phelan-mark-39.jpg" 
               alt="Keynote 3" 
               width={700}
               height={700}
@@ -168,7 +170,7 @@ export default function SpeakingPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <Image
-              src="/Phalen, Mark -37.jpg"
+              src="/phelan-mark-37.jpg"
               alt="Mark speaking on stage"
               width={600}
               height={600}
