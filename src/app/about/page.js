@@ -18,7 +18,6 @@ import {
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import ScrollToTopButton from "@/components/ScrollToTop";
 
-
 // Circle Progress Component
 const CircleProgress = ({ percentage, label }) => {
   const strokeDasharray = 283;
@@ -131,8 +130,16 @@ export default function AboutPage() {
       {/* Hero Section */}
       <Hero sectionClass="about-hero" bgImage="/About.png" header="About" />
 
-      {/* About Us Section */}
-      <section className="about-section">
+      {/* About Us Section*/}
+      <section
+        className="about-section z-20 relative"
+        style={{
+          padding: "64px 0 64px 0", 
+          background: "#f8fafc",
+          marginBottom: 0,
+          marginTop: 0,
+        }}
+      >
         <div className="about-container">
           <div className="about-images">
             <Image
@@ -148,6 +155,7 @@ export default function AboutPage() {
               height={280}
               alt="About Overlay"
               className="img2"
+              style={{marginBottom: 30}}
             />
           </div>
           <div className="about-text">
@@ -179,7 +187,15 @@ export default function AboutPage() {
       </section>
 
       {/* Partners */}
-      <section className="partner-section">
+      <section
+        className="partner-section z-20 relative"
+        style={{
+          background: "#144a8f",
+          marginTop: 0,
+          marginBottom: 0,
+          padding: "32px 0",
+        }}
+      >
         <div className="logos">
           <div className="logos-slide">
             <span>PROJXON</span><span>PROJXON</span><span>PROJXON</span><span>PROJXON</span><span>PROJXON</span>
@@ -188,7 +204,16 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="why-section">
+      <section
+        className="why-section z-20 relative"
+        style={{
+          background: "#f1f5f9",
+          marginLeft: "calc(50% - 50vw)",
+          marginRight: "calc(50% - 50vw)",
+          width: "100vw",
+          boxSizing: "border-box",
+        }}
+      >
         <div className="why-left">
           <h6>Create the Life</h6>
           <h3>Unlock Your Potential Life</h3>
@@ -217,7 +242,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section position-relative" style={{ backgroundImage: "url('Phalen, Mark -39.jpg')" }}>
+      <section className="cta-section z-20 relative position-relative" style={{ backgroundImage: "url('Phalen, Mark -39.jpg')" }}>
         <div className="image-overlay"></div>
         <div className="r-container position-relative py-5" style={{ zIndex: 2 }}>
           <div className="d-flex flex-column mx-auto text-center align-items-center text-white gap-4" style={{ maxWidth: '900px' }}>
@@ -233,9 +258,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-
       {/* Team Section */}
-      <section className="team-cards-section">
+      <section
+        className="team-cards-section z-20 relative"
+        style={{
+          background: "#f8fafc",
+          padding: "64px 0",
+        }}
+      >
         <h2 className="team-title">Meet Our Team</h2>
         <div className="team-cards-container">
           {[
@@ -314,10 +344,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-
-
-      {/* Counter Section */}
-      <section className="counter-section">
+      {/* Counter Section  */}
+      <section
+        className="counter-section z-20 relative"
+        style={{
+          background: "#144a8f",
+          color: "#fff",
+          padding: "48px 0",
+        }}
+      >
         <Counter end={15} label="Years Experience" />
         <Counter end={2500} label="Satisfied Clients" />
         <Counter end={300} label="Problem Solved" />
@@ -325,14 +360,19 @@ export default function AboutPage() {
       </section>
 
       {/* Services Section */}
-      <section className="services-section">
+      <section
+        className="services-section z-20 relative"
+        style={{
+          background: "#f1f5f9",
+          padding: "64px 0",
+        }}
+      >
         <h6>Master Your Mindset</h6>
         <h2>Professional Life Coaching Support</h2>
         <Link href="/services" className="all-service-btn">
           <span>ALL SERVICE</span>
           <span></span>
         </Link>
-
 
         <div className="service-cards">
           <div className="service-card">

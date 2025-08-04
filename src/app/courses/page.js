@@ -43,7 +43,7 @@ export default function CoursesPage() {
 
       <Hero sectionClass="courses-hero" bgImage="/courses/courses.jpeg" header="Courses" />
 
-      <div className="courses-page bg-white text-gray-800">
+      <div className="courses-page relative z-10 bg-white text-gray-800">
 
         {/* Intro Section */}
         <section className="py-16 px-4 max-w-6xl mx-auto">

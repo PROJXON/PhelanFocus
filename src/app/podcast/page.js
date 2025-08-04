@@ -68,14 +68,16 @@ export default function PodcastPage() {
       <Navbar isFooter={false} />
 
       {/* HERO */}
-      <Hero
-        sectionClass="podcast-hero"
-        bgImage="/podcast2.jpeg"
-        header="Podcast"
-      />
+      {/* Remove fixed positioning and z-index from Hero */}
+      <div style={{ position: "relative", width: "100%", height: "50vh", zIndex: 0 }}>
+        <Hero
+          bgImage="/podcast2.jpeg"
+          header="Podcast"
+        />
+      </div>
 
       {/* MARK PHELAN STORY */}
-      <section className="py-20 px-6 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="bg-[#0b1727] py-20 px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" style={{ position: "relative", zIndex: 1 }}>
         <div className="flex justify-center">
           <Image
             src="/Phelancoaching.jpg"
@@ -105,7 +107,7 @@ export default function PodcastPage() {
       </section>
 
       {/* QUOTE CAROUSEL */}
-      <section className="bg-slate-800 text-white py-16 px-6 text-center">
+      <section className="bg-slate-800 text-white py-16 px-6 text-center" style={{ position: "relative", zIndex: 1 }}>
         <h3 className="text-3xl font-bold mb-12">What Listeners Say</h3>
         <div className="relative max-w-3xl mx-auto h-48">
           <AnimatePresence mode="wait">
@@ -131,7 +133,7 @@ export default function PodcastPage() {
       </section>
 
       {/* LISTEN ON */}
-      <section className="py-20 px-6 text-center">
+      <section className="bg-[#0b1727] py-20 px-6 text-center" style={{ position: "relative", zIndex: 1 }}>
         <h3 className="text-2xl font-semibold mb-10">
           Listen wherever you find your favorite podcasts:
         </h3>
@@ -149,7 +151,7 @@ export default function PodcastPage() {
           ))}
         </div>
       </section>
-      <section className="bg-slate-800 text-white py-20 px-6 text-center">
+      <section className="bg-slate-800 text-white py-20 px-6 text-center" style={{ position: "relative", zIndex: 1 }}>
         <h3 className="text-3xl font-bold mb-4">
         Podcast With Our Featured Guest 
         </h3>
@@ -173,7 +175,7 @@ export default function PodcastPage() {
           Listen to Podcast
         </button>
       </section>
-      <section className="py-20 px-6 text-center">
+      <section className="bg-[#0b1727] py-20 px-6 text-center" style={{ position: "relative", zIndex: 1 }}>
         <h3 className="text-3xl font-semibold mb-10">First TPF Episode</h3>
         <FirstEpisode />
         <button
@@ -193,7 +195,7 @@ export default function PodcastPage() {
         </button>
       </section>
       {/* CTA SECTION */}
-      <section className="bg-slate-800 text-white py-20 px-6 text-center">
+      <section className="bg-slate-800 text-white py-20 px-6 text-center" style={{ position: "relative", zIndex: 1 }}>
         <h3 className="text-3xl font-bold mb-4">
           Are you ready to take action?
         </h3>

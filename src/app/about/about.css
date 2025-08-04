@@ -18,7 +18,7 @@ section {
 .about-hero {
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  height: 50vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -90,6 +90,7 @@ section {
   border-radius: 8px;
   z-index: 1;
 }
+
 
 .about-images .img1 {
   width: 400px;
@@ -297,16 +298,21 @@ section {
   line-height: 1.4;
 }
 
-/* Ensure image height matches progress */
 .why-section {
   display: flex;
   gap: 50px;
   align-items: center;
-  /* ✅ Ensure vertical alignment */
   justify-content: space-between;
-  max-width: 1200px;
-  margin: auto;
-  padding: 80px 20px;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  box-sizing: border-box;
+  margin-left: "calc(50% - 50vw)";
+  margin-right: "calc(50% - 50vw)",
 }
 
 .why-left {

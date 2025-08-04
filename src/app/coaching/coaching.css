@@ -39,7 +39,7 @@
 /* Hero Section (Kept the same as requested) */
 .coaching-page .coaching-hero {
   position: relative;
-  height: 70vh;
+  height: 50vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -73,6 +73,8 @@
 .coaching-page .methodology-section {
   background-color: #f8fafc;
   padding: 60px 0;
+  z-index: 10;
+  position: relative;
 }
 
 /* Title */
@@ -184,6 +186,8 @@
 /* Services Section */
 .coaching-page .services-section {
   background-color: #ffffff;
+  z-index: 10;
+  position: relative;
 }
 
 .coaching-page .coaching-services-grid {
@@ -291,6 +295,8 @@
 /* Outcomes Section */
 .coaching-page .outcomes-section {
   background-color: #f8fafc;
+  z-index: 10;
+  position: relative;
 }
 
 .coaching-page .outcome-list {
@@ -324,6 +330,8 @@
 /* Ideal Clients */
 .coaching-page .ideal-clients-section {
   background-color: #ffffff;
+  z-index: 10;
+  position: relative;
   padding: 60px 0;
 }
 
@@ -417,6 +425,8 @@
 /* Tools Section */
 .coaching-page .tools-section {
   background-color: #f8fafc;
+  position: relative;
+  z-index: 10;
 }
 
 .coaching-page .tools-grid {
@@ -451,6 +461,8 @@
 /* Success Stories */
 .coaching-page .success-stories-section {
   background-color: #ffffff;
+  z-index: 10;
+  position: relative;
 }
 
 .coaching-page .stories-container {
@@ -523,6 +535,8 @@
 /* Challenges Section */
 .coaching-page .challenges-section {
   background-color: #f8fafc;
+  z-index: 10;
+  position: relative;
 }
 
 .coaching-page .challenges-grid {
@@ -562,6 +576,8 @@
 /* Timeline Section */
 .coaching-page .how-it-works-section {
   background-color: #ffffff;
+  z-index: 10;
+  position: relative;
 }
 
 .coaching-page .process-timeline {
@@ -620,6 +636,8 @@
 /* Philosophy Section */
 .coaching-page .philosophy-section {
   background-color: #f8fafc;
+  z-index: 10;
+  position: relative
 }
 
 .coaching-page .philosophy-content {
