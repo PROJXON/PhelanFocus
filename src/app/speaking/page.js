@@ -36,11 +36,13 @@ export default function SpeakingPage() {
           {/* Right: Logo grid */}
           <div className="bg-[#f4f1f1] rounded-xl p-6 shadow relative border-t-4 border-pink-500">
             <div className="grid grid-cols-3 sm:grid-cols-3 gap-6 items-center justify-items-center">
-              {[...Array(6)].map((_, i) => (
-                <img
+              {[...Array(9)].map((_, i) => (
+                <Image
                   key={i}
-                  src={`speaking/school${i + 1}.png`}
-                  alt={`school${i + 1}`}
+                  src={`/speaking/school${i + 1}.png`}
+                  alt={`Client ${i + 1} logo`}
+                  width={80}
+                  height={48}
                   className="h-12 object-contain grayscale hover:grayscale-0 transition duration-300"
                 />
               ))}
@@ -83,8 +85,8 @@ export default function SpeakingPage() {
         <div className="space-y-16">
           {/* Keynote 1 */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <Image
-              src="/Phalen, Mark -78.jpg"
+            <Image 
+              src="/phelan-mark-78.jpg" 
               width={700}
               height={700}
               alt="Keynote 1"
@@ -126,9 +128,9 @@ export default function SpeakingPage() {
                 Uncover the Magic of AI
               </button>
             </div>
-            <Image
-              src="/Phalen, Mark -21.jpg"
-              alt="Keynote 2"
+            <Image 
+              src="/phelan-mark-21.jpg" 
+              alt="Keynote 2" 
               width={700}
               height={700}
               className="rounded-lg shadow-xl order-1 md:order-2"
@@ -137,9 +139,9 @@ export default function SpeakingPage() {
 
           {/* Keynote 3 */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <Image
-              src="/Phalen, Mark -39.jpg"
-              alt="Keynote 3"
+            <Image 
+              src="/phelan-mark-39.jpg" 
+              alt="Keynote 3" 
               width={700}
               height={700}
               className="rounded-lg shadow-xl"
@@ -197,7 +199,7 @@ export default function SpeakingPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <Image
-              src="/Phalen, Mark -37.jpg"
+              src="/phelan-mark-37.jpg"
               alt="Mark speaking on stage"
               width={600}
               height={600}

@@ -50,7 +50,7 @@ const steps = [
 export default function ProcessSection() {
   return (
     <section
-      className="bg-[#13395c] py-20 md:py-24 px-4 relative mb-24"
+      className="bg-[var(--slateBlue)] py-20 md:py-24 px-4 relative mb-24"
       style={{
         backgroundImage: 'url(/pattern-2.png)',
         backgroundRepeat: 'no-repeat',

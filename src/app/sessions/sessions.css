@@ -160,14 +160,8 @@
 }
 
 .btn:hover {
-  color: #13395c;
+  color: var(--slateBlue);
   box-shadow: 0 0 0 5px var(--darkGold);
-}
-
-.btn:hover span:last-child {
-  width: 160px;
-  height: 160px;
-  opacity: 1;
 }
 
 .btn:active {

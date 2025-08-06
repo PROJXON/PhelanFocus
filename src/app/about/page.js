@@ -60,7 +60,7 @@ const CircleProgress = ({ percentage, label }) => {
           cx="70"
           cy="70"
           r="45"
-          stroke="#13395c"
+          stroke="var(--slateBlue)"
           strokeWidth="10"
           fill="none"
           strokeDasharray={strokeDasharray}
@@ -68,7 +68,7 @@ const CircleProgress = ({ percentage, label }) => {
           strokeLinecap="round"
           style={{ transition: "stroke-dashoffset 0.3s linear" }}
         />
-        <text x="70" y="75" textAnchor="middle" fontSize="24" fill="#13395c" fontWeight="700">
+        <text x="70" y="75" textAnchor="middle" fontSize="24" fill="var(--slateBlue)" fontWeight="700">
           {count}%
         </text>
       </svg>
@@ -242,7 +242,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section z-20 relative position-relative" style={{ backgroundImage: "url('Phalen, Mark -39.jpg')" }}>
+      <section className="cta-section z-20 relative position-relative" style={{ backgroundImage: "url('phelan-mark-39.jpg')" }}>
         <div className="image-overlay"></div>
         <div className="r-container position-relative py-5" style={{ zIndex: 2 }}>
           <div className="d-flex flex-column mx-auto text-center align-items-center text-white gap-4" style={{ maxWidth: '900px' }}>
@@ -272,7 +272,7 @@ export default function AboutPage() {
             {
               name: "Mark Phelan",
               role: "Senior Consultant, E-Commerce Solutions",
-              img: "team/Phalen, Mark -41.jpg",
+              img: "team/phelan-mark-41.jpg",
               socials: {
                 linkedin: "https://www.linkedin.com/in/phelanmarkw/"
               }
@@ -306,7 +306,13 @@ export default function AboutPage() {
             return (
               <div key={idx} className="team-card">
                 <div className="team-img-wrapper">
-                  <img src={member.img} alt={member.name} />
+                  <Image 
+                    src={`/${member.img}`} 
+                    alt={member.name}
+                    width={280}
+                    height={280}
+                    className="object-cover"
+                  />
                 </div>
                 <h3>{member.name}</h3>
                 <p className="title">{title}</p>
