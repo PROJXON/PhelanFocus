@@ -234,93 +234,127 @@ export default function AboutPage() {
       </section>
 
 
-      {/* Team Section */}
-      <section className="team-cards-section">
-        <h2 className="team-title">Meet Our Team</h2>
-        <div className="team-cards-container">
-          {[
-            {
-              name: "Mark Phelan",
-              role: "Senior Consultant, E-Commerce Solutions",
-              img: "team/phelan-mark-41.jpg",
-              socials: {
-                linkedin: "https://www.linkedin.com/in/phelanmarkw/"
-              }
-            },
-            {
-              name: "Kathy Seaton",
-              role: "Senior Consultant, Non Profit Development",
-              img: "team/kathy.webp",
-              socials: {
-                linkedin: "https://www.linkedin.com/in/klseaton/"
-              }
-            },
-            {
-              name: "Melissa Eboli",
-              role: "Senior Consultant, Tech + Software Solutions",
-              img: "team/melissa.webp",
-              socials: {
-                linkedin: "https://www.linkedin.com/in/viamelissa/"
-              }
-            },
-            {
-              name: "Donavon Roberson",
-              role: "Senior Consultant, Health + Wellness Solutions",
-              img: "team/donavon.webp",
-              socials: {
-                linkedin: "https://www.linkedin.com/in/donavonroberson/"
-              }
-            }
-          ].map((member, idx) => {
-            const [title, dept] = member.role.split(",");
-            return (
-              <div key={idx} className="team-card">
-                <div className="team-img-wrapper">
-                  <Image 
-                    src={`/${member.img}`} 
-                    alt={member.name}
-                    width={280}
-                    height={280}
-                    className="object-cover"
-                  />
-                </div>
-                <h3>{member.name}</h3>
-                <p className="title">{title}</p>
-                <p className="department">{dept}</p>
-                <div className="team-socials">
-                  {member.socials.twitter && (
-                    <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                  )}
-                  {member.socials.linkedin && (
-                    <a
-                      href={member.socials.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="link-gold-hover"
-                    >
-                      <FontAwesomeIcon icon={faLinkedinIn} />
-                    </a>
-                  )}
-                  {member.socials.facebook && (
-                    <a href={member.socials.facebook} target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-facebook-f"></i>
-                    </a>
-                  )}
-                  {member.socials.instagram && (
-                    <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-instagram"></i>
-                    </a>
-                  )}
-                </div>
-              </div>
-            );
-          })}
+  <section className="founder-podcast-section">
+  <h2 className="team-title">Meet Our Founder</h2>
+  <div className="founder-podcast-container">
+    {/* Mark Phelan Card */}
+    <div className="team-card">
+      <div className="team-img-wrapper">
+        <Image 
+          src="/team/phelan-mark-41.jpg" 
+          alt="Mark Phelan"
+          width={280}
+          height={280}
+          style={{ objectFit: "cover" }}
+        />
+      </div>
+      <h3>Mark Phelan</h3>
+      <p className="title">CEO & Founder</p>
+      <p className="department">
+        <a href="https://projxon.com/" className="link-gold-hover"  target="_blank" rel="noopener noreferrer">
+          PROJXON
+        </a>
+       </p>
+      <div className="team-socials">
+        <a
+          href="https://www.linkedin.com/in/phelanmarkw/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link-gold-hover"
+        >
+          <FontAwesomeIcon icon={faLinkedinIn} />
+        </a>
+      </div>
+    </div>
+    {/* Podcast Block */}
+    <div className="podcast-card">
+      <a
+        href="https://www.thephelanfocus.com/podcast"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="podcast-link"
+      >
+        <div className="podcast-img-wrapper">
+          <Image
+            src="/podcast.png"
+            alt="The Phelan Focus Podcast"
+            width={280}
+            height={280}
+            style={{ objectFit: "cover" }}
+          />
         </div>
-      </section>
+        <div className="podcast-info">
+          <h4>The Phelan Focus Podcast</h4>
+          <p>Discover insights and stories with Mark Phelan. Listen now!</p>
+          <span className="btn">Explore Podcast</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
 
-
+{/* Section 2: Other Team Members */}
+<section className="team-cards-section">
+  <h2 className="team-title">Our Expert Team</h2>
+  <div className="team-cards-container">
+    {[
+      {
+        name: "Kathy Seaton",
+        role: "Senior Consultant, Non Profit Development",
+        img: "team/kathy.webp",
+        socials: {
+          linkedin: "https://www.linkedin.com/in/klseaton/"
+        }
+      },
+      {
+        name: "Melissa Eboli",
+        role: "Senior Consultant, Tech + Software Solutions",
+        img: "team/melissa.webp",
+        socials: {
+          linkedin: "https://www.linkedin.com/in/viamelissa/"
+        }
+      },
+      {
+        name: "Donavon Roberson",
+        role: "Senior Consultant, Health + Wellness Solutions",
+        img: "team/donavon.webp",
+        socials: {
+          linkedin: "https://www.linkedin.com/in/donavonroberson/"
+        }
+      }
+    ].map((member, idx) => {
+      const [title, dept] = member.role.split(",");
+      return (
+        <div key={idx} className="team-card">
+          <div className="team-img-wrapper">
+            <Image 
+              src={`/${member.img}`} 
+              alt={member.name}
+              width={280}
+              height={280}
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <h3>{member.name}</h3>
+          <p className="title">{title}</p>
+          <p className="department">{dept}</p>
+          <div className="team-socials">
+            {member.socials.linkedin && (
+              <a
+                href={member.socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-gold-hover"
+              >
+                <FontAwesomeIcon icon={faLinkedinIn} />
+              </a>
+            )}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</section>
 
       {/* Counter Section */}
       <section className="counter-section">
