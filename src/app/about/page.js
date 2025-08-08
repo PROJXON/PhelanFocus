@@ -60,7 +60,7 @@ const CircleProgress = ({ percentage, label }) => {
           cx="70"
           cy="70"
           r="45"
-          stroke="var(--slateBlue)"
+          stroke="#13395c"
           strokeWidth="10"
           fill="none"
           strokeDasharray={strokeDasharray}
@@ -68,7 +68,7 @@ const CircleProgress = ({ percentage, label }) => {
           strokeLinecap="round"
           style={{ transition: "stroke-dashoffset 0.3s linear" }}
         />
-        <text x="70" y="75" textAnchor="middle" fontSize="24" fill="var(--slateBlue)" fontWeight="700">
+        <text x="70" y="75" textAnchor="middle" fontSize="24" fill="#13395c" fontWeight="700">
           {count}%
         </text>
       </svg>
@@ -132,7 +132,7 @@ export default function AboutPage() {
 
       {/* About Us Section*/}
       <section
-        className="about-section z-20 relative"
+        className="about-section relative z-20"
         style={{
           padding: "64px 0 64px 0", 
           background: "#f8fafc",
@@ -188,7 +188,7 @@ export default function AboutPage() {
 
       {/* Partners */}
       <section
-        className="partner-section z-20 relative"
+        className="partner-section relative z-20"
         style={{
           background: "#144a8f",
           marginTop: 0,
@@ -205,7 +205,7 @@ export default function AboutPage() {
 
       {/* Why Choose Us */}
       <section
-        className="why-section z-20 relative"
+        className="why-section relative z-20"
         style={{
           background: "#f1f5f9",
           marginLeft: "calc(50% - 50vw)",
@@ -242,7 +242,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section z-20 relative position-relative" style={{ backgroundImage: "url('phelan-mark-39.jpg')" }}>
+      <section className="cta-section relative z-20 position-relative" style={{ backgroundImage: "url('phelan-mark-39.jpg')" }}>
         <div className="image-overlay"></div>
         <div className="r-container position-relative py-5" style={{ zIndex: 2 }}>
           <div className="d-flex flex-column mx-auto text-center align-items-center text-white gap-4" style={{ maxWidth: '900px' }}>
@@ -258,25 +258,71 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section
-        className="team-cards-section z-20 relative"
-        style={{
-          background: "#f8fafc",
-          padding: "64px 0",
-        }}
-      >
-        <h2 className="team-title">Meet Our Team</h2>
+      {/* Founder & Podcast Section */}
+      <section className="founder-podcast-section relative z-20">
+        <h2 className="team-title">Meet Our Founder</h2>
+        <div className="founder-podcast-container">
+          {/* Mark Phelan Card */}
+          <div className="team-card">
+            <div className="team-img-wrapper">
+              <Image 
+                src="/team/phelan-mark-41.jpg" 
+                alt="Mark Phelan"
+                width={280}
+                height={280}
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <h3>Mark Phelan</h3>
+            <p className="title">CEO & Founder</p>
+            <p className="department">
+              <a href="https://projxon.com/" className="link-gold-hover"  target="_blank" rel="noopener noreferrer">
+                PROJXON
+              </a>
+            </p>
+            <div className="team-socials">
+              <a
+                href="https://www.linkedin.com/in/phelanmarkw/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-gold-hover"
+              >
+                <FontAwesomeIcon icon={faLinkedinIn} />
+              </a>
+            </div>
+          </div>
+          {/* Podcast Block */}
+          <div className="podcast-card">
+            <a
+              href="https://www.thephelanfocus.com/podcast"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="podcast-link"
+            >
+              <div className="podcast-img-wrapper">
+                <Image
+                  src="/podcast.png"
+                  alt="The Phelan Focus Podcast"
+                  width={280}
+                  height={280}
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <div className="podcast-info">
+                <h4>The Phelan Focus Podcast</h4>
+                <p>Discover insights and stories with Mark Phelan. Listen now!</p>
+                <span className="btn">Explore Podcast</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Other Team Members */}
+      <section className="team-cards-section relative z-20">
+        <h2 className="team-title">Our Expert Team</h2>
         <div className="team-cards-container">
           {[
-            {
-              name: "Mark Phelan",
-              role: "Senior Consultant, E-Commerce Solutions",
-              img: "team/phelan-mark-41.jpg",
-              socials: {
-                linkedin: "https://www.linkedin.com/in/phelanmarkw/"
-              }
-            },
             {
               name: "Kathy Seaton",
               role: "Senior Consultant, Non Profit Development",
@@ -311,18 +357,13 @@ export default function AboutPage() {
                     alt={member.name}
                     width={280}
                     height={280}
-                    className="object-cover"
+                    style={{ objectFit: "cover" }}
                   />
                 </div>
                 <h3>{member.name}</h3>
                 <p className="title">{title}</p>
                 <p className="department">{dept}</p>
                 <div className="team-socials">
-                  {member.socials.twitter && (
-                    <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                  )}
                   {member.socials.linkedin && (
                     <a
                       href={member.socials.linkedin}
@@ -331,16 +372,6 @@ export default function AboutPage() {
                       className="link-gold-hover"
                     >
                       <FontAwesomeIcon icon={faLinkedinIn} />
-                    </a>
-                  )}
-                  {member.socials.facebook && (
-                    <a href={member.socials.facebook} target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-facebook-f"></i>
-                    </a>
-                  )}
-                  {member.socials.instagram && (
-                    <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-instagram"></i>
                     </a>
                   )}
                 </div>
@@ -352,7 +383,7 @@ export default function AboutPage() {
 
       {/* Counter Section  */}
       <section
-        className="counter-section z-20 relative"
+        className="counter-section relative z-20"
         style={{
           background: "#144a8f",
           color: "#fff",
@@ -367,7 +398,7 @@ export default function AboutPage() {
 
       {/* Services Section */}
       <section
-        className="services-section z-20 relative"
+        className="services-section relative z-20"
         style={{
           background: "#f1f5f9",
           padding: "64px 0",
