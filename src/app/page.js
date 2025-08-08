@@ -19,20 +19,20 @@ const Home = async () => {
         <Navbar isFooter={false} />
       </header>
 
-      <main className="pt-16 space-y-16">
+      {/* 🌟 Hero Section */}
+      <Hero
+        sectionClass="home-hero h-[60vh] flex items-center justify-center text-white text-center"
+        bgImage="/homepage-hero.png"
+        header="Welcome to Phelan Coaching"
+        alt="Phelan Coaching Hero Background"
+      />
 
-        {/* 🌟 Hero Section */}
-        <Hero 
-          sectionClass="home-hero h-[60vh] flex items-center justify-center text-white text-center" 
-          bgImage="/homepage-hero.png" 
-          header="Welcome to Phelan Coaching" 
-          alt="Phelan Coaching Hero Background"
-        />
-
+      <main className="relative z-10 pt-16 space-y-16 bg-white">
         {/* Call to Action Section */}
         <section className="text-center py-8">
           <p className="text-lg max-w-xl mx-auto mb-6">
-            Helping individuals unlock their potential and achieve personal and professional growth.
+            Helping individuals unlock their potential and achieve personal and
+            professional growth.
           </p>
           <Link href="/sessions">
             <button className="btn">
