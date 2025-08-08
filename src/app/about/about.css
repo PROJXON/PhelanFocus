@@ -42,17 +42,6 @@ section {
   margin-bottom: 15px;
 }
 
-.btn span:first-child {
-  position: relative;
-  z-index: 2;
-}
-
-.btn:hover span:last-child {
-  width: 160px;
-  height: 160px;
-  opacity: 1;
-}
-
 .btn:active {
   transform: scale(0.96);
 }
@@ -86,7 +75,7 @@ section {
   left: 40px;
   width: 380px;
   height: 380px;
-  background: #FFD700;
+  background: var(--gold);
   border-radius: 8px;
   z-index: 1;
 }
@@ -106,7 +95,7 @@ section {
   bottom: -80px;
   left: 350px;
   z-index: 3;
-  border: 4px solid #FFD700;
+  border: 4px solid var(--gold);
   background: #fff;
 }
 
@@ -127,7 +116,7 @@ section {
 }
 
 .about-text h3 {
-  color: #13395c;
+  color: var(--slateBlue);
   font-size: 36px;
   font-weight: 800;
   margin-bottom: 20px;
@@ -158,7 +147,7 @@ section {
   padding: 12px 24px;
   border: none;
   font-size: 16px;
-  background-color: #13395c;
+  background-color: var(--slateBlue);
   border-radius: 10px;
   font-weight: 600;
   color: #ffffff;
@@ -189,8 +178,8 @@ section {
 
 .btn-read:hover {
   background-color: #ffffff;
-  color: #13395c;
-  box-shadow: 0 0 0 2px #13395c;
+  color: var(--slateBlue);
+  box-shadow: 0 0 0 2px var(--slateBlue);
 }
 
 .btn-read:hover span:last-child {
@@ -207,7 +196,7 @@ section {
 
 /* Partner section   */
 .partner-section {
-  background-color: #13395c;
+  background-color: var(--slateBlue);
   padding: 60px 0;
   overflow: hidden;
   margin-top: 100px;
@@ -240,12 +229,12 @@ section {
 
 .logos::before {
   left: 0;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0), #13395c);
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), var(--slateBlue));
 }
 
 .logos::after {
   right: 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), #13395c);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--slateBlue));
 }
 
 .logos-slide {
@@ -292,7 +281,7 @@ section {
 
 .circle-label {
   font-size: 18px;
-  color: #13395c;
+  color: var(--slateBlue);
   font-weight: 600;
   margin-top: 20px;
   line-height: 1.4;
@@ -338,7 +327,7 @@ section {
 
 .years-badge {
   position: absolute;
-  background-color: #13395c;
+  background-color: var(--slateBlue);
   color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -367,7 +356,7 @@ section {
 }
 
 .why-left h3 {
-  color: #13395c;
+  color: var(--slateBlue);
   font-size: 42px;
   font-weight: 900;
   margin-bottom: 25px;
@@ -393,11 +382,11 @@ section {
   display: flex;
   align-items: center;
   font-size: 18px;
-  color: #13395c;
+  color: var(--slateBlue);
 }
 
 .contact-info i {
-  background-color: #13395c;
+  background-color: var(--slateBlue);
   color: #fff;
   padding: 15px;
   border-radius: 50%;
@@ -449,7 +438,7 @@ section {
 }
 
 .accent-color-2 {
-  color: #ffd700;
+  color: var(--gold);
 }
 
 .cta-button-container {
@@ -542,7 +531,7 @@ p {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 50px;
-  color: #13395c;
+  color: var(--slateBlue);
 }
 
 .team-cards-container {
@@ -587,7 +576,7 @@ p {
 
 .team-card h3 {
   font-weight: 700;
-  color: #13395c;
+  color: var(--slateBlue);
   margin-bottom: 8px;
 }
 
@@ -615,7 +604,7 @@ p {
 
 /* Counter */
 .counter-section {
-  background: #13395c;
+  background: var(--slateBlue);
   color: #fff;
   display: flex;
   justify-content: space-around;
@@ -653,7 +642,7 @@ p {
   padding: 12px 24px;
   border: none;
   font-size: 16px;
-  background-color: #13395c;
+  background-color: var(--slateBlue);
   border-radius: 10px;
   font-weight: 600;
   color: #ffffff;
@@ -685,8 +674,8 @@ p {
 
 .all-service-btn:hover {
   background-color: #ffffff;
-  color: #13395c;
-  box-shadow: 0 0 0 2px #13395c;
+  color: var(--slateBlue);
+  box-shadow: 0 0 0 2px var(--slateBlue);
 }
 
 .all-service-btn:hover span:last-child {
@@ -708,7 +697,7 @@ p {
 
 .service-card {
   background: #fff;
-  border: 1px solid #FFD700;
+  border: 1px solid var(--gold);
   padding: 30px;
   width: 300px;
   border-radius: 8px;
@@ -723,7 +712,7 @@ p {
 
 .service-card i {
   font-size: 36px;
-  color: #13395c;
+  color: var(--slateBlue);
   margin-bottom: 20px;
 }
 
@@ -741,7 +730,7 @@ p {
 }
 
 .service-card .learn-more {
-  background-color: #13395c;
+  background-color: var(--slateBlue);
   color: #fff;
   padding: 14px 24px;
   border-radius: 6px;
@@ -756,9 +745,9 @@ p {
 }
 
 .service-card:hover {
-  background-color: #13395c;
+  background-color: var(--slateBlue);
   color: #fff;
-  border-color: #13395c;
+  border-color: var(--slateBlue);
   transform: translateY(-10px);
 }
 
@@ -792,7 +781,7 @@ p {
 
 .learn-more:hover {
   background-color: #FFD28F;
-  color: #13395c;
+  color: var(--slateBlue);
 }
 
 .learn-more:hover i {
@@ -808,7 +797,7 @@ p {
 
 .service-card:hover .learn-more {
   background-color: #fff;
-  color: #13395c;
+  color: var(--slateBlue);
 }
 
 .service-icon {
