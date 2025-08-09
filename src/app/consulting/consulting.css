@@ -17,7 +17,7 @@
 .consulting-hero {
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  height: 50vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -32,10 +32,25 @@
 
 /* Main Content */
 .consulting-main {
-  max-width: 1200px;
   margin: 0 auto;
+  z-index: 10;
+  position: relative;
   padding: 4rem 2rem;
+  background-color: white;
+  left: 0;
+  right: 0;
 }
+
+.consulting-inner {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;   
+  padding-right: 1rem;  
+  width: 100%;       
+  box-sizing: border-box; 
+}
+
 
 /* Section Styles */
 .consulting-section-header {

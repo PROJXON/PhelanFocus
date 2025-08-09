@@ -9,6 +9,8 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./podcast.css";
 import ScrollToTopButton from "@/components/ScrollToTop";
+import FirstEpisode from "./video/TPFepisode";
+import PodcastVideo from "./video/featuredSection";
 
 export default function PodcastPage() {
   const { resolvedTheme } = useTheme();
@@ -51,7 +53,7 @@ export default function PodcastPage() {
       src: "/podcast/Instagram.png",
       alt: "Instagram logo",
     },
-  ]
+  ];
 
   useEffect(() => {
     setMounted(true);
@@ -66,10 +68,16 @@ export default function PodcastPage() {
       <Navbar isFooter={false} />
 
       {/* HERO */}
-      <Hero sectionClass="podcast-hero" bgImage="/podcast2.jpeg" header="Podcast" />
+      {/* Remove fixed positioning and z-index from Hero */}
+      <div style={{ position: "relative", width: "100%", height: "50vh", zIndex: 0 }}>
+        <Hero
+          bgImage="/podcast2.jpeg"
+          header="Podcast"
+        />
+      </div>
 
       {/* MARK PHELAN STORY */}
-      <section className="py-20 px-6 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="bg-[#0b1727] py-20 px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" style={{ position: "relative", zIndex: 1 }}>
         <div className="flex justify-center">
           <Image
             src="/Phelancoaching.jpg"
@@ -99,7 +107,7 @@ export default function PodcastPage() {
       </section>
 
       {/* QUOTE CAROUSEL */}
-      <section className="bg-slate-800 text-white py-16 px-6 text-center">
+      <section className="bg-slate-800 text-white py-16 px-6 text-center" style={{ position: "relative", zIndex: 1 }}>
         <h3 className="text-3xl font-bold mb-12">What Listeners Say</h3>
         <div className="relative max-w-3xl mx-auto h-48">
           <AnimatePresence mode="wait">
@@ -112,7 +120,9 @@ export default function PodcastPage() {
               className="absolute w-full"
             >
               <div className="bg-slate-700 p-6 rounded-xl shadow-md">
-                <p className="italic text-lg mb-4">“{quotes[quoteIndex].text}”</p>
+                <p className="italic text-lg mb-4">
+                  “{quotes[quoteIndex].text}”
+                </p>
                 <p className="text-yellow-400 text-sm uppercase font-semibold tracking-widest">
                   {quotes[quoteIndex].author}
                 </p>
@@ -123,7 +133,7 @@ export default function PodcastPage() {
       </section>
 
       {/* LISTEN ON */}
-      <section className="py-20 px-6 text-center">
+      <section className="bg-[#0b1727] py-20 px-6 text-center" style={{ position: "relative", zIndex: 1 }}>
         <h3 className="text-2xl font-semibold mb-10">
           Listen wherever you find your favorite podcasts:
         </h3>
@@ -136,30 +146,71 @@ export default function PodcastPage() {
               rel="noopener noreferrer"
               className="transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-lg"
             >
-              <Image
-                src={place.src}
-                alt={place.alt}
-                width={200}
-                height={50}
-              />
+              <Image src={place.src} alt={place.alt} width={200} height={50} />
             </a>
           ))}
         </div>
       </section>
-
-      {/* CTA SECTION */}
-      <section className="bg-slate-800 text-white py-20 px-6 text-center">
-        <h3 className="text-3xl font-bold mb-4">Are you ready to take action?</h3>
+      <section className="bg-slate-800 text-white py-20 px-6 text-center" style={{ position: "relative", zIndex: 1 }}>
+        <h3 className="text-3xl font-bold mb-4">
+        Podcast With Our Featured Guest 
+        </h3>
         <p className="text-lg mb-8 max-w-xl mx-auto">
-          Schedule a no-cost discovery call to learn if I'm the right person to help you move forward.
+          Here is a podcast episode with our featured guest
+        </p>
+        <PodcastVideo />
+        <button
+          className={`w-full sm:w-auto px-8 py-3 rounded-lg font-semibold transition duration-300 border-2 ${
+            mounted && resolvedTheme === "light"
+              ? "border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white hover:shadow-md"
+              : "border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black hover:shadow-md"
+          }`}
+          onClick={() =>
+            window.open(
+              "https://thejobseekersjourney.podbean.com/e/entrepreneurshipandthemomentuminternshipprogram/",
+              "_blank"
+            )
+          }
+        >
+          Listen to Podcast
+        </button>
+      </section>
+      <section className="bg-[#0b1727] py-20 px-6 text-center" style={{ position: "relative", zIndex: 1 }}>
+        <h3 className="text-3xl font-semibold mb-10">First TPF Episode</h3>
+        <FirstEpisode />
+        <button
+          className={`w-full sm:w-auto px-8 py-3 rounded-lg font-semibold transition duration-300 border-2 ${
+            mounted && resolvedTheme === "light"
+              ? "border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white hover:shadow-md"
+              : "border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black hover:shadow-md"
+          }`}
+          onClick={() =>
+            window.open(
+              "https://open.spotify.com/episode/0RFqaTngo8JSXrVBlhIGaV",
+              "_blank"
+            )
+          }
+        >
+          All Episodes
+        </button>
+      </section>
+      {/* CTA SECTION */}
+      <section className="bg-slate-800 text-white py-20 px-6 text-center" style={{ position: "relative", zIndex: 1 }}>
+        <h3 className="text-3xl font-bold mb-4">
+          Are you ready to take action?
+        </h3>
+        <p className="text-lg mb-8 max-w-xl mx-auto">
+          Schedule a no-cost discovery call to learn if I'm the right person to
+          help you move forward.
         </p>
         <div className="max-w-xs mx-auto">
           <Link href="/contact">
             <button
-              className={`w-full sm:w-auto px-8 py-3 rounded-lg font-semibold transition duration-300 border-2 ${mounted && resolvedTheme === "light"
-                ? "border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white hover:shadow-md"
-                : "border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black hover:shadow-md"
-                }`}
+              className={`w-full sm:w-auto px-8 py-3 rounded-lg font-semibold transition duration-300 border-2 ${
+                mounted && resolvedTheme === "light"
+                  ? "border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white hover:shadow-md"
+                  : "border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black hover:shadow-md"
+              }`}
             >
               Book a Call
             </button>
@@ -169,7 +220,6 @@ export default function PodcastPage() {
 
       <Footer />
       <ScrollToTopButton />
-
     </div>
   );
 }
