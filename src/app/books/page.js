@@ -85,7 +85,7 @@ export default function booksPage() {
       <Hero sectionClass="books-hero" bgImage="/books.jpeg" header="Books" />
 
       {/* Books Section */}
-      <section id="books" className="py-16 bg-white dark:bg-gray-900">
+      <section id="books" className="z-10 relative py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white text-center">
             Books
@@ -123,7 +123,7 @@ export default function booksPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900">
+      <section className="z-10 relative py-16 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-4xl font-bold mb-12 text-center text-gray-900 dark:text-white">
             What Readers Say
@@ -191,7 +191,7 @@ export default function booksPage() {
       </section>
 
       {/* Who Should Read Section */}
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className="z-10 relative py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white">
             Who Should Read These Books?
@@ -229,10 +229,10 @@ export default function booksPage() {
       </section>
 
       {/* Author Section */}
-      <section className="py-16 bg-gray-100 dark:bg-gray-800">
+      <section className="z-10 relative py-16 bg-gray-100 dark:bg-gray-800">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
           <Image
-            src="/Phalen, Mark -21.jpg"
+            src="/phelan-mark-21.jpg"
             alt="Phelan"
             width={200}
             height={200}

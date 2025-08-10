@@ -1,7 +1,7 @@
 nav {
-    position: relative;
-    z-index: 10;
-  }
+  position: relative;
+  z-index: 10;
+}
 
 .service-page {
   background: #fff;
@@ -13,7 +13,7 @@ nav {
 .speaking-hero {
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  height: 50vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -49,11 +49,11 @@ nav {
   padding: 12px 24px;
   border: none;
   font-size: 16px;
-  background-color: #13395c; 
+  background-color: var(--slateBlue);
   border-radius: 10px;
   font-weight: 600;
-  color: #ffffff; 
-  box-shadow: 0 0 0 2px #5ed4c6; 
+  color: #ffffff;
+  box-shadow: 0 0 0 2px #5ed4c6;
   cursor: pointer;
   overflow: hidden;
   transition: all 0.5s ease;
@@ -80,8 +80,8 @@ nav {
 
 .btn-book:hover {
   background-color: #ffffff;
-  color: #13395c;
-  box-shadow: 0 0 0 2px #13395c;
+  color: var(--slateBlue);
+  box-shadow: 0 0 0 2px var(--slateBlue);
 }
 
 .btn-book:hover span:last-child {

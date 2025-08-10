@@ -32,6 +32,7 @@ export default function ConsultingPage() {
       <Hero sectionClass="consulting-hero" bgImage="/Consult.png" header="Consulting" />
 
       <main className="consulting-main">
+        <div className='consulting-inner'>
         {/* Services Section */}
         <section id="services" className="consulting-services-section">
           <div className="consulting-section-header">
@@ -224,6 +225,7 @@ export default function ConsultingPage() {
             </div>
           </div>
         </section>
+        </div>
       </main>
 
       <Footer />

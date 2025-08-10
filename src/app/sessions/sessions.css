@@ -2,7 +2,7 @@
 .sessions-hero {
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  height: 50vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -35,6 +35,8 @@
 .sessions-container {
   background-color: #ffffff;
   padding-bottom: 60px;
+  z-index: 10;
+  position: relative;
 }
 
 /* Main Layout */
@@ -158,14 +160,8 @@
 }
 
 .btn:hover {
-  color: #13395c;
+  color: var(--slateBlue);
   box-shadow: 0 0 0 5px var(--darkGold);
-}
-
-.btn:hover span:last-child {
-  width: 160px;
-  height: 160px;
-  opacity: 1;
 }
 
 .btn:active {
@@ -323,6 +319,8 @@
   padding: 4rem 1rem;
   background: linear-gradient(to bottom, #f8f9fb, #ffffff);
   text-align: center;
+  position: relative;
+  z-index: 10;
 }
 
 .coaching-process h2 {

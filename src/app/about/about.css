@@ -18,7 +18,7 @@ section {
 .about-hero {
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  height: 50vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -40,17 +40,6 @@ section {
 .hero-content h1 {
   font-size: 48px;
   margin-bottom: 15px;
-}
-
-.btn span:first-child {
-  position: relative;
-  z-index: 2;
-}
-
-.btn:hover span:last-child {
-  width: 160px;
-  height: 160px;
-  opacity: 1;
 }
 
 .btn:active {
@@ -86,10 +75,11 @@ section {
   left: 40px;
   width: 380px;
   height: 380px;
-  background: #FFD700;
+  background: var(--gold);
   border-radius: 8px;
   z-index: 1;
 }
+
 
 .about-images .img1 {
   width: 400px;
@@ -105,7 +95,7 @@ section {
   bottom: -80px;
   left: 350px;
   z-index: 3;
-  border: 4px solid #FFD700;
+  border: 4px solid var(--gold);
   background: #fff;
 }
 
@@ -126,7 +116,7 @@ section {
 }
 
 .about-text h3 {
-  color: #13395c;
+  color: var(--slateBlue);
   font-size: 36px;
   font-weight: 800;
   margin-bottom: 20px;
@@ -157,7 +147,7 @@ section {
   padding: 12px 24px;
   border: none;
   font-size: 16px;
-  background-color: #13395c;
+  background-color: var(--slateBlue);
   border-radius: 10px;
   font-weight: 600;
   color: #ffffff;
@@ -188,8 +178,8 @@ section {
 
 .btn-read:hover {
   background-color: #ffffff;
-  color: #13395c;
-  box-shadow: 0 0 0 2px #13395c;
+  color: var(--slateBlue);
+  box-shadow: 0 0 0 2px var(--slateBlue);
 }
 
 .btn-read:hover span:last-child {
@@ -206,7 +196,7 @@ section {
 
 /* Partner section   */
 .partner-section {
-  background-color: #13395c;
+  background-color: var(--slateBlue);
   padding: 60px 0;
   overflow: hidden;
   margin-top: 100px;
@@ -239,12 +229,12 @@ section {
 
 .logos::before {
   left: 0;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0), #13395c);
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), var(--slateBlue));
 }
 
 .logos::after {
   right: 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), #13395c);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--slateBlue));
 }
 
 .logos-slide {
@@ -291,22 +281,27 @@ section {
 
 .circle-label {
   font-size: 18px;
-  color: #13395c;
+  color: var(--slateBlue);
   font-weight: 600;
   margin-top: 20px;
   line-height: 1.4;
 }
 
-/* Ensure image height matches progress */
 .why-section {
   display: flex;
   gap: 50px;
   align-items: center;
-  /* ✅ Ensure vertical alignment */
   justify-content: space-between;
-  max-width: 1200px;
-  margin: auto;
-  padding: 80px 20px;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  box-sizing: border-box;
+  margin-left: "calc(50% - 50vw)";
+  margin-right: "calc(50% - 50vw)",
 }
 
 .why-left {
@@ -332,7 +327,7 @@ section {
 
 .years-badge {
   position: absolute;
-  background-color: #13395c;
+  background-color: var(--slateBlue);
   color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -361,7 +356,7 @@ section {
 }
 
 .why-left h3 {
-  color: #13395c;
+  color: var(--slateBlue);
   font-size: 42px;
   font-weight: 900;
   margin-bottom: 25px;
@@ -387,11 +382,11 @@ section {
   display: flex;
   align-items: center;
   font-size: 18px;
-  color: #13395c;
+  color: var(--slateBlue);
 }
 
 .contact-info i {
-  background-color: #13395c;
+  background-color: var(--slateBlue);
   color: #fff;
   padding: 15px;
   border-radius: 50%;
@@ -443,7 +438,7 @@ section {
 }
 
 .accent-color-2 {
-  color: #ffd700;
+  color: var(--gold);
 }
 
 .cta-button-container {
@@ -536,7 +531,7 @@ p {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 50px;
-  color: #13395c;
+  color: var(--slateBlue);
 }
 
 .team-cards-container {
@@ -581,7 +576,7 @@ p {
 
 .team-card h3 {
   font-weight: 700;
-  color: #13395c;
+  color: var(--slateBlue);
   margin-bottom: 8px;
 }
 
@@ -609,7 +604,7 @@ p {
 
 /* Counter */
 .counter-section {
-  background: #13395c;
+  background: var(--slateBlue);
   color: #fff;
   display: flex;
   justify-content: space-around;
@@ -647,7 +642,7 @@ p {
   padding: 12px 24px;
   border: none;
   font-size: 16px;
-  background-color: #13395c;
+  background-color: var(--slateBlue);
   border-radius: 10px;
   font-weight: 600;
   color: #ffffff;
@@ -679,8 +674,8 @@ p {
 
 .all-service-btn:hover {
   background-color: #ffffff;
-  color: #13395c;
-  box-shadow: 0 0 0 2px #13395c;
+  color: var(--slateBlue);
+  box-shadow: 0 0 0 2px var(--slateBlue);
 }
 
 .all-service-btn:hover span:last-child {
@@ -702,7 +697,7 @@ p {
 
 .service-card {
   background: #fff;
-  border: 1px solid #FFD700;
+  border: 1px solid var(--gold);
   padding: 30px;
   width: 300px;
   border-radius: 8px;
@@ -717,7 +712,7 @@ p {
 
 .service-card i {
   font-size: 36px;
-  color: #13395c;
+  color: var(--slateBlue);
   margin-bottom: 20px;
 }
 
@@ -735,7 +730,7 @@ p {
 }
 
 .service-card .learn-more {
-  background-color: #13395c;
+  background-color: var(--slateBlue);
   color: #fff;
   padding: 14px 24px;
   border-radius: 6px;
@@ -750,9 +745,9 @@ p {
 }
 
 .service-card:hover {
-  background-color: #13395c;
+  background-color: var(--slateBlue);
   color: #fff;
-  border-color: #13395c;
+  border-color: var(--slateBlue);
   transform: translateY(-10px);
 }
 
@@ -786,7 +781,7 @@ p {
 
 .learn-more:hover {
   background-color: #FFD28F;
-  color: #13395c;
+  color: var(--slateBlue);
 }
 
 .learn-more:hover i {
@@ -802,7 +797,7 @@ p {
 
 .service-card:hover .learn-more {
   background-color: #fff;
-  color: #13395c;
+  color: var(--slateBlue);
 }
 
 .service-icon {
@@ -864,5 +859,108 @@ p {
     left: auto;
     right: auto;
     display: block;
+  }
+}
+/* Founder & Podcast Section */
+.founder-podcast-section {
+  padding: 80px 20px;
+  background: #f8f8fa;
+}
+
+.founder-podcast-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.team-card,
+.podcast-card {
+  background: #fff;
+  padding: 30px 20px;
+  width: 300px;
+  height:480px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-card:hover,
+.podcast-card:hover {
+  transform: translateY(-10px);
+}
+
+.team-img-wrapper,
+.podcast-img-wrapper {
+  border: 3px solid var(--gold);
+  padding: 5px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  height: 280px;
+  width: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.team-img-wrapper img,
+.podcast-img-wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.podcast-info {
+  text-align: center;
+}
+
+.podcast-info h4 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--slateBlue);
+}
+
+.podcast-info p {
+  font-size: 0.98rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.podcast-info .btn {
+  display: inline-block;
+  background: var(--slateBlue);
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.podcast-info .btn:hover {
+  background: var(--gold);
+  color: #222;
+}
+.founder-podcast-section{
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .founder-podcast-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .team-card,
+  .podcast-card {
+    max-width: 100%;
+    width: 100%;
   }
 }

@@ -18,7 +18,6 @@ import {
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import ScrollToTopButton from "@/components/ScrollToTop";
 
-
 // Circle Progress Component
 const CircleProgress = ({ percentage, label }) => {
   const strokeDasharray = 283;
@@ -131,8 +130,16 @@ export default function AboutPage() {
       {/* Hero Section */}
       <Hero sectionClass="about-hero" bgImage="/About.png" header="About" />
 
-      {/* About Us Section */}
-      <section className="about-section">
+      {/* About Us Section*/}
+      <section
+        className="about-section relative z-20"
+        style={{
+          padding: "64px 0 64px 0", 
+          background: "#f8fafc",
+          marginBottom: 0,
+          marginTop: 0,
+        }}
+      >
         <div className="about-container">
           <div className="about-images">
             <Image
@@ -148,6 +155,7 @@ export default function AboutPage() {
               height={280}
               alt="About Overlay"
               className="img2"
+              style={{marginBottom: 30}}
             />
           </div>
           <div className="about-text">
@@ -179,7 +187,15 @@ export default function AboutPage() {
       </section>
 
       {/* Partners */}
-      <section className="partner-section">
+      <section
+        className="partner-section relative z-20"
+        style={{
+          background: "#144a8f",
+          marginTop: 0,
+          marginBottom: 0,
+          padding: "32px 0",
+        }}
+      >
         <div className="logos">
           <div className="logos-slide">
             <span>PROJXON</span><span>PROJXON</span><span>PROJXON</span><span>PROJXON</span><span>PROJXON</span>
@@ -188,7 +204,16 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="why-section">
+      <section
+        className="why-section relative z-20"
+        style={{
+          background: "#f1f5f9",
+          marginLeft: "calc(50% - 50vw)",
+          marginRight: "calc(50% - 50vw)",
+          width: "100vw",
+          boxSizing: "border-box",
+        }}
+      >
         <div className="why-left">
           <h6>Create the Life</h6>
           <h3>Unlock Your Potential Life</h3>
@@ -217,7 +242,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section position-relative" style={{ backgroundImage: "url('Phalen, Mark -39.jpg')" }}>
+      <section className="cta-section relative z-20 position-relative" style={{ backgroundImage: "url('phelan-mark-39.jpg')" }}>
         <div className="image-overlay"></div>
         <div className="r-container position-relative py-5" style={{ zIndex: 2 }}>
           <div className="d-flex flex-column mx-auto text-center align-items-center text-white gap-4" style={{ maxWidth: '900px' }}>
@@ -233,20 +258,71 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Founder & Podcast Section */}
+      <section className="founder-podcast-section relative z-20">
+        <h2 className="team-title">Meet Our Founder</h2>
+        <div className="founder-podcast-container">
+          {/* Mark Phelan Card */}
+          <div className="team-card">
+            <div className="team-img-wrapper">
+              <Image 
+                src="/team/phelan-mark-41.jpg" 
+                alt="Mark Phelan"
+                width={280}
+                height={280}
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <h3>Mark Phelan</h3>
+            <p className="title">CEO & Founder</p>
+            <p className="department">
+              <a href="https://projxon.com/" className="link-gold-hover"  target="_blank" rel="noopener noreferrer">
+                PROJXON
+              </a>
+            </p>
+            <div className="team-socials">
+              <a
+                href="https://www.linkedin.com/in/phelanmarkw/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-gold-hover"
+              >
+                <FontAwesomeIcon icon={faLinkedinIn} />
+              </a>
+            </div>
+          </div>
+          {/* Podcast Block */}
+          <div className="podcast-card">
+            <a
+              href="https://www.thephelanfocus.com/podcast"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="podcast-link"
+            >
+              <div className="podcast-img-wrapper">
+                <Image
+                  src="/podcast.png"
+                  alt="The Phelan Focus Podcast"
+                  width={280}
+                  height={280}
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <div className="podcast-info">
+                <h4>The Phelan Focus Podcast</h4>
+                <p>Discover insights and stories with Mark Phelan. Listen now!</p>
+                <span className="btn">Explore Podcast</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
 
-      {/* Team Section */}
-      <section className="team-cards-section">
-        <h2 className="team-title">Meet Our Team</h2>
+      {/* Section 2: Other Team Members */}
+      <section className="team-cards-section relative z-20">
+        <h2 className="team-title">Our Expert Team</h2>
         <div className="team-cards-container">
           {[
-            {
-              name: "Mark Phelan",
-              role: "Senior Consultant, E-Commerce Solutions",
-              img: "team/Phalen, Mark -41.jpg",
-              socials: {
-                linkedin: "https://www.linkedin.com/in/phelanmarkw/"
-              }
-            },
             {
               name: "Kathy Seaton",
               role: "Senior Consultant, Non Profit Development",
@@ -276,17 +352,18 @@ export default function AboutPage() {
             return (
               <div key={idx} className="team-card">
                 <div className="team-img-wrapper">
-                  <img src={member.img} alt={member.name} />
+                  <Image 
+                    src={`/${member.img}`} 
+                    alt={member.name}
+                    width={280}
+                    height={280}
+                    style={{ objectFit: "cover" }}
+                  />
                 </div>
                 <h3>{member.name}</h3>
                 <p className="title">{title}</p>
                 <p className="department">{dept}</p>
                 <div className="team-socials">
-                  {member.socials.twitter && (
-                    <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                  )}
                   {member.socials.linkedin && (
                     <a
                       href={member.socials.linkedin}
@@ -297,16 +374,6 @@ export default function AboutPage() {
                       <FontAwesomeIcon icon={faLinkedinIn} />
                     </a>
                   )}
-                  {member.socials.facebook && (
-                    <a href={member.socials.facebook} target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-facebook-f"></i>
-                    </a>
-                  )}
-                  {member.socials.instagram && (
-                    <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-instagram"></i>
-                    </a>
-                  )}
                 </div>
               </div>
             );
@@ -314,10 +381,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-
-
-      {/* Counter Section */}
-      <section className="counter-section">
+      {/* Counter Section  */}
+      <section
+        className="counter-section relative z-20"
+        style={{
+          background: "#144a8f",
+          color: "#fff",
+          padding: "48px 0",
+        }}
+      >
         <Counter end={15} label="Years Experience" />
         <Counter end={2500} label="Satisfied Clients" />
         <Counter end={300} label="Problem Solved" />
@@ -325,14 +397,19 @@ export default function AboutPage() {
       </section>
 
       {/* Services Section */}
-      <section className="services-section">
+      <section
+        className="services-section relative z-20"
+        style={{
+          background: "#f1f5f9",
+          padding: "64px 0",
+        }}
+      >
         <h6>Master Your Mindset</h6>
         <h2>Professional Life Coaching Support</h2>
         <Link href="/services" className="all-service-btn">
           <span>ALL SERVICE</span>
           <span></span>
         </Link>
-
 
         <div className="service-cards">
           <div className="service-card">

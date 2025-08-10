@@ -80,7 +80,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <div className="bg-[#FFFFFF] dark:bg-[#13395c]">
+      <div className="bg-[#FFFFFF] dark:bg-[var(--slateBlue)]">
         <section className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-4 gap-10 text-center">
           <div className="flex flex-col items-center">
             {mounted && (
@@ -194,8 +194,8 @@ export default function ContactPage() {
         </div>
 
         <div className="contact-right">
-          <Image 
-            src="/contact-form.jpeg" 
+          <Image
+            src="/contact-form.jpeg"
             width={900}
             height={600}
             alt="Contact Visual" />

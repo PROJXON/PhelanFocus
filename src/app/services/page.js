@@ -56,7 +56,7 @@ export default function ServicesPage() {
             <Hero sectionClass="service-hero" bgImage="/service.jpeg" header="SERVICE" />
 
             {/* Service Detail Section */}
-            <section className="project-three-area pt-130 pb-130">
+            <section className="project-three-area relative z-10 pt-130 pb-130">
                 <div className="project-three__wrp">
                     <div className="row g-4">
                         {services.map((service, i) => (
@@ -97,7 +97,7 @@ export default function ServicesPage() {
 
 
             {/* Choose area */}
-            <section className="choose-one-area bg-sub pt-130">
+            <section className="choose-one-area relative z-10 bg-sub pt-130">
                 <div className="container">
                     <div className="row g-0">
                         <div className="col-xl-7 order-2 order-xl-1">
