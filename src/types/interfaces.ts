@@ -1,5 +1,6 @@
 import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { InputType } from "./types";
+import { IconType } from "react-icons";
 
 export interface SocialIcon {
   icon: IconDefinition;
@@ -32,4 +33,13 @@ export interface MenuLink {
 
 export interface MenuLinkWithSubmenu extends MenuLink {
   submenu?: MenuLink[];
+};
+
+export interface ProcessStep {
+  title: string;
+  icon: IconType;
+  text: string;
+  link: `/${string}`;
+  colorClass: string;
+  tagColor: string;
 };

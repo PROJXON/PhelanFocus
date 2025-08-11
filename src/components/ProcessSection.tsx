@@ -1,45 +1,36 @@
-'use client'
+'use client';
+import Link from 'next/link';
+import { FaRegClipboard, FaCogs, FaUserTie, FaFlagCheckered, } from 'react-icons/fa';
+import { ProcessStep } from "@/types/interfaces";
 
-import Link from 'next/link'
-import {
-  FaRegClipboard,
-  FaCogs,
-  FaUserTie,
-  FaFlagCheckered,
-} from 'react-icons/fa'
-
-const steps = [
+const steps: ProcessStep[] = [
   {
-    step: 'STEP 01',
     title: 'Plan For Work',
-    icon: <FaRegClipboard size={40} />,
+    icon: FaRegClipboard,
     text: 'We begin by understanding your speaking goals, audience, and brand voice to lay the foundation for a powerful online presence.',
     link: '/services',
     colorClass: 'hover:border-yellow-400',
     tagColor: 'text-yellow-400',
   },
   {
-    step: 'STEP 02',
     title: 'Implementation',
-    icon: <FaCogs size={40} />,
+    icon: FaCogs,
     text: 'From homepage to booking form, we design and develop every element with your personal brand and audience engagement in mind.',
     link: '/services',
     colorClass: 'hover:border-orange-400',
     tagColor: 'text-orange-400',
   },
   {
-    step: 'STEP 03',
     title: 'Consultancy',
-    icon: <FaUserTie size={40} />,
+    icon: FaUserTie,
     text: 'We guide you on best practices—like building your mailing list, integrating videos, and showcasing testimonials to boost authority.',
     link: '/services',
     colorClass: 'hover:border-green-400',
     tagColor: 'text-green-400',
   },
   {
-    step: 'STEP 04',
     title: 'Project Closure',
-    icon: <FaFlagCheckered size={40} />,
+    icon: FaFlagCheckered,
     text: 'After final testing and launch, we hand off a polished, responsive site you can confidently use to land gigs and grow your reach.',
     link: '/services',
     colorClass: 'hover:border-pink-400',
@@ -50,13 +41,8 @@ const steps = [
 export default function ProcessSection() {
   return (
     <section
-      className="bg-[var(--slateBlue)] py-20 md:py-24 px-4 relative mb-24"
-      style={{
-        backgroundImage: 'url(/pattern-2.png)',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
+      className="bg-[var(--slateBlue)] py-20 md:py-24 px-4 relative mb-24 bg-no-repeat bg-cover bg-center"
+      style={{ backgroundImage: 'url(/pattern-2.png)', }}
     >
       <div className="max-w-7xl mx-auto text-center">
         {/* Section Title */}
@@ -73,12 +59,12 @@ export default function ProcessSection() {
               >
                 {/* Icon with animation */}
                 <div className={`flex justify-center mb-4 transition-transform duration-500 ease-in-out group-hover:rotate-[360deg] group-hover:scale-110 ${item.tagColor}`}>
-                  {item.icon}
+                  <item.icon size={40} />
                 </div>
 
                 {/* Step badge */}
                 <div className={`text-xs font-semibold tracking-wide bg-gray-800 inline-block px-4 py-1 rounded-full mb-3 uppercase ${item.tagColor}`}>
-                  {item.step}
+                  STEP {String(index + 1).padStart(2, '0')}
                 </div>
 
                 {/* Title */}
