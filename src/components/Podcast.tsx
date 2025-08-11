@@ -1,50 +1,51 @@
 "use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
-// Background Shape SVGs
-const Shape1 = () => (
-  <svg
-    className="text-blue-200 dark:text-[#1E2735] absolute left-0 top-0 hidden sm:block -z-[1]"
-    width="370"
-    height="534"
-    viewBox="0 0 370 534"
-    fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <circle cx="0.5" cy="164.5" r="369.5" fill="currentColor" />
-  </svg>
-);
-
-const Shape2 = () => (
-  <svg
-    className="text-blue-200 dark:text-[#1E2735] absolute right-0 bottom-0 hidden sm:block -z-[1]"
-    width="344"
-    height="470"
-    viewBox="0 0 344 470"
-    fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <circle cx="369.5" cy="369.5" r="369.5" fill="currentColor" />
-  </svg>
-);
-
 // Podcast Section
 const Podcast = () => {
+  const shapes = [
+    {
+      classes: "left-0 top-0",
+      width: 370,
+      height: 534,
+      viewBox: "0 0 370 534",
+      cx: 0.5,
+      cy: 164.5,
+    },
+    {
+      classes: "right-0 bottom-0",
+      width: 344,
+      height: 370,
+      viewBox: "0 0 344 470",
+      cx: 369.5,
+      cy: 369.5,
+    },
+  ]
+
   return (
     <section
       id="podcast"
       className="bg-[#f5faff] dark:bg-[var(--slateBlue)] text-[var(--slateBlue)] dark:text-white py-20 md:py-24 px-4 relative mb-24 transition-colors duration-500"
     >
-      <Shape1 />
-      <Shape2 />
+      {shapes.map((shape, i) => (
+        <svg
+          key={i}
+          className={`text-blue-200 dark:text-[#1E2735] absolute hidden sm:block -z-[1] ${shape.classes}`}
+          width={shape.width}
+          height={shape.height}
+          viewBox={shape.viewBox}
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx={shape.cx} cy={shape.cy} r="369.5" fill="currentColor" />
+        </svg>
+      ))}
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
-        whileOutOfView={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
         className="max-w-7xl mx-auto grid grid-cols-12 items-center"
       >

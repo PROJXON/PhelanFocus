@@ -3,16 +3,18 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-const Hero = ({ bgImage, header, alt = "Hero background" }) => {
-  const heroRef = useRef(null);
+const Hero = ({ bgImage, header, alt = "Hero background" }: {
+  bgImage: `/${string}.${"jpeg" | "png"}`,
+  header: string,
+  alt: string,
+}) => {
+  const heroRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [heroHeight, setHeroHeight] = useState(0);
 
   useEffect(() => {
     const measureHeight = () => {
-      if (heroRef.current) {
-        setHeroHeight(heroRef.current.offsetHeight);
-      }
+      if (heroRef.current) setHeroHeight(heroRef.current.offsetHeight);
     };
     measureHeight();
     window.addEventListener("resize", measureHeight);
