@@ -1,21 +1,13 @@
 // /app/api/book-and-pay/route.js
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req) {
+export async function POST(req: NextRequest) {
   const body = await req.json();
 
-  const {
-    name,
-    email,
-    phone,
-    dateTime,
-    goals,
-    people,
-    sessionType
-  } = body;
+  const { name, email, phone, dateTime, goals, people, sessionType } = body;
 
   const message = `
 New Coaching Booking:
@@ -30,7 +22,7 @@ New Coaching Booking:
 `;
 
   try {
-    const response = await resend.emails.send({
+    await resend.emails.send({
       from: 'noreply@resend.dev',
       to: 'the.phelan.focus@gmail.com',
       subject: 'New Coaching Booking',

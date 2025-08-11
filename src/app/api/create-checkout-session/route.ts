@@ -1,21 +1,15 @@
-import { NextResponse } from 'next/server';
-import Stripe from 'stripe';
+import { PriceMap } from '@/types/interfaces';
+import { NextRequest, NextResponse } from 'next/server';
+import stripe from '@/lib/stripeObj';
+import PRICE_MAP from '@/lib/priceMap';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-
-const PRICE_MAP = {
-  'Performance Coaching': 300,
-  'Executive Performance': 600,
-  'Group Performance': 150,
-};
-
-export async function POST(req) {
+export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const { sessionType, people } = body;
 
     const quantity = parseInt(people || 1);
-    const pricePerPerson = PRICE_MAP[sessionType];
+    const pricePerPerson = PRICE_MAP[sessionType as keyof PriceMap];
 
     if (!pricePerPerson) {
       return NextResponse.json({ error: 'Invalid session type' }, { status: 400 });

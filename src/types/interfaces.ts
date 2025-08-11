@@ -64,3 +64,9 @@ export interface ColorMap {
   red: string;
   green: string;
 }
+
+export interface PriceMap {
+  'Performance Coaching': number;
+  'Executive Performance': number;
+  'Group Performance': number;
+}

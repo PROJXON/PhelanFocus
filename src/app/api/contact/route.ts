@@ -1,11 +1,15 @@
 import { EmailTemplate } from '@/components/EmailTemplate';
 import { Resend } from 'resend';
+import { ReactNode } from 'react';
+import { NextRequest } from 'next/server';
+import contactParagraphs from '@/functions/contactParagraphs';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req) {
+export async function POST(req: NextRequest) {
   try {
     const { name, email } = await req.json();
+    const paragraphs: ReactNode[] = contactParagraphs();
 
     const { data, error } = await resend.emails.send({
       from: 'noreply@resend.dev',
@@ -14,10 +18,7 @@ export async function POST(req) {
       subject: 'Contact from Website',
       react: EmailTemplate({
         heading: `Hi ${name},`,
-        paragraphs: [
-          <>Thanks for reaching out! We’ve received your message and will get back to you shortly.</>,
-          <>Best regards, <br />Phelan</>,
-        ],
+        paragraphs: paragraphs,
         lastMarginTop: false,
       }),
     });
