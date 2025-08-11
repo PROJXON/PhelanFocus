@@ -4,18 +4,24 @@ import { IconDefinition as SoldIcon } from "@fortawesome/free-solid-svg-icons";
 import { InputType } from "./types";
 
 export interface SocialIcon {
-    icon: BrandIcon | CoreIcon | SoldIcon;
-    link: URL;
+  icon: BrandIcon | CoreIcon | SoldIcon;
+  link: URL;
 };
 
 export interface CheckoutFormData {
-    name: string;
-    email: string;
-    zip: string;
+  name: string;
+  email: string;
+  zip: string;
 };
 
 export interface CheckoutFormInput {
-    type: InputType;
-    name: string;
-    placeholder: string;
+  type: InputType;
+  name: string;
+  placeholder: string;
+};
+
+export interface Email {
+  name: string;
+  email: string;
+  message: string;
 };
