@@ -1,15 +1,15 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import AboutMe from "../components/AboutMe";
-import Contact from "../components/Contact";
-import Services from "../components/Services";
-import Podcast from "../components/Podcast";
-import ScrollToTopButton from "@/components/ScrollToTop";
-import ServiceCarousel from "@/components/ServiceCarousel";
-import ProcessSection from "@/components/ProcessSection";
-import Hero from "@/components/Hero";
-import Books from "@/components/Books";
-import Link from "next/link";
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import AboutMe from '../components/AboutMe';
+import Contact from '../components/Contact';
+import Services from '../components/Services';
+import Podcast from '../components/Podcast';
+import ScrollToTopButton from '@/components/ScrollToTop';
+import ServiceCarousel from '@/components/ServiceCarousel';
+import ProcessSection from '@/components/ProcessSection';
+import Hero from '@/components/Hero';
+import Books from '@/components/Books';
+import Link from 'next/link';
 
 const Home = async () => {
   return (
@@ -30,8 +30,7 @@ const Home = async () => {
         {/* Call to Action Section */}
         <section className="text-center py-8">
           <p className="text-lg max-w-xl mx-auto mb-6">
-            Helping individuals unlock their potential and achieve personal and
-            professional growth.
+            Helping individuals unlock their potential and achieve personal and professional growth.
           </p>
           <Link href="/sessions">
             <button className="btn">

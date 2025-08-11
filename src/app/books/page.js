@@ -16,30 +16,32 @@ export default function booksPage() {
   // Testimonials data
   const testimonials = [
     {
-      quote: "The Bend to Bendd book transformed the way I approach my team's growth.",
+      quote:
+        "The Bend to Bendd book transformed the way I approach my team's growth.",
       author: "Latressa",
-      rating: 5
+      rating: 5,
     },
     {
-      quote: "This Peak to Peak book gave me the framework I needed to deliver results.",
+      quote:
+        "This Peak to Peak book gave me the framework I needed to deliver results.",
       author: "Jake Rappleye",
-      rating: 4.5
+      rating: 4.5,
     },
     {
       quote: "The speaking guide helped me overcome my stage fright.",
       author: "De La Cruz",
-      rating: 4.5
+      rating: 4.5,
     },
     {
       quote: "These books are game-changers for professional development.",
       author: "Caleb Contreras",
-      rating: 5
+      rating: 5,
     },
     {
       quote: "Practical advice that I could implement immediately.",
       author: "Chase Heien",
-      rating: 5
-    }
+      rating: 5,
+    },
   ];
 
   // Auto-rotate testimonials
@@ -77,8 +79,11 @@ export default function booksPage() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className={`absolute inset-0 transition-opacity duration-500 flex items-center justify-center ${index === activeTestimonial ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                  }`}
+                className={`absolute inset-0 transition-opacity duration-500 flex items-center justify-center ${
+                  index === activeTestimonial
+                    ? "opacity-100"
+                    : "opacity-0 pointer-events-none"
+                }`}
               >
                 <div className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg max-w-3xl mx-4 relative">
                   <div className="absolute top-0 left-8 -mt-4 w-8 h-8 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center">
@@ -109,7 +114,9 @@ export default function booksPage() {
                       {testimonial.author.charAt(0)}
                     </div>
                     <div className="ml-4">
-                      <p className="font-semibold text-gray-900 dark:text-white">{testimonial.author}</p>
+                      <p className="font-semibold text-gray-900 dark:text-white">
+                        {testimonial.author}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -122,10 +129,11 @@ export default function booksPage() {
               <button
                 key={index}
                 onClick={() => setActiveTestimonial(index)}
-                className={`w-3 h-3 rounded-full transition-all ${index === activeTestimonial
-                  ? 'bg-blue-600 dark:bg-blue-400 w-6'
-                  : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
-                  }`}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  index === activeTestimonial
+                    ? "bg-blue-600 dark:bg-blue-400 w-6"
+                    : "bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500"
+                }`}
                 aria-label={`View testimonial from ${testimonials[index].author}`}
               />
             ))}
@@ -142,7 +150,10 @@ export default function booksPage() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow transition-all duration-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1">
               {/* <h3 className="text-xl font-semibold text-blue-600 mb-2">Bend to Bend</h3> */}
-              <p>Ideal for leaders, managers, mentors, and anyone fostering growth.</p>
+              <p>
+                Ideal for leaders, managers, mentors, and anyone fostering
+                growth.
+              </p>
               <ul className="mt-2 pl-5 list-disc text-gray-600 dark:text-gray-300 hidden group-hover:block">
                 <li>Team leaders</li>
                 <li>HR professionals</li>
@@ -151,7 +162,10 @@ export default function booksPage() {
             </div>
             <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow transition-all duration-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1">
               {/* <h3 className="text-xl font-semibold text-blue-600 mb-2">Peak to Peak</h3> */}
-              <p>Perfect for consultants, advisors, and entrepreneurs enhancing delivery skills.</p>
+              <p>
+                Perfect for consultants, advisors, and entrepreneurs enhancing
+                delivery skills.
+              </p>
               <ul className="mt-2 pl-5 list-disc text-gray-600 dark:text-gray-300 hidden group-hover:block">
                 <li>Management consultants</li>
                 <li>Business analysts</li>
@@ -160,7 +174,10 @@ export default function booksPage() {
             </div>
             <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow transition-all duration-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1">
               {/* <h3 className="text-xl font-semibold text-blue-600 mb-2">Shore to Shore</h3> */}
-              <p>Great for professionals, educators, and creatives mastering public speaking.</p>
+              <p>
+                Great for professionals, educators, and creatives mastering
+                public speaking.
+              </p>
               <ul className="mt-2 pl-5 list-disc text-gray-600 dark:text-gray-300 hidden group-hover:block">
                 <li>Sales professionals</li>
                 <li>Teachers & professors</li>
@@ -186,7 +203,10 @@ export default function booksPage() {
               About the Author
             </h2>
             <p className="text-gray-700 dark:text-gray-300">
-              Phelan is a renowned expert in coaching, consulting, and public speaking, with years of experience inspiring individuals and organizations worldwide. These books share insights and tools to help you excel in leadership and communication.
+              Phelan is a renowned expert in coaching, consulting, and public
+              speaking, with years of experience inspiring individuals and
+              organizations worldwide. These books share insights and tools to
+              help you excel in leadership and communication.
             </p>
             <Image
               src="/books/sign.png"
@@ -201,7 +221,6 @@ export default function booksPage() {
 
       <Footer />
       <ScrollToTopButton />
-
     </div>
   );
 }
