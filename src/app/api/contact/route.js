@@ -1,18 +1,25 @@
-import { EmailTemplate } from '@/components/email-template';
+import { EmailTemplate } from '@/components/EmailTemplate';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req) {
   try {
-    const { name, email, message } = await req.json();
+    const { name, email } = await req.json();
 
     const { data, error } = await resend.emails.send({
       from: 'noreply@resend.dev',
       to: ['the.phelan.focusn@gmail.com'],
       replyTo: email,
       subject: 'Contact from Website',
-      react: EmailTemplate({ name, email, message }),
+      react: EmailTemplate({
+        heading: `Hi ${name},`,
+        paragraphs: [
+          <>Thanks for reaching out! We’ve received your message and will get back to you shortly.</>,
+          <>Best regards, <br />Phelan</>,
+        ],
+        lastMarginTop: false,
+      }),
     });
 
     if (error) {

@@ -1,4 +1,4 @@
-import { ConfirmationEmail } from '@/components/ConfirmationEmail';
+import { EmailTemplate } from '@/components/EmailTemplate';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -11,7 +11,15 @@ export async function POST(req) {
       from: 'noreply@resend.dev',
       to: [email, 'the.phelan.focusn@gmail.com'],
       subject: 'Confirmation email',
-      react: ConfirmationEmail({ name, email, message }),
+      react: EmailTemplate({
+        heading: "Hello Phelan,",
+        paragraphs: [
+          <>My name is <strong>{name}</strong>. I'm reaching out to you regarding a matter I’d like to discuss.</>,
+          <>You can reach me at: <a href={`mailto:${email}`} className="text-[#007BFF]">{email}</a>.</>,
+          <>{message}</>,
+        ],
+        lastMarginTop: true,
+      }),
     });
 
     if (error) {
