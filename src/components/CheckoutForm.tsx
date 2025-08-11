@@ -1,30 +1,43 @@
-// components/CheckoutForm.jsx
 "use client";
-import React, { useState } from "react";
-import {
-  CardElement,
-  useStripe,
-  useElements,
-} from "@stripe/react-stripe-js";
+import React, { useState, ChangeEvent, FormEvent } from "react";
+import { CardElement, useStripe, useElements, } from "@stripe/react-stripe-js";
+import { CheckoutFormData, CheckoutFormInput } from '@/types/interfaces';
 
 export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<CheckoutFormData>({
     name: "",
     email: "",
     zip: ""
   });
-
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleChange = (e) => {
+  const formInputs: CheckoutFormInput[] = [
+    {
+      type: "text",
+      name: "name",
+      placeholder: "Full Name"
+    },
+    {
+      type: "email",
+      name: "email",
+      placeholder: "Email Address"
+    },
+    {
+      type: "text",
+      name: "zip",
+      placeholder: "ZIP Code"
+    },
+  ]
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!stripe || !elements) return;
 
@@ -32,6 +45,11 @@ export default function CheckoutForm() {
     setError(null);
 
     const cardElement = elements.getElement(CardElement);
+    if (!cardElement) {
+      setError("Card element not found");
+      setLoading(false);
+      return;
+    }
 
     try {
       const { paymentMethod, error: pmError } = await stripe.createPaymentMethod({
@@ -65,7 +83,8 @@ export default function CheckoutForm() {
 
       alert("✅ Payment successful!");
     } catch (err) {
-      setError(err.message);
+      const message = err instanceof Error ? err.message : "An unknown error occurred";
+      setError(message);
     }
 
     setLoading(false);
@@ -73,33 +92,18 @@ export default function CheckoutForm() {
 
   return (
     <form onSubmit={handleSubmit} className="max-w-md w-full space-y-4 p-6 bg-white shadow-lg rounded">
-      <input
-        type="text"
-        name="name"
-        placeholder="Full Name"
-        value={formData.name}
-        onChange={handleChange}
-        required
-        className="w-full p-2 border rounded"
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email Address"
-        value={formData.email}
-        onChange={handleChange}
-        required
-        className="w-full p-2 border rounded"
-      />
-      <input
-        type="text"
-        name="zip"
-        placeholder="Zip Code"
-        value={formData.zip}
-        onChange={handleChange}
-        required
-        className="w-full p-2 border rounded"
-      />
+      {formInputs.map((input, i) => (
+        <input
+          key={i}
+          type={input.type}
+          name={input.name}
+          placeholder={input.placeholder}
+          value={formData.name}
+          onChange={handleChange}
+          required
+          className="w-full p-2 border rounded"
+        />
+      ))}
 
       <div className="p-2 border rounded">
         <CardElement options={{ hidePostalCode: true }} />
