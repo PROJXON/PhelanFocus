@@ -7,21 +7,20 @@ import Podcast from "../components/Podcast";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import ServiceCarousel from "@/components/ServiceCarousel";
 import ProcessSection from "@/components/ProcessSection";
+import Hero from "@/components/Hero";
 import Books from "@/components/Books";
 import Link from "next/link";
-import Hero from "@/components/Hero";
 
 const Home = async () => {
   return (
     <div className="bg-white text-gray-800">
       {/* Fixed Navbar */}
       <header className="w-full fixed z-40">
-        <Navbar isFooter={false} />
+        <Navbar />
       </header>
 
       {/* 🌟 Hero Section */}
       <Hero
-        sectionClass="home-hero h-[60vh] flex items-center justify-center text-white text-center"
         bgImage="/homepage-hero.png"
         header="Welcome to Phelan Coaching"
         alt="Phelan Coaching Hero Background"
@@ -43,13 +42,13 @@ const Home = async () => {
         </section>
 
         {/* ✨ Your Page Sections */}
-        <AboutMe id="about" />
-        <Services id="services" />
+        <AboutMe />
+        <Services />
         <ServiceCarousel />
         <ProcessSection />
         <Books />
-        <Podcast id="podcast" />
-        <Contact id="contact" />
+        <Podcast />
+        <Contact />
       </main>
 
       <Footer />
