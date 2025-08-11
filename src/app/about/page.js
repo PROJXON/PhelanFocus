@@ -208,9 +208,6 @@ export default function AboutPage() {
         className="why-section relative z-20"
         style={{
           background: "#f1f5f9",
-          marginLeft: "calc(50% - 50vw)",
-          marginRight: "calc(50% - 50vw)",
-          width: "100vw",
           boxSizing: "border-box",
         }}
       >
