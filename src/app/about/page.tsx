@@ -1,39 +1,31 @@
-"use client";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import "./about.css";
-import Link from "next/link";
-import { useTheme } from "next-themes";
-import { useEffect, useState, useRef } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
+'use client';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Hero from '@/components/Hero';
+import './about.css';
+import Link from 'next/link';
+import { useTheme } from 'next-themes';
+import { useEffect, useState, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 import {
   faArrowRight,
   faUsers,
   faBrain,
   faBriefcase,
   faGlobe,
-} from "@fortawesome/free-solid-svg-icons";
-import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import ScrollToTopButton from "@/components/ScrollToTop";
+} from '@fortawesome/free-solid-svg-icons';
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import ScrollToTopButton from '@/components/ScrollToTop';
+import useIsVisible from '@/hooks/useIsVisible';
 
 // Circle Progress Component
-const CircleProgress = ({ percentage, label }) => {
+const CircleProgress = ({ percentage, label }: { percentage: number; label: string }) => {
   const strokeDasharray = 283;
   const [progress, setProgress] = useState(0);
   const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const circleRef = useRef();
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setIsVisible(true),
-      { threshold: 0.5 }
-    );
-    if (circleRef.current) observer.observe(circleRef.current);
-    return () => circleRef.current && observer.unobserve(circleRef.current);
-  }, []);
+  const circleRef = useRef<HTMLDivElement>(null);
+  const isVisible = useIsVisible(circleRef);
 
   useEffect(() => {
     if (isVisible) {
@@ -66,7 +58,7 @@ const CircleProgress = ({ percentage, label }) => {
           strokeDasharray={strokeDasharray}
           strokeDashoffset={strokeDasharray - (progress / 100) * strokeDasharray}
           strokeLinecap="round"
-          style={{ transition: "stroke-dashoffset 0.3s linear" }}
+          style={{ transition: 'stroke-dashoffset 0.3s linear' }}
         />
         <text x="70" y="75" textAnchor="middle" fontSize="24" fill="#13395c" fontWeight="700">
           {count}%
@@ -78,19 +70,10 @@ const CircleProgress = ({ percentage, label }) => {
 };
 
 // Counter Component
-const Counter = ({ end, label }) => {
+const Counter = ({ end, label }: { end: number; label: string }) => {
   const [count, setCount] = useState(0);
-  const ref = useRef();
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setIsVisible(true),
-      { threshold: 0.5 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => ref.current && observer.unobserve(ref.current);
-  }, []);
+  const ref = useRef<HTMLDivElement>(null);
+  const isVisible = useIsVisible(ref);
 
   useEffect(() => {
     if (isVisible && count === 0) {
@@ -124,44 +107,33 @@ export default function AboutPage() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <div className={`about-page ${mounted && resolvedTheme === "light" ? "light" : "dark"}`}>
-      <Navbar isFooter={false} />
+    <div className={`about-page ${mounted && resolvedTheme === 'light' ? 'light' : 'dark'}`}>
+      <Navbar />
 
       {/* Hero Section */}
-      <Hero sectionClass="about-hero" bgImage="/About.png" header="About" />
+      <Hero bgImage="/About.png" header="About" />
 
       {/* About Us Section*/}
-      <section
-        className="about-section relative z-20"
-        style={{
-          padding: "64px 0 64px 0", 
-          background: "#f8fafc",
-          marginBottom: 0,
-          marginTop: 0,
-        }}
-      >
+      <section className="about-section relative z-20 my-0 px-[64px] py-0 bg-[#f8fafc]">
         <div className="about-container">
           <div className="about-images">
-            <Image
-              src="/about-1.jpg"
-              width={400}
-              height={400}
-              alt="About Main"
-              className="img1"
-            />
+            <Image src="/about-1.jpg" width={400} height={400} alt="About Main" className="img1" />
             <Image
               src="/about-2.jpg"
               width={280}
               height={280}
               alt="About Overlay"
               className="img2"
-              style={{marginBottom: 30}}
+              style={{ marginBottom: 30 }}
             />
           </div>
           <div className="about-text">
             <h6>Empowering Change</h6>
             <h2>Leading the Way in Personal Growth</h2>
-            <p>We help individuals unlock their full potential, overcome obstacles, and achieve their goals.</p>
+            <p>
+              We help individuals unlock their full potential, overcome obstacles, and achieve their
+              goals.
+            </p>
             <hr />
             <div className="contact-info">
               <p>
@@ -181,7 +153,10 @@ export default function AboutPage() {
                 </a>
               </p>
             </div>
-            <Link href="/sessions" className="btn-read"><span>Read More</span><span></span></Link>
+            <Link href="/sessions" className="btn-read">
+              <span>Read More</span>
+              <span></span>
+            </Link>
           </div>
         </div>
       </section>
@@ -190,15 +165,19 @@ export default function AboutPage() {
       <section
         className="partner-section relative z-20"
         style={{
-          background: "#144a8f",
+          background: '#144a8f',
           marginTop: 0,
           marginBottom: 0,
-          padding: "32px 0",
+          padding: '32px 0',
         }}
       >
         <div className="logos">
           <div className="logos-slide">
-            <span>PROJXON</span><span>PROJXON</span><span>PROJXON</span><span>PROJXON</span><span>PROJXON</span>
+            <span>PROJXON</span>
+            <span>PROJXON</span>
+            <span>PROJXON</span>
+            <span>PROJXON</span>
+            <span>PROJXON</span>
           </div>
         </div>
       </section>
@@ -207,8 +186,8 @@ export default function AboutPage() {
       <section
         className="why-section relative z-20"
         style={{
-          background: "#f1f5f9",
-          boxSizing: "border-box",
+          background: '#f1f5f9',
+          boxSizing: 'border-box',
         }}
       >
         <div className="why-left">
@@ -225,31 +204,41 @@ export default function AboutPage() {
         </div>
 
         <div className="why-right">
-          <Image
-            src="/about-1.jpg"
-            width={400}
-            height={400}
-            alt="Why Us"
-            className="why-image" />
+          <Image src="/about-1.jpg" width={400} height={400} alt="Why Us" className="why-image" />
           <div className="years-badge">
-            <h3>15<sup>+</sup></h3>
+            <h3>
+              15<sup>+</sup>
+            </h3>
             <span>Years Experience</span>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section relative z-20 position-relative" style={{ backgroundImage: "url('phelan-mark-39.jpg')" }}>
+      <section
+        className="cta-section relative z-20 position-relative"
+        style={{ backgroundImage: "url('phelan-mark-39.jpg')" }}
+      >
         <div className="image-overlay"></div>
         <div className="r-container position-relative py-5" style={{ zIndex: 2 }}>
-          <div className="d-flex flex-column mx-auto text-center align-items-center text-white gap-4" style={{ maxWidth: '900px' }}>
+          <div
+            className="d-flex flex-column mx-auto text-center align-items-center text-white gap-4"
+            style={{ maxWidth: '900px' }}
+          >
             <h6 className="accent-color-2 fw-semibold">Invest in Yourself</h6>
-            <h3 className="font-1 text-white">Create the Life You Want, Get Personalized Coaching Today!</h3>
+            <h3 className="font-1 text-white">
+              Create the Life You Want, Get Personalized Coaching Today!
+            </h3>
             <p className="col-9 col-lg-9">
-              Elevate your life with personalized coaching tailored to your unique needs. Start your journey to self-discovery and growth today by booking a session with our experienced life coach.
+              Elevate your life with personalized coaching tailored to your unique needs. Start your
+              journey to self-discovery and growth today by booking a session with our experienced
+              life coach.
             </p>
             <div className="cta-button-container">
-              <Link href="/contact" className="btn"><span>CONTACT US</span><span></span></Link>
+              <Link href="/contact" className="btn">
+                <span>CONTACT US</span>
+                <span></span>
+              </Link>
             </div>
           </div>
         </div>
@@ -262,18 +251,23 @@ export default function AboutPage() {
           {/* Mark Phelan Card */}
           <div className="team-card">
             <div className="team-img-wrapper">
-              <Image 
-                src="/team/phelan-mark-41.jpg" 
+              <Image
+                src="/team/phelan-mark-41.jpg"
                 alt="Mark Phelan"
                 width={280}
                 height={280}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
             <h3>Mark Phelan</h3>
             <p className="title">CEO & Founder</p>
             <p className="department">
-              <a href="https://projxon.com/" className="link-gold-hover"  target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://projxon.com/"
+                className="link-gold-hover"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 PROJXON
               </a>
             </p>
@@ -302,7 +296,7 @@ export default function AboutPage() {
                   alt="The Phelan Focus Podcast"
                   width={280}
                   height={280}
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
               <div className="podcast-info">
@@ -321,40 +315,40 @@ export default function AboutPage() {
         <div className="team-cards-container">
           {[
             {
-              name: "Kathy Seaton",
-              role: "Senior Consultant, Non Profit Development",
-              img: "team/kathy.webp",
+              name: 'Kathy Seaton',
+              role: 'Senior Consultant, Non Profit Development',
+              img: 'team/kathy.webp',
               socials: {
-                linkedin: "https://www.linkedin.com/in/klseaton/"
-              }
+                linkedin: 'https://www.linkedin.com/in/klseaton/',
+              },
             },
             {
-              name: "Melissa Eboli",
-              role: "Senior Consultant, Tech + Software Solutions",
-              img: "team/melissa.webp",
+              name: 'Melissa Eboli',
+              role: 'Senior Consultant, Tech + Software Solutions',
+              img: 'team/melissa.webp',
               socials: {
-                linkedin: "https://www.linkedin.com/in/viamelissa/"
-              }
+                linkedin: 'https://www.linkedin.com/in/viamelissa/',
+              },
             },
             {
-              name: "Donavon Roberson",
-              role: "Senior Consultant, Health + Wellness Solutions",
-              img: "team/donavon.webp",
+              name: 'Donavon Roberson',
+              role: 'Senior Consultant, Health + Wellness Solutions',
+              img: 'team/donavon.webp',
               socials: {
-                linkedin: "https://www.linkedin.com/in/donavonroberson/"
-              }
-            }
+                linkedin: 'https://www.linkedin.com/in/donavonroberson/',
+              },
+            },
           ].map((member, idx) => {
-            const [title, dept] = member.role.split(",");
+            const [title, dept] = member.role.split(',');
             return (
               <div key={idx} className="team-card">
                 <div className="team-img-wrapper">
-                  <Image 
-                    src={`/${member.img}`} 
+                  <Image
+                    src={`/${member.img}`}
                     alt={member.name}
                     width={280}
                     height={280}
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
                 <h3>{member.name}</h3>
@@ -382,9 +376,9 @@ export default function AboutPage() {
       <section
         className="counter-section relative z-20"
         style={{
-          background: "#144a8f",
-          color: "#fff",
-          padding: "48px 0",
+          background: '#144a8f',
+          color: '#fff',
+          padding: '48px 0',
         }}
       >
         <Counter end={15} label="Years Experience" />
@@ -397,8 +391,8 @@ export default function AboutPage() {
       <section
         className="services-section relative z-20"
         style={{
-          background: "#f1f5f9",
-          padding: "64px 0",
+          background: '#f1f5f9',
+          padding: '64px 0',
         }}
       >
         <h6>Master Your Mindset</h6>
@@ -412,22 +406,37 @@ export default function AboutPage() {
           <div className="service-card">
             <FontAwesomeIcon icon={faUsers} className="service-icon" />
             <h4>Personalized Coaching</h4>
-            <p>Our services are tailored to your unique needs, providing personalized guidance and support.</p>
-            <Link href="/services" className="learn-more">Learn More <FontAwesomeIcon icon={faArrowRight} /></Link>
+            <p>
+              Our services are tailored to your unique needs, providing personalized guidance and
+              support.
+            </p>
+            <Link href="/services" className="learn-more">
+              Learn More <FontAwesomeIcon icon={faArrowRight} />
+            </Link>
           </div>
 
           <div className="service-card">
             <FontAwesomeIcon icon={faBrain} className="service-icon" />
             <h4>Mindfulness Techniques</h4>
-            <p>Learn practical mindfulness exercises to enhance focus, reduce stress, and promote well-being.</p>
-            <Link href="/services" className="learn-more">Learn More <FontAwesomeIcon icon={faArrowRight} /></Link>
+            <p>
+              Learn practical mindfulness exercises to enhance focus, reduce stress, and promote
+              well-being.
+            </p>
+            <Link href="/services" className="learn-more">
+              Learn More <FontAwesomeIcon icon={faArrowRight} />
+            </Link>
           </div>
 
           <div className="service-card">
             <FontAwesomeIcon icon={faBriefcase} className="service-icon" />
             <h4>Career Development</h4>
-            <p>This coaching service provides guidance and support to individuals at various career stages.</p>
-            <Link href="/services" className="learn-more">Learn More <FontAwesomeIcon icon={faArrowRight} /></Link>
+            <p>
+              This coaching service provides guidance and support to individuals at various career
+              stages.
+            </p>
+            <Link href="/services" className="learn-more">
+              Learn More <FontAwesomeIcon icon={faArrowRight} />
+            </Link>
           </div>
         </div>
       </section>

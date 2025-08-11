@@ -11,7 +11,7 @@ const Hero = ({
 }: {
   bgImage: ImagePath;
   header: string;
-  alt: string;
+  alt?: string;
 }) => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(true);
