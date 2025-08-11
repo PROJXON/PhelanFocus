@@ -2,14 +2,10 @@
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faTwitter,
-  faInstagram,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faTwitter, faInstagram, faLinkedin, } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { MenuLink, SocialIcon } from "@/types/interfaces";
 
 const Footer = () => {
   const { resolvedTheme } = useTheme();
@@ -45,7 +41,7 @@ const Footer = () => {
     }
   };
 
-  const quickLinks = [
+  const quickLinks: MenuLink[] = [
     {
       text: "Home",
       href: "/"
@@ -68,26 +64,26 @@ const Footer = () => {
     },
   ];
 
-  const socialLinks = [
+  const socialLinks: SocialIcon[] = [
     {
       icon: faInstagram,
       label: "Instagram",
-      href: "https://www.instagram.com/The.Phelan.Focus/",
+      href: new URL('https://www.instagram.com/The.Phelan.Focus/'),
     },
     {
       icon: faLinkedin,
       label: "LinkedIn",
-      href: "https://www.linkedin.com/company/the-phelan-focus/?viewAsMember=true",
+      href: new URL('https://www.linkedin.com/company/the-phelan-focus/?viewAsMember=true'),
     },
     {
       icon: faFacebook,
       label: "Facebook",
-      href: "https://www.facebook.com/profile.php?id=100009307890107&ref=ig_profile_ac",
+      href: new URL('https://www.facebook.com/profile.php?id=100009307890107&ref=ig_profile_ac'),
     },
     {
       icon: faTwitter,
       label: "Twitter",
-      href: "https://x.com/The.Phelan.Focus",
+      href: new URL('https://x.com/The.Phelan.Focus'),
     },
   ];
 
@@ -157,7 +153,7 @@ const Footer = () => {
             {socialLinks.map((item, index) => (
               <div key={index}>
                 <a
-                  href={item.href}
+                  href={item.href.toString()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="link-gold-hover inline-flex items-center gap-2 text-base"

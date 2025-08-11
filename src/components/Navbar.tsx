@@ -1,15 +1,15 @@
 "use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { MenuLinkWithSubmenu } from "@/types/interfaces";
 
 const Navbar = () => {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | false>(false);
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const lastScroll = useRef(0);
@@ -29,21 +29,21 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const menuLinks = [
-    { name: "About", href: "/about" },
+  const menuLinks: MenuLinkWithSubmenu[] = [
+    { text: "About", href: "/about" },
     {
-      name: "Coaching",
+      text: "Coaching",
       href: "/coaching",
       submenu: [
-        { name: "Sessions", href: "/sessions" },
-        { name: "Courses", href: "/courses" },
+        { text: "Sessions", href: "/sessions" },
+        { text: "Courses", href: "/courses" },
       ],
     },
-    { name: "Consulting", href: "/consulting" },
-    { name: "Speaking", href: "/speaking" },
-    { name: "Podcast", href: "/podcast" },
-    { name: "Books", href: "/books" },
-    { name: "Contact", href: "/contact" },
+    { text: "Consulting", href: "/consulting" },
+    { text: "Speaking", href: "/speaking" },
+    { text: "Podcast", href: "/podcast" },
+    { text: "Books", href: "/books" },
+    { text: "Contact", href: "/contact" },
   ];
 
   return (
@@ -79,7 +79,7 @@ const Navbar = () => {
                       : "hover:bg-white/10"
                     }`}
                 >
-                  {menu.name}
+                  {menu.text}
                   <FaChevronDown className="text-sm" />
                   <span
                     className={`absolute bottom-0 left-0 h-[2px] ${pathname.startsWith(menu.href) ? "w-1/2" : "w-0"
@@ -103,7 +103,7 @@ const Navbar = () => {
                             : "hover:bg-[#2b5ea5]"
                           }`}
                       >
-                        {sub.name}
+                        {sub.text}
                       </Link>
                     ))}
                   </div>
@@ -118,7 +118,7 @@ const Navbar = () => {
                     : "hover:bg-white/10"
                   }`}
               >
-                {menu.name}
+                {menu.text}
                 <span
                   className={`absolute bottom-0 left-0 h-[2px] ${pathname === menu.href ? "w-1/2" : "w-0"
                     } bg-white transition-all duration-300 group-hover:w-1/2`}
@@ -153,17 +153,17 @@ const Navbar = () => {
                     className={`text-white text-lg py-2 ${pathname.startsWith(menu.href) ? "bg-white/10" : ""
                       }`}
                   >
-                    {menu.name}
+                    {menu.text}
                   </Link>
                   <button
                     onClick={() =>
                       setMobileDropdownOpen(
-                        mobileDropdownOpen === menu.name ? false : menu.name
+                        mobileDropdownOpen === menu.text ? false : menu.text
                       )
                     }
                     className="text-white pr-2"
                   >
-                    {mobileDropdownOpen === menu.name ? (
+                    {mobileDropdownOpen === menu.text ? (
                       <FaChevronUp className="text-sm" />
                     ) : (
                       <FaChevronDown className="text-sm" />
@@ -176,11 +176,11 @@ const Navbar = () => {
                   className={`text-white text-lg py-2 ${pathname === menu.href ? "bg-white/10" : ""
                     }`}
                 >
-                  {menu.name}
+                  {menu.text}
                 </Link>
               )}
 
-              {mobileDropdownOpen === menu.name &&
+              {mobileDropdownOpen === menu.text &&
                 menu.submenu &&
                 menu.submenu.map((sub, subIndex) => (
                   <Link
@@ -189,7 +189,7 @@ const Navbar = () => {
                     className={`block text-white/90 text-base pl-6 py-1 ${pathname === sub.href ? "bg-white/10" : ""
                       }`}
                   >
-                    {sub.name}
+                    {sub.text}
                   </Link>
                 ))}
             </div>

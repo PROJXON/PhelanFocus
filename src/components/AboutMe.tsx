@@ -6,20 +6,20 @@ import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import PropTypes from "prop-types";
 import Link from "next/link";
 import Image from "next/image";
-import { SocialIcon } from '@/types/interfaces';
+import { SocialIcon } from "@/types/interfaces";
 const social: SocialIcon[] = [
   {
     icon: faLinkedinIn,
-    link: new URL("https://www.linkedin.com/in/phelanmarkw/"),
+    href: new URL("https://www.linkedin.com/in/phelanmarkw/"),
   },
 ];
 
 const Social = ({ item }: { item: SocialIcon }) => {
-  const { link, icon } = item;
+  const { href, icon } = item;
   return (
     <li className="inline-block">
       <a
-        href={link.toString()}
+        href={href.toString()}
         target="_blank"
         rel="noopener noreferrer"
         className="border border-gray-400 flex justify-center items-center rounded-full w-9 h-9 transition hover:bg-blue-500 hover:border-blue-500 hover:text-white hover:scale-110 duration-300 ease-in-out"

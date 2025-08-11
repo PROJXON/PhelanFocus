@@ -1,11 +1,10 @@
-import { IconDefinition as BrandIcon } from "@fortawesome/free-brands-svg-icons";
-import { IconDefinition as CoreIcon } from "@fortawesome/fontawesome-svg-core";
-import { IconDefinition as SoldIcon } from "@fortawesome/free-solid-svg-icons";
+import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { InputType } from "./types";
 
 export interface SocialIcon {
-  icon: BrandIcon | CoreIcon | SoldIcon;
-  link: URL;
+  icon: IconDefinition;
+  label?: string;
+  href: URL;
 };
 
 export interface CheckoutFormData {
@@ -24,4 +23,13 @@ export interface Email {
   name: string;
   email: string;
   message: string;
+};
+
+export interface MenuLink {
+  text: string;
+  href: `/${string}`;
+};
+
+export interface MenuLinkWithSubmenu extends MenuLink {
+  submenu?: MenuLink[];
 };
