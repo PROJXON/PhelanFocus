@@ -46,7 +46,7 @@ const Home = async () => {
         <Services />
         <ServiceCarousel />
         <ProcessSection />
-        <Books />
+        <Books linkToBooksPage={true} bookClasses="bg-[#F3F0FF] border border-gray-200 shadow-md" />
         <Podcast />
         <Contact />
       </main>

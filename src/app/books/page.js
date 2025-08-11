@@ -3,15 +3,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import StarRating from "@/components/StarRating";
+import Books from "@/components/Books";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import "./books.css";
 import ScrollToTopButton from "@/components/ScrollToTop";
 
 export default function booksPage() {
-  // State for Read More toggles
-  const [expandedBooks, setExpandedBooks] = useState([false, false, false]);
-
   // State for testimonials slider
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
@@ -44,24 +42,6 @@ export default function booksPage() {
     }
   ];
 
-  const books = [
-    {
-      image: "/books/bendtobendblur.png",
-      title: "Bend to Bend",
-      subtitle: "The course of Volume, Velocity and Veracity.",
-    },
-    {
-      image: "/books/peaktopeakblur.png",
-      title: "Peak to Peak",
-      subtitle: "The journey of Purpose, progress and perspective.",
-    },
-    {
-      image: "/books/shoretoshoreblur.png",
-      title: "Shore to Shore",
-      subtitle: "The building of a Captain, crew and Courses.",
-    },
-  ];
-
   // Auto-rotate testimonials
   useEffect(() => {
     const interval = setInterval(() => {
@@ -69,13 +49,6 @@ export default function booksPage() {
     }, 2000);
     return () => clearInterval(interval);
   }, [testimonials.length]);
-
-  // Toggle read more for books
-  const toggleReadMore = (index) => {
-    const newExpanded = [...expandedBooks];
-    newExpanded[index] = !newExpanded[index];
-    setExpandedBooks(newExpanded);
-  };
 
   return (
     <div className="bg-white dark:bg-[#0b1727] text-gray-800 dark:text-white">
@@ -85,42 +58,12 @@ export default function booksPage() {
       <Hero sectionClass="books-hero" bgImage="/books.jpeg" header="Books" />
 
       {/* Books Section */}
-      <section id="books" className="z-10 relative py-16 bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white text-center">
-            Books
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {books.map((book, i) => (
-              <div
-                key={i}
-                className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-              >
-                <Image
-                  src={book.image}
-                  alt={book.title}
-                  width={300}
-                  height={450}
-                  className="rounded-md mb-4 mx-auto transition-transform duration-500 hover:scale-105"
-                />
-                <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">
-                  {/* Bend to Bend */}
-                </h3>
-                <StarRating rating={4.5} />
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  {expandedBooks[i] ? book.subtitle : book.subtitle}
-                </p>
-                <div className="flex mt-auto space-x-2">
-                  <button onClick={() => toggleReadMore(i)} className="btn">
-                    <span>{expandedBooks[i] ? "Read Less" : "Read More"}</span>
-                    <span></span>
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Books
+        sectionClasses="z-10 relative dark:bg-gray-900"
+        headingClasses="mb-8 dark:text-white text-center"
+        linkToBooksPage={false}
+        bookClasses="bg-gray-50 dark:bg-gray-800 shadow h-full hover:-translate-y-1"
+      />
 
       {/* Testimonials */}
       <section className="z-10 relative py-16 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900">
