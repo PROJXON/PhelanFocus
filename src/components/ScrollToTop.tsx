@@ -25,9 +25,7 @@ const ScrollToTopButton = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]); // Depend on lastScrollY to detect changes
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
     <button

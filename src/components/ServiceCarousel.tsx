@@ -1,51 +1,42 @@
-"use client";
-
-import React from "react";
-import Slider from "react-slick";
-import Image from "next/image";
-import Link from "next/link";
+'use client';
+import React from 'react';
+import Slider from 'react-slick';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ServiceCarouselItem } from '@/types/interfaces';
 
 // Services to display
-const services = [
+const services: ServiceCarouselItem[] = [
   {
-    title: "Performance Coaching",
-    lessons: "10+ Lessons",
-    badgeColor: "bg-blue-500",
-    image: "/performance-coaching.jpg",
+    title: 'Performance Coaching',
+    lessons: '10+ Lessons',
+    badgeColor: 'bg-blue-500',
+    image: '/performance-coaching.jpg',
   },
   {
-    title: "Career Coaching",
-    lessons: "10+ Lessons",
-    badgeColor: "bg-pink-500",
-    image: "/career-coaching.jpg",
+    title: 'Career Coaching',
+    lessons: '10+ Lessons',
+    badgeColor: 'bg-pink-500',
+    image: '/career-coaching.jpg',
   },
   {
-    title: "Consulting",
-    lessons: "10+ Lessons",
-    badgeColor: "bg-green-500",
-    image: "/consulting.jpg",
+    title: 'Consulting',
+    lessons: '10+ Lessons',
+    badgeColor: 'bg-green-500',
+    image: '/consulting.jpg',
   },
   {
-    title: "Personal Development",
-    lessons: "10+ Lessons",
-    badgeColor: "bg-yellow-500",
-    image: "/personal-development.jpg",
+    title: 'Personal Development',
+    lessons: '10+ Lessons',
+    badgeColor: 'bg-yellow-500',
+    image: '/personal-development.jpg',
   },
 ];
 
-const settings = {
-  dots: false,
-  arrows: false,
-  infinite: true,
-  autoplay: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  responsive: [
-    { breakpoint: 1024, settings: { slidesToShow: 2 } },
-    { breakpoint: 640, settings: { slidesToShow: 1 } },
-  ],
-};
+const responsiveSlider = [
+  { breakpoint: 1024, settings: { slidesToShow: 2 } },
+  { breakpoint: 640, settings: { slidesToShow: 1 } },
+];
 
 const ServiceCarousel = () => {
   return (
@@ -59,7 +50,16 @@ const ServiceCarousel = () => {
         </div>
 
         {/* Carousel */}
-        <Slider {...settings}>
+        <Slider
+          dots={false}
+          arrows={false}
+          infinite={true}
+          autoplay={true}
+          speed={500}
+          slidesToShow={3}
+          slidesToScroll={1}
+          responsive={responsiveSlider}
+        >
           {services.map((item, index) => (
             <div key={index} className="px-4">
               <div className="rounded-xl shadow-lg bg-white overflow-hidden transition hover:shadow-2xl">
