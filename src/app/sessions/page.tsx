@@ -1,22 +1,24 @@
 'use client';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import './sessions.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import ScrollToTopButton from '@/components/ScrollToTop';
+import { SessionType, TitleDescAndEmoji } from '@/types/interfaces';
 
 export default function CoachingSessions() {
-  const [selectedSession, setSelectedSession] = useState(null);
+  const [selectedSession, setSelectedSession] = useState<SessionType | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const sessionTypes = [
+  const sessionTypes: SessionType[] = [
     {
       id: 'performance',
       icon: '💼',
       title: 'Performance Coaching',
       bullets: ['✔️ Life', '✔️ Career', '✔️ Wellness'],
-      description: 'Empowering individuals to thrive across all areas of life with clarity, focus, and momentum.',
+      description:
+        'Empowering individuals to thrive across all areas of life with clarity, focus, and momentum.',
       duration: '60 minutes',
       format: '1-on-1',
       delivery: 'Online/In-person',
@@ -27,7 +29,8 @@ export default function CoachingSessions() {
       icon: '👔',
       title: 'Executive Performance',
       bullets: ['✔️ Packages Available', '✔️ Business', '✔️ Entrepreneur'],
-      description: 'Enhance leadership and entrepreneurial performance through strategic coaching and guidance.',
+      description:
+        'Enhance leadership and entrepreneurial performance through strategic coaching and guidance.',
       duration: '90 minutes',
       format: '1-on-1',
       delivery: 'Online/In-person',
@@ -38,7 +41,8 @@ export default function CoachingSessions() {
       icon: '👥',
       title: 'Group Performance',
       bullets: ['✔️ Peer Coaching', '✔️ Team Dynamics', '✔️ Collaborative Learning'],
-      description: 'Dynamic group sessions designed to foster growth and accountability among like-minded individuals.',
+      description:
+        'Dynamic group sessions designed to foster growth and accountability among like-minded individuals.',
       duration: '90 minutes',
       format: '4–8 people',
       delivery: 'Online/In-person',
@@ -46,7 +50,7 @@ export default function CoachingSessions() {
     },
   ];
 
-  const features = [
+  const features: TitleDescAndEmoji[] = [
     {
       icon: '🎯',
       title: 'Personalized Approach',
@@ -69,7 +73,7 @@ export default function CoachingSessions() {
     },
   ];
 
-  const openBookingModal = (session) => {
+  const openBookingModal = (session: SessionType) => {
     setSelectedSession(session);
     setIsModalOpen(true);
   };
@@ -79,18 +83,21 @@ export default function CoachingSessions() {
     setSelectedSession(null);
   };
 
-  const handleBookingSubmit = async (e) => {
+  const handleBookingSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.target;
+    const form = e.currentTarget;
+
+    const getValue = (name: string) =>
+      (form.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement)?.value || '';
 
     const bookingData = {
-      name: form['Full Name'].value,
-      email: form['Email'].value,
-      phone: form['Phone'].value,
-      dateTime: form['Preferred Date and Time'].value,
-      goals: form['Goals'].value,
-      people: form['people'].value,
-      sessionType: selectedSession?.title,
+      name: getValue('Full Name'),
+      email: getValue('Email'),
+      phone: getValue('Phone'),
+      dateTime: getValue('Preferred Date and Time'),
+      goals: getValue('Goals'),
+      people: getValue('people'),
+      sessionType: selectedSession?.title || '',
     };
 
     try {
@@ -113,7 +120,8 @@ export default function CoachingSessions() {
 
       window.location.href = `/book-and-pay?${params.toString()}`;
     } catch (error) {
-      alert('Error: ' + error.message);
+      if (error instanceof Error) alert('Error: ' + error.message);
+      else alert('An unknown error occurred. Please try again later.');
     }
   };
 
@@ -122,13 +130,15 @@ export default function CoachingSessions() {
       <Navbar />
 
       {/* Hero Section */}
-      <Hero sectionClass="sessions-hero" bgImage="/sessions/sessions.jpeg" header="Sessions" />
+      <Hero bgImage="/sessions/sessions.jpeg" header="Sessions" />
 
       <div className="sessions-container">
         <main className="sessions-main">
           <section className="hero">
             <h1>Transform Your Potential</h1>
-            <p>Explore tailored coaching packages built for personal, executive, and group success.</p>
+            <p>
+              Explore tailored coaching packages built for personal, executive, and group success.
+            </p>
           </section>
 
           <section id="sessions" className="sessions-grid">
@@ -149,7 +159,8 @@ export default function CoachingSessions() {
                 </div>
                 <div className="price">{session.price}</div>
                 <button className="btn" onClick={() => openBookingModal(session)}>
-                  <span>Book Session</span><span></span>
+                  <span>Book Session</span>
+                  <span></span>
                 </button>
               </div>
             ))}
@@ -173,7 +184,9 @@ export default function CoachingSessions() {
         {isModalOpen && (
           <div className="modal">
             <div className="modal-content">
-              <span className="close" onClick={closeModal}>&times;</span>
+              <span className="close" onClick={closeModal}>
+                &times;
+              </span>
               <h2>Book Your Session</h2>
               <p className="session-title">{selectedSession?.title}</p>
 
@@ -183,7 +196,7 @@ export default function CoachingSessions() {
                 <input type="email" name="Email" placeholder="Email Address" required />
                 <input type="tel" name="Phone" placeholder="Phone Number" required />
                 <input type="datetime-local" name="Preferred Date and Time" required />
-                <textarea name="Goals" rows="4" placeholder="Tell us about your goals..." />
+                <textarea name="Goals" rows={4} placeholder="Tell us about your goals..." />
                 <label htmlFor="people" className="block mb-1 font-medium text-gray-700">
                   How many people will attend?
                 </label>
@@ -211,35 +224,46 @@ export default function CoachingSessions() {
       <section className="coaching-process">
         <h2>Our Coaching Process</h2>
         <p className="section-intro">
-          We follow a proven step-by-step approach to ensure each session delivers lasting impact and clarity.
+          We follow a proven step-by-step approach to ensure each session delivers lasting impact
+          and clarity.
         </p>
         <div className="process-steps">
           <div className="sessions-step">
             <div className="sessions-step-number">1</div>
             <h3>Discovery Call</h3>
-            <p>We start with a free 20-minute consultation to understand your goals and challenges.</p>
+            <p>
+              We start with a free 20-minute consultation to understand your goals and challenges.
+            </p>
           </div>
           <div className="sessions-step">
             <div className="sessions-step-number">2</div>
             <h3>Goal Setting</h3>
-            <p>We define clear, actionable goals and outline a roadmap for success tailored to your needs.</p>
+            <p>
+              We define clear, actionable goals and outline a roadmap for success tailored to your
+              needs.
+            </p>
           </div>
           <div className="sessions-step">
             <div className="sessions-step-number">3</div>
             <h3>Coaching Sessions</h3>
-            <p>Engage in dynamic 1-on-1 or group sessions focused on strategy, mindset, and accountability.</p>
+            <p>
+              Engage in dynamic 1-on-1 or group sessions focused on strategy, mindset, and
+              accountability.
+            </p>
           </div>
           <div className="sessions-step">
             <div className="sessions-step-number">4</div>
             <h3>Progress Review</h3>
-            <p>We track your growth, make adjustments, and ensure continued momentum toward your outcomes.</p>
+            <p>
+              We track your growth, make adjustments, and ensure continued momentum toward your
+              outcomes.
+            </p>
           </div>
         </div>
       </section>
 
       <Footer />
       <ScrollToTopButton />
-
     </>
   );
 }

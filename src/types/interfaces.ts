@@ -1,6 +1,6 @@
 import { IconDefinition as BrandIcon } from '@fortawesome/free-brands-svg-icons';
 import { IconDefinition as SolidIcon } from '@fortawesome/free-solid-svg-icons';
-import { InputType, ImagePath, Emoji } from './types';
+import { InputType, ImagePath, Emoji, PageLink } from './types';
 import { IconType } from 'react-icons';
 
 export interface SocialIcon {
@@ -29,7 +29,7 @@ export interface Email {
 
 export interface MenuLink {
   text: string;
-  href: `/${string}`;
+  href: PageLink;
 }
 
 export interface MenuLinkWithSubmenu extends MenuLink {
@@ -40,7 +40,7 @@ export interface ProcessStep {
   title: string;
   icon: IconType;
   text: string;
-  link: `/${string}`;
+  link: PageLink;
   colorClass: string;
   tagColor: string;
 }
@@ -60,6 +60,10 @@ export interface TitleAndDesc {
 export interface Service extends TitleAndDesc {
   color: string;
   icon: SolidIcon;
+}
+
+export interface ServiceType extends TitleAndDesc {
+  href: PageLink;
 }
 
 export interface ColorMap {
@@ -96,7 +100,7 @@ export interface ClientSuccessStory {
 
 export interface ConsultingService extends TitleAndDesc {
   icon: SolidIcon;
-  link: `/${string}`;
+  link: PageLink;
 }
 
 export interface ConsultingIndustry {
@@ -126,4 +130,13 @@ export interface ListenOn {
 export interface PodcastQuote {
   text: string;
   author: `— ${string}`;
+}
+
+export interface SessionType extends TitleDescAndEmoji {
+  id: string;
+  bullets: string[];
+  duration: `${number} minutes` | `${number} hours`;
+  format: string;
+  delivery: string;
+  price: string;
 }
