@@ -116,3 +116,14 @@ export interface Module {
   bullets: string[];
   image: ImagePath;
 }
+
+export interface ListenOn {
+  href: URL;
+  src: ImagePath;
+  alt: string;
+}
+
+export interface PodcastQuote {
+  text: string;
+  author: `— ${string}`;
+}
