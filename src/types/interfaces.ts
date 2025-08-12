@@ -110,3 +110,9 @@ export interface GoldIcon {
   href?: URL;
   text: string;
 }
+
+export interface Module {
+  pillar: string;
+  bullets: string[];
+  image: ImagePath;
+}
