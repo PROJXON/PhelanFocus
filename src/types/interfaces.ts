@@ -1,6 +1,6 @@
 import { IconDefinition as BrandIcon } from '@fortawesome/free-brands-svg-icons';
 import { IconDefinition as SolidIcon } from '@fortawesome/free-solid-svg-icons';
-import { InputType, ImagePath } from './types';
+import { InputType, ImagePath, Emoji } from './types';
 import { IconType } from 'react-icons';
 
 export interface SocialIcon {
@@ -52,11 +52,14 @@ export interface ServiceCarouselItem {
   image: ImagePath;
 }
 
-export interface Service {
-  color: string;
-  icon: SolidIcon;
+export interface TitleAndDesc {
   title: string;
   description: string;
+}
+
+export interface Service extends TitleAndDesc {
+  color: string;
+  icon: SolidIcon;
 }
 
 export interface ColorMap {
@@ -69,4 +72,24 @@ export interface PriceMap {
   'Performance Coaching': number;
   'Executive Performance': number;
   'Group Performance': number;
+}
+
+export interface CoachingStep extends TitleAndDesc {
+  image: ImagePath;
+}
+
+export interface TitleDescAndEmoji extends TitleAndDesc {
+  icon: Emoji;
+}
+
+export interface CoachingService extends TitleDescAndEmoji {
+  features: string[];
+}
+
+export interface ClientSuccessStory {
+  avatar: string;
+  name: string;
+  role: string;
+  story: string;
+  result: string;
 }

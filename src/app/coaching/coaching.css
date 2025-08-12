@@ -3,7 +3,11 @@
   line-height: 1.6;
   color: #333;
   background-color: #ffffff;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
 }
 
 /* Section Base Styles */
@@ -87,7 +91,7 @@
 }
 
 /* Text + Image Intro Layout */
-.coaching-page .methodology-intro {
+.coaching-page .methodology-content {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -173,7 +177,7 @@
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .coaching-page .methodology-intro {
+  .coaching-page .methodology-content {
     flex-direction: column;
     text-align: center;
   }
@@ -421,7 +425,6 @@
   }
 }
 
-
 /* Tools Section */
 .coaching-page .tools-section {
   background-color: #f8fafc;
@@ -637,7 +640,7 @@
 .coaching-page .philosophy-section {
   background-color: #f8fafc;
   z-index: 10;
-  position: relative
+  position: relative;
 }
 
 .coaching-page .philosophy-content {
@@ -679,23 +682,23 @@
   .coaching-page .section {
     padding: 70px 20px;
   }
-  
+
   .coaching-page .section h2 {
     font-size: 2rem;
   }
-  
+
   .coaching-page .hero-content h1 {
     font-size: 2.5rem;
   }
-  
+
   .coaching-page .process-timeline::before {
     left: 25px;
   }
-  
+
   .coaching-page .timeline-item {
     gap: 20px;
   }
-  
+
   .coaching-page .timeline-number {
     width: 50px;
     height: 50px;
@@ -707,15 +710,15 @@
   .coaching-page .section {
     padding: 60px 15px;
   }
-  
+
   .coaching-page .section h2 {
     font-size: 1.8rem;
   }
-  
+
   .coaching-page .hero-content h1 {
     font-size: 2rem;
   }
-  
+
   .coaching-page .process-timeline {
     gap: 30px;
   }

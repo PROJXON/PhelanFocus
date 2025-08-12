@@ -33,3 +33,23 @@ export type EmailFormAction =
 export type EmailFieldsOptional = Partial<Email>;
 
 export type ImagePath = `/${string}.${'jpeg' | 'jpg' | 'png'}`;
+
+export type Emoji =
+  | '⚡'
+  | '🚀'
+  | '🔥'
+  | '💡'
+  | '🎯'
+  | '🌟'
+  | '✨'
+  | '📈'
+  | '🧠'
+  | '🤝'
+  | '💪'
+  | '🔄'
+  | '😰'
+  | '⏰'
+  | '🎭'
+  | '⚖️'
+  | '🧭'
+  | '🔒';
