@@ -1,22 +1,20 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { loadStripe } from '@stripe/stripe-js';
-import {
-  Elements,
-  CardElement,
-  useStripe,
-  useElements,
-} from '@stripe/react-stripe-js';
+import { loadStripe, StripeCardElementChangeEvent } from '@stripe/stripe-js';
+import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Hero from "@/components/Hero";
+import Hero from '@/components/Hero';
 import '../sessions/sessions.css';
 import './book-and-pay.css';
+import Image from 'next/image';
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+const stripePublishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
+if (!stripePublishableKey) throw new Error('Stripe publishable key is not set in the environment');
+const stripePromise = loadStripe(stripePublishableKey);
 
-function CheckoutForm({ sessionType, people }) {
+function CheckoutForm({ sessionType, people }: { sessionType: string; people: string | 1 }) {
   const stripe = useStripe();
   const elements = useElements();
   const router = useRouter();
@@ -48,13 +46,13 @@ function CheckoutForm({ sessionType, people }) {
     fetchIntent();
   }, [sessionType, people]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!stripe || !elements) return;
 
     const { paymentIntent, error } = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
-        card: elements.getElement(CardElement),
+        card: elements.getElement(CardElement)!,
         billing_details: {
           name: formData.name,
           email: formData.email,
@@ -62,19 +60,14 @@ function CheckoutForm({ sessionType, people }) {
       },
     });
 
-    if (error) {
-      alert(error.message);
-    } else if (paymentIntent.status === 'succeeded') {
-      router.push('/thank-you');
-    }
+    if (error) alert(error.message);
+    else if (paymentIntent.status === 'succeeded') router.push('/thank-you');
   };
 
-  const handleCardInput = (event) => {
-    const number = event.value?.cardNumber || '';
-    const expiry = event.value?.expiry || '';
+  const handleCardInput = () => {
     setCardPreview({
-      number: number || '',
-      expiry: expiry || '',
+      number: '',
+      expiry: '',
     });
   };
 
@@ -108,14 +101,12 @@ function CheckoutForm({ sessionType, people }) {
           <div className="card-details mt-10 flex justify-between items-end">
             <div className="name-number">
               <h6 className="text-xs">Card Number</h6>
-              <h5 className="number text-lg tracking-wider mt-1">
-                {cardPreview.number || '**** **** **** ****'}
-              </h5>
+              <h5 className="number text-lg tracking-wider mt-1">**** **** **** ****</h5>
               <h5 className="name mt-5">{formData.name || 'Your Name'}</h5>
             </div>
             <div className="valid-date text-right">
               <h6 className="text-xs">Valid Thru</h6>
-              <h5>{cardPreview.expiry || 'MM/YY'}</h5>
+              <h5>MM/YY</h5>
             </div>
           </div>
         </div>
@@ -177,15 +168,12 @@ export default function BookAndPayPage() {
   return (
     <div className="bg-white text-black min-h-screen">
       <Navbar />
-
-      <Hero sectionClass="sessions-hero" bgImage="/sessions/book-and-pay.jpeg" header={sessionType} />
-
+      <Hero bgImage="/sessions/book-and-pay.jpeg" header={sessionType} />
       <div className="py-10 px-4">
         <Elements stripe={stripePromise}>
           <CheckoutForm sessionType={sessionType} people={people} />
         </Elements>
       </div>
-
       <Footer />
     </div>
   );

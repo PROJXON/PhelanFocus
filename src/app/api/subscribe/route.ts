@@ -8,9 +8,7 @@ export async function POST(req: NextRequest) {
     const { email } = await req.json();
 
     if (!email || !email.includes('@')) {
-      return new Response(JSON.stringify({ error: 'Invalid email address' }), {
-        status: 400,
-      });
+      return new Response(JSON.stringify({ error: 'Invalid email address' }), { status: 400 });
     }
 
     await resend.emails.send({
