@@ -13,6 +13,7 @@ import {
   ClientSuccessStory,
 } from '@/types/interfaces';
 import { ReactNode } from 'react';
+import PaddedNumsTimeline from '@/components/PaddedNumsTimeline';
 
 const CoachingPageSection = ({
   sectionName,
@@ -494,11 +495,12 @@ export default function CoachingPage() {
         <div className="process-timeline">
           {timelineItems.map((item, index) => (
             <div key={index} className="timeline-item">
-              <div className="timeline-number">{String(index + 1).padStart(2, '0')}</div>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
+              <PaddedNumsTimeline
+                num={index + 1}
+                h3={item.title}
+                p={item.description}
+                class1="timeline-number"
+              />
             </div>
           ))}
         </div>

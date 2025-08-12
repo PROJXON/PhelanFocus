@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
-import { FaRegClipboard, FaCogs, FaUserTie, FaFlagCheckered, } from 'react-icons/fa';
-import { ProcessStep } from "@/types/interfaces";
+import { FaRegClipboard, FaCogs, FaUserTie, FaFlagCheckered } from 'react-icons/fa';
+import { ProcessStep } from '@/types/interfaces';
 
 const steps: ProcessStep[] = [
   {
@@ -36,13 +36,13 @@ const steps: ProcessStep[] = [
     colorClass: 'hover:border-pink-400',
     tagColor: 'text-pink-400',
   },
-]
+];
 
 export default function ProcessSection() {
   return (
     <section
       className="bg-[var(--slateBlue)] py-20 md:py-24 px-4 relative mb-24 bg-no-repeat bg-cover bg-center"
-      style={{ backgroundImage: 'url(/pattern-2.png)', }}
+      style={{ backgroundImage: 'url(/pattern-2.png)' }}
     >
       <div className="max-w-7xl mx-auto text-center">
         {/* Section Title */}
@@ -58,17 +58,23 @@ export default function ProcessSection() {
                 className={`group cursor-pointer bg-[#121c2f] border border-white/10 rounded-xl p-8 text-white text-center transition-all duration-300 ${item.colorClass}`}
               >
                 {/* Icon with animation */}
-                <div className={`flex justify-center mb-4 transition-transform duration-500 ease-in-out group-hover:rotate-[360deg] group-hover:scale-110 ${item.tagColor}`}>
+                <div
+                  className={`flex justify-center mb-4 transition-transform duration-500 ease-in-out group-hover:rotate-[360deg] group-hover:scale-110 ${item.tagColor}`}
+                >
                   <item.icon size={40} />
                 </div>
 
                 {/* Step badge */}
-                <div className={`text-xs font-semibold tracking-wide bg-gray-800 inline-block px-4 py-1 rounded-full mb-3 uppercase ${item.tagColor}`}>
+                <div
+                  className={`text-xs font-semibold tracking-wide bg-gray-800 inline-block px-4 py-1 rounded-full mb-3 uppercase ${item.tagColor}`}
+                >
                   STEP {String(index + 1).padStart(2, '0')}
                 </div>
 
                 {/* Title */}
-                <h4 className={`text-lg font-bold mb-2 group-hover:${item.tagColor} transition-colors`}>
+                <h4
+                  className={`text-lg font-bold mb-2 group-hover:${item.tagColor} transition-colors`}
+                >
                   {item.title}
                 </h4>
 
@@ -80,5 +86,5 @@ export default function ProcessSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

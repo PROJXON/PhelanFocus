@@ -93,3 +93,13 @@ export interface ClientSuccessStory {
   story: string;
   result: string;
 }
+
+export interface ConsultingService extends TitleAndDesc {
+  icon: SolidIcon;
+  link: `/${string}`;
+}
+
+export interface ConsultingIndustry {
+  name: string;
+  icon: SolidIcon;
+}

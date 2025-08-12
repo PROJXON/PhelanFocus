@@ -40,39 +40,6 @@
   padding: 0 20px;
 }
 
-/* Hero Section (Kept the same as requested) */
-.coaching-page .coaching-hero {
-  position: relative;
-  height: 50vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-}
-
-.coaching-page .coaching-hero .overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 41, 77, 0.6);
-}
-
-.coaching-page .hero-content {
-  position: relative;
-  z-index: 1;
-  padding: 0 1rem;
-}
-
-.coaching-page .hero-content h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-}
-
 /* Methodology Section */
 .coaching-page .methodology-section {
   background-color: #f8fafc;
@@ -687,10 +654,6 @@
     font-size: 2rem;
   }
 
-  .coaching-page .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
   .coaching-page .process-timeline::before {
     left: 25px;
   }
@@ -713,10 +676,6 @@
 
   .coaching-page .section h2 {
     font-size: 1.8rem;
-  }
-
-  .coaching-page .hero-content h1 {
-    font-size: 2rem;
   }
 
   .coaching-page .process-timeline {

@@ -14,34 +14,6 @@ section {
   padding: 80px 20px;
 }
 
-/* Hero Section */
-.about-hero {
-  background-size: cover;
-  background-position: center;
-  height: 50vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about-hero .overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 41, 77, 0.6);
-}
-
-.hero-content {
-  position: relative;
-  color: #fff;
-  text-align: center;
-}
-
-.hero-content h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
-
 .btn:active {
   transform: scale(0.96);
 }

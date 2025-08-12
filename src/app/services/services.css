@@ -27,22 +27,6 @@ nav {
   background-color: rgba(0, 41, 77, 0.6);
 }
 
-.hero-content {
-  position: relative;
-  color: #fff;
-  text-align: center;
-}
-
-.hero-content h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
-
-.hero-content p a {
-  color: #FFD700;
-  text-decoration: underline;
-}
-
 /* Detail Layout */
 .project-three-area {
   padding: 80px 0;
@@ -246,7 +230,7 @@ nav {
 }
 
 .choose-one-area .choose__tab .nav-link.active::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -312,7 +296,7 @@ nav {
 }
 
 .choose-one-area .choose-one__content ul.mt-25 li::before {
-  content: "✔";
+  content: '✔';
   position: absolute;
   left: 0;
   top: 0;
