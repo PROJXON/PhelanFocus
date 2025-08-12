@@ -103,3 +103,10 @@ export interface ConsultingIndustry {
   name: string;
   icon: SolidIcon;
 }
+
+export interface GoldIcon {
+  icon: BrandIcon | SolidIcon;
+  label: string;
+  href?: URL;
+  text: string;
+}
