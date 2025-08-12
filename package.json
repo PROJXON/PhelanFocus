@@ -8,6 +8,7 @@
     "start": "next start",
     "export": "next export",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "predeploy": "next build && next export",
     "deploy": "npm run build && gh-pages -d out"
   },
@@ -38,6 +39,8 @@
     "@types/react": "^19.1.9",
     "@types/react-slick": "^0.23.13",
     "@types/tailwindcss": "^3.0.11",
+    "eslint": "9.33.0",
+    "eslint-config-next": "15.4.6",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.8.3"
