@@ -4,32 +4,6 @@
   background-color: #f8fafc;
 }
 
-/* Hero */
- .hero-content {
-   position: relative;
-   color: #fff;
-   text-align: center;
- }
- .hero-content h1 {
-   font-size: 48px;
-   margin-bottom: 15px;
- }
-.consulting-hero {
-  background-size: cover;
-  background-position: center;
-  height: 50vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.consulting-hero .overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 41, 77, 0.6);
-}
-
 /* Main Content */
 .consulting-main {
   margin: 0 auto;
@@ -45,12 +19,11 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;   
-  padding-right: 1rem;  
-  width: 100%;       
-  box-sizing: border-box; 
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
-
 
 /* Section Styles */
 .consulting-section-header {
@@ -316,36 +289,20 @@
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .consulting-hero h1 {
-    font-size: 3rem;
-  }
-}
-
 @media (max-width: 768px) {
-  .consulting-hero {
-    height: 50vh;
-    min-height: 300px;
-  }
-  
-  .consulting-hero h1 {
-    font-size: 2.5rem;
-  }
-  
   .consulting-section-header h2 {
     font-size: 2rem;
   }
-  
+
   .consulting-cta-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .approach-step {
     padding-left: 80px;
   }
-  
+
   .step-number {
     width: 60px;
     height: 60px;
@@ -354,27 +311,19 @@
 }
 
 @media (max-width: 480px) {
-  .consulting-hero h1 {
-    font-size: 2rem;
-  }
-  
-  .consulting-hero h1 svg {
-    margin-right: 0.5rem;
-  }
-  
   .consulting-section-header h2 {
     font-size: 1.7rem;
   }
-  
+
   .approach-step {
     padding-left: 70px;
   }
-  
+
   .step-number {
     width: 50px;
     height: 50px;
   }
-  
+
   .consulting-industries-grid {
     grid-template-columns: repeat(2, 1fr);
   }

@@ -8,20 +8,3 @@ nav {
   color: #333;
   font-family: 'Poppins', sans-serif;
 }
-
-/* Hero */
-.books-hero {
-  background-size: cover;
-  background-position: center;
-  height: 50vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.books-hero .overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 41, 77, 0.6);
-}

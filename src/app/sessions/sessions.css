@@ -15,22 +15,6 @@
   background-color: rgba(0, 41, 77, 0.6);
 }
 
-.hero-content {
-  position: relative;
-  color: #fff;
-  text-align: center;
-}
-
-.hero-content h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
-
-.hero-content p a {
-  color: #FFD700;
-  text-decoration: underline;
-}
-
 /* Main Wrapper */
 .sessions-container {
   background-color: #ffffff;
@@ -101,7 +85,7 @@
   justify-content: center;
   margin: 0 auto 20px;
   font-size: 32px;
-  color: #FFD700;
+  color: #ffd700;
 }
 
 .session-card h3 {
@@ -186,10 +170,10 @@
 }
 
 .features h2::after {
-  content: "";
+  content: '';
   width: 80px;
   height: 3px;
-  background: #FFD700;
+  background: #ffd700;
   display: block;
   margin: 12px auto 0;
   border-radius: 4px;
@@ -312,9 +296,6 @@
   margin-bottom: 0.3rem;
 }
 
-
-
-
 .coaching-process {
   padding: 4rem 1rem;
   background: linear-gradient(to bottom, #f8f9fb, #ffffff);
@@ -348,7 +329,9 @@
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .sessions-step:hover {
@@ -372,7 +355,7 @@
 
 .sessions-step h3 {
   font-size: 1.25rem;
-  color: #12395B;
+  color: #12395b;
   margin-bottom: 0.5rem;
 }
 

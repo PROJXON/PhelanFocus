@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --background: #27272A;
+  --background: #27272a;
   --foreground: #171717;
-  --gold: #F9C705;
-  --darkGold: #F9C70580;
+  --gold: #f9c705;
+  --darkGold: #f9c70580;
   --slateBlue: #13395c;
   --shadow: #13395c80;
 }
@@ -143,20 +143,4 @@ body {
 
 .link-gold-hover {
   @apply hover:text-[var(--gold)] transition duration-300;
-}
-
-.hero-content {
-  position: relative;
-  color: #fff;
-  text-align: center;
-}
-
-.hero-content h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
-
-.hero-content p a {
-  color: #FFD700;
-  text-decoration: underline;
 }
