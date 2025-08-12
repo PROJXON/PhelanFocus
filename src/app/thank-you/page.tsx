@@ -10,7 +10,7 @@ export default function ThankYou() {
       <Navbar />
 
       {/* Hero Section */}
-      <Hero sectionClass="sessions-hero" bgImage="/sessions/thank-you.jpeg" header="Thank You" />
+      <Hero bgImage="/sessions/thank-you.jpeg" header="Thank You" />
 
       {/* Message Section */}
       <main className="flex-grow flex justify-center items-center px-4 py-12">
@@ -23,7 +23,11 @@ export default function ThankYou() {
             We will send you the meeting link and calendar invite shortly.
           </p>
           <p className="text-lg text-gray-700">
-            If you have any questions, feel free to contact us at <a href="mailto:ThePhelanFocus@gmail.com" className="text-blue-600 underline">ThePhelanFocus@gmail.com</a>.
+            If you have any questions, feel free to contact us at{' '}
+            <a href="mailto:ThePhelanFocus@gmail.com" className="text-blue-600 underline">
+              ThePhelanFocus@gmail.com
+            </a>
+            .
           </p>
         </div>
       </main>

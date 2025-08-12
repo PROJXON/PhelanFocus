@@ -140,3 +140,11 @@ export interface SessionType extends TitleDescAndEmoji {
   delivery: string;
   price: string;
 }
+
+export interface Keynote extends TitleAndDesc {
+  image: ImagePath;
+  preHeading: string;
+  buttonText: string;
+  preHeadingColor: string;
+  buttonColors: string;
+}
