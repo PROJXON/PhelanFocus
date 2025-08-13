@@ -1,7 +1,7 @@
 'use client';
 import { FormEvent, useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { loadStripe, StripeCardElementChangeEvent } from '@stripe/stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -26,10 +26,10 @@ function CheckoutForm({ sessionType, people }: { sessionType: string; people: st
     email: '',
   });
 
-  const [cardPreview, setCardPreview] = useState({
+  const setCardPreview = useState({
     number: '',
     expiry: '',
-  });
+  })[1];
 
   useEffect(() => {
     const fetchIntent = async () => {

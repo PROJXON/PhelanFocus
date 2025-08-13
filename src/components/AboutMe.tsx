@@ -1,16 +1,16 @@
-"use client";
-import { motion } from "framer-motion";
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import PropTypes from "prop-types";
-import Link from "next/link";
-import Image from "next/image";
-import { SocialIcon } from "@/types/interfaces";
+'use client';
+import { motion } from 'framer-motion';
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import PropTypes from 'prop-types';
+import Link from 'next/link';
+import Image from 'next/image';
+import { SocialIcon } from '@/types/interfaces';
 const social: SocialIcon[] = [
   {
     icon: faLinkedinIn,
-    href: new URL("https://www.linkedin.com/in/phelanmarkw/"),
+    href: new URL('https://www.linkedin.com/in/phelanmarkw/'),
   },
 ];
 
@@ -40,7 +40,7 @@ const AboutMe = () => {
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, ease: "easeOut" }}
+        transition={{ duration: 0.9, ease: 'easeOut' }}
         viewport={{ once: false, amount: 0.1 }}
         className="max-w-6xl mx-auto px-4"
       >
@@ -58,29 +58,33 @@ const AboutMe = () => {
 
           {/* Text section */}
           <div className="w-full md:w-7/12">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Hi, I'm Mark.</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">{"Hi, I'm Mark."}</h2>
             <p className="text-[#cf443c] font-medium mb-4">
-              I believe that each of us has the potential to create the change we want to see in the world.
-              But too often we get stuck feeling like we can’t. I want to change that.
+              I believe that each of us has the potential to create the change we want to see in the
+              world. But too often we get stuck feeling like we can’t. I want to change that.
             </p>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              The world needs people like you. People gifted with compassion and a desire to make a difference.
-              People who see a problem and look for a solution.
+              The world needs people like you. People gifted with compassion and a desire to make a
+              difference. People who see a problem and look for a solution.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              And you need people like me. Someone who’ll not only help you find the confidence to step up
-              and make that difference, but also support you as you create a life you love.
+              And you need people like me. Someone who’ll not only help you find the confidence to
+              step up and make that difference, but also support you as you create a life you love.
             </p>
 
             {/* Social & Button */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-              <ul className="flex gap-2">{social.map((item, i) => <Social item={item} key={i} />)}</ul>
-                <Link href="/about">
-                  <button className="btn">
-                    <span>About Phelan</span>
-                    <span></span>
-                  </button>
-                </Link>
+              <ul className="flex gap-2">
+                {social.map((item, i) => (
+                  <Social item={item} key={i} />
+                ))}
+              </ul>
+              <Link href="/about">
+                <button className="btn">
+                  <span>About Phelan</span>
+                  <span></span>
+                </button>
+              </Link>
             </div>
           </div>
         </div>

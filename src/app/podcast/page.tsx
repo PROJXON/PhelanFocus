@@ -96,10 +96,9 @@ export default function PodcastPage() {
             precision, discipline, and forward-thinking innovation.
           </p>
           <p className="text-lg leading-relaxed opacity-80 mt-4">
-            He has led high-impact initiatives across multimillion-dollar organizations, building
-            scalable systems and empowering teams to perform at their best. Whether he's on stage or
-            in the boardroom, Mark delivers insights that inspire action and drive measurable
-            results — all while staying grounded in authenticity and service.
+            {
+              "He has led high-impact initiatives across multimillion-dollar organizations, building scalable systems and empowering teams to perform at their best. Whether he's on stage or in the boardroom, Mark delivers insights that inspire action and drive measurable results — all while staying grounded in authenticity and service."
+            }
           </p>
         </div>
       </section>
@@ -222,8 +221,9 @@ export default function PodcastPage() {
       >
         <h3 className="text-3xl font-bold mb-4">Are you ready to take action?</h3>
         <p className="text-lg mb-8 max-w-xl mx-auto">
-          Schedule a no-cost discovery call to learn if I'm the right person to help you move
-          forward.
+          {
+            "Schedule a no-cost discovery call to learn if I'm the right person to help you move forward."
+          }
         </p>
         <div className="max-w-xs mx-auto">
           <Link href="/contact">

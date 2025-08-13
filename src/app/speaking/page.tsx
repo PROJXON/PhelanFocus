@@ -58,7 +58,7 @@ export default function SpeakingPage() {
               Recent Keynote Clients
             </p>
             <h2 className="text-3xl md:text-4xl font-bold leading-snug">
-              Just a few of the 500 brands who've entrusted their audiences to Mark Phelan
+              {"Just a few of the 500 brands who've entrusted their audiences to Mark Phelan"}
             </h2>
           </div>
 
@@ -87,8 +87,9 @@ export default function SpeakingPage() {
         </h2>
 
         <p className="text-md text-gray-600 dark:text-gray-300 mb-8">
-          Dive into Mark's approach to storytelling and learn how he captivates audiences in under 4
-          minutes.
+          {
+            "Dive into Mark's approach to storytelling and learn how he captivates audiences in under 4 minutes."
+          }
         </p>
 
         <div className="max-w-4xl mx-auto aspect-video">
@@ -149,10 +150,9 @@ export default function SpeakingPage() {
             Mark’s Most Popular Keynote Speeches
           </h2>
         </div>
-        <h3 className="text-xl font-bold mb-4">Don't Take Our Word For It</h3>
+        <h3 className="text-xl font-bold mb-4">{"Don't Take Our Word For It"}</h3>
         <p className="italic max-w-xl mx-auto">
-          "Mark’s coaching sessions are the most impactful of any program I’ve participated in —
-          insightful, energizing, and life-changing."
+          {`"Mark’s coaching sessions are the most impactful of any program I’ve participated in — insightful, energizing, and life-changing."`}
         </p>
         <p className="mt-2 font-semibold">— Global Leadership Summit Participant</p>
       </section>

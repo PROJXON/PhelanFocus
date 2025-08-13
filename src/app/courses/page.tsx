@@ -124,8 +124,9 @@ export default function CoursesPage() {
         {/* Intro Section */}
         <section className="py-16 px-4 max-w-6xl mx-auto">
           <p className="text-2xl text-blue-800 font-medium mb-10">
-            If you're ready to make some changes in your life, but don't know where to start, then
-            you probably recognize some of these problems:
+            {
+              "If you're ready to make some changes in your life, but don't know where to start, then you probably recognize some of these problems:"
+            }
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <ul className="list-disc list-inside space-y-3">
@@ -156,8 +157,7 @@ export default function CoursesPage() {
             ))}
           </div>
           <blockquote className="text-xl italic font-semibold text-gray-700 max-w-3xl mx-auto mb-10">
-            "Coaching offers a way forward, so you can start transforming your life and turn your
-            dreams into reality."
+            {`"Coaching offers a way forward, so you can start transforming your life and turn your dreams into reality."`}
           </blockquote>
           <p className="text-lg text-gray-700 max-w-4xl mx-auto">
             I can help you gain clarity on your purpose, values and priorities, figure out what’s
@@ -172,7 +172,7 @@ export default function CoursesPage() {
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-4">3 Pillars of Transformation</h2>
             <p className="text-xl text-blue-200 mb-12">
-              Here's my tried and tested formula that's proven to deliver results…
+              {"Here's my tried and tested formula that's proven to deliver results…"}
             </p>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -212,8 +212,8 @@ export default function CoursesPage() {
             </p>
             <p className="text-lg text-white">
               Based on the tried and tested{' '}
-              <strong className="text-[#FFD700]">Co-Active methodology</strong>. Here's what to
-              expect…
+              <strong className="text-[#FFD700]">Co-Active methodology</strong>
+              {". Here's what to expect…"}
             </p>
           </div>
         </section>

@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 import './books.css';
 import ScrollToTopButton from '@/components/ScrollToTop';
 
-export default function booksPage() {
+export default function BooksPage() {
   // State for testimonials slider
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
@@ -102,7 +102,7 @@ export default function booksPage() {
                   </div>
 
                   <blockquote className="text-xl md:text-2xl italic text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                    "{testimonial.quote}"
+                    {`"${testimonial.quote}"`}
                   </blockquote>
 
                   <div className="flex items-center">
