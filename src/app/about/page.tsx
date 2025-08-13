@@ -42,7 +42,7 @@ const CircleProgress = ({ percentage, label }: { percentage: number; label: stri
         clearInterval(countInterval);
       };
     }
-  }, [isVisible, percentage]);
+  }, [isVisible, percentage, count, progress]);
 
   return (
     <div className="circle-container" ref={circleRef}>

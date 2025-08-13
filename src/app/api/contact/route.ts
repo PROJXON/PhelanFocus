@@ -23,12 +23,11 @@ export async function POST(req: NextRequest) {
       }),
     });
 
-    if (error) {
-      return Response.json({ error }, { status: 400 });
-    }
+    if (error) return Response.json({ error }, { status: 400 });
 
     return Response.json(data);
   } catch (err) {
+    console.error('Resend error:', err);
     return Response.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }
