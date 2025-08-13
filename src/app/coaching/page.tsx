@@ -369,8 +369,9 @@ export default function CoachingPage() {
           <div className="text-center mb-10 max-w-3xl mx-auto">
             <h2 className="text-3xl font-semibold text-neutral-dark mb-4">What You Can Expect</h2>
             <p className="text-neutral-medium">
-              My clients typically see significant shifts within the first 30 days. Here's what's
-              possible when you commit to the process:
+              {
+                "My clients typically see significant shifts within the first 30 days. Here's what's possible when you commit to the process:"
+              }
             </p>
           </div>
 
