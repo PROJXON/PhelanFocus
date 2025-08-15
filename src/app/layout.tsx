@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
+import Script from "next/script";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,11 +26,32 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    <head>
+      {/* Google Analytics Scripts */}
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX`}
+      />
+      <Script
+        id="ga-init"
+        strategy="afterInteractive"
       >
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
-    </html>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XXXXXXXXXX', {
+            page_path: window.location.pathname,
+          });
+        `}
+      </Script>
+    </head>
+    <body
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    >
+      <AnalyticsTracker />    
+      <ThemeProvider>{children}</ThemeProvider>
+    </body>
+  </html>
   );
 }
