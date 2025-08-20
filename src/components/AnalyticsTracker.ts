@@ -9,12 +9,12 @@ export default function AnalyticsTracker() {
  const pathname = usePathname();
  const gaID = process.env.NEXT_PUBLIC_GA_ID;
  useEffect(() => {
-   if (window.gtag) {
+   if (gaID && typeof window !== "undefined" && window.gtag) {
      window.gtag("config", gaID, {
        page_path: pathname,
      });
    }
- }, [pathname]);
+ }, [pathname, gaID]);
 
 
  return null;
