@@ -280,13 +280,18 @@
 }
 
 .consulting-industries-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;       /* Center items horizontally */
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
 .consulting-industry-card {
+  flex: 0 1 220px;
+  max-width: 220px;
+  min-width: 180px;
+  box-sizing: border-box;
   background: white;
   border-radius: 12px;
   padding: 2rem 1.5rem;
