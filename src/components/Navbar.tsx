@@ -37,13 +37,12 @@ const Navbar = () => {
       submenu: [
         { text: "Sessions", href: "/sessions" },
         { text: "Courses", href: "/courses" },
+        { text: "Books", href: "/books" },
       ],
     },
     { text: "Consulting", href: "/consulting" },
     { text: "Speaking", href: "/speaking" },
     { text: "Podcast", href: "/podcast" },
-    { text: "Books", href: "/books" },
-    { text: "Contact", href: "/contact" },
   ];
 
   return (

@@ -73,35 +73,6 @@ export default function PodcastPage() {
         <Hero bgImage="/podcast2.jpeg" header="Podcast" />
       </div>
 
-      {/* MARK PHELAN STORY */}
-      <section
-        className="bg-[#0b1727] py-20 px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-        style={{ position: 'relative', zIndex: 1 }}
-      >
-        <div className="flex justify-center">
-          <Image
-            src="/Phelancoaching.jpg"
-            alt="Podcast Hosts"
-            width={400}
-            height={400}
-            className="rounded-xl shadow-2xl border-4 border-white dark:border-gray-700"
-          />
-        </div>
-        <div className="text-white">
-          <h3 className="text-2xl font-bold mb-4">Meet Mark Phelan</h3>
-          <p className="text-lg leading-relaxed opacity-80">
-            Mark Phelan is a dynamic public speaker and strategic consultant known for transforming
-            complexity into clarity. With a foundation in military logistics and a career spanning
-            project management, e-commerce, IT, and engineering, Mark brings a unique blend of
-            precision, discipline, and forward-thinking innovation.
-          </p>
-          <p className="text-lg leading-relaxed opacity-80 mt-4">
-            {
-              "He has led high-impact initiatives across multimillion-dollar organizations, building scalable systems and empowering teams to perform at their best. Whether he's on stage or in the boardroom, Mark delivers insights that inspire action and drive measurable results — all while staying grounded in authenticity and service."
-            }
-          </p>
-        </div>
-      </section>
 
       {/* QUOTE CAROUSEL */}
       <section

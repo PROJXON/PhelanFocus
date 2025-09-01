@@ -483,89 +483,6 @@ p {
     padding: 12px 24px;
   }
 }
-
-/* Team */
-.team-cards-section {
-  padding: 80px 20px;
-  text-align: center;
-  background-color: #f8f8f8;
-}
-
-.team-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 50px;
-  color: var(--slateBlue);
-}
-
-.team-cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.team-card {
-  background: #fff;
-  padding: 30px 20px;
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.team-card:hover {
-  transform: translateY(-10px);
-}
-
-.team-img-wrapper {
-  border: 3px solid var(--gold);
-  padding: 5px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  height: 280px;
-  /* Fixed height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.team-img-wrapper img {
-  height: 100%;
-  width: auto;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.team-card h3 {
-  font-weight: 700;
-  color: var(--slateBlue);
-  margin-bottom: 8px;
-}
-
-.team-card .title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #666;
-  margin-bottom: 4px;
-}
-
-.team-card .department {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #888;
-  margin-bottom: 20px;
-}
-
-.team-socials {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  font-size: 16px;
-  color: #999;
-}
-
 /* Counter */
 .counter-section {
   background: var(--slateBlue);
@@ -824,7 +741,7 @@ p {
 /* Founder & Podcast Section */
 .founder-podcast-section {
   padding: 80px 20px;
-  background: #f8f8fa;
+  background: #fff;
 }
 
 .founder-podcast-container {

@@ -309,69 +309,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Section 2: Other Team Members */}
-      <section className="team-cards-section relative z-20">
-        <h2 className="team-title">Our Expert Team</h2>
-        <div className="team-cards-container">
-          {[
-            {
-              name: 'Kathy Seaton',
-              role: 'Senior Consultant, Non Profit Development',
-              img: 'team/kathy.webp',
-              socials: {
-                linkedin: 'https://www.linkedin.com/in/klseaton/',
-              },
-            },
-            {
-              name: 'Melissa Eboli',
-              role: 'Senior Consultant, Tech + Software Solutions',
-              img: 'team/melissa.webp',
-              socials: {
-                linkedin: 'https://www.linkedin.com/in/viamelissa/',
-              },
-            },
-            {
-              name: 'Donavon Roberson',
-              role: 'Senior Consultant, Health + Wellness Solutions',
-              img: 'team/donavon.webp',
-              socials: {
-                linkedin: 'https://www.linkedin.com/in/donavonroberson/',
-              },
-            },
-          ].map((member, idx) => {
-            const [title, dept] = member.role.split(',');
-            return (
-              <div key={idx} className="team-card">
-                <div className="team-img-wrapper">
-                  <Image
-                    src={`/${member.img}`}
-                    alt={member.name}
-                    width={280}
-                    height={280}
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-                <h3>{member.name}</h3>
-                <p className="title">{title}</p>
-                <p className="department">{dept}</p>
-                <div className="team-socials">
-                  {member.socials.linkedin && (
-                    <a
-                      href={member.socials.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="link-gold-hover"
-                    >
-                      <FontAwesomeIcon icon={faLinkedinIn} />
-                    </a>
-                  )}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
       {/* Counter Section  */}
       <section
         className="counter-section relative z-20"
