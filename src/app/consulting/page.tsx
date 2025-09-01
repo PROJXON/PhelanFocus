@@ -253,8 +253,8 @@ export default function ConsultingPage() {
                       <Image
                         src={`/${member.img}`}
                         alt={member.name}
-                        width={210} // This keeps max width reasonable in the fixed-height box
-                        height={270} // Not 280 so padding is taken into account
+                        width={210} 
+                        height={270}
                         style={{
                           height: "100%",
                           width: "auto",
