@@ -11,6 +11,7 @@ import './podcast.css';
 import ScrollToTopButton from '@/components/ScrollToTop';
 import { ListenOn, PodcastQuote } from '@/types/interfaces';
 import PodcastEpisode from '@/components/PodcastEpisode';
+import PodcastHero from './PodcastHero';
 
 export default function PodcastPage() {
   const { resolvedTheme } = useTheme();
@@ -32,29 +33,6 @@ export default function PodcastPage() {
     },
   ];
 
-  const listenOn: ListenOn[] = [
-    {
-      href: new URL('https://www.tiktok.com/@the.phelan.focus'),
-      src: '/podcast/tiktok.png',
-      alt: 'TikTok logo',
-    },
-    {
-      href: new URL('https://www.youtube.com/@ThePhelanFocus'),
-      src: '/podcast/youtube.png',
-      alt: 'YouTube logo',
-    },
-    {
-      href: new URL('https://open.spotify.com/show/1hsQ9TSkvmuzkbnrE27ho7?si=95e611acecfa4385'),
-      src: '/podcast/spotify.png',
-      alt: 'Spotify logo',
-    },
-    {
-      href: new URL('https://www.instagram.com/The.Phelan.Focus/'),
-      src: '/podcast/Instagram.png',
-      alt: 'Instagram logo',
-    },
-  ];
-
   useEffect(() => {
     setMounted(true);
     const interval = setInterval(() => {
@@ -66,14 +44,9 @@ export default function PodcastPage() {
   return (
     <div className="bg-white dark:bg-[#0b1727] text-gray-800 dark:text-white">
       <Navbar />
-
-      {/* HERO */}
-      {/* Remove fixed positioning and z-index from Hero */}
       <div style={{ position: 'relative', width: '100%', height: '50vh', zIndex: 0 }}>
-        <Hero bgImage="/podcast2.jpeg" header="Podcast" />
+        <PodcastHero bgImage="/podcast2.jpeg" />
       </div>
-
-
       {/* QUOTE CAROUSEL */}
       <section
         className="bg-slate-800 text-white py-16 px-6 text-center"
@@ -101,28 +74,6 @@ export default function PodcastPage() {
         </div>
       </section>
 
-      {/* LISTEN ON */}
-      <section
-        className="bg-[#0b1727] py-20 px-6 text-center"
-        style={{ position: 'relative', zIndex: 1 }}
-      >
-        <h3 className="text-2xl font-semibold mb-10">
-          Listen wherever you find your favorite podcasts:
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-          {listenOn.map((place, i) => (
-            <a
-              key={i}
-              href={place.href.toString()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-lg"
-            >
-              <Image src={place.src} alt={place.alt} width={200} height={50} />
-            </a>
-          ))}
-        </div>
-      </section>
       <section
         className="bg-slate-800 text-white py-20 px-6 text-center"
         style={{ position: 'relative', zIndex: 1 }}

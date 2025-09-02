@@ -48,8 +48,7 @@ export default function SpeakingPage() {
 
       {/* Hero Section */}
       <Hero bgImage="/PublicSPeakking.png" header="Speaking" />
-
-      {/* --- Recent Keynote Clients (Neat version, no duplicate) --- */}
+      
       <section className="recent-keynote-section">
         <div className="keynote-clients-container">
           <div className="clients-heading">
