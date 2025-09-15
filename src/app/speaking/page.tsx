@@ -48,59 +48,28 @@ export default function SpeakingPage() {
 
       {/* Hero Section */}
       <Hero bgImage="/PublicSPeakking.png" header="Speaking" />
-
-      {/* Brand Logos */}
-      <section className="z-10 relative py-20 px-6 bg-white dark:bg-[#f8f9fa] text-gray-900 dark:text-gray-900">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left: Text */}
-          <div>
-            <p className="text-sm font-semibold text-blue-600 uppercase mb-2">
-              Recent Keynote Clients
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold leading-snug">
-              {"Just a few of the 500 brands who've entrusted their audiences to Mark Phelan"}
-            </h2>
+      
+      <section className="recent-keynote-section">
+        <div className="keynote-clients-container">
+          <div className="clients-heading">
+            Recent Keynote Clients
           </div>
-
-          {/* Right: Logo grid */}
-          <div className="bg-[#f4f1f1] rounded-xl p-6 shadow relative border-t-4 border-pink-500">
-            <div className="grid grid-cols-3 sm:grid-cols-3 gap-6 items-center justify-items-center">
+          <div className="logos-card">
+            <div className="logos-grid">
               {[...Array(6)].map((_, i) => (
-                <Image
-                  key={i}
-                  src={`/speaking/school${i + 1}.png`}
-                  alt={`Client ${i + 1} logo`}
-                  width={80}
-                  height={48}
-                  className="h-12 object-contain grayscale hover:grayscale-0 transition duration-300"
-                />
+                <div className="logo-item" key={i}>
+                  <Image
+                    src={`/speaking/school${i + 1}.png`}
+                    alt={`Client ${i + 1} logo`}
+                    width={115}
+                    height={48}
+                    className=""
+                    draggable={false}
+                  />
+                </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* The Power of Storytelling */}
-      <section className="z-10 relative py-20 px-6 text-center bg-white dark:bg-[#0b1727]">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-          The Power of Storytelling
-        </h2>
-
-        <p className="text-md text-gray-600 dark:text-gray-300 mb-8">
-          {
-            "Dive into Mark's approach to storytelling and learn how he captivates audiences in under 4 minutes."
-          }
-        </p>
-
-        <div className="max-w-4xl mx-auto aspect-video">
-          <iframe
-            className="w-full h-full rounded-lg shadow-lg"
-            src="https://www.youtube.com/embed/GyXiM_O76Vo"
-            title="Mark Phelan Keynote Video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
         </div>
       </section>
 

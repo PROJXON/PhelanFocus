@@ -122,10 +122,11 @@ export interface Module {
 }
 
 export interface ListenOn {
-  href: URL;
-  src: ImagePath;
+  href: string;
+  src: string;
   alt: string;
 }
+>
 
 export interface PodcastQuote {
   text: string;

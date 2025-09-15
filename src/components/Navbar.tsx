@@ -30,6 +30,7 @@ const Navbar = () => {
   }, []);
 
   const menuLinks: MenuLinkWithSubmenu[] = [
+    { text: "Podcast", href: "/podcast" },
     { text: "About", href: "/about" },
     {
       text: "Coaching",
@@ -37,13 +38,11 @@ const Navbar = () => {
       submenu: [
         { text: "Sessions", href: "/sessions" },
         { text: "Courses", href: "/courses" },
+        { text: "Books", href: "/books" },
       ],
     },
     { text: "Consulting", href: "/consulting" },
     { text: "Speaking", href: "/speaking" },
-    { text: "Podcast", href: "/podcast" },
-    { text: "Books", href: "/books" },
-    { text: "Contact", href: "/contact" },
   ];
 
   return (
@@ -52,7 +51,7 @@ const Navbar = () => {
         }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/">
+        <Link href="/about">
           <Image
             src="/PhelanFocusLOGO-02.png"
             alt="Phelan Focus Logo"

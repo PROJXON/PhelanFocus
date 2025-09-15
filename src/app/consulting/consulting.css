@@ -54,6 +54,103 @@
   margin: 0 auto;
 }
 
+/* Team */
+.team-cards-section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.zoomed-out-img img {
+  transform: scale(0.87); /* Adjust scale to taste */
+  transition: transform 0.3s;
+  /* Optional: center the image after scaling */
+  display: block;
+  margin: 0 auto;
+}
+
+.team-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: #FFD700;
+  text-shadow: 0 1.5px 6px rgba(0,0,0,0.44), 0 0 2px #FFD70088;
+}
+
+.team-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.team-card {
+  background: #fff;
+  padding: 30px 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Center the image wrapper block horizontally inside the card */
+.team-img-wrapper {
+  border: 3px solid var(--gold);
+  padding: 5px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  height: 280px;
+  width: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-left: auto;      
+  margin-right: auto;     
+}
+
+.team-img-wrapper img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 6px;
+  display: block;
+  margin: auto;
+}
+
+.team-card h3 {
+  font-weight: 700;
+  color: var(--slateBlue);
+  margin-bottom: 8px;
+}
+
+.team-card .title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.team-card .department {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.team-socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 16px;
+  color: #999;
+}
+
+
 /* Services Section */
 .consulting-services-section {
   margin-bottom: 6rem;
@@ -179,17 +276,22 @@
 
 /* Industries Section */
 .industries-section {
-  margin-bottom: 6rem;
+  margin-bottom: 0;
 }
 
 .consulting-industries-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;       /* Center items horizontally */
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
 .consulting-industry-card {
+  flex: 0 1 220px;
+  max-width: 220px;
+  min-width: 180px;
+  box-sizing: border-box;
   background: white;
   border-radius: 12px;
   padding: 2rem 1.5rem;

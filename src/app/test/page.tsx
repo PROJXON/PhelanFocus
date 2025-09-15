@@ -122,12 +122,18 @@ const About = () => {
   return (
     <div
       className={`about-page ${mounted && resolvedTheme === "light" ? "light" : "dark"}`}
+      // Force a white canvas for the whole page regardless of external CSS
       style={{ backgroundColor: "#fff" }}
     >
+      {/* Fixed Navbar */}
       <header className="w-full fixed z-40">
         <Navbar />
       </header>
-      <Hero bgImage="/homeHero.jpg" header="Welcome To The Phelan Focus" />
+
+      {/* About Hero Section as the main hero */}
+      <Hero bgImage="/homeHero.jpg" header="About" />
+
+      {/* Call to Action Section (from Home) */}
       <section className="z-20 relative text-center py-8 bg-white">
         <p className="text-lg max-w-xl mx-auto mb-6">
           Helping individuals unlock their potential and achieve personal and
@@ -140,6 +146,10 @@ const About = () => {
           </button>
         </Link>
       </section>
+
+      {/* About Us Section (from About) */}
+      {/* Fix: remove bottom margin (which was collapsing and showing parent bg),
+          use padding instead; also force bg with inline style and prevent margin collapse via overflow-hidden */}
       <section
         className="about-section relative z-20 my-0 px-[64px] pb-20 bg-white overflow-hidden"
         style={{ backgroundColor: "#fff" }}
