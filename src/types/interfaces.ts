@@ -126,7 +126,6 @@ export interface ListenOn {
   src: string;
   alt: string;
 }
->
 
 export interface PodcastQuote {
   text: string;
