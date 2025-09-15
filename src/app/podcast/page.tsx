@@ -1,15 +1,13 @@
 'use client';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Hero from '@/components/Hero';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import './podcast.css';
 import ScrollToTopButton from '@/components/ScrollToTop';
-import { ListenOn, PodcastQuote } from '@/types/interfaces';
+import { PodcastQuote } from '@/types/interfaces';
 import PodcastEpisode from '@/components/PodcastEpisode';
 import PodcastHero from './PodcastHero';
 
