@@ -1,10 +1,10 @@
-"use client";
-import Link from "next/link";
-import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { MenuLinkWithSubmenu } from "@/types/interfaces";
+'use client';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { MenuLinkWithSubmenu } from '@/types/interfaces';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -25,30 +25,31 @@ const Navbar = () => {
       lastScroll.current = current;
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const menuLinks: MenuLinkWithSubmenu[] = [
-    { text: "Podcast", href: "/podcast" },
-    { text: "About", href: "/about" },
+    { text: 'Podcast', href: '/podcast' },
+    { text: 'Home', href: '/' },
     {
-      text: "Coaching",
-      href: "/coaching",
+      text: 'Coaching',
+      href: '/coaching',
       submenu: [
-        { text: "Sessions", href: "/sessions" },
-        { text: "Courses", href: "/courses" },
-        { text: "Books", href: "/books" },
+        { text: 'Sessions', href: '/sessions' },
+        { text: 'Courses', href: '/courses' },
+        { text: 'Books', href: '/books' },
       ],
     },
-    { text: "Consulting", href: "/consulting" },
-    { text: "Speaking", href: "/speaking" },
+    { text: 'Consulting', href: '/consulting' },
+    { text: 'Speaking', href: '/speaking' },
   ];
 
   return (
     <nav
-      className={`bg-[#144a8f] text-white font-raleway shadow-md py-4 px-6 z-50 fixed top-0 left-0 w-full transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"
-        }`}
+      className={`bg-[#144a8f] text-white font-raleway shadow-md py-4 px-6 z-50 fixed top-0 left-0 w-full transition-transform duration-300 ${
+        showNavbar ? 'translate-y-0' : '-translate-y-full'
+      }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/about">
@@ -73,20 +74,21 @@ const Navbar = () => {
               >
                 <Link
                   href={menu.href}
-                  className={`text-lg px-4 py-2 relative inline-flex items-center gap-1 rounded-md transition duration-300 group ${pathname.startsWith(menu.href)
-                      ? "bg-white/10"
-                      : "hover:bg-white/10"
-                    }`}
+                  className={`text-lg px-4 py-2 relative inline-flex items-center gap-1 rounded-md transition duration-300 group ${
+                    pathname.startsWith(menu.href) ? 'bg-white/10' : 'hover:bg-white/10'
+                  }`}
                 >
                   {menu.text}
                   <FaChevronDown className="text-sm" />
                   <span
-                    className={`absolute bottom-0 left-0 h-[2px] ${pathname.startsWith(menu.href) ? "w-1/2" : "w-0"
-                      } bg-white transition-all duration-300 group-hover:w-1/2`}
+                    className={`absolute bottom-0 left-0 h-[2px] ${
+                      pathname.startsWith(menu.href) ? 'w-1/2' : 'w-0'
+                    } bg-white transition-all duration-300 group-hover:w-1/2`}
                   />
                   <span
-                    className={`absolute bottom-0 right-0 h-[2px] ${pathname.startsWith(menu.href) ? "w-1/2" : "w-0"
-                      } bg-white transition-all duration-300 group-hover:w-1/2`}
+                    className={`absolute bottom-0 right-0 h-[2px] ${
+                      pathname.startsWith(menu.href) ? 'w-1/2' : 'w-0'
+                    } bg-white transition-all duration-300 group-hover:w-1/2`}
                   />
                 </Link>
 
@@ -97,10 +99,9 @@ const Navbar = () => {
                       <Link
                         key={subIndex}
                         href={sub.href}
-                        className={`block px-4 py-2 text-white text-base transition ${pathname === sub.href
-                            ? "bg-[#2b5ea5]"
-                            : "hover:bg-[#2b5ea5]"
-                          }`}
+                        className={`block px-4 py-2 text-white text-base transition ${
+                          pathname === sub.href ? 'bg-[#2b5ea5]' : 'hover:bg-[#2b5ea5]'
+                        }`}
                       >
                         {sub.text}
                       </Link>
@@ -112,19 +113,20 @@ const Navbar = () => {
               <Link
                 key={index}
                 href={menu.href}
-                className={`text-lg px-4 py-2 relative inline-block rounded-md transition duration-300 group ${pathname === menu.href
-                    ? "bg-white/10"
-                    : "hover:bg-white/10"
-                  }`}
+                className={`text-lg px-4 py-2 relative inline-block rounded-md transition duration-300 group ${
+                  pathname === menu.href ? 'bg-white/10' : 'hover:bg-white/10'
+                }`}
               >
                 {menu.text}
                 <span
-                  className={`absolute bottom-0 left-0 h-[2px] ${pathname === menu.href ? "w-1/2" : "w-0"
-                    } bg-white transition-all duration-300 group-hover:w-1/2`}
+                  className={`absolute bottom-0 left-0 h-[2px] ${
+                    pathname === menu.href ? 'w-1/2' : 'w-0'
+                  } bg-white transition-all duration-300 group-hover:w-1/2`}
                 />
                 <span
-                  className={`absolute bottom-0 right-0 h-[2px] ${pathname === menu.href ? "w-1/2" : "w-0"
-                    } bg-white transition-all duration-300 group-hover:w-1/2`}
+                  className={`absolute bottom-0 right-0 h-[2px] ${
+                    pathname === menu.href ? 'w-1/2' : 'w-0'
+                  } bg-white transition-all duration-300 group-hover:w-1/2`}
                 />
               </Link>
             )
@@ -136,7 +138,7 @@ const Navbar = () => {
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden text-white text-2xl"
         >
-          {mobileOpen ? "✖" : "☰"}
+          {mobileOpen ? '✖' : '☰'}
         </button>
       </div>
 
@@ -149,16 +151,15 @@ const Navbar = () => {
                 <div className="flex justify-between items-center">
                   <Link
                     href={menu.href}
-                    className={`text-white text-lg py-2 ${pathname.startsWith(menu.href) ? "bg-white/10" : ""
-                      }`}
+                    className={`text-white text-lg py-2 ${
+                      pathname.startsWith(menu.href) ? 'bg-white/10' : ''
+                    }`}
                   >
                     {menu.text}
                   </Link>
                   <button
                     onClick={() =>
-                      setMobileDropdownOpen(
-                        mobileDropdownOpen === menu.text ? false : menu.text
-                      )
+                      setMobileDropdownOpen(mobileDropdownOpen === menu.text ? false : menu.text)
                     }
                     className="text-white pr-2"
                   >
@@ -172,8 +173,9 @@ const Navbar = () => {
               ) : (
                 <Link
                   href={menu.href}
-                  className={`text-white text-lg py-2 ${pathname === menu.href ? "bg-white/10" : ""
-                    }`}
+                  className={`text-white text-lg py-2 ${
+                    pathname === menu.href ? 'bg-white/10' : ''
+                  }`}
                 >
                   {menu.text}
                 </Link>
@@ -185,8 +187,9 @@ const Navbar = () => {
                   <Link
                     key={subIndex}
                     href={sub.href}
-                    className={`block text-white/90 text-base pl-6 py-1 ${pathname === sub.href ? "bg-white/10" : ""
-                      }`}
+                    className={`block text-white/90 text-base pl-6 py-1 ${
+                      pathname === sub.href ? 'bg-white/10' : ''
+                    }`}
                   >
                     {sub.text}
                   </Link>
