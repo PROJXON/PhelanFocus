@@ -48,12 +48,10 @@ export default function SpeakingPage() {
 
       {/* Hero Section */}
       <Hero bgImage="/PublicSPeakking.png" header="Speaking" />
-      
+
       <section className="recent-keynote-section">
         <div className="keynote-clients-container">
-          <div className="clients-heading">
-            Recent Keynote Clients
-          </div>
+          <div className="clients-heading">Recent Keynote Clients</div>
           <div className="logos-card">
             <div className="logos-grid">
               {[...Array(6)].map((_, i) => (
