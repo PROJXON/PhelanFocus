@@ -43,6 +43,7 @@ const Navbar = () => {
     },
     { text: 'Consulting', href: '/consulting' },
     { text: 'Speaking', href: '/speaking' },
+    { text: 'Appearances', href: '/appearances' },
   ];
 
   return (
