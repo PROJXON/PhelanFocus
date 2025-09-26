@@ -9,8 +9,8 @@ export default function Page() {
       <Navbar />
 
       {/* Hero Section*/}
-      <Hero bgImage="/Consult.png" header="Appearances" />
-      <main className="appearances-main">Stay tuned</main>
+      <Hero bgImage="/Consult.png" header="Stay Tuned!" />
+      <main className="appearances-main"></main>
       <Footer />
       <ScrollToTopButton />
     </div>
