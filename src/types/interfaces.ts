@@ -146,3 +146,9 @@ export interface Keynote extends TitleAndDesc {
   preHeading: string;
   buttonText: string;
 }
+
+export interface ContactModalContextType {
+  open: boolean;
+  openModal: () => void;
+  closeModal: () => void;
+}

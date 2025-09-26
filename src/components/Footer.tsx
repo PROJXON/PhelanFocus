@@ -6,6 +6,7 @@ import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/fre
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { MenuLink, SocialIcon } from '@/types/interfaces';
+import { useContactModal } from '@/context/ContactModalContext';
 import ContactModal from './ContactModal';
 
 const Footer = () => {
@@ -13,7 +14,7 @@ const Footer = () => {
   const [mounted, setMounted] = useState(false);
   const [subscriberEmail, setSubscriberEmail] = useState('');
   const [subscribeMessage, setSubscribeMessage] = useState('');
-  const [contactOpen, setContactOpen] = useState(false);
+  const { openModal } = useContactModal();
 
   useEffect(() => setMounted(true), []);
 
@@ -87,7 +88,7 @@ const Footer = () => {
 
   return (
     <>
-      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
+      <ContactModal />
       <motion.footer
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -114,7 +115,7 @@ const Footer = () => {
                     <button
                       type="button"
                       className="link-gold-hover bg-transparent border-none p-0 m-0 text-inherit cursor-pointer"
-                      onClick={() => setContactOpen(true)}
+                      onClick={openModal}
                     >
                       Contact
                     </button>

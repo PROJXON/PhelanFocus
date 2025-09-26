@@ -2,13 +2,16 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
+import ContactModal from '@/components/ContactModal';
 import Image from 'next/image';
-import Link from 'next/link';
 import './speaking.css';
 import ScrollToTopButton from '@/components/ScrollToTop';
 import { Keynote } from '@/types/interfaces';
+import { useContactModal } from '@/context/ContactModalContext';
 
 export default function SpeakingPage() {
+  const { openModal } = useContactModal();
+
   const keynotes: Keynote[] = [
     {
       title: 'The Cube of Creativity',
@@ -166,14 +169,13 @@ export default function SpeakingPage() {
       </section>
 
       {/* Call To Action */}
-      <section className="z-10 relative bg-yellow-500 py-16 text-center text-black">
+      <ContactModal />
+      <section className="z-10 relative bg-[var(--gold)] py-16 text-center text-black">
         <h3 className="text-2xl font-bold mb-4">Have a question that hasn’t been answered, yet?</h3>
-        <Link href="/contact">
-          <button className="btn-book">
-            <span>Book a Discovery Call</span>
-            <span></span>
-          </button>
-        </Link>
+        <button className="btn-book" onClick={openModal}>
+          <span>Book a Discovery Call</span>
+          <span></span>
+        </button>
       </section>
 
       <Footer />
