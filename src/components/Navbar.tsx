@@ -53,7 +53,7 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/about">
+        <Link href="/">
           <Image
             src="/PhelanFocusLOGO-02.png"
             alt="Phelan Focus Logo"

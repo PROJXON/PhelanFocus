@@ -49,10 +49,6 @@ const Footer = () => {
       href: '/',
     },
     {
-      text: 'About',
-      href: '/about',
-    },
-    {
       text: 'Services',
       href: '/services',
     },

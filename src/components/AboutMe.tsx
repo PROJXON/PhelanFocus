@@ -79,7 +79,7 @@ const AboutMe = () => {
                   <Social item={item} key={i} />
                 ))}
               </ul>
-              <Link href="/about">
+              <Link href="/">
                 <button className="btn">
                   <span>About Phelan</span>
                   <span></span>
