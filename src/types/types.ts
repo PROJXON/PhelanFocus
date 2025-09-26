@@ -58,4 +58,4 @@ export type Emoji =
   | '👔'
   | '👥';
 
-export type PageLink = `/${string}`;
+export type PageLink = `/${string}` | '#';
