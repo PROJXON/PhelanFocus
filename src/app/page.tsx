@@ -10,6 +10,8 @@ import ServiceCarousel from '@/components/ServiceCarousel';
 import ProcessSection from '@/components/ProcessSection';
 import Hero from '@/components/Hero';
 import Books from '@/components/Books';
+import ContactModal from '@/components/ContactModal';
+import { useContactModal } from '@/context/ContactModalContext';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { useEffect, useState, useRef } from 'react';
@@ -109,6 +111,7 @@ const Counter = ({ end, label }: { end: number; label: string }) => {
 const Home = () => {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { openModal } = useContactModal();
 
   useEffect(() => setMounted(true), []);
 
@@ -238,11 +241,10 @@ const Home = () => {
               journey to self-discovery and growth today by booking a session with our experienced
               life coach.
             </p>
-            <div className="cta-button-container">
-              <Link href="/contact" className="btn">
-                <span>CONTACT US</span>
-                <span></span>
-              </Link>
+            <ContactModal />
+            <div className="cta-button-container" onClick={openModal}>
+              <span>CONTACT US</span>
+              <span></span>
             </div>
           </div>
         </div>

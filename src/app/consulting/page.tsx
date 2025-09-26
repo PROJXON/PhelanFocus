@@ -26,8 +26,12 @@ import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import ScrollToTopButton from '@/components/ScrollToTop';
 import { ConsultingIndustry, ConsultingService, TitleAndDesc } from '@/types/interfaces';
 import PaddedNumsTimeline from '@/components/PaddedNumsTimeline';
+import ContactModal from '@/components/ContactModal';
+import { useContactModal } from '@/context/ContactModalContext';
 
 export default function ConsultingPage() {
+  const { openModal } = useContactModal();
+
   const consultingServices: ConsultingService[] = [
     {
       title: 'Management Consulting',
@@ -284,9 +288,10 @@ export default function ConsultingPage() {
                 <a href="/sessions" className="cta-button primary">
                   Get Started Now
                 </a>
-                <a href="/contact" className="cta-button secondary">
+                <ContactModal />
+                <div className="cta-button secondary cursor-pointer" onClick={openModal}>
                   Contact Us
-                </a>
+                </div>
               </div>
             </div>
           </section>

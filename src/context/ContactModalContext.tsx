@@ -6,7 +6,6 @@ const ContactModalContext = createContext<ContactModalContextType | undefined>(u
 
 export function ContactModalProvider({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
-
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
 
