@@ -6,6 +6,7 @@ import { faFacebook, faTwitter, faInstagram, faLinkedin, } from "@fortawesome/fr
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { MenuLink, SocialIcon } from "@/types/interfaces";
+import ContactModal from "@/components/ContactModal";
 
 const Footer = () => {
   const { resolvedTheme } = useTheme();
@@ -98,9 +99,10 @@ const Footer = () => {
         : "bg-[#144a8f] text-white"
         }`}
     >
-      {/* Top Row: Logo Only (social removed) */}
-      <div className="max-w-7xl mx-auto flex justify-center md:justify-start border-b border-gray-600 pb-8">
+      {/* Top Row: Logo and Contact Button */}
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center border-b border-gray-600 pb-8 gap-4">
         <h2 className="text-2xl font-bold text-blue-500">Phelan Focus</h2>
+        <ContactModal />
       </div>
 
       {/* Main Content */}
