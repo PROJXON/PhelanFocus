@@ -1,9 +1,9 @@
-"use client";
-import "./consulting.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+'use client';
+import './consulting.css';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Hero from '@/components/Hero';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBriefcase,
   faChartLine,
@@ -19,101 +19,101 @@ import {
   faPlane,
   faCog,
   faSeedling,
-} from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
-import Image from "next/image";
-import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import ScrollToTopButton from "@/components/ScrollToTop";
-import {
-  ConsultingIndustry,
-  ConsultingService,
-  TitleAndDesc,
-} from "@/types/interfaces";
-import PaddedNumsTimeline from "@/components/PaddedNumsTimeline";
+} from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
+import Image from 'next/image';
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import ScrollToTopButton from '@/components/ScrollToTop';
+import { ConsultingIndustry, ConsultingService, TitleAndDesc } from '@/types/interfaces';
+import PaddedNumsTimeline from '@/components/PaddedNumsTimeline';
+import ContactModal from '@/components/ContactModal';
+import { useContactModal } from '@/context/ContactModalContext';
 
 export default function ConsultingPage() {
+  const { openModal } = useContactModal();
+
   const consultingServices: ConsultingService[] = [
     {
-      title: "Management Consulting",
+      title: 'Management Consulting',
       description:
-        "We help organizations improve performance, operations, and efficiency through strategic planning and implementation.",
+        'We help organizations improve performance, operations, and efficiency through strategic planning and implementation.',
       icon: faChartLine,
-      link: "/sessions",
+      link: '/sessions',
     },
     {
-      title: "IT Consulting",
+      title: 'IT Consulting',
       description:
-        "Our technology experts assist with digital transformation, system implementation, and IT optimization.",
+        'Our technology experts assist with digital transformation, system implementation, and IT optimization.',
       icon: faLaptopCode,
-      link: "/sessions",
+      link: '/sessions',
     },
     {
-      title: "HR Consulting",
+      title: 'HR Consulting',
       description:
-        "Strategic human resources planning, talent management, and organizational development tailored to your needs.",
+        'Strategic human resources planning, talent management, and organizational development tailored to your needs.',
       icon: faUsers,
-      link: "/sessions",
+      link: '/sessions',
     },
   ];
 
   const approachSteps: TitleAndDesc[] = [
     {
-      title: "Discovery & Analysis",
+      title: 'Discovery & Analysis',
       description:
-        "We begin by thoroughly understanding your business, identifying problems, and spotting key opportunities for improvement and growth.",
+        'We begin by thoroughly understanding your business, identifying problems, and spotting key opportunities for improvement and growth.',
     },
     {
-      title: "Strategy Development",
+      title: 'Strategy Development',
       description:
-        "Our team creates custom strategies and action plans designed to address your specific challenges and capitalize on opportunities.",
+        'Our team creates custom strategies and action plans designed to address your specific challenges and capitalize on opportunities.',
     },
     {
-      title: "Implementation & Support",
+      title: 'Implementation & Support',
       description:
-        "We work alongside your team to implement solutions, providing guidance and support throughout the entire process.",
+        'We work alongside your team to implement solutions, providing guidance and support throughout the entire process.',
     },
     {
-      title: "Evaluation & Optimization",
+      title: 'Evaluation & Optimization',
       description:
-        "Continuous monitoring of results allows us to measure success, make necessary adjustments, and optimize strategies for maximum impact.",
+        'Continuous monitoring of results allows us to measure success, make necessary adjustments, and optimize strategies for maximum impact.',
     },
   ];
 
   const consultingIndustries: ConsultingIndustry[] = [
     {
-      name: "Technology",
+      name: 'Technology',
       icon: faLaptopCode,
     },
     {
-      name: "Wellness",
+      name: 'Wellness',
       icon: faHeartbeat,
     },
     {
-      name: "Education",
+      name: 'Education',
       icon: faGraduationCap,
     },
     {
-      name: "Ecommerce",
+      name: 'Ecommerce',
       icon: faShoppingCart,
     },
     {
-      name: "Nonprofit",
+      name: 'Nonprofit',
       icon: faHandsHelping,
     },
     {
-      name: "Veteran",
+      name: 'Veteran',
       icon: faPersonMilitaryPointing,
     },
     {
-      name: "Travel",
+      name: 'Travel',
       icon: faPlane,
     },
     {
-      name: "Manufacturing",
+      name: 'Manufacturing',
       icon: faCog,
     },
     {
-      name: "Energy",
+      name: 'Energy',
       icon: faSeedling,
     },
   ];
@@ -131,10 +131,7 @@ export default function ConsultingPage() {
           <section id="services" className="consulting-services-section">
             <div className="consulting-section-header">
               <h2>
-                <FontAwesomeIcon
-                  icon={faBriefcase}
-                  className="consulting-section-icon"
-                />
+                <FontAwesomeIcon icon={faBriefcase} className="consulting-section-icon" />
                 Our Consulting Services
               </h2>
               <p className="consulting-section-subtitle">
@@ -148,9 +145,7 @@ export default function ConsultingPage() {
                     <FontAwesomeIcon icon={service.icon} />
                   </div>
                   <h3 className="consulting-service-title">{service.title}</h3>
-                  <p className="consulting-service-description">
-                    {service.description}
-                  </p>
+                  <p className="consulting-service-description">{service.description}</p>
                   <Link href={service.link} className="consulting-service-link">
                     Learn more →
                   </Link>
@@ -163,10 +158,7 @@ export default function ConsultingPage() {
           <section id="approach" className="approach-section">
             <div className="consulting-section-header">
               <h2>
-                <FontAwesomeIcon
-                  icon={faTasks}
-                  className="consulting-section-icon"
-                />
+                <FontAwesomeIcon icon={faTasks} className="consulting-section-icon" />
                 Our Proven Approach
               </h2>
               <p className="consulting-section-subtitle">
@@ -192,16 +184,12 @@ export default function ConsultingPage() {
           <section id="industries" className="industries-section">
             <div className="consulting-section-header">
               <h2>
-                <FontAwesomeIcon
-                  icon={faIndustry}
-                  className="consulting-section-icon"
-                />
+                <FontAwesomeIcon icon={faIndustry} className="consulting-section-icon" />
                 Industries We Serve
               </h2>
               <p className="consulting-section-subtitle">
-                Our consultants bring specialized expertise across a wide range
-                of industries, helping organizations achieve their strategic
-                objectives.
+                Our consultants bring specialized expertise across a wide range of industries,
+                helping organizations achieve their strategic objectives.
               </p>
             </div>
             <div className="consulting-industries-grid">
@@ -222,45 +210,45 @@ export default function ConsultingPage() {
             <div className="team-cards-container">
               {[
                 {
-                  name: "Kathy Seaton",
-                  role: "Senior Consultant, Non Profit Development",
-                  img: "team/kathy.webp",
+                  name: 'Kathy Seaton',
+                  role: 'Senior Consultant, Non Profit Development',
+                  img: 'team/kathy.webp',
                   socials: {
-                    linkedin: "https://www.linkedin.com/in/klseaton/",
+                    linkedin: 'https://www.linkedin.com/in/klseaton/',
                   },
                 },
                 {
-                  name: "Melissa Eboli",
-                  role: "Senior Consultant, Health + Wellness Solutions",
-                  img: "team/melissa.webp",
+                  name: 'Melissa Eboli',
+                  role: 'Senior Consultant, Health + Wellness Solutions',
+                  img: 'team/melissa.webp',
                   socials: {
-                    linkedin: "https://www.linkedin.com/in/viamelissa/",
+                    linkedin: 'https://www.linkedin.com/in/viamelissa/',
                   },
                 },
                 {
-                  name: "Donavon Roberson",
-                  role: "Senior Consultant, Tech + Software Solutions",
-                  img: "team/donavon-picture.webp",
+                  name: 'Donavon Roberson',
+                  role: 'Senior Consultant, Tech + Software Solutions',
+                  img: 'team/donavon-picture.webp',
                   socials: {
-                    linkedin: "https://www.linkedin.com/in/donavonroberson/",
+                    linkedin: 'https://www.linkedin.com/in/donavonroberson/',
                   },
                 },
               ].map((member, idx) => {
-                const [title, dept] = member.role.split(",");
+                const [title, dept] = member.role.split(',');
                 return (
                   <div key={idx} className="team-card">
                     <div className="team-img-wrapper">
                       <Image
                         src={`/${member.img}`}
                         alt={member.name}
-                        width={210} 
+                        width={210}
                         height={270}
                         style={{
-                          height: "100%",
-                          width: "auto",
-                          objectFit: "cover",
-                          borderRadius: "6px",
-                          display: "block",
+                          height: '100%',
+                          width: 'auto',
+                          objectFit: 'cover',
+                          borderRadius: '6px',
+                          display: 'block',
                         }}
                         priority={idx === 0}
                       />
@@ -292,17 +280,18 @@ export default function ConsultingPage() {
               <div className="consulting-cta-content">
                 <h2>Ready to Transform Your Business?</h2>
                 <p>
-                  Schedule a free consultation with our experts and discover how
-                  we can help you achieve your business goals.
+                  Schedule a free consultation with our experts and discover how we can help you
+                  achieve your business goals.
                 </p>
               </div>
               <div className="consulting-cta-buttons">
                 <a href="/sessions" className="cta-button primary">
                   Get Started Now
                 </a>
-                <a href="/contact" className="cta-button secondary">
+                <ContactModal />
+                <div className="cta-button secondary cursor-pointer" onClick={openModal}>
                   Contact Us
-                </a>
+                </div>
               </div>
             </div>
           </section>

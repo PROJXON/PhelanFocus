@@ -1,7 +1,6 @@
 'use client';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -10,11 +9,14 @@ import ScrollToTopButton from '@/components/ScrollToTop';
 import { PodcastQuote } from '@/types/interfaces';
 import PodcastEpisode from '@/components/PodcastEpisode';
 import PodcastHero from './PodcastHero';
+import ContactModal from '@/components/ContactModal';
+import { useContactModal } from '@/context/ContactModalContext';
 
 export default function PodcastPage() {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [quoteIndex, setQuoteIndex] = useState(0);
+  const { openModal } = useContactModal();
 
   const quotes: PodcastQuote[] = [
     {
@@ -146,17 +148,17 @@ export default function PodcastPage() {
           }
         </p>
         <div className="max-w-xs mx-auto">
-          <Link href="/contact">
-            <button
-              className={`w-full sm:w-auto px-8 py-3 rounded-lg font-semibold transition duration-300 border-2 ${
-                mounted && resolvedTheme === 'light'
-                  ? 'border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white hover:shadow-md'
-                  : 'border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black hover:shadow-md'
-              }`}
-            >
-              Book a Call
-            </button>
-          </Link>
+          <ContactModal />
+          <button
+            className={`w-full sm:w-auto px-8 py-3 rounded-lg font-semibold transition duration-300 border-2 ${
+              mounted && resolvedTheme === 'light'
+                ? 'border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white hover:shadow-md'
+                : 'border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black hover:shadow-md'
+            }`}
+            onClick={openModal}
+          >
+            Book a Call
+          </button>
         </div>
       </section>
 

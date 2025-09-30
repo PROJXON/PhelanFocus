@@ -145,6 +145,10 @@ export interface Keynote extends TitleAndDesc {
   image: ImagePath;
   preHeading: string;
   buttonText: string;
-  preHeadingColor: string;
-  buttonColors: string;
+}
+
+export interface ContactModalContextType {
+  open: boolean;
+  openModal: () => void;
+  closeModal: () => void;
 }

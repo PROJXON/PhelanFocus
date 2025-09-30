@@ -2,13 +2,16 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
+import ContactModal from '@/components/ContactModal';
 import Image from 'next/image';
-import Link from 'next/link';
 import './speaking.css';
 import ScrollToTopButton from '@/components/ScrollToTop';
 import { Keynote } from '@/types/interfaces';
+import { useContactModal } from '@/context/ContactModalContext';
 
 export default function SpeakingPage() {
+  const { openModal } = useContactModal();
+
   const keynotes: Keynote[] = [
     {
       title: 'The Cube of Creativity',
@@ -17,8 +20,6 @@ export default function SpeakingPage() {
       image: '/phelan-mark-78.jpg',
       preHeading: 'Fan Favorite of 2023',
       buttonText: 'Step Into The Cube of Creativity',
-      preHeadingColor: 'text-cyan-600',
-      buttonColors: 'border-blue-400 text-blue-500 hover:bg-blue-500 hover:text-white',
     },
     {
       title: 'Artificial Influence',
@@ -27,8 +28,6 @@ export default function SpeakingPage() {
       image: '/phelan-mark-21.jpg',
       preHeading: 'Expanded for 2025',
       buttonText: 'Uncover the Magic of AI',
-      preHeadingColor: 'text-pink-600',
-      buttonColors: 'border-pink-400 text-pink-500 hover:bg-pink-500 hover:text-white',
     },
     {
       title: 'The Loyalty Loop',
@@ -37,8 +36,6 @@ export default function SpeakingPage() {
       image: '/phelan-mark-39.jpg',
       preHeading: 'Most Booked Keynote All Time',
       buttonText: 'Loop Me In!',
-      preHeadingColor: 'text-yellow-600',
-      buttonColors: 'border-yellow-400 text-yellow-600 hover:bg-yellow-400 hover:text-black',
     },
   ];
 
@@ -48,12 +45,10 @@ export default function SpeakingPage() {
 
       {/* Hero Section */}
       <Hero bgImage="/PublicSPeakking.png" header="Speaking" />
-      
+
       <section className="recent-keynote-section">
         <div className="keynote-clients-container">
-          <div className="clients-heading">
-            Recent Keynote Clients
-          </div>
+          <div className="clients-heading">Recent Keynote Clients</div>
           <div className="logos-card">
             <div className="logos-grid">
               {[...Array(6)].map((_, i) => (
@@ -83,29 +78,31 @@ export default function SpeakingPage() {
 
         <div className="space-y-16">
           {keynotes.map((keynote, index) => (
-            <div key={index} className="grid md:grid-cols-2 gap-8 items-center">
+            <div
+              key={index}
+              className={`grid ${index % 2 === 0 ? 'md:grid-cols-[350px_1fr]' : 'md:grid-cols-[1fr_350px]'} gap-8 items-center`}
+            >
               <Image
                 src={keynote.image}
                 alt={`Keynote ${index + 1}`}
-                width={700}
-                height={700}
-                className={`rounded-lg shadow-xl ${index % 2 === 0 ? '' : 'order-1 md:order-2'}`}
+                width={350}
+                height={350}
+                className={`m-auto md:m-0 rounded-lg shadow-xl ${index % 2 === 0 ? '' : 'order-1 md:order-2'}`}
               />
               <div
                 className={`bg-white dark:bg-[#2a2a2a] p-6 rounded-lg shadow-lg ${
                   index % 2 === 0 ? '' : 'order-2 md:order-1'
                 }`}
               >
-                <p className={`text-sm font-bold ${keynote.preHeadingColor} uppercase mb-2`}>
+                <p className="text-sm font-bold uppercase mb-2 text-[var(--slateBlue)]">
                   {keynote.preHeading}
                 </p>
                 <h3 className="text-2xl font-semibold mb-2">{keynote.title}</h3>
                 <p className="mb-4">{keynote.description}</p>
-                <button
-                  className={`border ${keynote.buttonColors} px-5 py-2 rounded-md transition`}
-                >
+                <button className="border px-5 py-2 rounded-md transition border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-white">
                   {keynote.buttonText}
                 </button>
+                {/* border-blue-400 text-blue-500 hover:bg-blue-500 hover:text-white */}
               </div>
             </div>
           ))}
@@ -172,14 +169,13 @@ export default function SpeakingPage() {
       </section>
 
       {/* Call To Action */}
-      <section className="z-10 relative bg-yellow-500 py-16 text-center text-black">
+      <ContactModal />
+      <section className="z-10 relative bg-[var(--gold)] py-16 text-center text-black">
         <h3 className="text-2xl font-bold mb-4">Have a question that hasn’t been answered, yet?</h3>
-        <Link href="/contact">
-          <button className="btn-book">
-            <span>Book a Discovery Call</span>
-            <span></span>
-          </button>
-        </Link>
+        <button className="btn-book" onClick={openModal}>
+          <span>Book a Discovery Call</span>
+          <span></span>
+        </button>
       </section>
 
       <Footer />
