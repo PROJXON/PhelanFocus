@@ -144,8 +144,12 @@ export interface SessionType extends TitleDescAndEmoji {
 export interface Keynote extends TitleAndDesc {
   image: ImagePath;
   preHeading: string;
+  preHeadingColor: string; 
   buttonText: string;
+  buttonColors: string;
 }
+
+
 
 export interface ContactModalContextType {
   open: boolean;

@@ -309,7 +309,7 @@ export default function CoachingPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <Hero bgImage="/coaching/coaching-hero.png" header="Coaching" />
+      <Hero bgImage="/coaching/coaching-hero.png" header="" />
 
       {/* Methodology Section */}
       <CoachingPageSection

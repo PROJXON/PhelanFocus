@@ -16,9 +16,8 @@ import {
   faShoppingCart,
   faPersonMilitaryPointing,
   faHandsHelping,
-  faPlane,
-  faCog,
-  faSeedling,
+  faRocket,
+  faConciergeBell,
 } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -89,32 +88,28 @@ export default function ConsultingPage() {
       icon: faHeartbeat,
     },
     {
-      name: 'Education',
-      icon: faGraduationCap,
+      name: 'Nonprofit',
+      icon: faHandsHelping,
     },
     {
       name: 'Ecommerce',
       icon: faShoppingCart,
     },
     {
-      name: 'Nonprofit',
-      icon: faHandsHelping,
-    },
-    {
       name: 'Veteran',
       icon: faPersonMilitaryPointing,
     },
     {
-      name: 'Travel',
-      icon: faPlane,
+      name: 'Education',
+      icon: faGraduationCap,
     },
     {
-      name: 'Manufacturing',
-      icon: faCog,
+      name: 'Hospitality',
+      icon: faConciergeBell,
     },
     {
-      name: 'Energy',
-      icon: faSeedling,
+      name: 'Startups',
+      icon: faRocket,
     },
   ];
 
@@ -123,7 +118,7 @@ export default function ConsultingPage() {
       <Navbar />
 
       {/* Hero Section*/}
-      <Hero bgImage="/Consult.png" header="Consulting" />
+      <Hero bgImage="/Consult.png" header="" />
 
       <main className="consulting-main">
         <div className="consulting-inner">

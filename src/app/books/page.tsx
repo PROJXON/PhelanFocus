@@ -55,7 +55,7 @@ export default function BooksPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <Hero bgImage="/books.jpeg" header="Books" />
+      <Hero bgImage="/books.jpeg" header="" />
 
       {/* Books Section */}
       <Books

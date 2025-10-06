@@ -30,8 +30,8 @@ const Navbar = () => {
   }, []);
 
   const menuLinks: MenuLinkWithSubmenu[] = [
-    { text: 'Podcast', href: '/podcast' },
     { text: 'Home', href: '/' },
+    { text: 'Podcast', href: '/podcast' },
     {
       text: 'Coaching',
       href: '/coaching',

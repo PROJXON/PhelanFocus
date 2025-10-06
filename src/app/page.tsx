@@ -123,7 +123,7 @@ const Home = () => {
       <header className="w-full fixed z-40">
         <Navbar />
       </header>
-      <Hero bgImage="/homeHero.jpg" header="Welcome To The Phelan Focus" />
+      <Hero bgImage="/homeHero.jpg" header="" />
       <section className="z-20 relative text-center py-8 bg-white">
         <p className="text-lg max-w-xl mx-auto mb-6">
           Helping individuals unlock their potential and achieve personal and professional growth.
