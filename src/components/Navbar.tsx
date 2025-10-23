@@ -38,7 +38,7 @@ const Navbar = () => {
       submenu: [
         { text: 'Sessions', href: '/sessions' },
         { text: 'Courses', href: '/courses' },
-        { text: 'Books', href: '/books' },
+        // { text: 'Books', href: '/books' },
       ],
     },
     { text: 'Consulting', href: '/consulting' },
