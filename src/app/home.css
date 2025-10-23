@@ -3,6 +3,16 @@ nav {
   z-index: 10;
 }
 
+.no-gap-between > *:first-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.no-gap-between > *:last-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
 /* General */
 .home-page {
   font-family: 'Poppins', sans-serif;

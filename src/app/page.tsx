@@ -1,34 +1,40 @@
-'use client';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import AboutMe from '@/components/AboutMe';
-import Contact from '@/components/Contact';
-import Services from '@/components/Services';
-import Podcast from '@/components/Podcast';
-import ScrollToTopButton from '@/components/ScrollToTop';
-import ServiceCarousel from '@/components/ServiceCarousel';
-import ProcessSection from '@/components/ProcessSection';
-import Hero from '@/components/Hero';
-import Books from '@/components/Books';
-import ContactModal from '@/components/ContactModal';
-import { useContactModal } from '@/context/ContactModalContext';
-import Link from 'next/link';
-import { useTheme } from 'next-themes';
-import { useEffect, useState, useRef } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from 'next/image';
+"use client";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import AboutMe from "@/components/AboutMe";
+import Contact from "@/components/Contact";
+import Services from "@/components/Services";
+import Podcast from "@/components/Podcast";
+import ScrollToTopButton from "@/components/ScrollToTop";
+import ServiceCarousel from "@/components/ServiceCarousel";
+import ProcessSection from "@/components/ProcessSection";
+import Hero from "@/components/Hero";
+import Books from "@/components/Books";
+import ContactModal from "@/components/ContactModal";
+import { useContactModal } from "@/context/ContactModalContext";
+import Link from "next/link";
+import { useTheme } from "next-themes";
+import { useEffect, useState, useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import {
   faArrowRight,
   faUsers,
   faBrain,
   faBriefcase,
   faGlobe,
-} from '@fortawesome/free-solid-svg-icons';
-import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import useIsVisible from '@/hooks/useIsVisible';
-import './home.css';
+} from "@fortawesome/free-solid-svg-icons";
+import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import useIsVisible from "@/hooks/useIsVisible";
+import "./home.css";
 
-const CircleProgress = ({ percentage, label }: { percentage: number; label: string }) => {
+const CircleProgress = ({
+  percentage,
+  label,
+}: {
+  percentage: number;
+  label: string;
+}) => {
   const strokeDasharray = 283;
   const [progress, setProgress] = useState(0);
   const [count, setCount] = useState(0);
@@ -55,7 +61,14 @@ const CircleProgress = ({ percentage, label }: { percentage: number; label: stri
   return (
     <div className="circle-container" ref={circleRef}>
       <svg width="140" height="140">
-        <circle cx="70" cy="70" r="45" stroke="#ddd" strokeWidth="10" fill="none" />
+        <circle
+          cx="70"
+          cy="70"
+          r="45"
+          stroke="#ddd"
+          strokeWidth="10"
+          fill="none"
+        />
         <circle
           cx="70"
           cy="70"
@@ -64,11 +77,20 @@ const CircleProgress = ({ percentage, label }: { percentage: number; label: stri
           strokeWidth="10"
           fill="none"
           strokeDasharray={strokeDasharray}
-          strokeDashoffset={strokeDasharray - (progress / 100) * strokeDasharray}
+          strokeDashoffset={
+            strokeDasharray - (progress / 100) * strokeDasharray
+          }
           strokeLinecap="round"
-          style={{ transition: 'stroke-dashoffset 0.3s linear' }}
+          style={{ transition: "stroke-dashoffset 0.3s linear" }}
         />
-        <text x="70" y="75" textAnchor="middle" fontSize="24" fill="#13395c" fontWeight="700">
+        <text
+          x="70"
+          y="75"
+          textAnchor="middle"
+          fontSize="24"
+          fill="#13395c"
+          fontWeight="700"
+        >
           {count}%
         </text>
       </svg>
@@ -117,8 +139,8 @@ const Home = () => {
 
   return (
     <div
-      className={`home-page ${mounted && resolvedTheme === 'light' ? 'light' : 'dark'}`}
-      style={{ backgroundColor: '#fff' }}
+      className={`home-page ${mounted && resolvedTheme === "light" ? "light" : "dark"}`}
+      style={{ backgroundColor: "#fff" }}
     >
       <header className="w-full fixed z-40">
         <Navbar />
@@ -126,7 +148,8 @@ const Home = () => {
       <Hero bgImage="/homeHero.jpg" header="" />
       <section className="z-20 relative text-center py-8 bg-white">
         <p className="text-lg max-w-xl mx-auto mb-6">
-          Helping individuals unlock their potential and achieve personal and professional growth.
+          Helping individuals unlock their potential and achieve personal and
+          professional growth.
         </p>
         <Link href="/sessions">
           <button className="btn">
@@ -137,11 +160,17 @@ const Home = () => {
       </section>
       <section
         className="about-section relative z-20 my-0 px-[64px] pb-20 bg-white overflow-hidden"
-        style={{ backgroundColor: '#fff' }}
+        style={{ backgroundColor: "#fff" }}
       >
         <div className="about-container">
           <div className="about-images">
-            <Image src="/about-1.jpg" width={400} height={400} alt="About Main" className="img1" />
+            <Image
+              src="/about-1.jpg"
+              width={400}
+              height={400}
+              alt="About Main"
+              className="img1"
+            />
             <Image
               src="/about-2.jpg"
               width={280}
@@ -155,14 +184,15 @@ const Home = () => {
             <h6>Empowering Change</h6>
             <h2>Leading the Way in Personal Growth</h2>
             <p>
-              We help individuals unlock their full potential, overcome obstacles, and achieve their
-              goals.
+              We help individuals unlock their full potential, overcome
+              obstacles, and achieve their goals.
             </p>
             <hr />
             <div className="contact-info">
               <p>
                 <a href="https://projxon.com" className="link-gold-hover">
-                  <FontAwesomeIcon icon={faGlobe} className="icon" /> projxon.com
+                  <FontAwesomeIcon icon={faGlobe} className="icon" />{" "}
+                  projxon.com
                 </a>
               </p>
               <p>
@@ -200,7 +230,13 @@ const Home = () => {
           </div>
         </div>
         <div className="why-right">
-          <Image src="/about-1.jpg" width={400} height={400} alt="Why Us" className="why-image" />
+          <Image
+            src="/about-1.jpg"
+            width={400}
+            height={400}
+            alt="Why Us"
+            className="why-image"
+          />
           <div className="years-badge">
             <h3>
               15<sup>+</sup>
@@ -211,13 +247,16 @@ const Home = () => {
       </section>
 
       {/* ✨ Home Additional Content Sections merged below */}
-      <main className="relative z-10 pt-16 space-y-16 bg-white">
+      <main className="relative z-10 pt-16 bg-white">
         <AboutMe />
         <Services />
         <ServiceCarousel />
-        <ProcessSection />
-        <Books linkToBooksPage={true} bookClasses="bg-[#F3F0FF] border border-gray-200 shadow-md" />
-        <Podcast />
+        {/* only remove gap between ProcessSection and Podcast */}
+        <div className="no-gap-between">
+          <ProcessSection />
+          <Podcast />
+        </div>
+
         <Contact />
       </main>
 
@@ -227,19 +266,22 @@ const Home = () => {
         style={{ backgroundImage: "url('phelan-mark-39.jpg')" }}
       >
         <div className="image-overlay"></div>
-        <div className="r-container position-relative py-5" style={{ zIndex: 2 }}>
+        <div
+          className="r-container position-relative py-5"
+          style={{ zIndex: 2 }}
+        >
           <div
             className="d-flex flex-column mx-auto text-center align-items-center text-white gap-4"
-            style={{ maxWidth: '900px' }}
+            style={{ maxWidth: "900px" }}
           >
             <h6 className="accent-color-2 fw-semibold">Invest in Yourself</h6>
             <h3 className="font-1 text-white">
               Create the Life You Want, Get Personalized Coaching Today!
             </h3>
             <p className="col-9 col-lg-9">
-              Elevate your life with personalized coaching tailored to your unique needs. Start your
-              journey to self-discovery and growth today by booking a session with our experienced
-              life coach.
+              Elevate your life with personalized coaching tailored to your
+              unique needs. Start your journey to self-discovery and growth
+              today by booking a session with our experienced life coach.
             </p>
             <ContactModal />
             <div className="cta-button-container" onClick={openModal}>
@@ -262,7 +304,7 @@ const Home = () => {
                 alt="Mark Phelan"
                 width={280}
                 height={280}
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: "cover" }}
               />
             </div>
             <h3>Mark Phelan</h3>
@@ -302,12 +344,14 @@ const Home = () => {
                   alt="The Phelan Focus Podcast"
                   width={280}
                   height={280}
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: "cover" }}
                 />
               </div>
               <div className="podcast-info">
                 <h4>The Phelan Focus Podcast</h4>
-                <p>Discover insights and stories with Mark Phelan. Listen now!</p>
+                <p>
+                  Discover insights and stories with Mark Phelan. Listen now!
+                </p>
                 <span className="btn">Explore Podcast</span>
               </div>
             </a>
@@ -316,7 +360,10 @@ const Home = () => {
       </section>
 
       {/* Counter Section (About) */}
-      <section className="counter-section relative z-20 bg-white" style={{ padding: '48px 0' }}>
+      <section
+        className="counter-section relative z-20 bg-white"
+        style={{ padding: "48px 0" }}
+      >
         <Counter end={15} label="Years Experience" />
         <Counter end={2500} label="Satisfied Clients" />
         <Counter end={300} label="Problem Solved" />
@@ -324,7 +371,10 @@ const Home = () => {
       </section>
 
       {/* Services Section (About) */}
-      <section className="services-section relative z-20 bg-white" style={{ padding: '64px 0' }}>
+      <section
+        className="services-section relative z-20 bg-white"
+        style={{ padding: "64px 0" }}
+      >
         <h6>Master Your Mindset</h6>
         <h2>Professional Life Coaching Support</h2>
         <Link href="/services" className="all-service-btn">
@@ -336,8 +386,8 @@ const Home = () => {
             <FontAwesomeIcon icon={faUsers} className="service-icon" />
             <h4>Personalized Coaching</h4>
             <p>
-              Our services are tailored to your unique needs, providing personalized guidance and
-              support.
+              Our services are tailored to your unique needs, providing
+              personalized guidance and support.
             </p>
             <Link href="/services" className="learn-more">
               Learn More <FontAwesomeIcon icon={faArrowRight} />
@@ -347,8 +397,8 @@ const Home = () => {
             <FontAwesomeIcon icon={faBrain} className="service-icon" />
             <h4>Mindfulness Techniques</h4>
             <p>
-              Learn practical mindfulness exercises to enhance focus, reduce stress, and promote
-              well-being.
+              Learn practical mindfulness exercises to enhance focus, reduce
+              stress, and promote well-being.
             </p>
             <Link href="/services" className="learn-more">
               Learn More <FontAwesomeIcon icon={faArrowRight} />
@@ -358,8 +408,8 @@ const Home = () => {
             <FontAwesomeIcon icon={faBriefcase} className="service-icon" />
             <h4>Career Development</h4>
             <p>
-              This coaching service provides guidance and support to individuals at various career
-              stages.
+              This coaching service provides guidance and support to individuals
+              at various career stages.
             </p>
             <Link href="/services" className="learn-more">
               Learn More <FontAwesomeIcon icon={faArrowRight} />
