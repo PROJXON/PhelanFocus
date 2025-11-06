@@ -189,7 +189,7 @@ const Home = () => {
             </p>
             <hr />
             <div className="contact-info">
-              <p>
+              {/* <p>
                 <a href="https://projxon.com" className="link-gold-hover">
                   <FontAwesomeIcon icon={faGlobe} className="icon" />{" "}
                   projxon.com
@@ -205,7 +205,7 @@ const Home = () => {
                   <FontAwesomeIcon icon={faLinkedinIn} className="icon" />
                   Linkedin
                 </a>
-              </p>
+              </p> */}
             </div>
             <Link href="/sessions" className="btn-read">
               <span>Read More</span>
