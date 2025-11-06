@@ -214,7 +214,7 @@ const Home = () => {
         </div>
         <div className="why-right">
           <Image
-            src="/about-2.jpg"
+            src="/consultingStockPhoto.jpg"
             width={400}
             height={400}
             alt="Why Us"
