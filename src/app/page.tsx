@@ -159,9 +159,11 @@ const Home = () => {
         </Link>
       </section>
       <section
-        className="about-section relative z-20 my-0 px-[64px] pb-20 bg-white overflow-hidden"
-        style={{ backgroundColor: "#fff" }}
+        className="about-section relative z-20 my-0 bg-blue"
+        style={{ backgroundColor: "#13395c", padding: "80px 20px" }}
       >
+        <h2 className="about-section-title">Empowering Change</h2>
+
         <div className="about-container">
           <div className="about-images">
             <Image
@@ -181,34 +183,15 @@ const Home = () => {
             />
           </div>
           <div className="about-text">
-            <h6>Empowering Change</h6>
-            <h2>Leading the Way in Personal Growth</h2>
-            <p>
+            <p className="text-white">
               We help individuals unlock their full potential, overcome
-              obstacles, and achieve their goals.
+              obstacles, and achieve their goals through personalized coaching
+              and proven strategies.
             </p>
             <hr />
-            <div className="contact-info">
-              {/* <p>
-                <a href="https://projxon.com" className="link-gold-hover">
-                  <FontAwesomeIcon icon={faGlobe} className="icon" />{" "}
-                  projxon.com
-                </a>
-              </p>
-              <p>
-                <a
-                  href="https://www.linkedin.com/in/phelanmarkw/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-gold-hover flex items-center gap-2"
-                >
-                  <FontAwesomeIcon icon={faLinkedinIn} className="icon" />
-                  Linkedin
-                </a>
-              </p> */}
-            </div>
+            <div className="contact-info"></div>
             <Link href="/sessions" className="btn-read">
-              <span>Read More</span>
+              <span>Book a Session</span>
               <span></span>
             </Link>
           </div>
@@ -231,7 +214,7 @@ const Home = () => {
         </div>
         <div className="why-right">
           <Image
-            src="/about-1.jpg"
+            src="/about-2.jpg"
             width={400}
             height={400}
             alt="Why Us"

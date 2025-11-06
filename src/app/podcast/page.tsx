@@ -141,7 +141,7 @@ export default function PodcastPage() {
         className="bg-slate-800 text-white py-20 px-6 text-center"
         style={{ position: 'relative', zIndex: 1 }}
       >
-        <h3 className="text-3xl font-bold mb-4">Are you ready to take action?</h3>
+        <h3 className="text-4xl font-bold mb-4">Join us in turning chaos into opportunity</h3>
         <p className="text-lg mb-8 max-w-xl mx-auto">
           {
             "Schedule a no-cost discovery call to learn if I'm the right person to help you move forward."

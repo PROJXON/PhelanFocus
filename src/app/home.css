@@ -28,9 +28,77 @@ section {
   transform: scale(0.96);
 }
 
-/* About Section */
+/* About Section - Banner Style */
 .about-section {
   background: #fff;
+  text-align: center;
+}
+
+.about-section-subtitle {
+  color: #00447c;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.about-section-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.about-all-service-btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  font-size: 16px;
+  background-color: var(--slateBlue);
+  border-radius: 10px;
+  font-weight: 600;
+  color: #ffffff;
+  box-shadow: 0 0 0 2px #5ed4c6;
+  cursor: pointer;
+  overflow: hidden;
+  margin-bottom: 40px;
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+
+.about-all-service-btn span:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+.about-all-service-btn span:last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.6s ease;
+  z-index: 0;
+}
+
+.about-all-service-btn:hover {
+  background-color: #ffffff;
+  color: var(--slateBlue);
+  box-shadow: 0 0 0 2px var(--slateBlue);
+}
+
+.about-all-service-btn:hover span:last-child {
+  width: 150px;
+  height: 150px;
+  opacity: 1;
+}
+
+.about-all-service-btn:active {
+  transform: scale(0.95);
 }
 
 .about-container {
@@ -105,7 +173,7 @@ section {
 }
 
 .about-text p {
-  color: #555;
+  color: white;
   line-height: 1.8;
   margin-bottom: 30px;
 }
@@ -136,6 +204,7 @@ section {
   cursor: pointer;
   overflow: hidden;
   transition: all 0.5s ease;
+  text-decoration: none;
 }
 
 .btn-read span:first-child {
