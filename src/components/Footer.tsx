@@ -201,7 +201,7 @@ const Footer = () => {
                 className="link-gold-hover inline-flex items-center gap-2 text-base justify-end"
               >
                 <FontAwesomeIcon icon={faGlobe} className="text-xl" />
-                projxon.com
+                Projxon.com
               </a>
 
               <a
