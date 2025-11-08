@@ -11,6 +11,7 @@ import PodcastEpisode from '@/components/PodcastEpisode';
 import PodcastHero from './PodcastHero';
 import ContactModal from '@/components/ContactModal';
 import { useContactModal } from '@/context/ContactModalContext';
+import SocialCarousel from './SocialMedia';
 
 export default function PodcastPage() {
   const { resolvedTheme } = useTheme();
@@ -73,7 +74,7 @@ export default function PodcastPage() {
           </AnimatePresence>
         </div>
       </section>
-
+    <SocialCarousel />
       <section
         className="bg-slate-800 text-white py-20 px-6 text-center"
         style={{ position: 'relative', zIndex: 1 }}
