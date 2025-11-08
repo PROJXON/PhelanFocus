@@ -130,7 +130,7 @@ export default function CoachingSessions() {
       <Navbar />
 
       {/* Hero Section */}
-      <Hero bgImage="/sessions/sessions.jpeg" header="" />
+      <Hero bgImage="/sessions/sessions.jpeg" header="Sessions" />
 
       <div className="sessions-container">
         <main className="sessions-main">

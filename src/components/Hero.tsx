@@ -61,7 +61,7 @@ const Hero = ({
           style={{ zIndex: 0, position: 'absolute' }}
         />
         <div className="absolute inset-0 bg-black/40 z-10"></div>
-        <h1 className="relative z-20 text-white text-4xl text-center px-4 max-w-4xl">{header}</h1>
+        <h1 className="relative z-20 text-white font-bold text-6xl text-center px-4 max-w-4xl">{header}</h1>
       </motion.div>
       <div style={{ height: '50vh' }} />
     </>

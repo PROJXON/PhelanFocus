@@ -118,7 +118,7 @@ export default function ConsultingPage() {
       <Navbar />
 
       {/* Hero Section*/}
-      <Hero bgImage="/Consult.png" header="" />
+      <Hero bgImage="/Consult.png" header="Consulting" />
 
       <main className="consulting-main">
         <div className="consulting-inner">

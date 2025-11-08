@@ -145,8 +145,8 @@ const Home = () => {
       <header className="w-full fixed z-40">
         <Navbar />
       </header>
-      <Hero bgImage="/homeHero.jpg" header="" />
-      <section className="z-20 relative text-center py-8 bg-white">
+      <Hero bgImage="/homeHero.jpg" header="Welcome To The Phelan Focus" />
+      {/* <section className="z-20 relative text-center py-8 bg-white">
         <p className="text-lg max-w-xl mx-auto mb-6">
           Helping individuals unlock their potential and achieve personal and
           professional growth.
@@ -157,7 +157,7 @@ const Home = () => {
             <span></span>
           </button>
         </Link>
-      </section>
+      </section> */}
       <section
         className="about-section relative z-20 my-0 bg-blue"
         style={{ backgroundColor: "#13395c", padding: "80px 20px" }}

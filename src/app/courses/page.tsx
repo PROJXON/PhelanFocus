@@ -118,7 +118,7 @@ export default function CoursesPage() {
   return (
     <>
       <Navbar />
-      <Hero bgImage="/courses/courses.jpeg" header="" />
+      <Hero bgImage="/courses/courses.jpeg" header="Courses" />
 
       <div className="courses-page relative z-10 bg-white text-gray-800">
         {/* Intro Section */}
