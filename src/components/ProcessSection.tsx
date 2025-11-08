@@ -51,7 +51,7 @@ export default function ProcessSection() {
         </div>
 
         {/* Process Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 p-20 lg:grid-cols-4 gap-8">
           {steps.map((item, index) => (
             <Link href={item.link} key={index}>
               <div

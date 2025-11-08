@@ -30,20 +30,20 @@ const Navbar = () => {
   }, []);
 
   const menuLinks: MenuLinkWithSubmenu[] = [
-    { text: 'Podcast', href: '/podcast' },
     { text: 'Home', href: '/' },
+    { text: 'Podcast', href: '/podcast' },
     {
       text: 'Coaching',
       href: '/coaching',
       submenu: [
         { text: 'Sessions', href: '/sessions' },
         { text: 'Courses', href: '/courses' },
-        { text: 'Books', href: '/books' },
+        // { text: 'Books', href: '/books' },
       ],
     },
     { text: 'Consulting', href: '/consulting' },
     { text: 'Speaking', href: '/speaking' },
-    { text: 'Appearances', href: '/appearances' },
+    // { text: 'Appearances', href: '/appearances' },
   ];
 
   return (

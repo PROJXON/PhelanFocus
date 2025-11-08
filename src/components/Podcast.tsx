@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
-// Podcast Section
 const Podcast = () => {
   const shapes = [
     {
@@ -23,7 +22,7 @@ const Podcast = () => {
       cx: 369.5,
       cy: 369.5,
     },
-  ]
+  ];
 
   return (
     <section
@@ -43,6 +42,7 @@ const Podcast = () => {
           <circle cx={shape.cx} cy={shape.cy} r="369.5" fill="currentColor" />
         </svg>
       ))}
+
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ const Podcast = () => {
         </div>
 
         {/* Right Column - Image */}
-        <div className="col-span-12 lg:col-span-6 mt-10 lg:mt-0 text-center">
+        <div className="col-span-12 lg:col-span-6 mt-10 lg:mt-0 text-center pt-10 lg:pt-20">
           <div className="relative inline-block group">
             <Image
               src="/podcast.png"
@@ -77,9 +77,16 @@ const Podcast = () => {
               alt="Podcast Coming Soon"
               className="rounded-xl shadow-lg group-hover:opacity-80 transition"
             />
-            <Link href="/podcast" className="absolute inset-0 flex justify-center items-center">
+            <Link
+              href="/podcast"
+              className="absolute inset-0 flex justify-center items-center"
+            >
               <div className="bg-white dark:bg-gray-100 bg-opacity-70 dark:bg-opacity-20 p-4 rounded-full hover:bg-opacity-100 transition">
-                <svg className="w-8 h-8 text-blue-600 dark:text-yellow-400" viewBox="0 0 24 24" fill="currentColor">
+                <svg
+                  className="w-8 h-8 text-blue-600 dark:text-yellow-400"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
                   <path d="M8 5v14l11-7z" />
                 </svg>
               </div>
