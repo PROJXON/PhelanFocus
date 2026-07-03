@@ -28,7 +28,7 @@ const listenOn: ListenOn[] = [
 const SocialCarousel = () => {
   return (
     <section
-      className="z-10 relative w-full h-[50vh] flex flex-col items-center justify-center text-white"
+      className="z-10 relative w-full py-20 px-6 flex flex-col items-center justify-center text-white"
       style={{ backgroundColor: "#0b1727" }}
     >
       {/* Title */}

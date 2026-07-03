@@ -10,25 +10,25 @@ const services: ServiceCarouselItem[] = [
   {
     title: 'Performance Coaching',
     lessons: '10+ Lessons',
-    badgeColor: 'bg-blue-500',
+    badgeColor: 'bg-[var(--slateBlue)]',
     image: '/performance-coaching.jpg',
   },
   {
     title: 'Career Coaching',
     lessons: '10+ Lessons',
-    badgeColor: 'bg-pink-500',
+    badgeColor: 'bg-[var(--slateBlue)]',
     image: '/career-coaching.jpg',
   },
   {
     title: 'Consulting',
     lessons: '10+ Lessons',
-    badgeColor: 'bg-green-500',
+    badgeColor: 'bg-[var(--slateBlue)]',
     image: '/consulting.jpg',
   },
   {
     title: 'Personal Development',
     lessons: '10+ Lessons',
-    badgeColor: 'bg-yellow-500',
+    badgeColor: 'bg-[var(--slateBlue)]',
     image: '/personal-development.jpg',
   },
 ];

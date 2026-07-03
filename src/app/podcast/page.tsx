@@ -46,9 +46,7 @@ export default function PodcastPage() {
   return (
     <div className="bg-white dark:bg-[#0b1727] text-gray-800 dark:text-white">
       <Navbar />
-      <div style={{ position: 'relative', width: '100%', height: '50vh', zIndex: 0 }}>
-        <PodcastHero bgImage="/podcast2.jpeg" />
-      </div>
+      <PodcastHero />
 
       {/* NOW STREAMING */}
       <section
