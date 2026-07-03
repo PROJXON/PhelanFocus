@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useRef } from 'react';
 import { usePathname } from 'next/navigation';
+import { AnimatePresence, motion } from 'framer-motion';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { MenuLinkWithSubmenu } from '@/types/interfaces';
 import { useThrottledScroll } from '@/hooks/useThrottledScroll';
@@ -140,61 +141,81 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="md:hidden mt-4 px-4 flex flex-col gap-2">
-          {menuLinks.map((menu, index) => (
-            <div key={index} className="border-b border-white/20 flex flex-col">
-              {menu.submenu ? (
-                <div className="flex justify-between items-center">
-                  <Link
-                    href={menu.href}
-                    className={`text-white text-lg py-2 ${
-                      pathname.startsWith(menu.href) ? 'bg-white/10' : ''
-                    }`}
-                  >
-                    {menu.text}
-                  </Link>
-                  <button
-                    onClick={() =>
-                      setMobileDropdownOpen(mobileDropdownOpen === menu.text ? false : menu.text)
-                    }
-                    className="text-white pr-2"
-                  >
-                    {mobileDropdownOpen === menu.text ? (
-                      <FaChevronUp className="text-sm" />
-                    ) : (
-                      <FaChevronDown className="text-sm" />
-                    )}
-                  </button>
-                </div>
-              ) : (
-                <Link
-                  href={menu.href}
-                  className={`text-white text-lg py-2 ${
-                    pathname === menu.href ? 'bg-white/10' : ''
-                  }`}
-                >
-                  {menu.text}
-                </Link>
-              )}
+      <AnimatePresence initial={false}>
+        {mobileOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="md:hidden overflow-hidden"
+          >
+            <div className="mt-4 px-4 flex flex-col gap-2">
+              {menuLinks.map((menu, index) => (
+                <div key={index} className="border-b border-white/20 flex flex-col">
+                  {menu.submenu ? (
+                    <div className="flex justify-between items-center">
+                      <Link
+                        href={menu.href}
+                        className={`text-white text-lg py-2 ${
+                          pathname.startsWith(menu.href) ? 'bg-white/10' : ''
+                        }`}
+                      >
+                        {menu.text}
+                      </Link>
+                      <button
+                        onClick={() =>
+                          setMobileDropdownOpen(mobileDropdownOpen === menu.text ? false : menu.text)
+                        }
+                        className="text-white pr-2"
+                      >
+                        {mobileDropdownOpen === menu.text ? (
+                          <FaChevronUp className="text-sm" />
+                        ) : (
+                          <FaChevronDown className="text-sm" />
+                        )}
+                      </button>
+                    </div>
+                  ) : (
+                    <Link
+                      href={menu.href}
+                      className={`text-white text-lg py-2 ${
+                        pathname === menu.href ? 'bg-white/10' : ''
+                      }`}
+                    >
+                      {menu.text}
+                    </Link>
+                  )}
 
-              {mobileDropdownOpen === menu.text &&
-                menu.submenu &&
-                menu.submenu.map((sub, subIndex) => (
-                  <Link
-                    key={subIndex}
-                    href={sub.href}
-                    className={`block text-white/90 text-base pl-6 py-1 ${
-                      pathname === sub.href ? 'bg-white/10' : ''
-                    }`}
-                  >
-                    {sub.text}
-                  </Link>
-                ))}
+                  <AnimatePresence initial={false}>
+                    {mobileDropdownOpen === menu.text && menu.submenu && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                        className="overflow-hidden"
+                      >
+                        {menu.submenu.map((sub, subIndex) => (
+                          <Link
+                            key={subIndex}
+                            href={sub.href}
+                            className={`block text-white/90 text-base pl-6 py-1 ${
+                              pathname === sub.href ? 'bg-white/10' : ''
+                            }`}
+                          >
+                            {sub.text}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

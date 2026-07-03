@@ -796,6 +796,11 @@ p {
     flex-direction: column;
     gap: 20px;
   }
+
+  .about-section-title {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
 }
 
 @media (max-width: 768px) {

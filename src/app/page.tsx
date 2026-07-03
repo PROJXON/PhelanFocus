@@ -145,7 +145,14 @@ const Home = () => {
       <header className="w-full fixed z-40">
         <Navbar />
       </header>
-      <Hero bgImage="/homeHero.jpg" header="Welcome To The Phelan Focus" fadeTo="#142c46" />
+      <Hero
+        bgImage="/homeHero.jpg"
+        header="Unlock Your Potential"
+        subtitle="Personalized coaching and consulting to help you create the change you want to see."
+        ctaText="Book a Session"
+        ctaHref="/sessions"
+        fadeTo="#142c46"
+      />
       {/* <section className="z-20 relative text-center py-8 bg-white">
         <p className="text-lg max-w-xl mx-auto mb-6">
           Helping individuals unlock their potential and achieve personal and
@@ -159,8 +166,8 @@ const Home = () => {
         </Link>
       </section> */}
       <section
-        className="about-section relative z-20 my-0 bg-blue"
-        style={{ backgroundColor: "#142c46", padding: "80px 20px" }}
+        className="about-section relative z-20 my-0 bg-blue py-12 md:py-20 px-5"
+        style={{ backgroundColor: "#142c46" }}
       >
         <h2 className="about-section-title">Empowering Change</h2>
 
@@ -196,6 +203,10 @@ const Home = () => {
             </Link>
           </div>
         </div>
+        <div
+          className="absolute inset-x-0 bottom-0 h-20 pointer-events-none"
+          style={{ background: 'linear-gradient(to bottom, transparent 0%, transparent 40%, #ffffff 100%)' }}
+        ></div>
       </section>
 
       {/* Why Choose Us (About) */}

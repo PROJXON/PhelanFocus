@@ -10,7 +10,10 @@ export function EmailTemplate({
   lastMarginTop: boolean;
 }) {
   return (
-    <div className="font-[Arial, sans-serif] p-[20px] border border-solid border-[#ddd] rounded-[8px] max-w-[500px]">
+    <div
+      style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
+      className="p-[20px] border border-solid border-[#ddd] rounded-[8px] max-w-[500px]"
+    >
       <h1 className="text-[#333]">{heading},</h1>
       {paragraphs.map((p, i) => (
         <p
