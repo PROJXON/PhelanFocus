@@ -71,7 +71,7 @@ const Podcast = () => {
         <div className="col-span-12 lg:col-span-6 mt-10 lg:mt-0 text-center pt-10 lg:pt-20">
           <div className="relative inline-block group">
             <Image
-              src="/podcast.png"
+              src="/podcast.jpg"
               width={796}
               height={796}
               alt="Podcast Coming Soon"

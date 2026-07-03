@@ -323,7 +323,7 @@ const Home = () => {
             >
               <div className="podcast-img-wrapper">
                 <Image
-                  src="/podcast.png"
+                  src="/podcast.jpg"
                   alt="The Phelan Focus Podcast"
                   width={280}
                   height={280}

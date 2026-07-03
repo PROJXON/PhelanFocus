@@ -111,7 +111,7 @@ export interface GoldIcon {
 export interface Module {
   pillar: string;
   bullets: string[];
-  image: ImagePath;
+  icon: SolidIcon;
 }
 
 export interface ListenOn {

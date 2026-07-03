@@ -51,7 +51,7 @@ export default function SpeakingPage() {
   return (
     <div className="bg-white dark:bg-[#0b1727] text-gray-800 dark:text-white">
       <Navbar />
-      <Hero bgImage="/PublicSPeakking.png" header="Speaking" />
+      <Hero bgImage="/PublicSPeakking.jpg" header="Speaking" />
 
       {/* Recent Keynote Clients */}
       <section className="recent-keynote-section">

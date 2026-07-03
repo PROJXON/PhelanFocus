@@ -1,10 +1,11 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { MenuLinkWithSubmenu } from '@/types/interfaces';
+import { useThrottledScroll } from '@/hooks/useThrottledScroll';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -14,20 +15,11 @@ const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
   const lastScroll = useRef(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const current = window.scrollY;
-      if (current > lastScroll.current && current > 80) {
-        setShowNavbar(false);
-      } else {
-        setShowNavbar(true);
-      }
-      lastScroll.current = current;
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  useThrottledScroll((current) => {
+    const shouldShow = !(current > lastScroll.current && current > 80);
+    lastScroll.current = current;
+    setShowNavbar((prev) => (prev === shouldShow ? prev : shouldShow));
+  });
 
   const menuLinks: MenuLinkWithSubmenu[] = [
     { text: 'Home', href: '/' },

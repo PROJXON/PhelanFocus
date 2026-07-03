@@ -66,11 +66,11 @@ export default function BooksPage() {
       />
 
       {/* Testimonials */}
-      <section className="z-10 relative py-16 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900">
+      <section className="z-10 relative py-16 bg-gradient-to-r from-[#f7f5f0] to-[#f3ecdb] dark:from-gray-800 dark:to-gray-900">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-4xl font-bold mb-12 text-center text-gray-900 dark:text-white">
             What Readers Say
-            <span className="block w-20 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mt-4"></span>
+            <span className="block w-20 h-1 bg-[var(--gold)] dark:bg-[var(--gold)] mx-auto mt-4"></span>
           </h2>
 
           <div className="relative h-96 md:h-80">
@@ -82,7 +82,7 @@ export default function BooksPage() {
                 }`}
               >
                 <div className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg max-w-3xl mx-4 relative">
-                  <div className="absolute top-0 left-8 -mt-4 w-8 h-8 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center">
+                  <div className="absolute top-0 left-8 -mt-4 w-8 h-8 bg-[var(--slateBlue)] dark:bg-[var(--slateBlue)] rounded-full flex items-center justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5 text-white"
@@ -106,7 +106,7 @@ export default function BooksPage() {
                   </blockquote>
 
                   <div className="flex items-center">
-                    <div className="bg-blue-600 dark:bg-blue-500 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    <div className="bg-[var(--slateBlue)] dark:bg-[var(--slateBlue)] w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg">
                       {testimonial.author.charAt(0)}
                     </div>
                     <div className="ml-4">
@@ -127,7 +127,7 @@ export default function BooksPage() {
                 onClick={() => setActiveTestimonial(index)}
                 className={`w-3 h-3 rounded-full transition-all ${
                   index === activeTestimonial
-                    ? 'bg-blue-600 dark:bg-blue-400 w-6'
+                    ? 'bg-[var(--gold)] dark:bg-[var(--gold)] w-6'
                     : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
                 }`}
                 aria-label={`View testimonial from ${testimonials[index].author}`}
@@ -144,8 +144,10 @@ export default function BooksPage() {
             Who Should Read These Books?
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow transition-all duration-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1">
-              {/* <h3 className="text-xl font-semibold text-blue-600 mb-2">Bend to Bend</h3> */}
+            <div className="group bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow transition-all duration-300 hover:bg-[#faf3e0] dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1">
+              <h3 className="text-xl font-semibold text-[var(--slateBlue)] dark:text-white mb-2">
+                Bend to Bend
+              </h3>
               <p>Ideal for leaders, managers, mentors, and anyone fostering growth.</p>
               <ul className="mt-2 pl-5 list-disc text-gray-600 dark:text-gray-300 hidden group-hover:block">
                 <li>Team leaders</li>
@@ -153,8 +155,10 @@ export default function BooksPage() {
                 <li>Career coaches</li>
               </ul>
             </div>
-            <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow transition-all duration-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1">
-              {/* <h3 className="text-xl font-semibold text-blue-600 mb-2">Peak to Peak</h3> */}
+            <div className="group bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow transition-all duration-300 hover:bg-[#faf3e0] dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1">
+              <h3 className="text-xl font-semibold text-[var(--slateBlue)] dark:text-white mb-2">
+                Peak to Peak
+              </h3>
               <p>Perfect for consultants, advisors, and entrepreneurs enhancing delivery skills.</p>
               <ul className="mt-2 pl-5 list-disc text-gray-600 dark:text-gray-300 hidden group-hover:block">
                 <li>Management consultants</li>
@@ -162,8 +166,10 @@ export default function BooksPage() {
                 <li>Startup founders</li>
               </ul>
             </div>
-            <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow transition-all duration-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1">
-              {/* <h3 className="text-xl font-semibold text-blue-600 mb-2">Shore to Shore</h3> */}
+            <div className="group bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow transition-all duration-300 hover:bg-[#faf3e0] dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1">
+              <h3 className="text-xl font-semibold text-[var(--slateBlue)] dark:text-white mb-2">
+                Shore to Shore
+              </h3>
               <p>Great for professionals, educators, and creatives mastering public speaking.</p>
               <ul className="mt-2 pl-5 list-disc text-gray-600 dark:text-gray-300 hidden group-hover:block">
                 <li>Sales professionals</li>

@@ -9,24 +9,6 @@ nav {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Hero */
-.service-hero {
-  background-image: url('/service-hero.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 50vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.service-hero .overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 41, 77, 0.6);
-}
-
 /* Detail Layout */
 .project-three-area {
   padding: 80px 0;

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ImagePath } from '@/types/types';
+import { useThrottledScroll } from '@/hooks/useThrottledScroll';
 
 const Hero = ({
   bgImage,
@@ -26,18 +27,10 @@ const Hero = ({
     return () => window.removeEventListener('resize', measureHeight);
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY >= heroHeight) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [heroHeight]);
+  useThrottledScroll((scrollY) => {
+    const next = scrollY < heroHeight;
+    setIsVisible((prev) => (prev === next ? prev : next));
+  });
 
   return (
     <>
@@ -56,8 +49,6 @@ const Hero = ({
           quality={75}
           sizes="100vw"
           className="object-cover object-center"
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/..."
           style={{ zIndex: 0, position: 'absolute' }}
         />
         <div className="absolute inset-0 bg-black/40 z-10"></div>

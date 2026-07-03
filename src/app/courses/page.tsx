@@ -1,18 +1,26 @@
 'use client';
-import Image from 'next/image';
 import { MouseEvent, useRef } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import ScrollToTop from '@/components/ScrollToTop';
-import { ImagePath } from '@/types/types';
 import { Module, TitleAndDesc } from '@/types/interfaces';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  IconDefinition,
+  faGem,
+  faCompass,
+  faEye,
+  faBinoculars,
+  faHandshake,
+  faBolt,
+} from '@fortawesome/free-solid-svg-icons';
 
-function ParallaxCard({ src, alt }: { src: ImagePath; alt: string }) {
-  const imageRef = useRef<HTMLDivElement>(null);
+function ParallaxCard({ icon, alt }: { icon: IconDefinition; alt: string }) {
+  const cardRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    const card = imageRef.current;
+    const card = cardRef.current;
     if (!card) return;
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
@@ -25,7 +33,7 @@ function ParallaxCard({ src, alt }: { src: ImagePath; alt: string }) {
   };
 
   const handleMouseLeave = () => {
-    const card = imageRef.current;
+    const card = cardRef.current;
     if (!card) return;
     card.style.transform = `rotateX(0deg) rotateY(0deg)`;
   };
@@ -36,8 +44,12 @@ function ParallaxCard({ src, alt }: { src: ImagePath; alt: string }) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <div ref={imageRef} className="parallax-inner rounded-xl shadow-md">
-        <Image src={src} alt={alt} width={360} height={360} className="rounded-xl" />
+      <div
+        ref={cardRef}
+        aria-label={alt}
+        className="parallax-inner rounded-xl shadow-md w-[360px] h-[360px] flex items-center justify-center bg-[var(--slateBlue)]"
+      >
+        <FontAwesomeIcon icon={icon} className="text-[var(--gold)] text-8xl" />
       </div>
     </div>
   );
@@ -69,7 +81,7 @@ const sixModules: Module[] = [
       'Understand Foundational vs Motivational Values',
       'Honor your most important values',
     ],
-    image: '/courses/value.jpeg',
+    icon: faGem,
   },
   {
     pillar: 'Purpose',
@@ -78,7 +90,7 @@ const sixModules: Module[] = [
       'Overcome self-limiting beliefs',
       'Build lasting self-confidence',
     ],
-    image: '/courses/purpose.jpeg',
+    icon: faCompass,
   },
   {
     pillar: 'Vision',
@@ -87,7 +99,7 @@ const sixModules: Module[] = [
       'Develop a personal life vision',
       'Establish clear life direction',
     ],
-    image: '/courses/vision.jpeg',
+    icon: faEye,
   },
   {
     pillar: 'Perspectives',
@@ -96,12 +108,12 @@ const sixModules: Module[] = [
       'Manage negativity with clarity',
       'Channel your best self',
     ],
-    image: '/courses/Perspectives.jpeg',
+    icon: faBinoculars,
   },
   {
     pillar: 'Commitment',
     bullets: ['Time management strategies', 'Improve work-life balance', 'Own your next chapter'],
-    image: '/courses/Commitment.jpeg',
+    icon: faHandshake,
   },
   {
     pillar: 'Action',
@@ -110,7 +122,7 @@ const sixModules: Module[] = [
       'Achieve real results',
       'Stay on track and motivated',
     ],
-    image: '/courses/Action.jpeg',
+    icon: faBolt,
   },
 ];
 
@@ -118,7 +130,7 @@ export default function CoursesPage() {
   return (
     <>
       <Navbar />
-      <Hero bgImage="/courses/courses.jpeg" header="Courses" />
+      <Hero bgImage="/coaching/KC_GroupTraining-13.jpg" header="Courses" />
 
       <div className="courses-page relative z-10 bg-white text-gray-800">
         {/* Intro Section */}
@@ -142,20 +154,8 @@ export default function CoursesPage() {
           </div>
         </section>
 
-        {/* Round Images & Pullquote */}
+        {/* Pullquote */}
         <section className="py-16 px-4 max-w-6xl mx-auto text-center">
-          <div className="flex justify-center gap-8 mb-10 flex-wrap">
-            {Array.from({ length: 3 }).map((_, i) => (
-              <Image
-                key={i + 1}
-                src={`/courses/round${i + 1}.jpeg`}
-                alt={`Round ${i + 1}`}
-                width={240}
-                height={240}
-                className="rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
-              />
-            ))}
-          </div>
           <blockquote className="text-xl italic font-semibold text-gray-700 max-w-3xl mx-auto mb-10">
             {`"Coaching offers a way forward, so you can start transforming your life and turn your dreams into reality."`}
           </blockquote>
@@ -187,12 +187,7 @@ export default function CoursesPage() {
         </section>
 
         {/* Six Modules Program Section */}
-        <section
-          className="py-20 text-white relative z-10 bg-cover bg-center bg-no-repeat bg-fixed"
-          style={{ backgroundImage: "url('courses/module.jpeg')" }}
-        >
-          <div className="absolute inset-0 bg-[#00294d]/60 z-0"></div>
-
+        <section className="py-20 text-white relative z-10 bg-[var(--slateBlue)]">
           <div
             className="absolute top-0 left-0 w-full z-0 opacity-10 pointer-events-none"
             style={{
@@ -224,7 +219,7 @@ export default function CoursesPage() {
             {sixModules.map((module, index) => (
               <div key={index} className="grid md:grid-cols-2 items-center gap-10">
                 <div className={index % 2 === 0 ? '' : 'md:order-2'}>
-                  <ParallaxCard src={module.image} alt={module.pillar.toLowerCase()} />
+                  <ParallaxCard icon={module.icon} alt={module.pillar.toLowerCase()} />
                 </div>
                 <div className={index % 2 === 0 ? '' : 'md:order-1'}>
                   <h4 className="text-2xl font-bold mb-4">

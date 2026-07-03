@@ -41,7 +41,7 @@ const AboutMe = () => {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: 'easeOut' }}
-        viewport={{ once: false, amount: 0.1 }}
+        viewport={{ once: true, amount: 0.1 }}
         className="max-w-6xl mx-auto px-4"
       >
         <div className="flex flex-col md:flex-row items-center gap-10">
@@ -59,7 +59,7 @@ const AboutMe = () => {
           {/* Text section */}
           <div className="w-full md:w-7/12">
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">{"Hi, I'm Mark."}</h2>
-            <p className="text-[#cf443c] font-medium mb-4">
+            <p className="text-[var(--slateBlue)] font-medium mb-4">
               I believe that each of us has the potential to create the change we want to see in the
               world. But too often we get stuck feeling like we can’t. I want to change that.
             </p>
