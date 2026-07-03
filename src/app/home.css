@@ -480,10 +480,6 @@ section {
   color: var(--gold);
 }
 
-.cta-button-container {
-  padding: 50px;
-}
-
 .text-white {
   color: white;
 }
@@ -507,10 +503,6 @@ p {
     font-size: 2.5rem;
   }
 
-  .cta-button-container {
-    padding: 30px;
-  }
-
   p {
     font-size: 1.1rem;
   }
@@ -526,10 +518,6 @@ p {
     font-size: 2rem;
   }
 
-  .cta-button-container {
-    padding: 40px;
-  }
-
   p {
     font-size: 1rem;
   }
@@ -543,10 +531,6 @@ p {
 
   .font-1 {
     font-size: 1.5rem;
-  }
-
-  .cta-button-container {
-    padding: 15px;
   }
 
   p {

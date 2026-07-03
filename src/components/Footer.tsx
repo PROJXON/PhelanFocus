@@ -4,17 +4,15 @@ import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
-  faTwitter,
+  faXTwitter,
   faInstagram,
   faLinkedin,
-  faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { MenuLink, SocialIcon } from "@/types/interfaces";
 import { useContactModal } from "@/context/ContactModalContext";
 import ContactModal from "./ContactModal";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   const { resolvedTheme } = useTheme();
@@ -57,12 +55,20 @@ const Footer = () => {
       href: "/",
     },
     {
-      text: "Services",
-      href: "/services",
-    },
-    {
       text: "Podcast",
       href: "/podcast",
+    },
+    {
+      text: "Coaching",
+      href: "/coaching",
+    },
+    {
+      text: "Consulting",
+      href: "/consulting",
+    },
+    {
+      text: "Speaking",
+      href: "/speaking",
     },
     {
       text: "Contact",
@@ -91,8 +97,8 @@ const Footer = () => {
       ),
     },
     {
-      icon: faTwitter,
-      label: "Twitter",
+      icon: faXTwitter,
+      label: "X",
       href: new URL("https://x.com/The.Phelan.Focus"),
     },
   ];
@@ -113,7 +119,7 @@ const Footer = () => {
       >
         {/* Top Row: Logo Only (social removed) */}
         <div className="max-w-7xl mx-auto flex justify-center md:justify-start border-b border-gray-600 pb-8">
-          <h2 className="text-2xl font-bold text-blue-500">Phelan Focus</h2>
+          <h2 className="text-2xl font-bold text-[var(--gold)]">Phelan Focus</h2>
         </div>
 
         {/* Main Content */}
@@ -174,45 +180,22 @@ const Footer = () => {
           </div>
 
           {/* Follow Us */}
-          <div className="md:text-left flex flex-col items-end">
+          <div>
             <h3 className="text-lg mb-4 font-semibold">Follow Us</h3>
 
-            {/* All links stacked vertically, right-aligned */}
-            <div className="flex flex-col items-end gap-3">
-              {/* SNS Links */}
+            <div className="flex flex-col items-center md:items-start gap-3">
               {socialLinks.map((item, index) => (
                 <a
                   key={index}
                   href={item.href.toString()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="link-gold-hover inline-flex items-center gap-2 text-base justify-end"
+                  className="link-gold-hover inline-flex items-center gap-2 text-sm"
                 >
                   <FontAwesomeIcon icon={item.icon} className="text-xl" />
                   <span>{item.label}</span>
                 </a>
               ))}
-
-              {/* Extra links */}
-              <a
-                href="https://projxon.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-gold-hover inline-flex items-center gap-2 text-base justify-end"
-              >
-                <FontAwesomeIcon icon={faGlobe} className="text-xl" />
-                Projxon.com
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/phelanmarkw/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-gold-hover inline-flex items-center gap-2 text-base justify-end"
-              >
-                <FontAwesomeIcon icon={faLinkedinIn} className="text-xl" />
-                Linkedin
-              </a>
             </div>
           </div>
         </div>
@@ -222,15 +205,16 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="text-center text-gray-400 text-sm">
-          © 2025 <span className="font-semibold">Phelan Focus</span>. All
-          rights reserved • Powered by{" "}
+          © {new Date().getFullYear()}{" "}
+          <span className="font-semibold">Phelan Focus</span>. All rights
+          reserved • Powered by{" "}
           <a
             href="https://www.projxon.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white font-semibold hover:underline"
           >
-            Projxon
+            PROJXON
           </a>
         </div>
       </motion.footer>

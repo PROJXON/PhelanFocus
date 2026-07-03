@@ -267,10 +267,10 @@ const Home = () => {
               today by booking a session with our experienced life coach.
             </p>
             <ContactModal />
-            <div className="cta-button-container" onClick={openModal}>
+            <button type="button" className="btn-gold" onClick={openModal}>
               <span>CONTACT US</span>
               <span></span>
-            </div>
+            </button>
           </div>
         </div>
       </section>
