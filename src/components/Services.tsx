@@ -41,13 +41,13 @@ const ServiceItem = ({ service }: { service: Service }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       viewport={{ once: true, amount: 0.2 }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.98 }}
-      className="bg-white dark:bg-slate-800 text-gray-800 dark:text-white h-full shadow-xl rounded-[20px] p-6 lg:px-6 lg:py-12 transition-transform duration-300 hover:scale-105"
+      className="bg-white dark:bg-slate-800 text-gray-800 dark:text-white h-full shadow-xl rounded-[20px] p-6 lg:px-6 lg:py-12"
     >
       <div
         className={`w-24 h-24 rounded-full text-3xl inline-flex justify-center items-center mb-6 bg-opacity-10 shadow-md ${colorMap[serviceColor]}`}
@@ -70,9 +70,9 @@ const Services = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <motion.h2
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: 'easeOut' }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true, amount: 0.1 }}
             className="text-3xl md:text-[45px] font-bold mb-4 text-gray-800 dark:text-white"
           >
