@@ -312,11 +312,6 @@ section {
   gap: 50px 100px;
 }
 
-.circle-progress-section .circle-container:nth-child(1),
-.circle-progress-section .circle-container:nth-child(3) {
-  transform: translateX(-30px);
-}
-
 .circle-container {
   text-align: center;
   width: 180px;
