@@ -186,10 +186,6 @@ const Home = () => {
             </p>
             <hr />
             <div className="contact-info"></div>
-            <Link href="/sessions" className="btn-read">
-              <span>Book a Session</span>
-              <span></span>
-            </Link>
           </div>
         </div>
         <div
