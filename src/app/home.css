@@ -441,17 +441,11 @@ section {
   position: relative;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  overflow: hidden;
   padding: 100px 20px;
-  height: 80vh;
 }
 
 .image-overlay {
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
+  inset: 0;
   position: absolute;
   background: linear-gradient(0deg, rgba(1, 31, 68, 0.6), rgba(1, 31, 68, 0.6));
   transition:
@@ -496,7 +490,6 @@ p {
 @media (max-width: 1024px) {
   .cta-section {
     padding: 80px 20px;
-    height: 70vh;
   }
 
   .font-1 {
@@ -511,7 +504,6 @@ p {
 @media (max-width: 768px) {
   .cta-section {
     padding: 60px 20px;
-    height: 60vh;
   }
 
   .font-1 {
@@ -526,7 +518,6 @@ p {
 @media (max-width: 480px) {
   .cta-section {
     padding: 40px 20px;
-    height: 50vh;
   }
 
   .font-1 {
