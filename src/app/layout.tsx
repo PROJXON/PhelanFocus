@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Fraunces } from 'next/font/google';
 import './globals.css';
 import ThemeProvider from '@/components/ThemeProvider';
 import { ContactModalProvider } from '@/context/ContactModalContext';
@@ -17,6 +17,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
+});
+
+const heading = Fraunces({
+  variable: '--font-heading',
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -46,7 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   `}
         </Script>
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${heading.variable} antialiased`}>
         <AnalyticsTracker />
         <ThemeProvider>
           <ContactModalProvider>{children}</ContactModalProvider>

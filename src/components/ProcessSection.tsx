@@ -5,33 +5,33 @@ import { ProcessStep } from '@/types/interfaces';
 
 const steps: ProcessStep[] = [
   {
-    title: 'Plan For Work',
+    title: 'Discovery Call',
     icon: FaRegClipboard,
-    text: 'We begin by understanding your speaking goals, audience, and brand voice to lay the foundation for a powerful online presence.',
+    text: "We start with a conversation about where you are, where you want to go, and what's been holding you back.",
     link: '/services',
     colorClass: 'hover:border-yellow-400',
     tagColor: 'text-yellow-400',
   },
   {
-    title: 'Implementation',
+    title: 'Personalized Plan',
     icon: FaCogs,
-    text: 'From homepage to booking form, we design and develop every element with your personal brand and audience engagement in mind.',
+    text: 'Your coaching plan is built around your specific goals, not a one-size-fits-all program.',
     link: '/services',
     colorClass: 'hover:border-orange-400',
     tagColor: 'text-orange-400',
   },
   {
-    title: 'Consultancy',
+    title: 'Coaching Sessions',
     icon: FaUserTie,
-    text: 'We guide you on best practices—like building your mailing list, integrating videos, and showcasing testimonials to boost authority.',
+    text: 'We meet consistently, working through real challenges and building the habits that create lasting change.',
     link: '/services',
     colorClass: 'hover:border-green-400',
     tagColor: 'text-green-400',
   },
   {
-    title: 'Project Closure',
+    title: 'Growth & Results',
     icon: FaFlagCheckered,
-    text: 'After final testing and launch, we hand off a polished, responsive site you can confidently use to land gigs and grow your reach.',
+    text: 'You leave with clarity, momentum, and a plan you can keep using long after our work together ends.',
     link: '/services',
     colorClass: 'hover:border-pink-400',
     tagColor: 'text-pink-400',
@@ -47,7 +47,7 @@ export default function ProcessSection() {
       <div className="max-w-7xl mx-auto text-center">
         {/* Section Title */}
         <div className="mb-12">
-          <h2 className="text-white text-4xl font-bold mt-4">Our Solution Process</h2>
+          <h2 className="text-white text-4xl font-bold mt-4">How We Work Together</h2>
         </div>
 
         {/* Process Cards Grid */}

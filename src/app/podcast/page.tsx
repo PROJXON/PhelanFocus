@@ -12,6 +12,7 @@ import PodcastHero from './PodcastHero';
 import ContactModal from '@/components/ContactModal';
 import { useContactModal } from '@/context/ContactModalContext';
 import SocialCarousel from './SocialMedia';
+import SpotifyPhoneMockup from './SpotifyPhoneMockup';
 
 export default function PodcastPage() {
   const { resolvedTheme } = useTheme();
@@ -48,6 +49,36 @@ export default function PodcastPage() {
       <div style={{ position: 'relative', width: '100%', height: '50vh', zIndex: 0 }}>
         <PodcastHero bgImage="/podcast2.jpeg" />
       </div>
+
+      {/* NOW STREAMING */}
+      <section
+        className="bg-white dark:bg-[#0f1419] py-20 px-6"
+        style={{ position: 'relative', zIndex: 1 }}
+      >
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-16">
+          <SpotifyPhoneMockup />
+          <div className="text-center md:text-left max-w-sm">
+            <p className="text-[var(--gold)] text-sm uppercase font-semibold tracking-widest mb-3">
+              Now Streaming
+            </p>
+            <h2 className="text-3xl font-bold mb-4 text-[var(--slateBlue)] dark:text-white">
+              Tune in on Spotify
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
+              New episodes of The Phelan Focus drop every week. Follow along wherever you listen.
+            </p>
+            <a
+              href="https://open.spotify.com/show/1hsQ9TSkvmuzkbnrE27ho7?si=95e611acecfa4385"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#1DB954] text-white font-semibold hover:bg-[#1ed760] transition"
+            >
+              Listen on Spotify
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* QUOTE CAROUSEL */}
       <section
         className="bg-slate-800 text-white py-16 px-6 text-center"
@@ -66,7 +97,7 @@ export default function PodcastPage() {
             >
               <div className="bg-slate-700 p-6 rounded-xl shadow-md">
                 <p className="italic text-lg mb-4">“{quotes[quoteIndex].text}”</p>
-                <p className="text-yellow-400 text-sm uppercase font-semibold tracking-widest">
+                <p className="text-[var(--gold)] text-sm uppercase font-semibold tracking-widest">
                   {quotes[quoteIndex].author}
                 </p>
               </div>
@@ -95,8 +126,8 @@ export default function PodcastPage() {
         <button
           className={`w-full sm:w-auto px-8 py-3 rounded-lg font-semibold transition duration-300 border-2 ${
             mounted && resolvedTheme === 'light'
-              ? 'border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white hover:shadow-md'
-              : 'border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black hover:shadow-md'
+              ? 'border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-white hover:shadow-md'
+              : 'border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-black hover:shadow-md'
           }`}
           onClick={() =>
             window.open(
@@ -127,8 +158,8 @@ export default function PodcastPage() {
         <button
           className={`w-full sm:w-auto px-8 py-3 rounded-lg font-semibold transition duration-300 border-2 ${
             mounted && resolvedTheme === 'light'
-              ? 'border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white hover:shadow-md'
-              : 'border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black hover:shadow-md'
+              ? 'border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-white hover:shadow-md'
+              : 'border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-black hover:shadow-md'
           }`}
           onClick={() =>
             window.open('https://open.spotify.com/episode/0RFqaTngo8JSXrVBlhIGaV', '_blank')
@@ -153,8 +184,8 @@ export default function PodcastPage() {
           <button
             className={`w-full sm:w-auto px-8 py-3 rounded-lg font-semibold transition duration-300 border-2 ${
               mounted && resolvedTheme === 'light'
-                ? 'border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white hover:shadow-md'
-                : 'border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black hover:shadow-md'
+                ? 'border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-white hover:shadow-md'
+                : 'border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-black hover:shadow-md'
             }`}
             onClick={openModal}
           >

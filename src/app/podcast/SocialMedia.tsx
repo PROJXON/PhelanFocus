@@ -9,11 +9,6 @@ interface ListenOn {
 
 const listenOn: ListenOn[] = [
   {
-    href: "https://www.tiktok.com/@the.phelan.focus",
-    src: "/podcast/tiktok.png",
-    alt: "TikTok logo",
-  },
-  {
     href: "https://www.youtube.com/@ThePhelanFocus",
     src: "/podcast/youtube.png",
     alt: "YouTube logo",
@@ -41,8 +36,8 @@ const SocialCarousel = () => {
         Listen wherever you find your favorite podcasts
       </h2>
 
-      {/* 4-Item Carousel Layout */}
-      <div className="w-full max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-10 justify-items-center">
+      {/* Platform Layout */}
+      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-10 justify-items-center">
         {listenOn.map((place, i) => (
           <a
             key={i}

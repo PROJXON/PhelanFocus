@@ -35,7 +35,7 @@ section {
 }
 
 .about-section-subtitle {
-  color: #00447c;
+  color: var(--slateBlue);
   font-weight: 600;
   margin-bottom: 10px;
   font-size: 16px;
@@ -58,7 +58,7 @@ section {
   border-radius: 10px;
   font-weight: 600;
   color: #ffffff;
-  box-shadow: 0 0 0 2px #5ed4c6;
+  box-shadow: 0 0 0 2px var(--darkGold);
   cursor: pointer;
   overflow: hidden;
   margin-bottom: 40px;
@@ -158,7 +158,7 @@ section {
 }
 
 .about-text h6 {
-  color: #00447c;
+  color: var(--slateBlue);
   font-weight: 700;
   font-size: 16px;
   margin-bottom: 15px;
@@ -200,7 +200,7 @@ section {
   border-radius: 10px;
   font-weight: 600;
   color: #ffffff;
-  box-shadow: 0 0 0 2px #5ed4c6;
+  box-shadow: 0 0 0 2px var(--darkGold);
   cursor: pointer;
   overflow: hidden;
   transition: all 0.5s ease;
@@ -393,7 +393,7 @@ section {
 }
 
 .why-left h6 {
-  color: #00447c;
+  color: var(--slateBlue);
   font-weight: 700;
   font-size: 16px;
   margin-bottom: 15px;
@@ -584,7 +584,7 @@ p {
 }
 
 .services-section h6 {
-  color: #00447c;
+  color: var(--slateBlue);
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -605,7 +605,7 @@ p {
   border-radius: 10px;
   font-weight: 600;
   color: #ffffff;
-  box-shadow: 0 0 0 2px #5ed4c6;
+  box-shadow: 0 0 0 2px var(--darkGold);
   cursor: pointer;
   overflow: hidden;
   margin-bottom: 40px;
@@ -713,7 +713,7 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #011f44;
+  background-color: var(--slateBlue);
   color: #fff;
   padding: 12px 24px;
   border-radius: 5px;
@@ -722,8 +722,8 @@ p {
 }
 
 .learn-more:hover {
-  background-color: #fec28e;
-  color: #011f44;
+  background-color: var(--gold);
+  color: var(--slateBlue);
   transform: translateY(-3px);
 }
 
@@ -738,7 +738,7 @@ p {
 }
 
 .learn-more:hover {
-  background-color: #ffd28f;
+  background-color: var(--gold);
   color: var(--slateBlue);
 }
 

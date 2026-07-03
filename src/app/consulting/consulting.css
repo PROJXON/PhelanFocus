@@ -34,7 +34,7 @@
 .consulting-section-header h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #144a8f;
+  color: var(--slateBlue);
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -44,7 +44,7 @@
 
 .consulting-section-icon {
   font-size: 1.8rem;
-  color: #144a8f;
+  color: var(--slateBlue);
 }
 
 .consulting-section-subtitle {
@@ -73,10 +73,10 @@
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 50px;
-  color: #ffd700;
+  color: var(--gold);
   text-shadow:
     1.5 1.5px 0px rgba(0, 0, 0, 0.44),
-    0 0 2px #ffd70088;
+    0 0 2px var(--darkGold);
 }
 
 .team-cards-container {
@@ -180,7 +180,7 @@
 
 .consulting-service-icon {
   font-size: 2.5rem;
-  color: #144a8f;
+  color: var(--slateBlue);
   margin-bottom: 1.5rem;
 }
 
@@ -198,7 +198,7 @@
 }
 
 .consulting-service-link {
-  color: #144a8f;
+  color: var(--slateBlue);
   font-weight: 500;
   text-decoration: none;
   display: inline-flex;
@@ -246,7 +246,7 @@
   top: 0;
   width: 80px;
   height: 80px;
-  background: #144a8f;
+  background: var(--slateBlue);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -305,7 +305,7 @@
 .consulting-industry-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(20, 74, 143, 0.1);
-  background: #144a8f;
+  background: var(--slateBlue);
   color: white;
 }
 
@@ -315,7 +315,7 @@
 
 .consulting-industry-icon {
   font-size: 2rem;
-  color: #144a8f;
+  color: var(--slateBlue);
   margin-bottom: 1rem;
 }
 
@@ -326,7 +326,7 @@
 
 /* CTA Section */
 .consulting-cta-section {
-  background: linear-gradient(135deg, #144a8f 0%, #0d3a7a 100%);
+  background: linear-gradient(135deg, var(--slateBlue) 0%, #0d3a7a 100%);
   border-radius: 16px;
   padding: 4rem 2rem;
   color: white;
@@ -371,7 +371,7 @@
 
 .cta-button.primary {
   background: white;
-  color: #144a8f;
+  color: var(--slateBlue);
 }
 
 .cta-button.primary:hover {

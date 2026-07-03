@@ -168,7 +168,7 @@ export default function CoursesPage() {
         </section>
 
         {/* 3 Pillars Section */}
-        <section className="py-20 px-4 text-white" style={{ backgroundColor: '#144a8f' }}>
+        <section className="py-20 px-4 text-white" style={{ backgroundColor: '#142c46' }}>
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-4">3 Pillars of Transformation</h2>
             <p className="text-xl text-blue-200 mb-12">
@@ -212,7 +212,7 @@ export default function CoursesPage() {
             </p>
             <p className="text-lg text-white">
               Based on the tried and tested{' '}
-              <strong className="text-[#FFD700]">Co-Active methodology</strong>
+              <strong className="text-[#c9a227]">Co-Active methodology</strong>
               {". Here's what to expect…"}
             </p>
           </div>
@@ -229,7 +229,7 @@ export default function CoursesPage() {
                 <div className={index % 2 === 0 ? '' : 'md:order-1'}>
                   <h4 className="text-2xl font-bold mb-4">
                     Module {String(index + 1).padStart(2, '0')}.{' '}
-                    <span className="text-[#FFD700]">{module.pillar}</span>
+                    <span className="text-[#c9a227]">{module.pillar}</span>
                   </h4>
                   <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">
                     {module.bullets.map((bullet, bulletIndex) => (

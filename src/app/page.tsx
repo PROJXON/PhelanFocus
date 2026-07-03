@@ -73,7 +73,7 @@ const CircleProgress = ({
           cx="70"
           cy="70"
           r="45"
-          stroke="#13395c"
+          stroke="#142c46"
           strokeWidth="10"
           fill="none"
           strokeDasharray={strokeDasharray}
@@ -88,7 +88,7 @@ const CircleProgress = ({
           y="75"
           textAnchor="middle"
           fontSize="24"
-          fill="#13395c"
+          fill="#142c46"
           fontWeight="700"
         >
           {count}%
@@ -160,7 +160,7 @@ const Home = () => {
       </section> */}
       <section
         className="about-section relative z-20 my-0 bg-blue"
-        style={{ backgroundColor: "#13395c", padding: "80px 20px" }}
+        style={{ backgroundColor: "#142c46", padding: "80px 20px" }}
       >
         <h2 className="about-section-title">Empowering Change</h2>
 

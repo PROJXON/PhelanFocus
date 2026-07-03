@@ -6,6 +6,8 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import ScrollToTopButton from '@/components/ScrollToTop';
 import { SessionType, TitleDescAndEmoji } from '@/types/interfaces';
+import EmojiIcon from '@/components/EmojiIcon';
+import { FaRegCalendar, FaBullseye, FaLaptop } from 'react-icons/fa';
 
 export default function CoachingSessions() {
   const [selectedSession, setSelectedSession] = useState<SessionType | null>(null);
@@ -144,7 +146,7 @@ export default function CoachingSessions() {
           <section id="sessions" className="sessions-grid">
             {sessionTypes.map((session) => (
               <div key={session.id} className="session-card">
-                <div className="session-icon">{session.icon}</div>
+                <div className="session-icon"><EmojiIcon emoji={session.icon} /></div>
                 <h3>{session.title}</h3>
                 <ul className="session-bullets">
                   {session.bullets.map((item, idx) => (
@@ -153,9 +155,9 @@ export default function CoachingSessions() {
                 </ul>
                 <p className="session-description">{session.description}</p>
                 <div className="session-details">
-                  <span>📅 {session.duration}</span>
-                  <span>🎯 {session.format}</span>
-                  <span>💻 {session.delivery}</span>
+                  <span><FaRegCalendar /> {session.duration}</span>
+                  <span><FaBullseye /> {session.format}</span>
+                  <span><FaLaptop /> {session.delivery}</span>
                 </div>
                 <div className="price">{session.price}</div>
                 <button className="btn" onClick={() => openBookingModal(session)}>
@@ -171,7 +173,7 @@ export default function CoachingSessions() {
             <div className="features-grid">
               {features.map((feature, index) => (
                 <div key={index} className="feature-item">
-                  <div className="feature-icon">{feature.icon}</div>
+                  <div className="feature-icon"><EmojiIcon emoji={feature.icon} /></div>
                   <h3>{feature.title}</h3>
                   <p>{feature.description}</p>
                 </div>

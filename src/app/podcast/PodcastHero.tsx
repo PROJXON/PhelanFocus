@@ -60,8 +60,8 @@ const PodcastHero = ({
           style={{ zIndex: -1, position: "absolute" }}
         />
 
-        {/* Stronger Overlay for visibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-0"></div>
+        {/* Light overlay to add depth without hiding the bright background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/40 z-0"></div>
 
         {/* Hero Content (logo slightly lower) */}
         <div className="relative z-10 flex flex-col items-center justify-center">

@@ -20,9 +20,9 @@ export default function SpeakingPage() {
       image: "/phelan-mark-78.jpg",
       preHeading: "Fan Favorite of 2023",
       buttonText: "Step Into The Cube of Creativity",
-      preHeadingColor: "text-cyan-600",
+      preHeadingColor: "text-[var(--gold)]",
       buttonColors:
-        "border-blue-400 text-blue-500 hover:bg-blue-500 hover:text-white",
+        "border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--slateBlue)]",
     },
     {
       title: "Artificial Influence",
@@ -31,9 +31,9 @@ export default function SpeakingPage() {
       image: "/phelan-mark-21.jpg",
       preHeading: "Expanded for 2025",
       buttonText: "Uncover the Magic of AI",
-      preHeadingColor: "text-pink-600",
+      preHeadingColor: "text-[var(--gold)]",
       buttonColors:
-        "border-pink-400 text-pink-500 hover:bg-pink-500 hover:text-white",
+        "border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--slateBlue)]",
     },
     {
       title: "The Loyalty Loop",
@@ -42,9 +42,9 @@ export default function SpeakingPage() {
       image: "/phelan-mark-39.jpg",
       preHeading: "Most Booked Keynote All Time",
       buttonText: "Loop Me In!",
-      preHeadingColor: "text-yellow-600",
+      preHeadingColor: "text-[var(--gold)]",
       buttonColors:
-        "border-yellow-400 text-yellow-600 hover:bg-yellow-400 hover:text-black",
+        "border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--slateBlue)]",
     },
   ];
 
@@ -79,7 +79,7 @@ export default function SpeakingPage() {
       <section className="z-50 relative py-24 px-6 bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-[#0f1419] dark:via-[#1a2332] dark:to-[#0f1419]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[var(--slateBlue)] dark:text-white">
               Mark's Most Popular Coaching Sessions
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -96,7 +96,7 @@ export default function SpeakingPage() {
                 <div
                   className={`relative group ${index % 2 !== 0 ? "md:order-2" : ""}`}
                 >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl blur-lg opacity-25 group-hover:opacity-40 transition duration-500"></div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[var(--gold)] to-[var(--slateBlue)] rounded-2xl blur-lg opacity-25 group-hover:opacity-40 transition duration-500"></div>
                   <Image
                     src={keynote.image}
                     alt={keynote.title}
@@ -136,17 +136,17 @@ export default function SpeakingPage() {
       </section>
 
       {/* Testimonial */}
-      <section className="py-20 px-6 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-[#2a1e13] dark:to-[#1a1410]">
+      <section className="py-20 px-6 bg-gradient-to-br from-[#faf7ef] to-[#f3ecdb] dark:from-[#1a2332] dark:to-[#0f1419]">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gray-900 dark:text-white">
             Mark's Most Popular Keynote Speeches
           </h2>
-          <div className="bg-white dark:bg-[#1c1410] rounded-2xl shadow-2xl p-10 md:p-14 border-t-4 border-yellow-500">
+          <div className="bg-white dark:bg-[#1c2535] rounded-2xl shadow-2xl p-10 md:p-14 border-t-4 border-[var(--gold)]">
             <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
               Don't Take Our Word For It
             </h3>
             <svg
-              className="w-12 h-12 mx-auto mb-6 text-yellow-500 opacity-50"
+              className="w-12 h-12 mx-auto mb-6 text-[var(--gold)] opacity-50"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
@@ -183,13 +183,13 @@ export default function SpeakingPage() {
 
       <ContactModal />
 
-      <section className="relative z-10 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 py-24 text-center text-gray-900 overflow-hidden">
-        <h3 className="text-4xl md:text-5xl font-extrabold mb-12 max-w-3xl mx-auto leading-snug drop-shadow-lg">
+      <section className="relative z-10 bg-gradient-to-r from-[var(--slateBlue)] via-[#1a3a5c] to-[var(--slateBlue)] py-24 text-center text-white overflow-hidden">
+        <h3 className="text-4xl md:text-5xl font-extrabold mb-12 max-w-3xl mx-auto leading-snug">
           Have a question that hasn’t been answered yet?
         </h3>
         <button
           onClick={openModal}
-          className="relative inline-block px-10 py-4 font-semibold text-white rounded-full bg-black overflow-hidden group shadow-lg hover:shadow-2xl transition"
+          className="relative inline-block px-10 py-4 font-semibold text-[var(--slateBlue)] rounded-full bg-[var(--gold)] overflow-hidden group shadow-lg hover:shadow-2xl transition"
         >
           <span className="absolute inset-0 w-full h-full bg-white opacity-10 transform -translate-x-full group-hover:translate-x-0 transition duration-500"></span>
           <span className="relative z-10">Book a Discovery Call</span>

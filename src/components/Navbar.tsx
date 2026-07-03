@@ -48,7 +48,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`bg-[#144a8f] text-white font-raleway shadow-md py-4 px-6 z-50 fixed top-0 left-0 w-full transition-transform duration-300 ${
+      className={`bg-[#142c46] text-white font-raleway shadow-md py-4 px-6 z-50 fixed top-0 left-0 w-full transition-transform duration-300 ${
         showNavbar ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
@@ -94,14 +94,14 @@ const Navbar = () => {
                 </Link>
 
                 {desktopDropdownOpen && (
-                  <div className="absolute top-full mt-1 left-1/2 transform -translate-x-1/2 w-44 bg-[#144a8f] rounded-lg shadow-lg py-2 z-40">
+                  <div className="absolute top-full mt-1 left-1/2 transform -translate-x-1/2 w-44 bg-[#142c46] rounded-lg shadow-lg py-2 z-40">
                     <div className="absolute -top-3 left-0 w-full h-4" />
                     {menu.submenu.map((sub, subIndex) => (
                       <Link
                         key={subIndex}
                         href={sub.href}
                         className={`block px-4 py-2 text-white text-base transition ${
-                          pathname === sub.href ? 'bg-[#2b5ea5]' : 'hover:bg-[#2b5ea5]'
+                          pathname === sub.href ? 'bg-[#1e3a5c]' : 'hover:bg-[#1e3a5c]'
                         }`}
                       >
                         {sub.text}

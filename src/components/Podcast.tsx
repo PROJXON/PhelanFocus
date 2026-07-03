@@ -83,7 +83,7 @@ const Podcast = () => {
             >
               <div className="bg-white dark:bg-gray-100 bg-opacity-70 dark:bg-opacity-20 p-4 rounded-full hover:bg-opacity-100 transition">
                 <svg
-                  className="w-8 h-8 text-blue-600 dark:text-yellow-400"
+                  className="w-8 h-8 text-[var(--slateBlue)] dark:text-[var(--gold)]"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >

@@ -14,6 +14,7 @@ import {
 } from '@/types/interfaces';
 import { ReactNode } from 'react';
 import PaddedNumsTimeline from '@/components/PaddedNumsTimeline';
+import EmojiIcon from '@/components/EmojiIcon';
 
 const CoachingPageSection = ({
   sectionName,
@@ -309,7 +310,7 @@ export default function CoachingPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <Hero bgImage="/coaching/coaching-hero.png" header="Coaching" />
+      <Hero bgImage="/coaching/coaching-hero.jpg" header="Coaching" />
 
       {/* Methodology Section */}
       <CoachingPageSection
@@ -346,7 +347,7 @@ export default function CoachingPage() {
         <div className="coaching-services-grid">
           {coachingServices.map((service, index) => (
             <div key={index} className="coaching-service-card">
-              <div className="coaching-service-icon">{service.icon}</div>
+              <div className="coaching-service-icon"><EmojiIcon emoji={service.icon} /></div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
               <ul className="coaching-service-features">
@@ -418,7 +419,7 @@ export default function CoachingPage() {
         <div className="client-profiles">
           {clientProfiles.map((profile, index) => (
             <div key={index} className="profile-card">
-              <div className="profile-icon">{profile.icon}</div>
+              <div className="profile-icon"><EmojiIcon emoji={profile.icon} /></div>
               <h3>{profile.title}</h3>
               <p>{profile.description}</p>
             </div>
@@ -479,7 +480,7 @@ export default function CoachingPage() {
         <div className="challenges-grid">
           {challenges.map((challenge, index) => (
             <div key={index} className="challenge-item">
-              <div className="challenge-icon">{challenge.icon}</div>
+              <div className="challenge-icon"><EmojiIcon emoji={challenge.icon} /></div>
               <h3>{challenge.title}</h3>
               <p>{challenge.description}</p>
             </div>
