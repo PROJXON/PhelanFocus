@@ -1,35 +1,37 @@
 'use client';
 import React from 'react';
 import Slider from 'react-slick';
-import Image from 'next/image';
 import Link from 'next/link';
-import { ServiceCarouselItem } from '@/types/interfaces';
+import { FaChartLine, FaBriefcase, FaHandshake, FaSeedling } from 'react-icons/fa';
+import type { IconType } from 'react-icons';
+
+interface ServiceCarouselItem {
+  title: string;
+  lessons: string;
+  icon: IconType;
+}
 
 // Services to display
 const services: ServiceCarouselItem[] = [
   {
     title: 'Performance Coaching',
     lessons: '10+ Lessons',
-    badgeColor: 'bg-[var(--slateBlue)]',
-    image: '/performance-coaching.jpg',
+    icon: FaChartLine,
   },
   {
     title: 'Career Coaching',
     lessons: '10+ Lessons',
-    badgeColor: 'bg-[var(--slateBlue)]',
-    image: '/career-coaching.jpg',
+    icon: FaBriefcase,
   },
   {
     title: 'Consulting',
     lessons: '10+ Lessons',
-    badgeColor: 'bg-[var(--slateBlue)]',
-    image: '/consulting.jpg',
+    icon: FaHandshake,
   },
   {
     title: 'Personal Development',
     lessons: '10+ Lessons',
-    badgeColor: 'bg-[var(--slateBlue)]',
-    image: '/personal-development.jpg',
+    icon: FaSeedling,
   },
 ];
 
@@ -62,36 +64,26 @@ const ServiceCarousel = () => {
         >
           {services.map((item, index) => (
             <div key={index} className="px-4">
-              <div className="rounded-xl shadow-lg bg-white overflow-hidden transition hover:shadow-2xl">
-                {/* Image Block */}
-                <div className="relative group overflow-hidden">
-                  <Link href="/services">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      width={600}
-                      height={400}
-                      className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105 group-hover:opacity-80"
-                    />
-                  </Link>
-                </div>
+              <Link href="/services">
+                <div className="rounded-xl shadow-lg bg-white overflow-hidden transition hover:shadow-2xl group">
+                  {/* Icon Block */}
+                  <div className="h-64 flex items-center justify-center bg-[var(--slateBlue)] transition-colors duration-300 group-hover:bg-[#1a3a5c]">
+                    <item.icon className="text-[var(--gold)] text-6xl" />
+                  </div>
 
-                {/* Badge */}
-                <div className="p-4 -mt-8 relative z-10">
-                  <span
-                    className={`inline-block px-3 py-1 text-sm font-medium text-white rounded-full ${item.badgeColor}`}
-                  >
-                    {item.lessons}
-                  </span>
-                </div>
+                  {/* Badge */}
+                  <div className="p-4 -mt-8 relative z-10">
+                    <span className="inline-block px-3 py-1 text-sm font-medium text-white rounded-full bg-[var(--slateBlue)]">
+                      {item.lessons}
+                    </span>
+                  </div>
 
-                {/* Title */}
-                <div className="p-4 bg-white">
-                  <h4 className="text-xl font-semibold text-gray-800">
-                    <Link href="/services">{item.title}</Link>
-                  </h4>
+                  {/* Title */}
+                  <div className="p-4 bg-white">
+                    <h4 className="text-xl font-semibold text-gray-800">{item.title}</h4>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </Slider>

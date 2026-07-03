@@ -13,7 +13,6 @@ import {
   ClientSuccessStory,
 } from '@/types/interfaces';
 import { ReactNode } from 'react';
-import PaddedNumsTimeline from '@/components/PaddedNumsTimeline';
 import EmojiIcon from '@/components/EmojiIcon';
 
 const CoachingPageSection = ({
@@ -259,33 +258,6 @@ export default function CoachingPage() {
     },
   ];
 
-  const timelineItems: TitleAndDesc[] = [
-    {
-      title: 'Discovery Call',
-      description: '30-minute intro call to explore goals and fit. No pressure.',
-    },
-    {
-      title: 'Deep Dive Assessment',
-      description: 'Personalized intake to uncover patterns, blocks, and priorities.',
-    },
-    {
-      title: 'Goal Setting & Strategy',
-      description: 'We co-create a roadmap with measurable goals and milestones.',
-    },
-    {
-      title: 'Coaching Sessions',
-      description: 'We meet regularly to refine plans, overcome obstacles, and grow.',
-    },
-    {
-      title: 'Ongoing Support',
-      description: "You'll have check-ins and resources to keep momentum going.",
-    },
-    {
-      title: 'Integration',
-      description: 'We lock in the new mindset and systems to make results permanent.',
-    },
-  ];
-
   const philosophies: TitleAndDesc[] = [
     {
       title: 'Growth is Inevitable',
@@ -483,26 +455,6 @@ export default function CoachingPage() {
               <div className="challenge-icon"><EmojiIcon emoji={challenge.icon} /></div>
               <h3>{challenge.title}</h3>
               <p>{challenge.description}</p>
-            </div>
-          ))}
-        </div>
-      </CoachingPageSection>
-
-      {/* Timeline */}
-      <CoachingPageSection
-        sectionName="how-it-works"
-        title="How The Coaching Process Works"
-        paragraph="Here’s what to expect when you work with me, step by step:"
-      >
-        <div className="process-timeline">
-          {timelineItems.map((item, index) => (
-            <div key={index} className="timeline-item">
-              <PaddedNumsTimeline
-                num={index + 1}
-                h3={item.title}
-                p={item.description}
-                class1="timeline-number"
-              />
             </div>
           ))}
         </div>

@@ -45,13 +45,6 @@ export interface ProcessStep {
   tagColor: string;
 }
 
-export interface ServiceCarouselItem {
-  title: string;
-  lessons: string;
-  badgeColor: `bg-${string}-${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9}00` | `bg-[${string}]`;
-  image: ImagePath;
-}
-
 export interface TitleAndDesc {
   title: string;
   description: string;
