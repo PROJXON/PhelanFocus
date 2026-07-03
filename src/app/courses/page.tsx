@@ -213,7 +213,7 @@ export default function CoursesPage() {
           </div>
         </section>
 
-        {/* Modules 01–06 */}
+        {/* Modules 01-06 */}
         <section className="bg-white py-20">
           <div className="max-w-6xl mx-auto space-y-24 px-4">
             {sixModules.map((module, index) => (

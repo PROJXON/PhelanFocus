@@ -122,7 +122,7 @@ export interface ListenOn {
 
 export interface PodcastQuote {
   text: string;
-  author: `— ${string}`;
+  author: `- ${string}`;
 }
 
 export interface SessionType extends TitleDescAndEmoji {

@@ -154,10 +154,10 @@ export default function SpeakingPage() {
             </svg>
             <p className="text-xl md:text-2xl italic text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
               "Mark's coaching sessions are the most impactful of any program
-              I've participated in — insightful, energizing, and life-changing."
+              I've participated in, insightful, energizing, and life-changing."
             </p>
             <p className="text-lg font-semibold text-gray-900 dark:text-white">
-              — Global Leadership Summit Participant
+              - Global Leadership Summit Participant
             </p>
           </div>
         </div>

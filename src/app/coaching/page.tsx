@@ -126,7 +126,7 @@ export default function CoachingPage() {
     {
       title: 'Confidence in Action',
       description:
-        'Build self-belief and take bold, aligned action—even in the face of fear or uncertainty.',
+        'Build self-belief and take bold, aligned action, even in the face of fear or uncertainty.',
     },
     {
       title: 'Sustainable Progress',
@@ -150,7 +150,7 @@ export default function CoachingPage() {
     {
       icon: '💪',
       title: 'The Life Transformer',
-      description: 'You’re ready for a life overhaul—health, relationships, and purpose.',
+      description: 'You’re ready for a life overhaul: health, relationships, and purpose.',
     },
     {
       icon: '🌟',
@@ -269,7 +269,7 @@ export default function CoachingPage() {
     },
     {
       title: 'Authenticity Over Perfection',
-      description: 'Your best results come from being you—fully and unapologetically.',
+      description: 'Your best results come from being you, fully and unapologetically.',
     },
     {
       title: 'Partnership, Not Dependency',
@@ -288,7 +288,7 @@ export default function CoachingPage() {
       <CoachingPageSection
         sectionName="methodology"
         title="My Coaching Methodology"
-        paragraph="This coaching program follows a proven 4 coaching step framework that has helped hundreds of clients create sustainable transformation. It's not just talk therapy – it's a strategic, action-oriented approach designed to deliver real, lasting results."
+        paragraph="This coaching program follows a proven 4 coaching step framework that has helped hundreds of clients create sustainable transformation. It's not just talk therapy, it's a strategic, action-oriented approach designed to deliver real, lasting results."
         image={
           <Image
             src="/coaching/KC_GroupTraining-4.jpg"

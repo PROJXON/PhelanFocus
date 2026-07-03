@@ -64,23 +64,25 @@ const ServiceCarousel = () => {
         >
           {services.map((item, index) => (
             <div key={index} className="px-4">
-              <Link href="/services">
-                <div className="rounded-xl shadow-lg bg-white overflow-hidden transition hover:shadow-2xl group">
-                  {/* Icon Block */}
-                  <div className="h-64 flex items-center justify-center bg-[var(--slateBlue)] transition-colors duration-300 group-hover:bg-[#1a3a5c]">
-                    <item.icon className="text-[var(--gold)] text-6xl" />
-                  </div>
+              <Link href="/coaching">
+                <div className="rounded-xl shadow-lg bg-white transition hover:shadow-2xl group">
+                  <div className="rounded-xl overflow-hidden">
+                    {/* Icon Block */}
+                    <div className="h-64 flex items-center justify-center bg-[var(--slateBlue)] transition-colors duration-300 group-hover:bg-[#1a3a5c]">
+                      <item.icon className="text-[var(--gold)] text-6xl" />
+                    </div>
 
-                  {/* Badge */}
-                  <div className="p-4 -mt-8 relative z-10">
-                    <span className="inline-block px-3 py-1 text-sm font-medium text-white rounded-full bg-[var(--slateBlue)]">
-                      {item.lessons}
-                    </span>
-                  </div>
+                    {/* Badge */}
+                    <div className="p-4 -mt-8 relative z-10">
+                      <span className="inline-block px-3 py-1 text-sm font-medium text-white rounded-full bg-[var(--slateBlue)]">
+                        {item.lessons}
+                      </span>
+                    </div>
 
-                  {/* Title */}
-                  <div className="p-4 bg-white">
-                    <h4 className="text-xl font-semibold text-gray-800">{item.title}</h4>
+                    {/* Title */}
+                    <div className="p-4 bg-white">
+                      <h4 className="text-xl font-semibold text-gray-800">{item.title}</h4>
+                    </div>
                   </div>
                 </div>
               </Link>

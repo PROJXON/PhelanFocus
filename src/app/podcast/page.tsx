@@ -22,16 +22,16 @@ export default function PodcastPage() {
 
   const quotes: PodcastQuote[] = [
     {
-      text: 'I’m a podcast fanatic – and this is my new obsession! So many life skills tucked in the fun conversations...',
-      author: '— iTunes Review',
+      text: 'I’m a podcast fanatic, and this is my new obsession! So many life skills tucked in the fun conversations...',
+      author: '- iTunes Review',
     },
     {
       text: "Mark's coaching helped me finally get clarity in my business.",
-      author: '— Entrepreneur Weekly',
+      author: '- Entrepreneur Weekly',
     },
     {
       text: 'Every episode delivers pure value. Highly recommend!',
-      author: '— FounderCast',
+      author: '- FounderCast',
     },
   ];
 

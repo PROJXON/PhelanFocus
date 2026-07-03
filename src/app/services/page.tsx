@@ -56,12 +56,12 @@ export default function ServicesPage() {
     {
       title: 'Discovery',
       description:
-        'We begin by diving deep into your goals and challenges—uncovering what success looks like for you.',
+        'We begin by diving deep into your goals and challenges, uncovering what success looks like for you.',
     },
     {
       title: 'Strategy & Planning',
       description:
-        'Together we co-create a customized roadmap—combining coaching techniques, speaking frameworks, and consulting best practices.',
+        'Together we co-create a customized roadmap, combining coaching techniques, speaking frameworks, and consulting best practices.',
     },
     {
       title: 'Execute & Refine',
@@ -145,7 +145,7 @@ export default function ServicesPage() {
                     <div className="choose-one__content">
                       <p>
                         In today’s fast-paced world, everyone faces challenges in reaching their
-                        full potential—whether that’s advancing your career, winning over an
+                        full potential, whether that’s advancing your career, winning over an
                         audience, or pivoting your business strategy. Our three-fold approach of{' '}
                         <strong>personalized coaching</strong>,{' '}
                         <strong>dynamic public speaking training</strong>, and{' '}
@@ -158,7 +158,7 @@ export default function ServicesPage() {
                           <h4 className="box-title">Mission Statement</h4>
                           <p>
                             We empower individuals and teams to unlock their strengths, articulate
-                            their vision, and drive meaningful change—through one-on-one guidance,
+                            their vision, and drive meaningful change through one-on-one guidance,
                             impactful stage presence, and data-driven business insights.
                           </p>
                         </div>
@@ -191,7 +191,7 @@ export default function ServicesPage() {
                         combine <strong>personalized coaching</strong>,{' '}
                         <strong>impactful public speaking training</strong>, and{' '}
                         <strong>strategic consulting</strong> to give you the clarity, confidence,
-                        and roadmap you need to excel—whether you’re leading a team, addressing an
+                        and roadmap you need to excel, whether you’re leading a team, addressing an
                         audience, or redefining your business.
                       </p>
                       <ul className="mb-40 list-check">
@@ -210,7 +210,7 @@ export default function ServicesPage() {
                     <div className="choose-one__content">
                       <p>
                         Our three-phase approach ensures you move confidently from idea to
-                        impact—every step built to deliver real, measurable results.
+                        impact, every step built to deliver real, measurable results.
                       </p>
                       <div className="work-ten__wrp">
                         {howItWorks.map((step, i) => (

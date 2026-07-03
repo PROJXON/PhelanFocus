@@ -46,7 +46,7 @@ export default function CoachingSessions() {
       description:
         'Dynamic group sessions designed to foster growth and accountability among like-minded individuals.',
       duration: '90 minutes',
-      format: '4–8 people',
+      format: '4-8 people',
       delivery: 'Online/In-person',
       price: '$150/person',
     },
