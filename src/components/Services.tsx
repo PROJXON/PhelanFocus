@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { Service, ColorMap } from '@/types/interfaces';
 
 const colorMap: ColorMap = {
-  blue: 'bg-blue-600 text-blue-600',
+  blue: 'bg-[#f3ecdb] text-[var(--gold)]',
   red: 'bg-red-600 text-red-600',
   green: 'bg-green-600 text-green-600',
 };
@@ -50,7 +50,7 @@ const ServiceItem = ({ service }: { service: Service }) => {
       className="bg-white dark:bg-slate-800 text-gray-800 dark:text-white h-full shadow-xl rounded-[20px] p-6 lg:px-6 lg:py-12"
     >
       <div
-        className={`w-24 h-24 rounded-full text-3xl inline-flex justify-center items-center mb-6 bg-opacity-10 shadow-md ${colorMap[serviceColor]}`}
+        className={`w-24 h-24 rounded-full text-3xl inline-flex justify-center items-center mb-6 shadow-md ${colorMap[serviceColor]}`}
       >
         <FontAwesomeIcon icon={service.icon} />
       </div>

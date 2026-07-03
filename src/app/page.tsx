@@ -254,7 +254,7 @@ const Home = () => {
           style={{ zIndex: 2 }}
         >
           <div
-            className="d-flex flex-column mx-auto text-center align-items-center text-white gap-4"
+            className="flex flex-col mx-auto text-center items-center text-white gap-6"
             style={{ maxWidth: "900px" }}
           >
             <h6 className="accent-color-2 fw-semibold">Invest in Yourself</h6>

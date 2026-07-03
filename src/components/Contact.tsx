@@ -42,7 +42,7 @@ const FaqSection = () => {
           <details key={idx} className="group border-b border-gray-300 pb-4 cursor-pointer">
             <summary className="text-lg font-semibold text-gray-900 flex justify-between items-center">
               {faq.question}
-              <span className="ml-2 text-blue-500 group-open:rotate-180 transition-transform">
+              <span className="ml-2 text-[var(--gold)] group-open:rotate-180 transition-transform">
                 +
               </span>
             </summary>

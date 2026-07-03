@@ -27,12 +27,12 @@ const Podcast = () => {
   return (
     <section
       id="podcast"
-      className="bg-[#f5faff] dark:bg-[var(--slateBlue)] text-[var(--slateBlue)] dark:text-white py-20 md:py-24 px-4 relative mb-24 transition-colors duration-500"
+      className="bg-[#f7f5f0] dark:bg-[var(--slateBlue)] text-[var(--slateBlue)] dark:text-white py-20 md:py-24 px-4 relative mb-24 transition-colors duration-500"
     >
       {shapes.map((shape, i) => (
         <svg
           key={i}
-          className={`text-blue-200 dark:text-[#1E2735] absolute hidden sm:block -z-[1] ${shape.classes}`}
+          className={`text-[var(--gold)]/10 dark:text-[#1E2735] absolute hidden sm:block -z-[1] ${shape.classes}`}
           width={shape.width}
           height={shape.height}
           viewBox={shape.viewBox}

@@ -83,7 +83,7 @@ const ContactForm = () => {
                 name={field}
                 value={emailState[key]}
                 onChange={handleChange}
-                className="min-h-[48px] w-full px-5 py-3 rounded-xl border bg-[#0e2a47] text-white placeholder-gray-400 focus:ring focus:ring-blue-500/40"
+                className="min-h-[48px] w-full px-5 py-3 rounded-xl border bg-[#0e2a47] text-white placeholder-gray-400 focus:ring focus:ring-[var(--gold)]/40"
                 placeholder={`Enter ${field.charAt(0).toUpperCase() + field.slice(1)}`}
               />
             ) : (
@@ -91,7 +91,7 @@ const ContactForm = () => {
                 name={field}
                 value={emailState[key]}
                 onChange={handleChange}
-                className="min-h-[120px] w-full px-5 py-3 rounded-xl border bg-[#0e2a47] text-white placeholder-gray-400 resize-none focus:ring focus:ring-blue-500/40"
+                className="min-h-[120px] w-full px-5 py-3 rounded-xl border bg-[#0e2a47] text-white placeholder-gray-400 resize-none focus:ring focus:ring-[var(--gold)]/40"
                 placeholder="Enter Message"
               />
             )}

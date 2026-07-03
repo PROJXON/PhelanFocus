@@ -22,7 +22,7 @@ const Social = ({ item }: { item: SocialIcon }) => {
         href={href.toString()}
         target="_blank"
         rel="noopener noreferrer"
-        className="border border-gray-400 flex justify-center items-center rounded-full w-9 h-9 transition hover:bg-blue-500 hover:border-blue-500 hover:text-white hover:scale-110 duration-300 ease-in-out"
+        className="border border-gray-400 flex justify-center items-center rounded-full w-9 h-9 transition hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-[var(--slateBlue)] hover:scale-110 duration-300 ease-in-out"
       >
         <FontAwesomeIcon icon={icon} className="w-4 h-4" />
       </a>

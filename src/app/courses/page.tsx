@@ -135,7 +135,7 @@ export default function CoursesPage() {
       <div className="courses-page relative z-10 bg-white text-gray-800">
         {/* Intro Section */}
         <section className="py-16 px-4 max-w-6xl mx-auto">
-          <p className="text-2xl text-blue-800 font-medium mb-10">
+          <p className="text-2xl text-[var(--slateBlue)] font-medium mb-10">
             {
               "If you're ready to make some changes in your life, but don't know where to start, then you probably recognize some of these problems:"
             }
@@ -171,7 +171,7 @@ export default function CoursesPage() {
         <section className="py-20 px-4 text-white" style={{ backgroundColor: '#142c46' }}>
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-4">3 Pillars of Transformation</h2>
-            <p className="text-xl text-blue-200 mb-12">
+            <p className="text-xl text-white/80 mb-12">
               {"Here's my tried and tested formula that's proven to deliver results…"}
             </p>
 
@@ -198,7 +198,7 @@ export default function CoursesPage() {
 
           <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
             <h2 className="text-4xl font-bold mb-4">Six Modules Program</h2>
-            <p className="text-xl text-blue-100 mb-6">
+            <p className="text-xl text-white/80 mb-6">
               that are proven to deliver immediate outcomes and results
             </p>
             <p className="text-lg text-white mb-4">
