@@ -175,7 +175,7 @@ const Home = () => {
               height={280}
               alt="About Overlay"
               className="img2"
-              style={{ marginBottom: 30 }}
+              style={{ marginBottom: 80 }}
             />
           </div>
           <div className="about-text">
