@@ -37,25 +37,15 @@ const CircleProgress = ({
 }) => {
   const strokeDasharray = 283;
   const [progress, setProgress] = useState(0);
-  const [count, setCount] = useState(0);
   const circleRef = useRef<HTMLDivElement>(null);
   const isVisible = useIsVisible(circleRef);
 
   useEffect(() => {
-    if (isVisible) {
-      const progressInterval = setInterval(() => {
-        setProgress((prev) => (prev < percentage ? prev + 1 : percentage));
-      }, 15);
-
-      const countInterval = setInterval(() => {
-        setCount((prev) => (prev < percentage ? prev + 1 : percentage));
-      }, 25);
-
-      return () => {
-        clearInterval(progressInterval);
-        clearInterval(countInterval);
-      };
-    }
+    if (!isVisible) return;
+    const interval = setInterval(() => {
+      setProgress((prev) => (prev < percentage ? prev + 1 : percentage));
+    }, 20);
+    return () => clearInterval(interval);
   }, [isVisible, percentage]);
 
   return (
@@ -81,7 +71,6 @@ const CircleProgress = ({
             strokeDasharray - (progress / 100) * strokeDasharray
           }
           strokeLinecap="round"
-          style={{ transition: "stroke-dashoffset 0.3s linear" }}
         />
         <text
           x="70"
@@ -91,7 +80,7 @@ const CircleProgress = ({
           fill="#142c46"
           fontWeight="700"
         >
-          {count}%
+          {progress}%
         </text>
       </svg>
       <p className="circle-label">{label}</p>

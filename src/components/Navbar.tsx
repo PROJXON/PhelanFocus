@@ -4,9 +4,11 @@ import Image from 'next/image';
 import { useState, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaBars, FaChevronDown, FaChevronUp, FaTimes } from 'react-icons/fa';
 import { MenuLinkWithSubmenu } from '@/types/interfaces';
 import { useThrottledScroll } from '@/hooks/useThrottledScroll';
+
+const NAV_FONT = 'font-[family-name:var(--font-heading)] tracking-wide';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -41,7 +43,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`bg-[#142c46] text-white font-raleway shadow-md py-4 px-6 z-50 fixed top-0 left-0 w-full transition-transform duration-300 ${
+      className={`bg-[#142c46] text-white shadow-md py-4 px-6 z-50 fixed top-0 left-0 w-full transition-transform duration-300 ${
         showNavbar ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
@@ -68,7 +70,7 @@ const Navbar = () => {
               >
                 <Link
                   href={menu.href}
-                  className={`text-lg px-4 py-2 relative inline-flex items-center gap-1 rounded-md transition duration-300 group ${
+                  className={`${NAV_FONT} text-lg px-4 py-2 relative inline-flex items-center gap-1 rounded-md transition duration-300 group ${
                     pathname.startsWith(menu.href) ? 'bg-white/10' : 'hover:bg-white/10'
                   }`}
                 >
@@ -87,7 +89,7 @@ const Navbar = () => {
                 </Link>
 
                 <div
-                  className={`absolute top-full left-1/2 w-44 bg-[#142c46] rounded-lg shadow-lg py-2 z-40 transition-all duration-200 ease-out ${
+                  className={`absolute top-full left-1/2 w-48 bg-[#142c46] border border-white/10 rounded-xl shadow-xl py-2 z-40 transition-all duration-200 ease-out ${
                     desktopDropdownOpen
                       ? 'opacity-100 translate-x-[-50%] translate-y-0 pointer-events-auto'
                       : 'opacity-0 translate-x-[-50%] -translate-y-1 pointer-events-none'
@@ -98,8 +100,10 @@ const Navbar = () => {
                     <Link
                       key={subIndex}
                       href={sub.href}
-                      className={`block px-4 py-2 text-white text-base transition ${
-                        pathname === sub.href ? 'bg-[#1e3a5c]' : 'hover:bg-[#1e3a5c]'
+                      className={`${NAV_FONT} block mx-2 px-3 py-2 rounded-lg text-white text-base transition-colors duration-200 ${
+                        pathname === sub.href
+                          ? 'bg-[var(--gold)] text-[var(--slateBlue)]'
+                          : 'hover:bg-white/10'
                       }`}
                     >
                       {sub.text}
@@ -111,7 +115,7 @@ const Navbar = () => {
               <Link
                 key={index}
                 href={menu.href}
-                className={`text-lg px-4 py-2 relative inline-block rounded-md transition duration-300 group ${
+                className={`${NAV_FONT} text-lg px-4 py-2 relative inline-block rounded-md transition duration-300 group ${
                   pathname === menu.href ? 'bg-white/10' : 'hover:bg-white/10'
                 }`}
               >
@@ -134,9 +138,10 @@ const Navbar = () => {
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-white text-2xl"
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          className="md:hidden text-white text-2xl p-1 rounded-md transition-colors duration-200 hover:bg-white/10"
         >
-          {mobileOpen ? '✖' : '☰'}
+          {mobileOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
@@ -150,24 +155,32 @@ const Navbar = () => {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="md:hidden overflow-hidden"
           >
-            <div className="mt-4 px-4 flex flex-col gap-2">
+            <div className="mt-4 px-2 pb-2 flex flex-col gap-1">
               {menuLinks.map((menu, index) => (
-                <div key={index} className="border-b border-white/20 flex flex-col">
+                <div key={index} className="flex flex-col">
                   {menu.submenu ? (
-                    <div className="flex justify-between items-center">
+                    <div
+                      className={`flex justify-between items-center rounded-lg transition-colors duration-200 ${
+                        pathname.startsWith(menu.href) ? 'bg-white/10' : ''
+                      }`}
+                    >
                       <Link
                         href={menu.href}
-                        className={`text-white text-lg py-2 ${
-                          pathname.startsWith(menu.href) ? 'bg-white/10' : ''
+                        className={`${NAV_FONT} relative flex-1 text-white text-lg px-3 py-3 ${
+                          pathname.startsWith(menu.href) ? 'pl-4' : ''
                         }`}
                       >
+                        {pathname.startsWith(menu.href) && (
+                          <span className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[3px] rounded-full bg-[var(--gold)]" />
+                        )}
                         {menu.text}
                       </Link>
                       <button
                         onClick={() =>
                           setMobileDropdownOpen(mobileDropdownOpen === menu.text ? false : menu.text)
                         }
-                        className="text-white pr-2"
+                        aria-label={mobileDropdownOpen === menu.text ? 'Collapse submenu' : 'Expand submenu'}
+                        className="text-white pr-4 py-3"
                       >
                         {mobileDropdownOpen === menu.text ? (
                           <FaChevronUp className="text-sm" />
@@ -179,10 +192,13 @@ const Navbar = () => {
                   ) : (
                     <Link
                       href={menu.href}
-                      className={`text-white text-lg py-2 ${
-                        pathname === menu.href ? 'bg-white/10' : ''
+                      className={`${NAV_FONT} relative text-white text-lg px-3 py-3 rounded-lg transition-colors duration-200 ${
+                        pathname === menu.href ? 'bg-white/10 pl-4' : 'hover:bg-white/5'
                       }`}
                     >
+                      {pathname === menu.href && (
+                        <span className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[3px] rounded-full bg-[var(--gold)]" />
+                      )}
                       {menu.text}
                     </Link>
                   )}
@@ -196,20 +212,28 @@ const Navbar = () => {
                         transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                         className="overflow-hidden"
                       >
-                        {menu.submenu.map((sub, subIndex) => (
-                          <Link
-                            key={subIndex}
-                            href={sub.href}
-                            className={`block text-white/90 text-base pl-6 py-1 ${
-                              pathname === sub.href ? 'bg-white/10' : ''
-                            }`}
-                          >
-                            {sub.text}
-                          </Link>
-                        ))}
+                        <div className="flex flex-col pl-4 py-1 gap-1">
+                          {menu.submenu.map((sub, subIndex) => (
+                            <Link
+                              key={subIndex}
+                              href={sub.href}
+                              className={`${NAV_FONT} block text-base pl-4 py-2 rounded-lg transition-colors duration-200 ${
+                                pathname === sub.href
+                                  ? 'bg-[var(--gold)] text-[var(--slateBlue)]'
+                                  : 'text-white/80 hover:bg-white/5'
+                              }`}
+                            >
+                              {sub.text}
+                            </Link>
+                          ))}
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
+
+                  {index < menuLinks.length - 1 && (
+                    <div className="border-b border-white/10 mt-1" />
+                  )}
                 </div>
               ))}
             </div>
