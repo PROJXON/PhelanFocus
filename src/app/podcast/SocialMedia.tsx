@@ -1,5 +1,7 @@
 "use client";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 interface ListenOn {
   href: string;
@@ -37,7 +39,7 @@ const SocialCarousel = () => {
       </h2>
 
       {/* Platform Layout */}
-      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-10 justify-items-center">
+      <div className="w-full max-w-4xl grid grid-cols-2 md:grid-cols-4 gap-10 justify-items-center">
         {listenOn.map((place, i) => (
           <a
             key={i}
@@ -55,6 +57,15 @@ const SocialCarousel = () => {
             />
           </a>
         ))}
+        <a
+          href="https://www.linkedin.com/company/the-phelan-focus/?viewAsMember=true"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-transform duration-300 hover:scale-110 flex items-center justify-center gap-3 text-white"
+        >
+          <FontAwesomeIcon icon={faLinkedin} className="text-5xl" />
+          <span className="text-xl font-semibold">LinkedIn</span>
+        </a>
       </div>
     </section>
   );
