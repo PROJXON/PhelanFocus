@@ -75,7 +75,7 @@ export default function ServicesPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <Hero bgImage="/service.jpeg" header="" />
+      <Hero bgImage="/service.jpeg" header="" objectPosition="center 25%" />
 
       {/* Service Detail Section */}
       <section className="project-three-area relative z-10 pt-130 pb-130">

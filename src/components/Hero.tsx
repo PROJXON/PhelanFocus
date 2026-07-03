@@ -9,10 +9,12 @@ const Hero = ({
   bgImage,
   header,
   alt = 'Hero background',
+  objectPosition = 'center',
 }: {
   bgImage: ImagePath;
   header: string;
   alt?: string;
+  objectPosition?: string;
 }) => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(true);
@@ -48,10 +50,11 @@ const Hero = ({
           priority
           quality={75}
           sizes="100vw"
-          className="object-cover object-center"
-          style={{ zIndex: 0, position: 'absolute' }}
+          className="object-cover"
+          style={{ zIndex: 0, position: 'absolute', objectPosition }}
         />
         <div className="absolute inset-0 bg-black/40 z-10"></div>
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-white z-10 pointer-events-none"></div>
         <h1 className="relative z-20 text-white font-bold text-6xl text-center px-4 max-w-4xl">{header}</h1>
       </motion.div>
       <div style={{ height: '50vh' }} />
