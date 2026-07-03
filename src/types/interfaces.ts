@@ -48,7 +48,7 @@ export interface ProcessStep {
 export interface ServiceCarouselItem {
   title: string;
   lessons: string;
-  badgeColor: `bg-${string}-${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9}00`;
+  badgeColor: `bg-${string}-${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9}00` | `bg-[${string}]`;
   image: ImagePath;
 }
 
