@@ -10,11 +10,13 @@ const Hero = ({
   header,
   alt = 'Hero background',
   objectPosition = 'center',
+  fadeTo = '#ffffff',
 }: {
   bgImage: ImagePath;
   header: string;
   alt?: string;
   objectPosition?: string;
+  fadeTo?: string;
 }) => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(true);
@@ -54,7 +56,10 @@ const Hero = ({
           style={{ zIndex: 0, position: 'absolute', objectPosition }}
         />
         <div className="absolute inset-0 bg-black/40 z-10"></div>
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-white z-10 pointer-events-none"></div>
+        <div
+          className="absolute inset-x-0 bottom-0 h-24 z-10 pointer-events-none"
+          style={{ background: `linear-gradient(to bottom, transparent, ${fadeTo})` }}
+        ></div>
         <h1 className="relative z-20 text-white font-bold text-6xl text-center px-4 max-w-4xl">{header}</h1>
       </motion.div>
       <div style={{ height: '50vh' }} />
