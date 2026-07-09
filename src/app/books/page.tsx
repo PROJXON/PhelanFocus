@@ -148,7 +148,7 @@ export default function BooksPage() {
               <h3 className="text-xl font-semibold text-[var(--slateBlue)] dark:text-white mb-2">
                 Bend to Bend
               </h3>
-              <p>Ideal for leaders, managers, mentors, and anyone fostering growth.</p>
+              <p>Ideal for leaders, managers, and mentors who are responsible for someone else's growth.</p>
               <ul className="mt-2 pl-5 list-disc text-gray-600 dark:text-gray-300 hidden group-hover:block">
                 <li>Team leaders</li>
                 <li>HR professionals</li>
@@ -159,7 +159,7 @@ export default function BooksPage() {
               <h3 className="text-xl font-semibold text-[var(--slateBlue)] dark:text-white mb-2">
                 Peak to Peak
               </h3>
-              <p>Perfect for consultants, advisors, and entrepreneurs enhancing delivery skills.</p>
+              <p>Perfect for consultants, advisors, and entrepreneurs who want to sharpen how they deliver ideas.</p>
               <ul className="mt-2 pl-5 list-disc text-gray-600 dark:text-gray-300 hidden group-hover:block">
                 <li>Management consultants</li>
                 <li>Business analysts</li>
@@ -170,7 +170,7 @@ export default function BooksPage() {
               <h3 className="text-xl font-semibold text-[var(--slateBlue)] dark:text-white mb-2">
                 Shore to Shore
               </h3>
-              <p>Great for professionals, educators, and creatives mastering public speaking.</p>
+              <p>Great for professionals, educators, and creatives who want to get better at public speaking.</p>
               <ul className="mt-2 pl-5 list-disc text-gray-600 dark:text-gray-300 hidden group-hover:block">
                 <li>Sales professionals</li>
                 <li>Teachers & professors</li>

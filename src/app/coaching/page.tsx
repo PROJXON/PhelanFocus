@@ -378,7 +378,7 @@ export default function CoachingPage() {
       <CoachingPageSection
         sectionName="ideal-clients"
         title="Who We Serve"
-        paragraph="The coaching team specializes in supporting driven individuals ready to make meaningful changes in their lives. We work with professionals, entrepreneurs, and change-makers who are committed to personal growth, career advancement, and building a life aligned with their values."
+        paragraph="We work with professionals and entrepreneurs who are ready to make a real change, whether that's in their career, their personal life, or how the two fit together."
         image={
           <Image
             src="/coaching/KC_GroupTraining-13.jpg"
@@ -464,7 +464,7 @@ export default function CoachingPage() {
       <CoachingPageSection
         sectionName="philosophy"
         title="My Coaching Philosophy"
-        paragraph="The coaching philosophy centers around human potential and personalized empowerment."
+        paragraph="This approach is built around recognizing your own potential and learning to act on it."
       >
         <div className="philosophy-content">
           {philosophies.map((philosophy, index) => (

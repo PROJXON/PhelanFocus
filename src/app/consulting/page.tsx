@@ -130,7 +130,7 @@ export default function ConsultingPage() {
                 Our Consulting Services
               </h2>
               <p className="consulting-section-subtitle">
-                Comprehensive solutions tailored to your business needs
+                Practical support built around what your business actually needs
               </p>
             </div>
             <div className="consulting-services-grid">

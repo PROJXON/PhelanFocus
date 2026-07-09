@@ -83,7 +83,7 @@ export default function SpeakingPage() {
               Mark's Most Popular Coaching Sessions
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Transform your team with powerful, actionable insights
+              Practical takeaways your team can actually use
             </p>
           </div>
 
@@ -171,11 +171,10 @@ export default function SpeakingPage() {
               What Makes a Great Coaching Experience?
             </h2>
             <p className="max-w-4xl mx-auto text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-              A transformational coaching session empowers individuals to
-              challenge their own thinking and approach. It inspires clients to
-              take actionable steps towards their goals. A great coaching
-              experience should be engaging, insightful, memorable, and
-              motivating. That's exactly what Mark delivers. Every Single Time.
+              A good coaching session pushes you to look at your own thinking
+              differently, not just hand you a checklist. It should be
+              memorable enough that you actually act on what you talked
+              about. That's what Mark aims for, every time.
             </p>
           </div>
         </div>

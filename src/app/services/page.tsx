@@ -21,19 +21,19 @@ export default function ServicesPage() {
       href: '/coaching',
       title: 'Coaching',
       description:
-        'Unlock your full potential with personalized executive coaching. Develop leadership skills, enhance strategic thinking, and achieve your professional aspirations with tailored guidance and support.',
+        'Executive coaching focused on leadership skills and strategic thinking, built around your specific goals.',
     },
     {
       href: '/speaking',
       title: 'Speaking',
       description:
-        'Inspire and motivate your audience with engaging presentations. From keynote speeches to workshops, our dynamic speaking engagements deliver impactful messages on leadership, strategy, and personal growth.',
+        'Keynotes and workshops on leadership, strategy, and personal growth, built to actually land with a room instead of just filling time.',
     },
     {
       href: '/consulting',
       title: 'Consulting',
       description:
-        'Drive business growth and overcome challenges with expert strategic consulting. We provide actionable insights and innovative solutions to optimize performance and achieve sustainable success.',
+        'Strategic consulting to work through business challenges and improve performance, with recommendations you can actually act on.',
     },
   ];
 
@@ -56,17 +56,17 @@ export default function ServicesPage() {
     {
       title: 'Discovery',
       description:
-        'We begin by diving deep into your goals and challenges, uncovering what success looks like for you.',
+        'We start by getting a clear picture of your goals and what’s standing in the way.',
     },
     {
       title: 'Strategy & Planning',
       description:
-        'Together we co-create a customized roadmap, combining coaching techniques, speaking frameworks, and consulting best practices.',
+        'We build a plan together, pulling from coaching, speaking, and consulting depending on what the situation calls for.',
     },
     {
       title: 'Execute & Refine',
       description:
-        'You put the plan into action with our support, then we measure, adjust, and celebrate your wins.',
+        'You put the plan into action with our support. We check in, adjust what isn’t working, and track the results.',
     },
   ];
 
@@ -144,22 +144,20 @@ export default function ServicesPage() {
                   {activeTab === 'our-services' && (
                     <div className="choose-one__content">
                       <p>
-                        In today’s fast-paced world, everyone faces challenges in reaching their
-                        full potential, whether that’s advancing your career, winning over an
-                        audience, or pivoting your business strategy. Our three-fold approach of{' '}
-                        <strong>personalized coaching</strong>,{' '}
-                        <strong>dynamic public speaking training</strong>, and{' '}
-                        <strong>strategic consulting</strong> ensures you get the confidence,
-                        clarity, and roadmap you need to succeed.
+                        Most people hit a wall trying to grow their career, win over a room, or
+                        shift their business strategy on their own. That's where{' '}
+                        <strong>coaching</strong>, <strong>speaking training</strong>, and{' '}
+                        <strong>consulting</strong> come in, combined into one approach instead of
+                        three separate services.
                       </p>
                       <div className="item">
                         <div className="icon">{/* icon_globe */}</div>
                         <div className="box-content">
                           <h4 className="box-title">Mission Statement</h4>
                           <p>
-                            We empower individuals and teams to unlock their strengths, articulate
-                            their vision, and drive meaningful change through one-on-one guidance,
-                            impactful stage presence, and data-driven business insights.
+                            We help individuals and teams figure out what they're good at and put
+                            it to work, through one-on-one coaching, public speaking training, and
+                            practical business strategy.
                           </p>
                         </div>
                       </div>
@@ -169,10 +167,9 @@ export default function ServicesPage() {
                         <div className="box-content">
                           <h4 className="box-title">Our Commitment</h4>
                           <p>
-                            Whether you’re preparing for your first keynote, navigating a career
-                            crossroads, or scaling your organization, we pledge to deliver tailored
-                            solutions, unwavering support, and measurable results every step of the
-                            way.
+                            Whether you're prepping for your first keynote, at a career crossroads,
+                            or scaling your organization, we build the plan around your specific
+                            situation and stay involved until you see results.
                           </p>
                           <ul className="mt-25">
                             <li>Tailored Coaching Programs</li>
@@ -187,21 +184,16 @@ export default function ServicesPage() {
                   {activeTab === 'choose-us' && (
                     <div className="choose-one__content">
                       <p>
-                        Choosing the right partner is key to unlocking your full potential. We
-                        combine <strong>personalized coaching</strong>,{' '}
-                        <strong>impactful public speaking training</strong>, and{' '}
-                        <strong>strategic consulting</strong> to give you the clarity, confidence,
-                        and roadmap you need to excel, whether you’re leading a team, addressing an
-                        audience, or redefining your business.
+                        The right partner makes a real difference here. We combine{' '}
+                        <strong>coaching</strong>, <strong>public speaking training</strong>, and{' '}
+                        <strong>consulting</strong> so you're not piecing together three different
+                        vendors, whether you're leading a team, addressing an audience, or
+                        rethinking your business.
                       </p>
                       <ul className="mb-40 list-check">
-                        <li>
-                          Proven Expertise: Decades of experience across industries and stages
-                        </li>
-                        <li>Tailored Solutions: Programs built around your goals and challenges</li>
-                        <li>
-                          End-to-End Support: From mindset shifts to execution and follow-through
-                        </li>
+                        <li>Decades of experience across industries and stages</li>
+                        <li>Programs built around your specific goals, not a template</li>
+                        <li>Support from the first mindset shift through execution and follow-through</li>
                       </ul>
                     </div>
                   )}
@@ -209,8 +201,8 @@ export default function ServicesPage() {
                   {activeTab === 'how-works' && (
                     <div className="choose-one__content">
                       <p>
-                        Our three-phase approach ensures you move confidently from idea to
-                        impact, every step built to deliver real, measurable results.
+                        Three phases take you from idea to execution: discovery, strategy, and
+                        hands-on delivery.
                       </p>
                       <div className="work-ten__wrp">
                         {howItWorks.map((step, i) => (
