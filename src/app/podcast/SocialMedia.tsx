@@ -1,71 +1,68 @@
 "use client";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faYoutube,
+  faSpotify,
+  faInstagram,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
-interface ListenOn {
-  href: string;
-  src: string;
-  alt: string;
-}
-
-const listenOn: ListenOn[] = [
+const platforms: { href: string; label: string; icon: IconDefinition; color: string }[] = [
   {
     href: "https://www.youtube.com/@ThePhelanFocus",
-    src: "/podcast/youtube.png",
-    alt: "YouTube logo",
+    label: "YouTube",
+    icon: faYoutube,
+    color: "#FF0000",
   },
   {
     href: "https://open.spotify.com/show/1hsQ9TSkvmuzkbnrE27ho7?si=95e611acecfa4385",
-    src: "/podcast/spotify.png",
-    alt: "Spotify logo",
+    label: "Spotify",
+    icon: faSpotify,
+    color: "#1DB954",
   },
   {
     href: "https://www.instagram.com/The.Phelan.Focus/",
-    src: "/podcast/Instagram.png",
-    alt: "Instagram logo",
+    label: "Instagram",
+    icon: faInstagram,
+    color: "#E1306C",
+  },
+  {
+    href: "https://www.linkedin.com/company/the-phelan-focus/?viewAsMember=true",
+    label: "LinkedIn",
+    icon: faLinkedin,
+    color: "#0A66C2",
   },
 ];
 
 const SocialCarousel = () => {
   return (
     <section
-      className="z-10 relative w-full py-20 px-6 flex flex-col items-center justify-center text-white"
+      className="z-10 relative w-full py-20 px-6 flex flex-col items-center text-white"
       style={{ backgroundColor: "#0b1727" }}
     >
-      {/* Title */}
-      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-white text-center">
+      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
         Listen wherever you find your favorite podcasts
       </h2>
 
-      {/* Platform Layout */}
-      <div className="w-full max-w-4xl grid grid-cols-2 md:grid-cols-4 gap-10 justify-items-center">
-        {listenOn.map((place, i) => (
+      <div className="w-full max-w-3xl grid grid-cols-2 md:grid-cols-4 gap-8">
+        {platforms.map((p) => (
           <a
-            key={i}
-            href={place.href}
+            key={p.label}
+            href={p.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-transform duration-300 hover:scale-110 hover:shadow-2xl rounded-lg"
+            aria-label={p.label}
+            className="group flex flex-col items-center gap-3"
           >
-            <Image
-              src={place.src}
-              alt={place.alt}
-              width={200}
-              height={60}
-              className="mx-auto"
-            />
+            <span className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-white/10">
+              <FontAwesomeIcon icon={p.icon} className="text-3xl" style={{ color: p.color }} />
+            </span>
+            <span className="text-sm font-medium text-white/80 group-hover:text-white">
+              {p.label}
+            </span>
           </a>
         ))}
-        <a
-          href="https://www.linkedin.com/company/the-phelan-focus/?viewAsMember=true"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="transition-transform duration-300 hover:scale-110 flex items-center justify-center gap-3 text-white"
-        >
-          <FontAwesomeIcon icon={faLinkedin} className="text-5xl" />
-          <span className="text-xl font-semibold">LinkedIn</span>
-        </a>
       </div>
     </section>
   );
