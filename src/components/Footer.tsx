@@ -115,11 +115,11 @@ const Footer = () => {
         className="z-10 relative pt-16 pb-8 px-6 bg-[var(--slateBlue)] text-white"
       >
         {/* Main Content */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 text-center md:text-left">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-[1.5fr_1fr_1.5fr] text-center md:text-left">
           {/* Brand */}
           <div className="flex flex-col items-center md:items-start sm:col-span-2 md:col-span-1">
             <h2 className="text-2xl font-bold text-[var(--gold)]">Phelan Focus</h2>
-            <p className={`mt-3 text-sm max-w-xs ${mutedText}`}>
+            <p className={`mt-3 text-sm max-w-xs md:mx-0 ${mutedText}`}>
               Coaching, speaking, and consulting to help you create the change
               you want to see.
             </p>
@@ -166,7 +166,7 @@ const Footer = () => {
           {/* Newsletter */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg mb-2 font-semibold">Stay in the loop</h3>
-            <p className={`text-sm mb-4 max-w-xs ${mutedText}`}>
+            <p className={`text-sm mb-4 max-w-xs md:mx-0 ${mutedText}`}>
               Get new episodes and coaching insights in your inbox.
             </p>
             <form

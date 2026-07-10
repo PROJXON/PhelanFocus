@@ -167,37 +167,32 @@ const Home = () => {
         </Link>
       </section> */}
       <section
-        className="about-section relative z-20 my-0 bg-blue py-12 md:py-20 px-5"
+        className="relative z-20 py-16 md:py-24 px-6"
         style={{ backgroundColor: "var(--slateBlue)" }}
       >
-        <h2 className="about-section-title">Empowering Change</h2>
-
-        <div className="about-container">
-          <div className="about-images">
+        <div className="max-w-4xl mx-auto grid gap-10 md:grid-cols-2 md:gap-12 items-center">
+          <div className="relative mx-auto md:mx-0 w-full max-w-xs">
+            <div className="absolute -bottom-4 -right-4 h-full w-full rounded-2xl border-2 border-[var(--gold)]/40" />
             <Image
               src="/about-1.jpg"
-              width={400}
-              height={400}
-              alt="About Main"
-              className="img1"
-            />
-            <Image
-              src="/about-2.jpg"
-              width={280}
-              height={280}
-              alt="About Overlay"
-              className="img2"
-              style={{ marginBottom: 80 }}
+              width={440}
+              height={440}
+              alt="Coaching session"
+              className="relative w-full h-auto rounded-2xl shadow-2xl object-cover"
             />
           </div>
-          <div className="about-text">
-            <p className="text-white">
+          <div className="text-center md:text-left">
+            <span className="block text-[var(--gold)] font-semibold uppercase tracking-wide text-sm mb-3">
+              Our Mission
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
+              Empowering Change
+            </h2>
+            <p className="text-white/80 text-lg leading-relaxed">
               We help individuals unlock their full potential, overcome
               obstacles, and achieve their goals through personalized coaching
               and proven strategies.
             </p>
-            <hr />
-            <div className="contact-info"></div>
           </div>
         </div>
         <div
