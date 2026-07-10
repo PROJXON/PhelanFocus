@@ -28,6 +28,9 @@ import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import useIsVisible from "@/hooks/useIsVisible";
 import "./home.css";
 
+const CIRCLE_RADIUS = 54;
+const CIRCLE_CIRCUMFERENCE = 2 * Math.PI * CIRCLE_RADIUS;
+
 const CircleProgress = ({
   percentage,
   label,
@@ -35,48 +38,57 @@ const CircleProgress = ({
   percentage: number;
   label: string;
 }) => {
-  const strokeDasharray = 283;
   const [progress, setProgress] = useState(0);
   const circleRef = useRef<HTMLDivElement>(null);
   const isVisible = useIsVisible(circleRef);
+  const gradientId = `progress-gradient-${label.replace(/\s+/g, "-").toLowerCase()}`;
 
   useEffect(() => {
     if (!isVisible) return;
-    const interval = setInterval(() => {
-      setProgress((prev) => (prev < percentage ? prev + 1 : percentage));
-    }, 20);
-    return () => clearInterval(interval);
+    const duration = 1300;
+    const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
+    let raf = 0;
+    let start = 0;
+    const step = (now: number) => {
+      if (!start) start = now;
+      const t = Math.min((now - start) / duration, 1);
+      setProgress(Math.round(easeOut(t) * percentage));
+      if (t < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
   }, [isVisible, percentage]);
+
+  const offset = CIRCLE_CIRCUMFERENCE - (progress / 100) * CIRCLE_CIRCUMFERENCE;
 
   return (
     <div className="circle-container" ref={circleRef}>
-      <svg width="140" height="140">
+      <svg width="140" height="140" viewBox="0 0 140 140">
+        <defs>
+          <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="var(--slateBlue)" />
+            <stop offset="100%" stopColor="var(--gold)" />
+          </linearGradient>
+        </defs>
+        <circle cx="70" cy="70" r={CIRCLE_RADIUS} stroke="#eef1f4" strokeWidth="9" fill="none" />
         <circle
           cx="70"
           cy="70"
-          r="45"
-          stroke="#ddd"
-          strokeWidth="10"
+          r={CIRCLE_RADIUS}
+          stroke={`url(#${gradientId})`}
+          strokeWidth="9"
           fill="none"
-        />
-        <circle
-          cx="70"
-          cy="70"
-          r="45"
-          style={{ stroke: "var(--slateBlue)" }}
-          strokeWidth="10"
-          fill="none"
-          strokeDasharray={strokeDasharray}
-          strokeDashoffset={
-            strokeDasharray - (progress / 100) * strokeDasharray
-          }
+          strokeDasharray={CIRCLE_CIRCUMFERENCE}
+          strokeDashoffset={offset}
           strokeLinecap="round"
+          transform="rotate(-90 70 70)"
         />
         <text
           x="70"
-          y="75"
+          y="70"
           textAnchor="middle"
-          fontSize="24"
+          dominantBaseline="central"
+          fontSize="26"
           style={{ fill: "var(--slateBlue)" }}
           fontWeight="700"
         >

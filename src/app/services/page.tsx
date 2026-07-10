@@ -7,7 +7,14 @@ import './services.css';
 import { useState } from 'react';
 import ScrollToTopButton from '@/components/ScrollToTop';
 import Image from 'next/image';
-import { ServiceType, TitleAndDesc } from '@/types/interfaces';
+import { TitleAndDesc } from '@/types/interfaces';
+import { FaChartLine, FaMicrophone, FaHandshake, FaBullseye } from 'react-icons/fa';
+import type { IconType } from 'react-icons';
+
+interface ServiceCard extends TitleAndDesc {
+  href: string;
+  icon: IconType;
+}
 
 export default function ServicesPage() {
   // State to keep track of the active tab
@@ -16,22 +23,25 @@ export default function ServicesPage() {
   // Function to handle tab switching
   const handleTabClick = (tab: string) => setActiveTab(tab);
 
-  const services: ServiceType[] = [
+  const services: ServiceCard[] = [
     {
       href: '/coaching',
       title: 'Coaching',
+      icon: FaChartLine,
       description:
         'Executive coaching focused on leadership skills and strategic thinking, built around your specific goals.',
     },
     {
       href: '/speaking',
       title: 'Speaking',
+      icon: FaMicrophone,
       description:
         'Keynotes and workshops on leadership, strategy, and personal growth, built to actually land with a room instead of just filling time.',
     },
     {
       href: '/consulting',
       title: 'Consulting',
+      icon: FaHandshake,
       description:
         'Strategic consulting to work through business challenges and improve performance, with recommendations you can actually act on.',
     },
@@ -94,19 +104,19 @@ export default function ServicesPage() {
                       />
                     </div>
                     <div className="content">
+                      <div className="service-icon">
+                        <service.icon />
+                      </div>
                       <h4>
                         <Link className="hover-link-light" href={service.href}>
                           {i + 1}. {service.title}
                         </Link>
                       </h4>
                       <p className="mt-15 mb-25">{service.description}</p>
-                      <Link href={service.href} className="arry-btn">
-                        <i className="fa-light fa-arrow-up-right"></i>
+                      <Link href={service.href} className="service-link">
+                        Learn more →
                       </Link>
                     </div>
-                  </div>
-                  <div className="image">
-                    <Image src="/coaching.jpeg" width={446} height={250} alt="image" />
                   </div>
                 </div>
               </div>
@@ -151,7 +161,7 @@ export default function ServicesPage() {
                         three separate services.
                       </p>
                       <div className="item">
-                        <div className="icon">{/* icon_globe */}</div>
+                        <div className="icon"><FaBullseye /></div>
                         <div className="box-content">
                           <h4 className="box-title">Mission Statement</h4>
                           <p>
@@ -161,9 +171,8 @@ export default function ServicesPage() {
                           </p>
                         </div>
                       </div>
-                      <div className="divider h14"></div>
                       <div className="item">
-                        <div className="icon mt4">{/* icon_wallet */}</div>
+                        <div className="icon"><FaHandshake /></div>
                         <div className="box-content">
                           <h4 className="box-title">Our Commitment</h4>
                           <p>
@@ -224,9 +233,9 @@ export default function ServicesPage() {
               <div className="choose-one__image gsap__parallax">
                 <Image
                   src="/services/choose-one-image.jpg"
-                  width={429}
-                  height={287}
-                  alt="Financial Solutions"
+                  width={540}
+                  height={540}
+                  alt="Mark Phelan"
                 />
                 <div className="choose-one__rectangle">
                   <div className="item wow"></div>

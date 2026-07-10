@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -9,19 +8,15 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MenuLink, SocialIcon } from "@/types/interfaces";
 import { useContactModal } from "@/context/ContactModalContext";
 import ContactModal from "./ContactModal";
 
 const Footer = () => {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const [subscriberEmail, setSubscriberEmail] = useState("");
   const [subscribeMessage, setSubscribeMessage] = useState("");
   const { openModal } = useContactModal();
-
-  useEffect(() => setMounted(true), []);
 
   const handleSubscribe = async () => {
     if (!subscriberEmail || !subscriberEmail.includes("@")) {
@@ -103,6 +98,12 @@ const Footer = () => {
     },
   ];
 
+  const mutedText = "text-gray-300";
+  const socialBtn =
+    "bg-white/10 text-white hover:bg-[var(--gold)] hover:text-[var(--slateBlue)]";
+  const inputCls =
+    "bg-[#0e2a47] text-white placeholder-gray-400 border-[#355776]";
+
   return (
     <>
       <ContactModal />
@@ -111,19 +112,33 @@ const Footer = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.1 }}
-        className={`z-10 relative py-16 px-6 transition-colors duration-500 ${
-          mounted && resolvedTheme === "light"
-            ? "bg-white text-black"
-            : "bg-[var(--slateBlue)] text-white"
-        }`}
+        className="z-10 relative pt-16 pb-8 px-6 bg-[var(--slateBlue)] text-white"
       >
-        {/* Top Row: Logo Only (social removed) */}
-        <div className="max-w-7xl mx-auto flex justify-center md:justify-start border-b border-gray-600 pb-8">
-          <h2 className="text-2xl font-bold text-[var(--gold)]">Phelan Focus</h2>
-        </div>
-
         {/* Main Content */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pt-8 text-center md:text-left">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 text-center md:text-left">
+          {/* Brand */}
+          <div className="flex flex-col items-center md:items-start sm:col-span-2 md:col-span-1">
+            <h2 className="text-2xl font-bold text-[var(--gold)]">Phelan Focus</h2>
+            <p className={`mt-3 text-sm max-w-xs ${mutedText}`}>
+              Coaching, speaking, and consulting to help you create the change
+              you want to see.
+            </p>
+            <div className="flex gap-3 mt-5">
+              {socialLinks.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.href.toString()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.label}
+                  className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 ${socialBtn}`}
+                >
+                  <FontAwesomeIcon icon={item.icon} className="text-lg" />
+                </a>
+              ))}
+            </div>
+          </div>
+
           {/* Quick Links */}
           <div>
             <h3 className="text-lg mb-4 font-semibold">Quick Links</h3>
@@ -149,69 +164,58 @@ const Footer = () => {
           </div>
 
           {/* Newsletter */}
-          <div className="flex flex-col items-center justify-center text-center">
-            <h3 className="text-base mb-4 font-medium tracking-wide text-center w-full">
-              Subscribe For Our Newsletter
-            </h3>
-            <input
-              type="email"
-              value={subscriberEmail}
-              onChange={(e) => setSubscriberEmail(e.target.value)}
-              placeholder="Enter your email"
-              className={`w-full max-w-xs p-3 rounded-lg mb-2 border text-sm text-center ${
-                mounted && resolvedTheme === "light"
-                  ? "bg-white text-black placeholder-gray-600 border-gray-400"
-                  : "bg-[#0e2a47] text-white placeholder-gray-300 border-[#355776]"
-              }`}
-            />
-            <button
-              onClick={handleSubscribe}
-              className="w-full max-w-xs border border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-black py-2 rounded-full text-sm font-semibold transition duration-300"
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-lg mb-2 font-semibold">Stay in the loop</h3>
+            <p className={`text-sm mb-4 max-w-xs ${mutedText}`}>
+              Get new episodes and coaching insights in your inbox.
+            </p>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSubscribe();
+              }}
+              className="w-full max-w-sm flex flex-col sm:flex-row gap-2"
             >
-              SUBSCRIBE NOW
-            </button>
+              <input
+                type="email"
+                value={subscriberEmail}
+                onChange={(e) => setSubscriberEmail(e.target.value)}
+                placeholder="Enter your email"
+                className={`flex-1 p-3 rounded-lg border text-sm ${inputCls}`}
+              />
+              <button
+                type="submit"
+                className="border border-[var(--gold)] bg-[var(--gold)] text-black hover:bg-transparent hover:text-[var(--gold)] px-5 py-3 rounded-lg text-sm font-semibold transition-colors duration-300 whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </form>
             {subscribeMessage && (
-              <p className="mt-2 text-sm">{subscribeMessage}</p>
+              <p className={`mt-2 text-sm ${mutedText}`}>{subscribeMessage}</p>
             )}
-          </div>
-
-          {/* Follow Us */}
-          <div>
-            <h3 className="text-lg mb-4 font-semibold">Follow Us</h3>
-
-            <div className="flex flex-col items-center md:items-start gap-3">
-              {socialLinks.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.href.toString()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-gold-hover inline-flex items-center gap-2 text-sm"
-                >
-                  <FontAwesomeIcon icon={item.icon} className="text-xl" />
-                  <span>{item.label}</span>
-                </a>
-              ))}
-            </div>
           </div>
         </div>
 
-        {/* Divider */}
-        <hr className="max-w-7xl mx-auto border-gray-600 my-8" />
-
-        {/* Copyright */}
-        <div className="text-center text-gray-400 text-sm">
-          © {new Date().getFullYear()}{" "}
-          <span className="font-semibold">Phelan Focus</span>. All rights
-          reserved • Powered by{" "}
-          <a
-            href="https://www.projxon.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white font-semibold hover:underline"
-          >
-            PROJXON
-          </a>
+        {/* Bottom bar */}
+        <div
+          className={`max-w-7xl mx-auto mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm ${mutedText}`}
+        >
+          <p>
+            © {new Date().getFullYear()}{" "}
+            <span className="font-semibold">Phelan Focus</span>. All rights
+            reserved.
+          </p>
+          <p>
+            Powered by{" "}
+            <a
+              href="https://www.projxon.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[var(--gold)] hover:underline"
+            >
+              PROJXON
+            </a>
+          </p>
         </div>
       </motion.footer>
     </>

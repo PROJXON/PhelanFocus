@@ -269,7 +269,7 @@ section {
 
 .why-section {
   display: flex;
-  gap: 50px;
+  gap: 90px;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -309,7 +309,7 @@ section {
   padding: 20px;
   border-radius: 8px;
   top: 50%;
-  left: -60px;
+  left: -35px;
   transform: translateY(-50%);
   text-align: center;
   width: 120px;

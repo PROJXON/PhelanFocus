@@ -14,7 +14,18 @@ import {
   faBinoculars,
   faHandshake,
   faBolt,
+  faCircleExclamation,
+  faQuoteLeft,
 } from '@fortawesome/free-solid-svg-icons';
+
+const commonProblems: string[] = [
+  'Struggling to find a clear focus, direction or vision',
+  'Feeling demotivated or uninspired',
+  'Feeling stuck or unsure about your next move',
+  'Frustrated about not fulfilling your true potential',
+  'Paralyzed by a fear of failure or self-doubt',
+  'Stressed about financial stability and security',
+];
 
 function ParallaxCard({ icon, alt }: { icon: IconDefinition; alt: string }) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -135,31 +146,37 @@ export default function CoursesPage() {
       <div className="courses-page relative z-10 bg-white text-gray-800">
         {/* Intro Section */}
         <section className="py-16 px-4 max-w-6xl mx-auto">
-          <p className="text-2xl text-[var(--slateBlue)] font-medium mb-10">
+          <h2 className="text-2xl md:text-3xl text-[var(--slateBlue)] font-bold text-center max-w-3xl mx-auto mb-12">
             {
               "If you're ready to make some changes in your life, but don't know where to start, then you probably recognize some of these problems:"
             }
-          </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            <ul className="list-disc list-inside space-y-3">
-              <li>Struggling to find a clear focus, direction or vision</li>
-              <li>Feeling demotivated or uninspired</li>
-              <li>Feeling stuck or unsure about your next move</li>
-            </ul>
-            <ul className="list-disc list-inside space-y-3">
-              <li>Frustrated about not fulfilling your true potential</li>
-              <li>Paralyzed by a fear of failure or self-doubt</li>
-              <li>Stressed about financial stability and security</li>
-            </ul>
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {commonProblems.map((problem, index) => (
+              <div
+                key={index}
+                className="flex items-start gap-4 bg-[#f8fafc] border border-gray-200 rounded-xl p-6 transition-transform duration-200 hover:-translate-y-1"
+              >
+                <FontAwesomeIcon
+                  icon={faCircleExclamation}
+                  className="text-[var(--gold)] text-xl mt-1 shrink-0"
+                />
+                <p className="text-gray-700">{problem}</p>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* Pullquote */}
-        <section className="py-16 px-4 max-w-6xl mx-auto text-center">
-          <blockquote className="text-xl italic font-semibold text-gray-700 max-w-3xl mx-auto mb-10">
+        <section className="py-16 px-4 max-w-4xl mx-auto text-center">
+          <FontAwesomeIcon
+            icon={faQuoteLeft}
+            className="text-[var(--gold)] text-4xl mb-6 opacity-60"
+          />
+          <blockquote className="text-2xl md:text-3xl italic font-semibold text-[var(--slateBlue)] mb-8 leading-snug">
             {`"Coaching offers a way forward, so you can start transforming your life and turn your dreams into reality."`}
           </blockquote>
-          <p className="text-lg text-gray-700 max-w-4xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             I can help you gain clarity on your purpose, values and priorities, figure out what’s
             holding you back, set clear goals based on what you want most, develop strategies and
             action plans, and help you implement them while providing the support and accountability
@@ -187,12 +204,12 @@ export default function CoursesPage() {
         </section>
 
         {/* Six Modules Program Section */}
-        <section className="py-20 text-white relative z-10 bg-[var(--slateBlue)]">
+        <section className="py-20 text-white relative z-10 bg-[var(--slateBlue)] overflow-hidden">
           <div
-            className="absolute top-0 left-0 w-full z-0 opacity-10 pointer-events-none"
+            className="absolute inset-0 z-0 pointer-events-none"
             style={{
-              height: '200px',
-              background: 'radial-gradient(circle at center, white, transparent)',
+              background:
+                'radial-gradient(circle at 50% 40%, rgba(255,255,255,0.09), transparent 55%)',
             }}
           ></div>
 

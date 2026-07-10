@@ -1,9 +1,7 @@
-import { Geist, Geist_Mono, Fraunces } from 'next/font/google';
+import { Geist, Fraunces } from 'next/font/google';
 import './globals.css';
 import ThemeProvider from '@/components/ThemeProvider';
 import { ContactModalProvider } from '@/context/ContactModalContext';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import Script from 'next/script';
@@ -11,11 +9,6 @@ import AnalyticsTracker from '@/components/AnalyticsTracker';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
   subsets: ['latin'],
 });
 
@@ -31,18 +24,23 @@ export const metadata: Metadata = {
 };
 
 const gaID = process.env.NEXT_PUBLIC_GA_ID;
+// Only load Google Analytics when a real measurement ID is configured.
+// Otherwise the ~140KB gtag script loads on every page for nothing.
+const gaEnabled = !!gaID && gaID !== 'G-PLACEHOLDER';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
         {/* Google Analytics Scripts */}
-        <Script
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${gaID}`}
-        />
-        <Script id="ga-init" strategy="afterInteractive">
-          {`
+        {gaEnabled && (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaID}`}
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -50,9 +48,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       page_path: window.location.pathname,
     });
   `}
-        </Script>
+            </Script>
+          </>
+        )}
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${heading.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${heading.variable} antialiased`}>
         <AnalyticsTracker />
         <ThemeProvider>
           <ContactModalProvider>{children}</ContactModalProvider>

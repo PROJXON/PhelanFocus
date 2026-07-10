@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion';
+import { FaChevronDown } from 'react-icons/fa';
 import ContactForm from './ContactForm';
 
 const ContactFormCard = () => (
-  <div className="h-full flex flex-col justify-center bg-[var(--slateBlue)] text-white p-8 rounded-3xl">
-    <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact Me</h2>
-    <p className="text-lg mb-8 opacity-90 text-center">Send me a message!</p>
+  <div className="bg-[var(--slateBlue)] text-white p-8 md:p-10 rounded-3xl shadow-xl">
+    <h2 className="text-3xl md:text-4xl font-bold mb-2">Contact Me</h2>
+    <p className="text-white/70 mb-8">
+      Have a question or ready to get started? Send me a message.
+    </p>
     <ContactForm />
   </div>
 );
@@ -33,20 +36,22 @@ const FaqSection = () => {
   ];
 
   return (
-    <div className="h-full flex flex-col justify-center">
-      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+    <div>
+      <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gray-900">
         Your Path to Success Starts Here
       </h2>
-      <div className="space-y-4">
+      <p className="text-gray-500 mb-6">Answers to the questions I hear most often.</p>
+      <div className="space-y-3">
         {faqs.map((faq, idx) => (
-          <details key={idx} className="group border-b border-gray-300 pb-4 cursor-pointer">
-            <summary className="text-lg font-semibold text-gray-900 flex justify-between items-center">
+          <details
+            key={idx}
+            className="group rounded-xl border border-gray-200 bg-gray-50 transition-colors open:bg-white open:shadow-sm"
+          >
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-base md:text-lg font-semibold text-gray-900 [&::-webkit-details-marker]:hidden">
               {faq.question}
-              <span className="ml-2 text-[var(--gold)] group-open:rotate-180 transition-transform">
-                +
-              </span>
+              <FaChevronDown className="shrink-0 text-[var(--gold)] transition-transform duration-300 group-open:rotate-180" />
             </summary>
-            <p className="mt-2 text-gray-700">{faq.answer}</p>
+            <p className="px-5 pb-5 text-gray-600 leading-relaxed">{faq.answer}</p>
           </details>
         ))}
       </div>
