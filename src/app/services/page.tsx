@@ -96,7 +96,7 @@ export default function ServicesPage() {
                     <div className="content">
                       <h4>
                         <Link className="hover-link-light" href={service.href}>
-                          {i + 1} {service.title}
+                          {i + 1}. {service.title}
                         </Link>
                       </h4>
                       <p className="mt-15 mb-25">{service.description}</p>
