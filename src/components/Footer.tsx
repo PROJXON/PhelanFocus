@@ -114,7 +114,7 @@ const Footer = () => {
         className={`z-10 relative py-16 px-6 transition-colors duration-500 ${
           mounted && resolvedTheme === "light"
             ? "bg-white text-black"
-            : "bg-[#142c46] text-white"
+            : "bg-[var(--slateBlue)] text-white"
         }`}
       >
         {/* Top Row: Logo Only (social removed) */}
@@ -166,11 +166,7 @@ const Footer = () => {
             />
             <button
               onClick={handleSubscribe}
-              className={`w-full max-w-xs border py-2 rounded-full text-sm font-semibold transition duration-300 ${
-                mounted && resolvedTheme === "light"
-                  ? "border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white"
-                  : "border-[#c9a227] text-[#c9a227] hover:bg-[#c9a227] hover:text-black"
-              }`}
+              className="w-full max-w-xs border border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-black py-2 rounded-full text-sm font-semibold transition duration-300"
             >
               SUBSCRIBE NOW
             </button>

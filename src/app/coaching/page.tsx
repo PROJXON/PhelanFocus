@@ -282,7 +282,7 @@ export default function CoachingPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <Hero bgImage="/coaching/coaching-hero.jpg" header="Coaching" objectPosition="center 25%" />
+      <Hero bgImage="/coaching/coaching-hero.jpg" header="Coaching" objectPosition="center 25%" fadeTo="#f8fafc" />
 
       {/* Methodology Section */}
       <CoachingPageSection

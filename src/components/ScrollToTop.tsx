@@ -9,9 +9,14 @@ const ScrollToTopButton = () => {
   const lastScrollY = useRef(0);
 
   useThrottledScroll((currentScrollY) => {
+    // Only relevant once the page is actually taller than the viewport;
+    // otherwise a short page reads as "at the bottom" at scrollY 0 and the
+    // button would show on load before the user ever scrolls.
+    const scrollable = document.body.offsetHeight > window.innerHeight + 1;
     const shouldShow =
-      (currentScrollY > 300 && currentScrollY > lastScrollY.current) ||
-      currentScrollY + window.innerHeight >= document.body.offsetHeight - 1;
+      scrollable &&
+      ((currentScrollY > 300 && currentScrollY > lastScrollY.current) ||
+        currentScrollY + window.innerHeight >= document.body.offsetHeight - 1);
     lastScrollY.current = currentScrollY;
     setIsVisible((prev) => (prev === shouldShow ? prev : shouldShow));
   });

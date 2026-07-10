@@ -78,7 +78,7 @@ function CheckoutForm({ sessionType, people }: { sessionType: string; people: st
       <div className="w-full flex justify-center">
         <div
           className="credit-card-container"
-          style={{ backgroundColor: '#142c46', color: 'var(--gold)' }}
+          style={{ backgroundColor: 'var(--slateBlue)', color: 'var(--gold)' }}
         >
           <header className="credit-header flex justify-between items-center">
             <span className="credit-logo flex items-center gap-2">

@@ -63,7 +63,7 @@ const CircleProgress = ({
           cx="70"
           cy="70"
           r="45"
-          stroke="#142c46"
+          style={{ stroke: "var(--slateBlue)" }}
           strokeWidth="10"
           fill="none"
           strokeDasharray={strokeDasharray}
@@ -77,7 +77,7 @@ const CircleProgress = ({
           y="75"
           textAnchor="middle"
           fontSize="24"
-          fill="#142c46"
+          style={{ fill: "var(--slateBlue)" }}
           fontWeight="700"
         >
           {progress}%
@@ -140,7 +140,7 @@ const Home = () => {
         subtitle="Personalized coaching and consulting to help you create the change you want to see."
         ctaText="Book a Session"
         ctaHref="/sessions"
-        fadeTo="#142c46"
+        fadeTo="var(--slateBlue)"
       />
       {/* <section className="z-20 relative text-center py-8 bg-white">
         <p className="text-lg max-w-xl mx-auto mb-6">
@@ -156,7 +156,7 @@ const Home = () => {
       </section> */}
       <section
         className="about-section relative z-20 my-0 bg-blue py-12 md:py-20 px-5"
-        style={{ backgroundColor: "#142c46" }}
+        style={{ backgroundColor: "var(--slateBlue)" }}
       >
         <h2 className="about-section-title">Empowering Change</h2>
 

@@ -29,7 +29,7 @@ export default function ThankYou() {
               d="M9 12.75l2.25 2.25 4.5-4.5m4.5 2.25a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
-          <h2 className="text-3xl font-bold text-[#0b1727]">Payment Successful!</h2>
+          <h2 className="text-3xl font-bold text-[var(--slateBlue)]">Payment Successful!</h2>
           <p className="text-lg text-gray-700">
             Thank you for booking your session. We look forward to seeing you!
           </p>

@@ -43,7 +43,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`bg-[#142c46] text-white shadow-md py-4 px-6 z-50 fixed top-0 left-0 w-full transition-transform duration-300 ${
+      className={`bg-[var(--slateBlue)] text-white shadow-md py-4 px-6 z-50 fixed top-0 left-0 w-full transition-transform duration-300 ${
         showNavbar ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
@@ -67,6 +67,12 @@ const Navbar = () => {
                 className="relative group"
                 onMouseEnter={() => setDesktopDropdownOpen(true)}
                 onMouseLeave={() => setDesktopDropdownOpen(false)}
+                onFocus={() => setDesktopDropdownOpen(true)}
+                onBlur={(e) => {
+                  if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                    setDesktopDropdownOpen(false);
+                  }
+                }}
               >
                 <Link
                   href={menu.href}
@@ -89,7 +95,7 @@ const Navbar = () => {
                 </Link>
 
                 <div
-                  className={`absolute top-full left-1/2 w-48 bg-[#142c46] border border-white/10 rounded-xl shadow-xl py-2 z-40 transition-all duration-200 ease-out ${
+                  className={`absolute top-full left-1/2 w-48 bg-[var(--slateBlue)] border border-white/10 rounded-xl shadow-xl py-2 z-40 transition-all duration-200 ease-out ${
                     desktopDropdownOpen
                       ? 'opacity-100 translate-x-[-50%] translate-y-0 pointer-events-auto'
                       : 'opacity-0 translate-x-[-50%] -translate-y-1 pointer-events-none'
