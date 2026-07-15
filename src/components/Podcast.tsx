@@ -27,12 +27,12 @@ const Podcast = () => {
   return (
     <section
       id="podcast"
-      className="bg-[#f5faff] dark:bg-[var(--slateBlue)] text-[var(--slateBlue)] dark:text-white py-20 md:py-24 px-4 relative mb-24 transition-colors duration-500"
+      className="bg-[#f7f5f0] dark:bg-[var(--slateBlue)] text-[var(--slateBlue)] dark:text-white py-20 md:py-24 px-4 relative mb-24 transition-colors duration-500"
     >
       {shapes.map((shape, i) => (
         <svg
           key={i}
-          className={`text-blue-200 dark:text-[#1E2735] absolute hidden sm:block -z-[1] ${shape.classes}`}
+          className={`text-[var(--gold)]/10 dark:text-[#1E2735] absolute hidden sm:block -z-[1] ${shape.classes}`}
           width={shape.width}
           height={shape.height}
           viewBox={shape.viewBox}
@@ -71,7 +71,7 @@ const Podcast = () => {
         <div className="col-span-12 lg:col-span-6 mt-10 lg:mt-0 text-center pt-10 lg:pt-20">
           <div className="relative inline-block group">
             <Image
-              src="/podcast.png"
+              src="/podcast.jpg"
               width={796}
               height={796}
               alt="Podcast Coming Soon"
@@ -83,7 +83,7 @@ const Podcast = () => {
             >
               <div className="bg-white dark:bg-gray-100 bg-opacity-70 dark:bg-opacity-20 p-4 rounded-full hover:bg-opacity-100 transition">
                 <svg
-                  className="w-8 h-8 text-blue-600 dark:text-yellow-400"
+                  className="w-8 h-8 text-[var(--slateBlue)] dark:text-[var(--gold)]"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >

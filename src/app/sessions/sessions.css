@@ -1,20 +1,3 @@
-/* Hero */
-.sessions-hero {
-  background-size: cover;
-  background-position: center;
-  height: 50vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sessions-hero .overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 41, 77, 0.6);
-}
-
 /* Main Wrapper */
 .sessions-container {
   background-color: #ffffff;
@@ -38,7 +21,7 @@
 
 .hero h1 {
   font-size: 2.7rem;
-  color: #154079;
+  color: var(--slateBlue);
   font-weight: 800;
   margin-bottom: 12px;
   letter-spacing: -1px;
@@ -103,7 +86,7 @@
 .session-card h3 {
   font-size: 1.35rem;
   font-weight: 700;
-  color: #1858a7;
+  color: var(--slateBlue);
   margin-bottom: 5px;
   text-align: center;
   letter-spacing: -0.5px;
@@ -120,7 +103,7 @@
 }
 
 .session-bullets li {
-  color: #4086c9;
+  color: var(--slateBlue);
   font-size: 1.01rem;
   background: #f1fafb;
   border-radius: 7px;
@@ -171,6 +154,12 @@
   flex-wrap: wrap;
 }
 
+.session-details span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .price {
   font-size: 1.20rem;
   font-weight: 700;
@@ -182,7 +171,7 @@
 /* CTA Button */
 .session-card .btn {
   background: linear-gradient(90deg, var(--gold, #f7df6e) 0%, #ffeab8 100%);
-  color: #1a365d;
+  color: var(--slateBlue);
   font-weight: 700;
   font-size: 1.01rem;
   border: none;
@@ -197,7 +186,7 @@
 
 .session-card .btn:hover, .session-card .btn:focus-visible {
   background: linear-gradient(90deg, #ffe27d 0%, #ffecbd 100%);
-  color: #1858a7;
+  color: var(--slateBlue);
   box-shadow: 0 2px 16px 0 #faeabb40;
 }
 
@@ -228,7 +217,7 @@
 .modal-content h2 {
   font-size: 24px;
   font-weight: bold;
-  color: #144a8f;
+  color: var(--slateBlue);
   margin-bottom: 10px;
   text-align: center;
 }
@@ -281,7 +270,7 @@
 .features h2 {
   text-align: center;
   font-size: 2.3rem;
-  color: #144a8f;
+  color: var(--slateBlue);
   font-weight: 800;
   margin-bottom: 33px;
   position: relative;
@@ -291,7 +280,7 @@
   content: '';
   width: 80px;
   height: 3px;
-  background: #ffd700;
+  background: var(--gold);
   display: block;
   margin: 12px auto 0;
   border-radius: 4px;
@@ -320,12 +309,12 @@
 .feature-icon {
   font-size: 40px;
   margin-bottom: 17px;
-  color: #144a8f;
+  color: var(--slateBlue);
 }
 
 .feature-item h3 {
   margin-bottom: 13px;
-  color: #144a8f;
+  color: var(--slateBlue);
   font-weight: 700;
 }
 
@@ -411,7 +400,7 @@
 .coaching-process h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
-  color: #0b1727;
+  color: var(--slateBlue);
 }
 
 .section-intro {
@@ -446,7 +435,7 @@
 .sessions-step-number {
   width: 45px;
   height: 45px;
-  background-color: #144a8f;
+  background-color: var(--slateBlue);
   color: white;
   font-weight: bold;
   font-size: 1.2rem;
@@ -459,7 +448,7 @@
 
 .sessions-step h3 {
   font-size: 1.25rem;
-  color: #12395b;
+  color: var(--slateBlue);
   margin-bottom: 0.5rem;
 }
 

@@ -45,13 +45,6 @@ export interface ProcessStep {
   tagColor: string;
 }
 
-export interface ServiceCarouselItem {
-  title: string;
-  lessons: string;
-  badgeColor: `bg-${string}-${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9}00`;
-  image: ImagePath;
-}
-
 export interface TitleAndDesc {
   title: string;
   description: string;
@@ -118,7 +111,7 @@ export interface GoldIcon {
 export interface Module {
   pillar: string;
   bullets: string[];
-  image: ImagePath;
+  icon: SolidIcon;
 }
 
 export interface ListenOn {
@@ -129,7 +122,7 @@ export interface ListenOn {
 
 export interface PodcastQuote {
   text: string;
-  author: `— ${string}`;
+  author: `- ${string}`;
 }
 
 export interface SessionType extends TitleDescAndEmoji {

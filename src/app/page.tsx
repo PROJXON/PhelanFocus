@@ -28,6 +28,9 @@ import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import useIsVisible from "@/hooks/useIsVisible";
 import "./home.css";
 
+const CIRCLE_RADIUS = 54;
+const CIRCLE_CIRCUMFERENCE = 2 * Math.PI * CIRCLE_RADIUS;
+
 const CircleProgress = ({
   percentage,
   label,
@@ -35,63 +38,61 @@ const CircleProgress = ({
   percentage: number;
   label: string;
 }) => {
-  const strokeDasharray = 283;
   const [progress, setProgress] = useState(0);
-  const [count, setCount] = useState(0);
   const circleRef = useRef<HTMLDivElement>(null);
   const isVisible = useIsVisible(circleRef);
+  const gradientId = `progress-gradient-${label.replace(/\s+/g, "-").toLowerCase()}`;
 
   useEffect(() => {
-    if (isVisible) {
-      const progressInterval = setInterval(() => {
-        setProgress((prev) => (prev < percentage ? prev + 1 : percentage));
-      }, 15);
-
-      const countInterval = setInterval(() => {
-        setCount((prev) => (prev < percentage ? prev + 1 : percentage));
-      }, 25);
-
-      return () => {
-        clearInterval(progressInterval);
-        clearInterval(countInterval);
-      };
-    }
+    if (!isVisible) return;
+    const duration = 1300;
+    const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
+    let raf = 0;
+    let start = 0;
+    const step = (now: number) => {
+      if (!start) start = now;
+      const t = Math.min((now - start) / duration, 1);
+      setProgress(Math.round(easeOut(t) * percentage));
+      if (t < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
   }, [isVisible, percentage]);
+
+  const offset = CIRCLE_CIRCUMFERENCE - (progress / 100) * CIRCLE_CIRCUMFERENCE;
 
   return (
     <div className="circle-container" ref={circleRef}>
-      <svg width="140" height="140">
+      <svg width="140" height="140" viewBox="0 0 140 140">
+        <defs>
+          <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="var(--slateBlue)" />
+            <stop offset="100%" stopColor="var(--gold)" />
+          </linearGradient>
+        </defs>
+        <circle cx="70" cy="70" r={CIRCLE_RADIUS} stroke="#eef1f4" strokeWidth="9" fill="none" />
         <circle
           cx="70"
           cy="70"
-          r="45"
-          stroke="#ddd"
-          strokeWidth="10"
+          r={CIRCLE_RADIUS}
+          stroke={`url(#${gradientId})`}
+          strokeWidth="9"
           fill="none"
-        />
-        <circle
-          cx="70"
-          cy="70"
-          r="45"
-          stroke="#13395c"
-          strokeWidth="10"
-          fill="none"
-          strokeDasharray={strokeDasharray}
-          strokeDashoffset={
-            strokeDasharray - (progress / 100) * strokeDasharray
-          }
+          strokeDasharray={CIRCLE_CIRCUMFERENCE}
+          strokeDashoffset={offset}
           strokeLinecap="round"
-          style={{ transition: "stroke-dashoffset 0.3s linear" }}
+          transform="rotate(-90 70 70)"
         />
         <text
           x="70"
-          y="75"
+          y="70"
           textAnchor="middle"
-          fontSize="24"
-          fill="#13395c"
+          dominantBaseline="central"
+          fontSize="26"
+          style={{ fill: "var(--slateBlue)" }}
           fontWeight="700"
         >
-          {count}%
+          {progress}%
         </text>
       </svg>
       <p className="circle-label">{label}</p>
@@ -145,7 +146,14 @@ const Home = () => {
       <header className="w-full fixed z-40">
         <Navbar />
       </header>
-      <Hero bgImage="/homeHero.jpg" header="Welcome To The Phelan Focus" />
+      <Hero
+        bgImage="/homeHero.jpg"
+        header="Unlock Your Potential"
+        subtitle="Personalized coaching and consulting to help you create the change you want to see."
+        ctaText="Book a Session"
+        ctaHref="/sessions"
+        fadeTo="var(--slateBlue)"
+      />
       {/* <section className="z-20 relative text-center py-8 bg-white">
         <p className="text-lg max-w-xl mx-auto mb-6">
           Helping individuals unlock their potential and achieve personal and
@@ -159,43 +167,38 @@ const Home = () => {
         </Link>
       </section> */}
       <section
-        className="about-section relative z-20 my-0 bg-blue"
-        style={{ backgroundColor: "#13395c", padding: "80px 20px" }}
+        className="relative z-20 py-16 md:py-24 px-6"
+        style={{ backgroundColor: "var(--slateBlue)" }}
       >
-        <h2 className="about-section-title">Empowering Change</h2>
-
-        <div className="about-container">
-          <div className="about-images">
+        <div className="max-w-4xl mx-auto grid gap-10 md:grid-cols-2 md:gap-12 items-center">
+          <div className="relative mx-auto md:mx-0 w-full max-w-xs">
+            <div className="absolute -bottom-4 -right-4 h-full w-full rounded-2xl border-2 border-[var(--gold)]/40" />
             <Image
               src="/about-1.jpg"
-              width={400}
-              height={400}
-              alt="About Main"
-              className="img1"
-            />
-            <Image
-              src="/about-2.jpg"
-              width={280}
-              height={280}
-              alt="About Overlay"
-              className="img2"
-              style={{ marginBottom: 30 }}
+              width={440}
+              height={440}
+              alt="Coaching session"
+              className="relative w-full h-auto rounded-2xl shadow-2xl object-cover"
             />
           </div>
-          <div className="about-text">
-            <p className="text-white">
+          <div className="text-center md:text-left">
+            <span className="block text-[var(--gold)] font-semibold uppercase tracking-wide text-sm mb-3">
+              Our Mission
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
+              Empowering Change
+            </h2>
+            <p className="text-white/80 text-lg leading-relaxed">
               We help individuals unlock their full potential, overcome
               obstacles, and achieve their goals through personalized coaching
               and proven strategies.
             </p>
-            <hr />
-            <div className="contact-info"></div>
-            <Link href="/sessions" className="btn-read">
-              <span>Book a Session</span>
-              <span></span>
-            </Link>
           </div>
         </div>
+        <div
+          className="absolute inset-x-0 bottom-0 h-20 pointer-events-none"
+          style={{ background: 'linear-gradient(to bottom, transparent 0%, transparent 40%, #ffffff 100%)' }}
+        ></div>
       </section>
 
       {/* Why Choose Us (About) */}
@@ -254,7 +257,7 @@ const Home = () => {
           style={{ zIndex: 2 }}
         >
           <div
-            className="d-flex flex-column mx-auto text-center align-items-center text-white gap-4"
+            className="flex flex-col mx-auto text-center items-center text-white gap-6"
             style={{ maxWidth: "900px" }}
           >
             <h6 className="accent-color-2 fw-semibold">Invest in Yourself</h6>
@@ -267,10 +270,10 @@ const Home = () => {
               today by booking a session with our experienced life coach.
             </p>
             <ContactModal />
-            <div className="cta-button-container" onClick={openModal}>
+            <button type="button" className="btn-gold" onClick={openModal}>
               <span>CONTACT US</span>
               <span></span>
-            </div>
+            </button>
           </div>
         </div>
       </section>
@@ -323,7 +326,7 @@ const Home = () => {
             >
               <div className="podcast-img-wrapper">
                 <Image
-                  src="/podcast.png"
+                  src="/podcast.jpg"
                   alt="The Phelan Focus Podcast"
                   width={280}
                   height={280}

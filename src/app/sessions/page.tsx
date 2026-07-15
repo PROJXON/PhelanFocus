@@ -6,6 +6,8 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import ScrollToTopButton from '@/components/ScrollToTop';
 import { SessionType, TitleDescAndEmoji } from '@/types/interfaces';
+import EmojiIcon from '@/components/EmojiIcon';
+import { FaRegCalendar, FaBullseye, FaLaptop } from 'react-icons/fa';
 
 export default function CoachingSessions() {
   const [selectedSession, setSelectedSession] = useState<SessionType | null>(null);
@@ -18,7 +20,7 @@ export default function CoachingSessions() {
       title: 'Performance Coaching',
       bullets: ['✔️ Life', '✔️ Career', '✔️ Wellness'],
       description:
-        'Empowering individuals to thrive across all areas of life with clarity, focus, and momentum.',
+        'One-on-one coaching to help you get clear on what matters and build momentum toward it.',
       duration: '60 minutes',
       format: '1-on-1',
       delivery: 'Online/In-person',
@@ -30,7 +32,7 @@ export default function CoachingSessions() {
       title: 'Executive Performance',
       bullets: ['✔️ Packages Available', '✔️ Business', '✔️ Entrepreneur'],
       description:
-        'Enhance leadership and entrepreneurial performance through strategic coaching and guidance.',
+        'Coaching for leaders and entrepreneurs who want to perform better under pressure.',
       duration: '90 minutes',
       format: '1-on-1',
       delivery: 'Online/In-person',
@@ -42,9 +44,9 @@ export default function CoachingSessions() {
       title: 'Group Performance',
       bullets: ['✔️ Peer Coaching', '✔️ Team Dynamics', '✔️ Collaborative Learning'],
       description:
-        'Dynamic group sessions designed to foster growth and accountability among like-minded individuals.',
+        'Group sessions built around peer accountability, for people working toward similar goals.',
       duration: '90 minutes',
-      format: '4–8 people',
+      format: '4-8 people',
       delivery: 'Online/In-person',
       price: '$150/person',
     },
@@ -144,7 +146,7 @@ export default function CoachingSessions() {
           <section id="sessions" className="sessions-grid">
             {sessionTypes.map((session) => (
               <div key={session.id} className="session-card">
-                <div className="session-icon">{session.icon}</div>
+                <div className="session-icon"><EmojiIcon emoji={session.icon} /></div>
                 <h3>{session.title}</h3>
                 <ul className="session-bullets">
                   {session.bullets.map((item, idx) => (
@@ -153,9 +155,9 @@ export default function CoachingSessions() {
                 </ul>
                 <p className="session-description">{session.description}</p>
                 <div className="session-details">
-                  <span>📅 {session.duration}</span>
-                  <span>🎯 {session.format}</span>
-                  <span>💻 {session.delivery}</span>
+                  <span><FaRegCalendar /> {session.duration}</span>
+                  <span><FaBullseye /> {session.format}</span>
+                  <span><FaLaptop /> {session.delivery}</span>
                 </div>
                 <div className="price">{session.price}</div>
                 <button className="btn" onClick={() => openBookingModal(session)}>
@@ -171,7 +173,7 @@ export default function CoachingSessions() {
             <div className="features-grid">
               {features.map((feature, index) => (
                 <div key={index} className="feature-item">
-                  <div className="feature-icon">{feature.icon}</div>
+                  <div className="feature-icon"><EmojiIcon emoji={feature.icon} /></div>
                   <h3>{feature.title}</h3>
                   <p>{feature.description}</p>
                 </div>
@@ -211,7 +213,7 @@ export default function CoachingSessions() {
                 />
                 <button
                   type="submit"
-                  className="w-full bg-[var(--gold)] hover:bg-yellow-500 text-black font-semibold py-3 px-6 rounded-lg transition duration-300"
+                  className="w-full bg-[var(--gold)] hover:bg-[var(--slateBlue)] hover:text-white text-black font-semibold py-3 px-6 rounded-lg transition duration-300"
                 >
                   Confirm Booking & Pay
                 </button>
@@ -224,8 +226,7 @@ export default function CoachingSessions() {
       <section className="coaching-process">
         <h2>Our Coaching Process</h2>
         <p className="section-intro">
-          We follow a proven step-by-step approach to ensure each session delivers lasting impact
-          and clarity.
+          Each session follows the same four steps, so nothing gets lost between calls.
         </p>
         <div className="process-steps">
           <div className="sessions-step">
@@ -239,24 +240,21 @@ export default function CoachingSessions() {
             <div className="sessions-step-number">2</div>
             <h3>Goal Setting</h3>
             <p>
-              We define clear, actionable goals and outline a roadmap for success tailored to your
-              needs.
+              We set specific goals and a plan for hitting them.
             </p>
           </div>
           <div className="sessions-step">
             <div className="sessions-step-number">3</div>
             <h3>Coaching Sessions</h3>
             <p>
-              Engage in dynamic 1-on-1 or group sessions focused on strategy, mindset, and
-              accountability.
+              1-on-1 or group sessions built around strategy, mindset, and staying accountable.
             </p>
           </div>
           <div className="sessions-step">
             <div className="sessions-step-number">4</div>
             <h3>Progress Review</h3>
             <p>
-              We track your growth, make adjustments, and ensure continued momentum toward your
-              outcomes.
+              We check your progress and adjust the plan as needed.
             </p>
           </div>
         </div>

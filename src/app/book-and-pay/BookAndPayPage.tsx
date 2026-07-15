@@ -6,6 +6,7 @@ import { Elements, CardElement, useStripe, useElements } from '@stripe/react-str
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
+import ScrollToTopButton from '@/components/ScrollToTop';
 import '../sessions/sessions.css';
 import './book-and-pay.css';
 import Image from 'next/image';
@@ -77,7 +78,7 @@ function CheckoutForm({ sessionType, people }: { sessionType: string; people: st
       <div className="w-full flex justify-center">
         <div
           className="credit-card-container"
-          style={{ backgroundColor: '#144a8f', color: 'var(--gold)' }}
+          style={{ backgroundColor: 'var(--slateBlue)', color: 'var(--gold)' }}
         >
           <header className="credit-header flex justify-between items-center">
             <span className="credit-logo flex items-center gap-2">
@@ -91,7 +92,7 @@ function CheckoutForm({ sessionType, people }: { sessionType: string; people: st
               <h5 className="text-base font-medium">PhelanFocus</h5>
             </span>
             <Image
-              src="sessions/chip.png"
+              src="/sessions/chip.png"
               alt="chip"
               width={60}
               height={36}
@@ -150,7 +151,7 @@ function CheckoutForm({ sessionType, people }: { sessionType: string; people: st
 
         <button
           type="submit"
-          className="w-full bg-[var(--gold)] hover:bg-yellow-500 text-black font-semibold text-lg py-3 px-4 rounded-lg transition duration-300"
+          className="w-full bg-[var(--gold)] hover:bg-[var(--slateBlue)] hover:text-white text-black font-semibold text-lg py-3 px-4 rounded-lg transition duration-300"
           disabled={!stripe}
         >
           Pay
@@ -175,6 +176,7 @@ export default function BookAndPayPage() {
         </Elements>
       </div>
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

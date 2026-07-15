@@ -71,45 +71,53 @@ const ContactForm = () => {
     setLoading(false);
   };
 
+  const fields: { name: keyof Email; label: string; placeholder: string; type: string }[] = [
+    { name: 'name', label: 'Name', placeholder: 'Your name', type: 'text' },
+    { name: 'email', label: 'Email', placeholder: 'you@example.com', type: 'email' },
+    { name: 'message', label: 'Message', placeholder: 'How can I help?', type: 'text' },
+  ];
+
+  const inputClasses =
+    'w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-white/40 transition-colors focus:outline-none focus:border-[var(--gold)] focus:ring-2 focus:ring-[var(--gold)]/30';
+
   return (
-    <form noValidate onSubmit={handleSubmit}>
-      {['name', 'email', 'message'].map((field) => {
-        const key = field as keyof Email;
-        return (
-          <div className="mb-4" key={key}>
-            {field !== 'message' ? (
-              <input
-                type={field === 'email' ? 'email' : 'text'}
-                name={field}
-                value={emailState[key]}
-                onChange={handleChange}
-                className="min-h-[48px] w-full px-5 py-3 rounded-xl border bg-[#0e2a47] text-white placeholder-gray-400 focus:ring focus:ring-blue-500/40"
-                placeholder={`Enter ${field.charAt(0).toUpperCase() + field.slice(1)}`}
-              />
-            ) : (
-              <textarea
-                name={field}
-                value={emailState[key]}
-                onChange={handleChange}
-                className="min-h-[120px] w-full px-5 py-3 rounded-xl border bg-[#0e2a47] text-white placeholder-gray-400 resize-none focus:ring focus:ring-blue-500/40"
-                placeholder="Enter Message"
-              />
-            )}
-            {errors[key] && <p className="text-red-500 text-sm">{errors[key]}</p>}
-          </div>
-        );
-      })}
-      {statusMessage && <p className="text-green-600 pb-2">{statusMessage}</p>}
-      <div className="text-end">
-        <button
-          type="submit"
-          disabled={loading}
-          className={`btn-gold relative ${loading ? 'disabled-btn' : ''}`}
-        >
-          <span>{loading ? 'Submitting...' : 'Send Message'}</span>
-          <span></span>
-        </button>
-      </div>
+    <form noValidate onSubmit={handleSubmit} className="space-y-4">
+      {fields.map(({ name, label, placeholder, type }) => (
+        <div key={name}>
+          <label htmlFor={name} className="block text-sm font-medium text-white/80 mb-1.5">
+            {label}
+          </label>
+          {name !== 'message' ? (
+            <input
+              id={name}
+              type={type}
+              name={name}
+              value={emailState[name]}
+              onChange={handleChange}
+              className={inputClasses}
+              placeholder={placeholder}
+            />
+          ) : (
+            <textarea
+              id={name}
+              name={name}
+              value={emailState[name]}
+              onChange={handleChange}
+              className={`${inputClasses} min-h-[120px] resize-none`}
+              placeholder={placeholder}
+            />
+          )}
+          {errors[name] && <p className="text-red-400 text-sm mt-1">{errors[name]}</p>}
+        </div>
+      ))}
+      {statusMessage && <p className="text-sm text-white/90">{statusMessage}</p>}
+      <button
+        type="submit"
+        disabled={loading}
+        className="w-full bg-[var(--gold)] text-[var(--slateBlue)] font-semibold py-3 rounded-xl transition-colors hover:bg-white disabled:opacity-60 disabled:cursor-not-allowed"
+      >
+        {loading ? 'Sending...' : 'Send Message'}
+      </button>
     </form>
   );
 };

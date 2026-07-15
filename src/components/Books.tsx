@@ -20,19 +20,19 @@ export default function Books({sectionClasses, headingClasses, linkToBooksPage, 
 
   const books = [
     {
-      image: "/books/bendtobendblur.png",
+      image: "/books/bendtobendblur.jpg",
       title: "Bend to Bend",
       subtitle: "The course of Volume, Velocity and Veracity.",
       rating: 4.5,
     },
     {
-      image: "/books/peaktopeakblur.png",
+      image: "/books/peaktopeakblur.jpg",
       title: "Peak to Peak",
       subtitle: "The journey of Purpose, progress and perspective.",
       rating: 4.5,
     },
     {
-      image: "/books/shoretoshoreblur.png",
+      image: "/books/shoretoshoreblur.jpg",
       title: "Shore to Shore",
       subtitle: "The building of a Captain, crew and Courses.",
       rating: 4.5,

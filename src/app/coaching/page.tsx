@@ -13,7 +13,7 @@ import {
   ClientSuccessStory,
 } from '@/types/interfaces';
 import { ReactNode } from 'react';
-import PaddedNumsTimeline from '@/components/PaddedNumsTimeline';
+import EmojiIcon from '@/components/EmojiIcon';
 
 const CoachingPageSection = ({
   sectionName,
@@ -126,7 +126,7 @@ export default function CoachingPage() {
     {
       title: 'Confidence in Action',
       description:
-        'Build self-belief and take bold, aligned action—even in the face of fear or uncertainty.',
+        'Build self-belief and take bold, aligned action, even in the face of fear or uncertainty.',
     },
     {
       title: 'Sustainable Progress',
@@ -150,7 +150,7 @@ export default function CoachingPage() {
     {
       icon: '💪',
       title: 'The Life Transformer',
-      description: 'You’re ready for a life overhaul—health, relationships, and purpose.',
+      description: 'You’re ready for a life overhaul: health, relationships, and purpose.',
     },
     {
       icon: '🌟',
@@ -258,33 +258,6 @@ export default function CoachingPage() {
     },
   ];
 
-  const timelineItems: TitleAndDesc[] = [
-    {
-      title: 'Discovery Call',
-      description: '30-minute intro call to explore goals and fit. No pressure.',
-    },
-    {
-      title: 'Deep Dive Assessment',
-      description: 'Personalized intake to uncover patterns, blocks, and priorities.',
-    },
-    {
-      title: 'Goal Setting & Strategy',
-      description: 'We co-create a roadmap with measurable goals and milestones.',
-    },
-    {
-      title: 'Coaching Sessions',
-      description: 'We meet regularly to refine plans, overcome obstacles, and grow.',
-    },
-    {
-      title: 'Ongoing Support',
-      description: "You'll have check-ins and resources to keep momentum going.",
-    },
-    {
-      title: 'Integration',
-      description: 'We lock in the new mindset and systems to make results permanent.',
-    },
-  ];
-
   const philosophies: TitleAndDesc[] = [
     {
       title: 'Growth is Inevitable',
@@ -296,7 +269,7 @@ export default function CoachingPage() {
     },
     {
       title: 'Authenticity Over Perfection',
-      description: 'Your best results come from being you—fully and unapologetically.',
+      description: 'Your best results come from being you, fully and unapologetically.',
     },
     {
       title: 'Partnership, Not Dependency',
@@ -309,13 +282,13 @@ export default function CoachingPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <Hero bgImage="/coaching/coaching-hero.png" header="Coaching" />
+      <Hero bgImage="/coaching/coaching-hero.jpg" header="Coaching" objectPosition="center 25%" fadeTo="#f8fafc" />
 
       {/* Methodology Section */}
       <CoachingPageSection
         sectionName="methodology"
         title="My Coaching Methodology"
-        paragraph="This coaching program follows a proven 4 coaching step framework that has helped hundreds of clients create sustainable transformation. It's not just talk therapy – it's a strategic, action-oriented approach designed to deliver real, lasting results."
+        paragraph="This coaching program follows a proven 4 coaching step framework that has helped hundreds of clients create sustainable transformation. It's not just talk therapy, it's a strategic, action-oriented approach designed to deliver real, lasting results."
         image={
           <Image
             src="/coaching/KC_GroupTraining-4.jpg"
@@ -346,7 +319,7 @@ export default function CoachingPage() {
         <div className="coaching-services-grid">
           {coachingServices.map((service, index) => (
             <div key={index} className="coaching-service-card">
-              <div className="coaching-service-icon">{service.icon}</div>
+              <div className="coaching-service-icon"><EmojiIcon emoji={service.icon} /></div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
               <ul className="coaching-service-features">
@@ -405,7 +378,7 @@ export default function CoachingPage() {
       <CoachingPageSection
         sectionName="ideal-clients"
         title="Who We Serve"
-        paragraph="The coaching team specializes in supporting driven individuals ready to make meaningful changes in their lives. We work with professionals, entrepreneurs, and change-makers who are committed to personal growth, career advancement, and building a life aligned with their values."
+        paragraph="We work with professionals and entrepreneurs who are ready to make a real change, whether that's in their career, their personal life, or how the two fit together."
         image={
           <Image
             src="/coaching/KC_GroupTraining-13.jpg"
@@ -418,7 +391,7 @@ export default function CoachingPage() {
         <div className="client-profiles">
           {clientProfiles.map((profile, index) => (
             <div key={index} className="profile-card">
-              <div className="profile-icon">{profile.icon}</div>
+              <div className="profile-icon"><EmojiIcon emoji={profile.icon} /></div>
               <h3>{profile.title}</h3>
               <p>{profile.description}</p>
             </div>
@@ -479,29 +452,9 @@ export default function CoachingPage() {
         <div className="challenges-grid">
           {challenges.map((challenge, index) => (
             <div key={index} className="challenge-item">
-              <div className="challenge-icon">{challenge.icon}</div>
+              <div className="challenge-icon"><EmojiIcon emoji={challenge.icon} /></div>
               <h3>{challenge.title}</h3>
               <p>{challenge.description}</p>
-            </div>
-          ))}
-        </div>
-      </CoachingPageSection>
-
-      {/* Timeline */}
-      <CoachingPageSection
-        sectionName="how-it-works"
-        title="How The Coaching Process Works"
-        paragraph="Here’s what to expect when you work with me, step by step:"
-      >
-        <div className="process-timeline">
-          {timelineItems.map((item, index) => (
-            <div key={index} className="timeline-item">
-              <PaddedNumsTimeline
-                num={index + 1}
-                h3={item.title}
-                p={item.description}
-                class1="timeline-number"
-              />
             </div>
           ))}
         </div>
@@ -511,7 +464,7 @@ export default function CoachingPage() {
       <CoachingPageSection
         sectionName="philosophy"
         title="My Coaching Philosophy"
-        paragraph="The coaching philosophy centers around human potential and personalized empowerment."
+        paragraph="This approach is built around recognizing your own potential and learning to act on it."
       >
         <div className="philosophy-content">
           {philosophies.map((philosophy, index) => (
