@@ -4,21 +4,23 @@ import { Resend } from 'resend';
 import { Email } from '@/types/interfaces';
 import { ReactNode } from 'react';
 import confirmationParagraphs from '@/functions/confirmationParagraphs';
+import { getPhelanBackendSecrets } from '@/lib/serverSecrets';
 
 export async function POST(req: NextRequest) {
   try {
-    const resendKey = process.env.RESEND_API_KEY;
-    if (!resendKey) {
-      throw new Error('RESEND_API_KEY is not set in the environment');
+    const { RESEND_API_KEY, EMAIL_TO } = await getPhelanBackendSecrets();
+
+    if (!RESEND_API_KEY) {
+      throw new Error('Resend API key is not configured');
     }
 
-    const resend = new Resend(resendKey);
+    const resend = new Resend(RESEND_API_KEY);
     const { name, email, message }: Email = await req.json();
     const paragraphs: ReactNode[] = confirmationParagraphs({ name, email, message });
 
     const { data, error } = await resend.emails.send({
       from: 'noreply@resend.dev',
-      to: [email, 'the.phelan.focusn@gmail.com'],
+      to: [email, EMAIL_TO || 'the.phelan.focusn@gmail.com'],
       subject: 'Confirmation email',
       react: EmailTemplate({
         heading: 'Hello Phelan,',

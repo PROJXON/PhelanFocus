@@ -1,23 +1,27 @@
 import { NextRequest } from 'next/server';
 import { Resend } from 'resend';
+import { getPhelanBackendSecrets } from '@/lib/serverSecrets';
 
 export async function POST(req: NextRequest) {
   try {
-    const resendKey = process.env.RESEND_API_KEY;
-    if (!resendKey) {
-      throw new Error('RESEND_API_KEY is not set in the environment');
+    const { RESEND_API_KEY, EMAIL_TO } = await getPhelanBackendSecrets();
+
+    if (!RESEND_API_KEY) {
+      throw new Error('Resend API key is not configured');
     }
 
-    const resend = new Resend(resendKey);
+    const resend = new Resend(RESEND_API_KEY);
     const { email } = await req.json();
 
     if (!email || !email.includes('@')) {
-      return new Response(JSON.stringify({ error: 'Invalid email address' }), { status: 400 });
+      return new Response(JSON.stringify({ error: 'Invalid email address' }), {
+        status: 400,
+      });
     }
 
     await resend.emails.send({
       from: 'noreply@resend.dev',
-      to: ['the.phelan.focus@gmail.com'],
+      to: [EMAIL_TO || 'the.phelan.focus@gmail.com'],
       subject: 'New Newsletter Subscriber',
       html: `<p>You have a new subscriber: <strong>${email}</strong></p>`,
     });

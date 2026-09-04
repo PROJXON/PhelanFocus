@@ -5,7 +5,7 @@ import PRICE_MAP from '@/lib/priceMap';
 
 export async function POST(req: NextRequest) {
   try {
-    const stripe = getStripe();
+    const stripe = await getStripe();
     const body = await req.json();
     const { sessionType, people } = body;
 
@@ -17,10 +17,10 @@ export async function POST(req: NextRequest) {
     }
 
     const totalAmount = pricePerPerson * quantity;
-
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
     if (!baseUrl) {
-      throw new Error('NEXT_PUBLIC_BASE_URL is not set in the environment');
+      throw new Error('NEXT_PUBLIC_BASE_URL is not configured');
     }
 
     const session = await stripe.checkout.sessions.create({
@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ url: session.url });
   } catch (err) {
-    console.error(err);
+    console.error('Stripe checkout error:', err);
     return NextResponse.json({ error: 'Stripe error' }, { status: 500 });
   }
 }

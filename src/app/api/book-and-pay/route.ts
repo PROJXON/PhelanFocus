@@ -1,14 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { getPhelanBackendSecrets } from '@/lib/serverSecrets';
 
 export async function POST(req: NextRequest) {
   try {
-    const resendKey = process.env.RESEND_API_KEY;
-    if (!resendKey) {
-      throw new Error('RESEND_API_KEY is not set in the environment');
+    const { RESEND_API_KEY, EMAIL_TO } = await getPhelanBackendSecrets();
+
+    if (!RESEND_API_KEY) {
+      throw new Error('Resend API key is not configured');
     }
 
-    const resend = new Resend(resendKey);
+    const resend = new Resend(RESEND_API_KEY);
     const body = await req.json();
     const { name, email, phone, dateTime, goals, people, sessionType } = body;
 
@@ -26,7 +28,7 @@ New Coaching Booking:
 
     await resend.emails.send({
       from: 'noreply@resend.dev',
-      to: 'the.phelan.focus@gmail.com',
+      to: EMAIL_TO || 'the.phelan.focus@gmail.com',
       subject: 'New Coaching Booking',
       text: message,
     });

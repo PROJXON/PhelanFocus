@@ -1,11 +1,23 @@
 import Stripe from 'stripe';
+import { getPhelanBackendSecrets } from '@/lib/serverSecrets';
 
-export default function getStripe() {
-  const stripeKey = process.env.STRIPE_SECRET_KEY;
+let stripePromise: Promise<Stripe> | null = null;
 
-  if (!stripeKey) {
-    throw new Error('Stripe key is not set in the environment');
+export default async function getStripe(): Promise<Stripe> {
+  if (!stripePromise) {
+    stripePromise = (async () => {
+      const { STRIPE_SECRET_KEY } = await getPhelanBackendSecrets();
+
+      if (!STRIPE_SECRET_KEY) {
+        throw new Error('Stripe secret key is not configured');
+      }
+
+      return new Stripe(STRIPE_SECRET_KEY);
+    })().catch((error) => {
+      stripePromise = null;
+      throw error;
+    });
   }
 
-  return new Stripe(stripeKey);
+  return stripePromise;
 }

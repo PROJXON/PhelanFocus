@@ -5,7 +5,7 @@ import { PriceMap } from '@/types/interfaces';
 
 export async function POST(req: NextRequest) {
   try {
-    const stripe = getStripe();
+    const stripe = await getStripe();
     const { sessionType, people } = await req.json();
 
     const unitAmount = PRICE_MAP[sessionType as keyof PriceMap];
@@ -29,6 +29,9 @@ export async function POST(req: NextRequest) {
   } catch (error: unknown) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     console.error('Stripe error:', errorMessage);
-    return NextResponse.json({ error: errorMessage || 'Internal Server Error' }, { status: 500 });
+    return NextResponse.json(
+      { error: errorMessage || 'Internal Server Error' },
+      { status: 500 },
+    );
   }
 }
