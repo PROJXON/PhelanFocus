@@ -5,10 +5,14 @@ import { Email } from '@/types/interfaces';
 import { ReactNode } from 'react';
 import confirmationParagraphs from '@/functions/confirmationParagraphs';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: NextRequest) {
   try {
+    const resendKey = process.env.RESEND_API_KEY;
+    if (!resendKey) {
+      throw new Error('RESEND_API_KEY is not set in the environment');
+    }
+
+    const resend = new Resend(resendKey);
     const { name, email, message }: Email = await req.json();
     const paragraphs: ReactNode[] = confirmationParagraphs({ name, email, message });
 
@@ -18,7 +22,7 @@ export async function POST(req: NextRequest) {
       subject: 'Confirmation email',
       react: EmailTemplate({
         heading: 'Hello Phelan,',
-        paragraphs: paragraphs,
+        paragraphs,
         lastMarginTop: true,
       }),
     });

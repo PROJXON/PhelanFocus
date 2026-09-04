@@ -148,7 +148,7 @@ export default function BooksPage() {
               <h3 className="text-xl font-semibold text-[var(--slateBlue)] dark:text-white mb-2">
                 Bend to Bend
               </h3>
-              <p>Ideal for leaders, managers, and mentors who are responsible for someone else's growth.</p>
+              <p>Ideal for leaders, managers, and mentors who are responsible for someone else’s growth.</p>
               <ul className="mt-2 pl-5 list-disc text-gray-600 dark:text-gray-300 hidden group-hover:block">
                 <li>Team leaders</li>
                 <li>HR professionals</li>

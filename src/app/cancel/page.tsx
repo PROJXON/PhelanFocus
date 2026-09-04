@@ -23,7 +23,7 @@ export default function CancelPage() {
           </svg>
           <h1 className="text-3xl font-bold text-[var(--slateBlue)]">Payment Canceled</h1>
           <p className="text-lg text-gray-600">
-            No charge was made. You can try again whenever you're ready, or reach out if you need
+            No charge was made. You can try again whenever you’re ready, or reach out if you need
             help.
           </p>
           <Link

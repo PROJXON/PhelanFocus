@@ -1,15 +1,18 @@
-// /app/api/book-and-pay/route.js
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: NextRequest) {
-  const body = await req.json();
+  try {
+    const resendKey = process.env.RESEND_API_KEY;
+    if (!resendKey) {
+      throw new Error('RESEND_API_KEY is not set in the environment');
+    }
 
-  const { name, email, phone, dateTime, goals, people, sessionType } = body;
+    const resend = new Resend(resendKey);
+    const body = await req.json();
+    const { name, email, phone, dateTime, goals, people, sessionType } = body;
 
-  const message = `
+    const message = `
 New Coaching Booking:
 
 🔹 Name: ${name}
@@ -21,12 +24,11 @@ New Coaching Booking:
 🔹 Goals: ${goals || 'N/A'}
 `;
 
-  try {
     await resend.emails.send({
       from: 'noreply@resend.dev',
       to: 'the.phelan.focus@gmail.com',
       subject: 'New Coaching Booking',
-      text: message, // 👈 This fills the "Plain Text" content
+      text: message,
     });
 
     return NextResponse.json({ success: true });

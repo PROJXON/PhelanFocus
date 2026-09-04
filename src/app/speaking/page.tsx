@@ -80,7 +80,7 @@ export default function SpeakingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[var(--slateBlue)] dark:text-white">
-              Mark's Most Popular Coaching Sessions
+              Mark’s Most Popular Coaching Sessions
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Practical takeaways your team can actually use
@@ -139,11 +139,11 @@ export default function SpeakingPage() {
       <section className="py-20 px-6 bg-gradient-to-br from-[#faf7ef] to-[#f3ecdb] dark:from-[#1a2332] dark:to-[#0f1419]">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gray-900 dark:text-white">
-            Mark's Most Popular Keynote Speeches
+            Mark’s Most Popular Keynote Speeches
           </h2>
           <div className="bg-white dark:bg-[#1c2535] rounded-2xl shadow-2xl p-10 md:p-14 border-t-4 border-[var(--gold)]">
             <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-              Don't Take Our Word For It
+              Don’t Take Our Word For It
             </h3>
             <svg
               className="w-12 h-12 mx-auto mb-6 text-[var(--gold)] opacity-50"
@@ -153,8 +153,8 @@ export default function SpeakingPage() {
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
             </svg>
             <p className="text-xl md:text-2xl italic text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
-              "Mark's coaching sessions are the most impactful of any program
-              I've participated in, insightful, energizing, and life-changing."
+              “Mark’s coaching sessions are the most impactful of any program
+              I’ve participated in, insightful, energizing, and life-changing.”
             </p>
             <p className="text-lg font-semibold text-gray-900 dark:text-white">
               - Global Leadership Summit Participant
@@ -174,7 +174,7 @@ export default function SpeakingPage() {
               A good coaching session pushes you to look at your own thinking
               differently, not just hand you a checklist. It should be
               memorable enough that you actually act on what you talked
-              about. That's what Mark aims for, every time.
+              about. That’s what Mark aims for, every time.
             </p>
           </div>
         </div>

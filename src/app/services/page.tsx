@@ -155,7 +155,7 @@ export default function ServicesPage() {
                     <div className="choose-one__content">
                       <p>
                         Most people hit a wall trying to grow their career, win over a room, or
-                        shift their business strategy on their own. That's where{' '}
+                        shift their business strategy on their own. That’s where{' '}
                         <strong>coaching</strong>, <strong>speaking training</strong>, and{' '}
                         <strong>consulting</strong> come in, combined into one approach instead of
                         three separate services.
@@ -165,7 +165,7 @@ export default function ServicesPage() {
                         <div className="box-content">
                           <h4 className="box-title">Mission Statement</h4>
                           <p>
-                            We help individuals and teams figure out what they're good at and put
+                            We help individuals and teams figure out what they’re good at and put
                             it to work, through one-on-one coaching, public speaking training, and
                             practical business strategy.
                           </p>
@@ -176,7 +176,7 @@ export default function ServicesPage() {
                         <div className="box-content">
                           <h4 className="box-title">Our Commitment</h4>
                           <p>
-                            Whether you're prepping for your first keynote, at a career crossroads,
+                            Whether you’re prepping for your first keynote, at a career crossroads,
                             or scaling your organization, we build the plan around your specific
                             situation and stay involved until you see results.
                           </p>
@@ -195,8 +195,8 @@ export default function ServicesPage() {
                       <p>
                         The right partner makes a real difference here. We combine{' '}
                         <strong>coaching</strong>, <strong>public speaking training</strong>, and{' '}
-                        <strong>consulting</strong> so you're not piecing together three different
-                        vendors, whether you're leading a team, addressing an audience, or
+                        <strong>consulting</strong> so you’re not piecing together three different
+                        vendors, whether you’re leading a team, addressing an audience, or
                         rethinking your business.
                       </p>
                       <ul className="mb-40 list-check">

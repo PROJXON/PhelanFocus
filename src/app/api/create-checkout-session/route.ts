@@ -1,10 +1,11 @@
 import { PriceMap } from '@/types/interfaces';
 import { NextRequest, NextResponse } from 'next/server';
-import stripe from '@/lib/stripeObj';
+import getStripe from '@/lib/stripeObj';
 import PRICE_MAP from '@/lib/priceMap';
 
 export async function POST(req: NextRequest) {
   try {
+    const stripe = getStripe();
     const body = await req.json();
     const { sessionType, people } = body;
 
@@ -17,6 +18,11 @@ export async function POST(req: NextRequest) {
 
     const totalAmount = pricePerPerson * quantity;
 
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+    if (!baseUrl) {
+      throw new Error('NEXT_PUBLIC_BASE_URL is not set in the environment');
+    }
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       mode: 'payment',
@@ -28,13 +34,13 @@ export async function POST(req: NextRequest) {
               name: sessionType,
               description: `${sessionType} booking for ${quantity} person(s)`,
             },
-            unit_amount: totalAmount * 100, // Stripe uses cents
+            unit_amount: totalAmount * 100,
           },
           quantity: 1,
         },
       ],
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/sessions?canceled=true`,
+      success_url: `${baseUrl}/success`,
+      cancel_url: `${baseUrl}/sessions?canceled=true`,
     });
 
     return NextResponse.json({ url: session.url });

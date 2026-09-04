@@ -1,14 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
-import stripe from '@/lib/stripeObj';
+import getStripe from '@/lib/stripeObj';
 import PRICE_MAP from '@/lib/priceMap';
 import { PriceMap } from '@/types/interfaces';
 
 export async function POST(req: NextRequest) {
   try {
+    const stripe = getStripe();
     const { sessionType, people } = await req.json();
 
     const unitAmount = PRICE_MAP[sessionType as keyof PriceMap];
-    if (!unitAmount) return NextResponse.json({ error: 'Invalid session type' }, { status: 400 });
+    if (!unitAmount) {
+      return NextResponse.json({ error: 'Invalid session type' }, { status: 400 });
+    }
 
     const totalPeople = parseInt(people || 1);
     const total = unitAmount * totalPeople;
