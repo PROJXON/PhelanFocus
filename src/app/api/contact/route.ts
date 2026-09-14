@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
     const paragraphs: ReactNode[] = contactParagraphs();
 
     const { data, error } = await resend.emails.send({
-      from: 'noreply@resend.dev',
+      from: 'noreply@thephelanfocus.com',
       to: [EMAIL_TO || 'the.phelan.focusn@gmail.com'],
       replyTo: email,
       subject: 'Contact from Website',

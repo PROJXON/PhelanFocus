@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
     }
 
     await resend.emails.send({
-      from: 'noreply@resend.dev',
+      from: 'noreply@thephelanfocus.com',
       to: [EMAIL_TO || 'the.phelan.focus@gmail.com'],
       subject: 'New Newsletter Subscriber',
       html: `<p>You have a new subscriber: <strong>${email}</strong></p>`,

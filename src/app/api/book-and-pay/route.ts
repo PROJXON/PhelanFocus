@@ -27,7 +27,7 @@ New Coaching Booking:
 `;
 
     await resend.emails.send({
-      from: 'noreply@resend.dev',
+      from: 'noreply@thephelanfocus.com',
       to: EMAIL_TO || 'the.phelan.focus@gmail.com',
       subject: 'New Coaching Booking',
       text: message,

@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     const paragraphs: ReactNode[] = confirmationParagraphs({ name, email, message });
 
     const { data, error } = await resend.emails.send({
-      from: 'noreply@resend.dev',
+      from: 'noreply@thephelanfocus.com',
       to: [email, EMAIL_TO || 'the.phelan.focusn@gmail.com'],
       subject: 'Confirmation email',
       react: EmailTemplate({
