@@ -1,4 +1,4 @@
-import { Geist, Fraunces } from 'next/font/google';
+﻿import { Geist, Fraunces } from 'next/font/google';
 import './globals.css';
 import ThemeProvider from '@/components/ThemeProvider';
 import { ContactModalProvider } from '@/context/ContactModalContext';
@@ -57,7 +57,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <ThemeProvider>
           <ContactModalProvider>{children}</ContactModalProvider>
         </ThemeProvider>
+      {/* Cloudflare Web Analytics */}
+      <Script
+        id="cloudflare-web-analytics"
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        strategy="afterInteractive"
+        data-cf-beacon='{"token":"826e2c59f64d4eb692a55112f427995d"}'
+      />
       </body>
     </html>
   );
 }
+
